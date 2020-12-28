@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Read more on the Holy Grail layout in the Wikipedia: https://en.wikipedia.org/wiki/Holy_grail_(web_design) -->
+
+    <meta charset="UTF-8">
+    <title>Demo of the Holy Grail layout, using flexbox</title>
+
+    <style type="text/css">
+        /* Without this one the content will not fill the whole page! */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial,serif;
+            font-size: 1.2em;
+        }
+
+        #page-container {
+            display: flex;
+            background-color: azure;
+            flex-direction: column;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        #header {
+            height: 200px;
+            border: 1px solid black;
+            background-color: #59b1de;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #header h1 {
+            margin: auto; /* Without this whitespace will be added and the h1 item will have "too much height" */
+        }
+
+        #nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            height: 100%;
+            min-height: 100%;
+            background-color: #8e6abe;
+        }
+
+        .nav-item {
+            padding: 10px;
+            background-color: aqua;
+            border: 1px solid red;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+
+        #footer {
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            padding: 20px 0;
+        }
+
+        #footer p {
+            margin: auto;
+        }
+
+        #content-area {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            flex-grow: 1;
+        }
+
+        #main-content {
+            background-color: #efafb2;
+            border: 1px solid blue;
+            padding: 20px;
+            min-width: 600px;
+        }
+
+        #ads {
+            height: 100%;
+            min-height: 100%;
+            background-color: #8e6abe;
+        }
+
+        .ad {
+            padding: 10px;
+            text-align: center;
+        }
+        .ad p {
+            margin: auto;
+            border: 1px solid black;
+            padding: 10px;
+            width: 180px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div id="page-container">
+    <div id="header"><h1>Welcome to a demo of the holy grail layout using flexbox CSS features!</h1></div>
+    <div id="content-area">
+        <div id="nav">
+            <div id="home" class="nav-item">Home</div>
+            <div id="gallery" class="nav-item">Gallery</div>
+            <div id="aboutus" class="nav-item">About us</div>
+            <div id="contacts" class="nav-item">Contacts</div>
+        </div>
+        <div id="main-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum eaque earum, eius eligendi, enim
+            eos error esse, excepturi harum illum impedit laudantium molestias nemo nostrum officia pariatur praesentium
+            provident quaerat quibusdam quo quod repellat sapiente sequi sint tempore unde veritatis vitae. Ab at eos
+            error, eum hic itaque magni maiores, minus nam nisi pariatur qui ratione temporibus tenetur voluptatibus!
+            Commodi consequatur debitis, dolor doloremque ea enim, facere fuga fugiat id mollitia numquam officia quidem
+            quis quo recusandae, rem sequi similique sint temporibus totam ut velit vero. A, aut labore nemo omnis optio
+            quod sequi sit totam ut.
+        </div>
+        <div id="ads">
+            <div class="ad">
+                <p>Ad Nr 1</p>
+            </div>
+            <div class="ad">
+                <p>Ad Nr 2</p>
+            </div>
+            <div class="ad">
+                <p>Ad Nr 3</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer"><p>Copyright 2020</p></div>
+</div>
+
+</body>
+</html>
