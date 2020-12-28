@@ -19,7 +19,6 @@
 
         #page-container {
             display: flex;
-            background-color: azure;
             flex-direction: column;
             height: 100%;
             min-height: 100%;
@@ -27,8 +26,6 @@
 
         #header {
             height: 200px;
-            border: 1px solid black;
-            background-color: #59b1de;
             display: flex;
             justify-content: center;
             align-content: center;
@@ -44,15 +41,13 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            height: 100%;
-            min-height: 100%;
             background-color: #8e6abe;
         }
 
         .nav-item {
             padding: 10px;
             background-color: aqua;
-            border: 1px solid red;
+            border: 1px dashed black;
             margin: 10px;
             width: 200px;
             text-align: center;
@@ -71,6 +66,10 @@
             margin: auto;
         }
 
+        #header, #footer {
+            background-color: #59b1de;
+        }
+
         #content-area {
             display: flex;
             flex-direction: row;
@@ -80,14 +79,15 @@
 
         #main-content {
             background-color: #efafb2;
-            border: 1px solid blue;
             padding: 20px;
             min-width: 600px;
         }
 
+        #nav, #main-content, #ads, #header {
+            /*border: 5px dotted black;*/
+        }
+
         #ads {
-            height: 100%;
-            min-height: 100%;
             background-color: #8e6abe;
         }
 
@@ -97,7 +97,7 @@
         }
         .ad p {
             margin: auto;
-            border: 1px solid black;
+            border: 1px dashed black;
             padding: 10px;
             width: 180px;
         }
