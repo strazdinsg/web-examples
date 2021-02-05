@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 1 - Hello, Flexbox!</title>
+    <link rel="stylesheet" href="../exercise-description-style.css"/>
+</head>
+
+<body>
+
+<article>
+    <h1>Exercise 1</h1>
+    <p>This is Exercise #1, lecture on CSS Flexbox, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+        at NTNU, campus Aalesund.
+    </p>
+
+    <h2>Purpose</h2>
+    <p>The purpose of the exercise is to <em>get your hands dirty</em> with CSS flexbox layout. Well, and to get used to
+        writing HTML and CSS code. It's like playing piano - practice is needed to <em>get it in your fingers.</em>
+    </p>
+
+    <h2>Instructions</h2>
+    <p>Your task is to create an HTML document and necessary CSS styling to get the necessary result described below.
+        You decide whether to embed <code>&lt;style&gt;</code> block in the heading, or to include an external
+        .css file.
+    </p>
+
+    <p>Requirements:</p>
+    <ol>
+        <li>Create a flexbox container.</li>
+        <li>It must contain five child elements, let's call them <em>items</em>.</li>
+        <li>Each item should contain some text in it. For example, numbers 1, 2, ..., 5.</li>
+        <li>Add a border to the flexbox container and each item to see their boundaries.</li>
+    </ol>
+
+    <h2>Extra challenge</h2>
+    <p>If you are done with the exercise too fast and are bored, you can practice CSS:
+    <ol>
+        <li>Recreate the look used in <a href="https://learningwebdesign.com">the book</a>:
+            <img src="img/flexbox-with-items.png" height="50px" alt="flexbox with five colored items: 1, 2, 3, 4, 5"/>
+        </li>
+        <li>Add some fancy effects, such as shadows, hover effects</li>
+    </ol>
+
+    <h2>Template</h2>
+    <p>Although you could use this file as a template, it can be a good practice to start from scratch - get the
+        feeling of creating HTML documents!</p>
+
+    <h2>Solution</h2>
+    <p>You can find a solution in <a href="../solutions/ex01-solution.html"><code>../solutions/ex01-solution.html</code></a>.</p>
+
+    <h2>Side note(s)</h2>
+    <p>P.S. If your code editor supports <a href="https://emmet.io/">Emmet</a> (WebStorm does), you can create the child
+        items with this emmet-shortcut:
+        <code>div{$}*5</code>.
+        Type it and then press Tab (or Ctrl+E in some editors). <a href="https://docs.emmet.io/cheat-sheet/">Emmet's
+            Cheat sheet here</a>.
+    </p>
+    <p>
+        Explanation: <code>div{$}*5</code> means "create element &lt;div&gt; with the <em>loop index</em> as the text
+        content, repeat that in a loop 5 times".
+    </p>
+    <p>A small quiz-question for you: how will this Emmet expression be expanded: <code>div#item$*5</code>? Hint: how about you try it and see for yourself? :)</p>
+
+</article>
+
+
+</body>
+</html>
