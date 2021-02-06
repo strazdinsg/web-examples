@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solution for Exercise 3 - Flexbox media object</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+</head>
+<style>
+    .container {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .figure {
+        flex: 1 1 30%;
+        align-self: flex-start;
+        min-width: 150px;
+        margin: 0 20px;
+    }
+
+    .media-body {
+        flex: 1 1 70%;
+        min-width: 350px;
+    }
+
+    img.right {
+        /* The default order (applied for the text paragraph) is 0.
+        Setting order to 1 moves this item to the end of the flexbox. */
+        order: 1;
+    }
+</style>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 3</h1>
+    <p>This is a solution for
+        <a href="../ex03-flexbox-media-object/exercise-3-flexbox-media-object.html">Exercise 3</a>.
+    </p>
+
+    <div class="container">
+        <img src="https://picsum.photos/id/1027/600/800" alt="A woman" class="figure">
+        <div class="media-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+        </div>
+    </div>
+
+    <h2>Picture on the right</h2>
+
+    <div class="container">
+        <img src="https://picsum.photos/id/1027/600/800" alt="A woman" class="figure right">
+        <div class="media-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+        </div>
+    </div>
+
+    <h2>Nested media object</h2>
+
+    <div class="container">
+        <img src="https://picsum.photos/id/1027/600/800" alt="A woman" class="figure">
+        <div class="media-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore dolorum
+                eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis nostrum, odio
+                officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt odit
+                quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima minus, non
+                obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid aspernatur
+                eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus reprehenderit
+                similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt voluptatem!
+                Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias cum eaque,
+                libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+
+            <div class="container">
+                <img src="https://picsum.photos/id/1027/600/800" alt="A woman" class="figure">
+                <div class="media-body">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore
+                        dolorum
+                        eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis
+                        nostrum, odio
+                        officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt
+                        odit
+                        quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima
+                        minus, non
+                        obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid
+                        aspernatur
+                        eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus
+                        reprehenderit
+                        similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt
+                        voluptatem!
+                        Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias
+                        cum eaque,
+                        libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore
+                        dolorum
+                        eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis
+                        nostrum, odio
+                        officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt
+                        odit
+                        quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima
+                        minus, non
+                        obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid
+                        aspernatur
+                        eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus
+                        reprehenderit
+                        similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt
+                        voluptatem!
+                        Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias
+                        cum eaque,
+                        libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolore
+                        dolorum
+                        eligendi enim esse eum in inventore ipsa iusto, laudantium, nisi nobis
+                        nostrum, odio
+                        officia porro provident rerum sed sit veniam vitae. Distinctio enim nesciunt
+                        odit
+                        quaerat ratione unde? Ab assumenda cum dolor eius, ipsa laudantium minima
+                        minus, non
+                        obcaecati perferendis, saepe tempora unde voluptatum. Aliquam aliquid
+                        aspernatur
+                        eligendi esse eum excepturi in ipsa magni nemo pariatur repellendus
+                        reprehenderit
+                        similique, sint sit temporibus ullam voluptates! Id illum nisi sed sunt
+                        voluptatem!
+                        Deleniti, earum, enim. Beatae illo numquam placeat sequi. Accusamus alias
+                        cum eaque,
+                        libero necessitatibus nesciunt numquam omnis praesentium tempora?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</article>
+
+
+</body>
+</html>
