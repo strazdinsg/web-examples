@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Holy grail layout with grid</title>
+
+    <style>
+        /* Body is the grid */
+        body {
+            display: grid;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            min-width: 600px;
+            grid-template-areas:
+                "header header header"
+                "nav main ads"
+                "footer footer footer";
+            grid-template-rows: 200px auto 100px;
+            grid-template-columns: minmax(100px, 200px) minmax(300px, auto) minmax(100px, 200px);
+        }
+        /* Assign grid areas for each content element */
+        header {
+            grid-area: header;
+        }
+        header h1 {
+            text-align: center;
+        }
+        main {
+            grid-area: main;
+        }
+        nav {
+            grid-area: nav;
+        }
+        footer {
+            grid-area: footer;
+        }
+        footer p {
+            text-align: center;
+        }
+        #ads {
+            grid-area: ads;
+        }
+
+        /* --------------------------- */
+        /* Borders around the sections */
+        /* --------------------------- */
+        nav {
+            border-right: 3px dashed black;
+        }
+
+        footer {
+            border-top: 3px dashed black;
+        }
+
+        header {
+            border-bottom: 3px dashed black;
+        }
+
+        #ads {
+            border-left: 3px dashed black;
+        }
+
+
+        /* --------------- */
+        /* Polish the look */
+        /* --------------- */
+        html {
+            font-size: 1.2em;
+            font-family: Arial, serif;
+        }
+
+        header, footer {
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #8e6abe;
+        }
+
+        .nav-item {
+            padding: 10px;
+            border: 1px dashed black;
+            margin: 10px;
+            text-align: center;
+        }
+
+        header, footer {
+            background-color: #59b1de;
+        }
+
+        main {
+            background-color: #efafb2;
+            padding: 20px;
+        }
+
+        #ads {
+            background-color: #8e6abe;
+        }
+
+        .ad {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .ad p {
+            margin: auto;
+            border: 1px dashed black;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<header><h1>Welcome to a demo of the holy grail layout using CSS Grid!</h1>
+</header>
+<main>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum eaque earum, eius
+    eligendi, enim
+    eos error esse, excepturi harum illum impedit laudantium molestias nemo nostrum officia pariatur
+    praesentium
+    provident quaerat quibusdam quo quod repellat sapiente sequi sint tempore unde veritatis vitae.
+    Ab at eos
+    error, eum hic itaque magni maiores, minus nam nisi pariatur qui ratione temporibus tenetur
+    voluptatibus!
+    Commodi consequatur debitis, dolor doloremque ea enim, facere fuga fugiat id mollitia numquam
+    officia quidem
+    quis quo recusandae, rem sequi similique sint temporibus totam ut velit vero. A, aut labore nemo
+    omnis optio
+    quod sequi sit totam ut.
+</main>
+<!-- According to the theory, the navigation bar should come after the main content in the markup -->
+<nav>
+    <div id="home" class="nav-item">Home</div>
+    <div id="gallery" class="nav-item">Gallery</div>
+    <div id="aboutus" class="nav-item">About us</div>
+    <div id="contacts" class="nav-item">Contacts</div>
+</nav>
+<aside id="ads">
+    <div class="ad">
+        <p>Ad Nr 1</p>
+    </div>
+    <div class="ad">
+        <p>Ad Nr 2</p>
+    </div>
+    <div class="ad">
+        <p>Ad Nr 3</p>
+    </div>
+</aside>
+<footer><p>Copyright 2020</p></footer>
+
+
+</body>
+</html>
