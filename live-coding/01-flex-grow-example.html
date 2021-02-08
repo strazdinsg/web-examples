@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Example of flex growing</title>
+
+    <style>
+        #container {
+            /*width: 450px;*/
+            border: 1px solid blue;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .item {
+            padding: 5px;
+            flex-basis: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            flex-grow: 1;
+        }
+
+        #middle {
+            flex-grow: 2;
+        }
+        #last {
+            flex-grow: 10;
+            flex-shrink: 0;
+        }
+        #logo {
+            order: -1;
+        }
+        .ddd {
+            order: 5;
+        }
+    </style>
+
 </head>
 <body>
+
+<div id="container">
+    <div class="item">Item 1</div>
+    <div class="item ddd" id="middle">Item 2</div>
+    <div class="item ddd" id="last">Item 3</div>
+    <div class="item" id="logo">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
 
 </body>
 </html>

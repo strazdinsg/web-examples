@@ -3,8 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <title>Holy grail layout with flexbox</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-width: 800px;
+            height: 100vh;
+            margin: 0;
+        }
+
+        header, footer {
+            background-color: #59b1de;
+            flex-grow: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header {
+            font-size: 1.5em;
+        }
+
+        main {
+            background-color: #efafb2;
+        }
+
+        #content {
+            display: flex;
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+
+        nav, aside {
+            background-color: #ba69ba;
+            flex-basis: 200px;
+            flex-shrink: 0;
+        }
+
+        nav > div, .reklame {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 10px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+
+
+    </style>
+
 </head>
 <body>
+
+<header>Welcome to our page!</header>
+
+<div id="content">
+    <nav>
+        <div>Home</div>
+        <div>About</div>
+        <div>Gallery</div>
+        <div>Contact</div>
+        <div>Buy now!</div>
+    </nav>
+
+    <main>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquam amet assumenda
+        aut blanditiis et, illo, illum laboriosam, libero magni numquam ullam voluptate voluptatem.
+        Esse natus nihil nisi sed velit voluptas. Accusamus dolor error eum iure necessitatibus
+        nostrum obcaecati optio voluptate? At consectetur delectus eaque libero neque, odit
+        similique totam voluptate. Accusamus accusantium adipisci aliquid atque corporis cumque
+        deserunt dignissimos dolorum ducimus ea eaque earum, esse ex iure laudantium libero mollitia
+        neque nihil nisi non nulla obcaecati odio porro praesentium provident quam quibusdam quidem
+        quo ratione sapiente, sequi sit sunt tempora tenetur, totam ullam ut. Beatae maxime minima
+        obcaecati temporibus.
+    </main>
+
+    <aside>
+        <div class="reklame">R 1</div>
+        <div class="reklame">R 2</div>
+        <div class="reklame">R 3</div>
+        <div class="reklame">R 4</div>
+    </aside>
+</div>
+
+
+<footer>(C) 2021</footer>
 
 </body>
 </html>
