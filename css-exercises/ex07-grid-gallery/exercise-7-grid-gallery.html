@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 7 - Image grid</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+    <style>
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 3px 3px 5px gray;
+        }
+        img {
+            border: 1px dashed black;
+        }
+
+        button {
+            padding: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<article>
+    <h1>Exercise 7</h1>
+    <p>This is Exercise #7, lecture on CSS Grid, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+        at NTNU, campus Aalesund.
+    </p>
+
+    <h2>Purpose</h2>
+    <p>The purpose of the exercise is to practice the implicit behaviour of CSS grids:
+        automatically-generated columns and rows.
+    </p>
+
+    <h2>Instructions</h2>
+    <p>Use this document as a template. You see a set of images below. Configure the following
+        behaviour for the gallery container:
+    </p>
+    <ol>
+        <li>The images should be in a flexbox container.</li>
+        <li>Each image should be 200px wide and 150px high.</li>
+        <li>The container should fill the whole width of the page, with 50px margins on the sides.
+        </li>
+        <li>The container should not shrink to less than 500px horizontally
+            (hint: <code>min-width</code> property).
+        </li>
+        <li>The container should be 800px high.</li>
+        <li>The images should be laid out horizontally in a grid, placing as many images as possible
+            in every row.
+        </li>
+    </ol>
+
+    <p>Here you can see a an example of how the gallery could look on a wide screen:</p>
+    <img src="img/gallery-preview01.jpg" alt="Nine images laid out in two rows"/>
+    <p>And this is how it could look on a narrow screen:</p>
+    <img src="img/gallery-preview02.jpg"
+         alt="Eight images laid out on three rows: three, three and two on each row"/>
+
+    <h2>Template</h2>
+    <p>Start with this file as a template. It should be enough by creating only the CSS style,
+        the HTML elements are in place already.</p>
+    <h3>The gallery</h3>
+
+    <div id="container">
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <p><b>What a nice picture!</b></p>
+            <p>Here is a description of the image. Verināāāis!</p>
+            <button>Add to cart</button>
+        </div>
+    </div>
+
+    <h2>Solution</h2>
+    <p>You can find a solution in <a href="../solutions/ex07-solution.html">
+        <code>../solutions/ex07-solution.html</code></a>.
+    </p>
+
+</article>
+
+
+</body>
+</html>
