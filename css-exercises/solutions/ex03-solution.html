@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <title>Solution for Exercise 3 - Flexbox media object</title>
     <link rel="stylesheet" href="../exercise-base-style.css"/>
+    <style>
+        .container {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .figure {
+            flex: 1 1 30%;
+            align-self: flex-start;
+            min-width: 150px;
+            margin: 0 20px;
+        }
+
+        .media-body {
+            flex: 1 1 70%;
+            min-width: 350px;
+        }
+
+        img.right {
+            /* The default order (applied for the text paragraph) is 0.
+            Setting order to 1 moves this item to the end of the flexbox. */
+            order: 1;
+        }
+    </style>
 </head>
-<style>
-    .container {
-        display: flex;
-        flex-flow: row nowrap;
-    }
-
-    .figure {
-        flex: 1 1 30%;
-        align-self: flex-start;
-        min-width: 150px;
-        margin: 0 20px;
-    }
-
-    .media-body {
-        flex: 1 1 70%;
-        min-width: 350px;
-    }
-
-    img.right {
-        /* The default order (applied for the text paragraph) is 0.
-        Setting order to 1 moves this item to the end of the flexbox. */
-        order: 1;
-    }
-</style>
 
 <body>
 
