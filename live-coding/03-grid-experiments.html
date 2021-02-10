@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid experiments</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        #grid-container {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 200px 1fr 2fr;
+            grid-template-rows: 100px auto 100px;
+            grid-template-areas:
+                "logo title title"
+                "nav  main  main"
+                "copy footer footer";
+        }
+        .item {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 5px;
+        }
+        #item1 {
+            grid-area: logo;
+        }
+        #item2 {
+            grid-area: title;
+        }
+        #item3 {
+            grid-area: footer;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="grid-container">
+    <div class="item" id="item1">Item 1</div>
+    <div class="item" id="item2">Item 2</div>
+    <div class="item" id="item3">Item 3</div>
+    <div class="item" id="item4">Item 4</div>
+    <div class="item" id="item5">Item 5</div>
+    <div class="item" id="item6">Item 6</div>
+</div>
+
+
+</body>
+</html>
