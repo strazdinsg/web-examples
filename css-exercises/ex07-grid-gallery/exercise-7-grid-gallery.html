@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exercise 7 - Image grid</title>
+    <title>Exercise 7 - Product gallery</title>
     <link rel="stylesheet" href="../exercise-base-style.css"/>
     <style>
         /****************************************
@@ -23,8 +23,10 @@
             box-shadow: 3px 3px 5px gray;
         }
 
-        img {
+        /* This style applies only to images within the .card container */
+        .card img {
             border: 1px dashed black;
+            width: 200px;
         }
 
         button {
@@ -61,8 +63,21 @@
         </li>
     </ol>
 
+    <h3>Hints</h3>
+    <p>You probably want to configure several things (just using grid-auto-columns will not be
+        enough, the grid will decide that it is enough with a single column!):</p>
+    <ul>
+        <li>Tell that the grid should repeat creating as many columns of necessary size as can fit
+            within the available width.
+        </li>
+        <li>Specify the height of auto-created rows.</li>
+    </ul>
+
+
+    <h3>Preview</h3>
     <p>Here you can see a an example of how the gallery could look on a wide screen:</p>
-    <img src="img/gallery-preview01.jpg" alt="Nine images laid out in two rows"/>
+    <img src="img/gallery-preview01.jpg" class="reference-img"
+         alt="Nine images laid out in two rows"/>
     <p>And this is how it could look on a narrow screen:</p>
     <img src="img/gallery-preview02.jpg"
          alt="Eight images laid out on three rows: three, three and two on each row"/>
@@ -74,54 +89,63 @@
 
     <div id="container">
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
 
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
 
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
 
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
 
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
 
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
 
         <div class="card">
-            <img src="https://picsum.photos/200/150?grayscale" alt="Random picture">
+            <img src="img/pc.webp" alt="Personal Computer">
             <p><b>What a nice product!</b></p>
             <p>Here is a description of the image. Verināāāis!</p>
             <button>Add to cart</button>
         </div>
     </div>
+
+    <h2>Extra challenge - alignment</h2>
+    <p>To do this, your will need to know the other part of the lecture, see "Item Alignment" in the
+        slides.</p>
+    <p>The task : center the cards within the grid cells. If you look at the current grid, the
+        default alignment is not nice - the cards are stretched vertically, there is not space
+        between them. Also, if you look at the grid (hover over the container in Chrome developer
+        tools), you will notice that the cards are aligned on the left of each cell. Put them in the
+        center both horizontally and vertically!</p>
 
     <h2>Solution</h2>
     <p>You can find a solution in <a href="../solutions/ex07-solution.html">
