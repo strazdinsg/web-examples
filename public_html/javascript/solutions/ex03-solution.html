@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solution for Exercise 3 - Events</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+</head>
+
+<body onload="printSqrt()">
+
+<article>
+    <h1>Solution for Exercise 3</h1>
+    <p>This is a solution for <a href="../exercises/ex03-events.html">Exercise 3</a>. See the source code for this
+        file, and check the output in the console.</p>
+</article>
+
+<script type="application/javascript">
+    /////////////////////////////////////////////
+    // Step 1
+    /////////////////////////////////////////////
+    function printSqrt() {
+        console.log("Square root of 1764 is", Math.sqrt(1764));
+    }
+
+    /////////////////////////////////////////////
+    // Step 2
+    /////////////////////////////////////////////
+    var counter = 1;
+    function printCounter() {
+        console.log("Hello, " + counter++);
+    }
+    setInterval(printCounter, 1000);
+
+
+    /////////////////////////////////////////////
+    // Step 3
+    /////////////////////////////////////////////
+    function printBtnMessage(btnType) {
+        console.log("Button " + btnType + " pressed");
+    }
+
+</script>
+
+<input type="button" value="Button A" onclick="printBtnMessage('A')" />
+<input type="button" value="Button B" onclick="printBtnMessage('B')" />
+
+<!--
+///////////////////////////////////////////////////
+Step 4
+///////////////////////////////////////////////////
+We could define a function externally, but here I choose to have an inline code block that is
+executed every time a key is pressed within the text input field.
+-->
+<label>
+    Type a text here
+    <input type="text" onkeyup="console.log('The text changed')" />
+</label>
+
+</body>
+</html>
