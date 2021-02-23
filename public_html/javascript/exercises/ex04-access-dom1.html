@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS exercise #4: Access DOM</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+</head>
+<body>
+
+<article>
+    <h1>Exercise 4</h1>
+    <p>This is Exercise #4, lecture on traversing DOM with Javascript, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+        at NTNU, campus Aalesund.
+    </p>
+    <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+    <h2>Purpose</h2>
+    <p>The purpose of the exercise is learn how you can access specific elements in the DOM tree.
+    </p>
+
+    <h2>Instructions</h2>
+    <h3>Part 1 - inspect an existing site in the console</h3>
+
+    <p>Go to <a href="https://web-tek.ninja">https://web-tek.ninja</a> in your browser (preferably in another tab), open
+        developer tool console and explore the DOM:</p>
+    <ol>
+        <li>type <code>document.body</code> in the console, hit <code>Enter</code>. What do you see?</li>
+        <li>Select the heading "CSS exercises" and save the reference to it in a variable <code>heading1</code>. You can
+            do that by issuing the following command in the console:
+            <code>var heading1 = document.getElementById('css-exercise-heading');</code>
+            Now change the text of the heading to "Cool exercises".
+        </li>
+        <li>Find the ID of the heading "CSS Grid exercises". Hint: you can right-click on it with the mouse, select
+            Inspect. The Elements tab of dev tools will be opened, and the element selected. Do you see the id="..."?
+        </li>
+        <li>Now change the text of this heading (from the previous step) to "Hei!".</li>
+    </ol>
+
+    <h3>Create your <abbr title="Even if it is not the first, it's fun, right? :)">first</abbr> DYNAMIC websites!</h3>
+    <ol>
+        <li>Create a page which has one paragraph (<code>&lt;p&gt;</code>) element in it. The text inside it should be
+            "Loading...". Now add a Javascript to the page, which sets the text in the <code>&lt;p&gt;</code> element to
+            "Hello" when the page is loaded.
+        </li>
+        <li>Add a paragraph to the same page (or create a new page if you want) that shows a text: "<i>X</i> seconds
+            have passed since the page was loaded”. Update <i>X</i> every second.
+        </li>
+        <li>Create a "calculator":
+            <ol type="i">
+                <li>Two text inputs (let us call them A and B), the user can input a number in each of them. Set A=3, B=5
+                    by default.
+                </li>
+                <li>A text saying: "the two numbers multiplied are <i>X</i>".</li>
+                <li>Update the <i>X</i> to be A*B whenever text changes in any of the inputs.</li>
+                <li>Extra challenge: show "Not a number!" when either A or B (or both) are not numbers.</li>
+            </ol>
+
+        </li>
+    </ol>
+
+
+    <h2>Solution</h2>
+    <p>You can find a solution for the second part in <a
+            href="../solutions/ex04-solution.html"><code>../solutions/ex04-solution.html</code></a>.
+    </p>
+
+</article>
+
+
+</body>
+</html>
