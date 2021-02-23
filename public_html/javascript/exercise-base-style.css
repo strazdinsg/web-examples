@@ -30,3 +30,7 @@ h1, h2 {
 code, pre {
     background-color: #eee;
 }
+
+ol {
+    margin-top: 0.2em;
+}
