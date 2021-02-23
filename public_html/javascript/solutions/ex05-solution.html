@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solution for Exercise 5 - DOM #2</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template: repeat(3, 50px) / repeat(3, 50px);
+            grid-gap: 10px;
+            margin-bottom: 50px;
+            align-items: center;
+        }
+        .container div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 5</h1>
+    <p>This is a solution for <a href="../exercises/ex05-access-dom2.html">Exercise 5</a>. See the source code for this
+        file, and check the output in the console.</p>
+</article>
+
+<div id="container1" class="container">
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+    <div class="even"></div>
+    <div class="odd"></div>
+</div>
+
+<div id="container2" class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<script>
+    /////////////////////////////////////////////
+    // Step 4
+    /////////////////////////////////////////////
+    var odd_elements = document.getElementsByClassName("odd");
+    for (var i = 0; i < odd_elements.length; ++i) {
+        var odd_element = odd_elements[i];
+        odd_element.innerText = "X";
+    }
+    var even_elements = document.getElementsByClassName("even");
+    for (i = 0; i < even_elements.length; ++i) {
+        var even_element = even_elements[i];
+        even_element.innerText = "O";
+    }
+
+    /////////////////////////////////////////////
+    // Step 5
+    /////////////////////////////////////////////
+    // We can use "fancier" selectors
+    // We can also refactor the code to avoid lots of copied code
+
+    function setTextToElements(elements, text) {
+        for (var i = 0; i < elements.length; ++i) {
+            var e = elements[i];
+            e.innerText = text;
+        }
+    }
+
+    var odd = document.querySelectorAll("#container2 div:nth-child(odd)");
+    var even = document.querySelectorAll("#container2 div:nth-child(even)");
+    setTextToElements(odd, "X");
+    setTextToElements(even, "O");
+
+</script>
+
+</body>
+</html>
