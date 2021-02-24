@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex07 Solution: Add/remove</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 7</h1>
+    <p>This is a solution for <a href="../exercises/ex07-add-remove.html">Exercise 7</a>.
+        See the source code for this file.</p>
+</article>
+
+<article id="part1">
+    <h2>Part 1 - add a paragraph on button-click</h2>
+    <button onclick="addParagraph()">Add a paragraph</button>
+    <script>
+        function addParagraph() {
+            var par = document.createElement("p");
+            par.innerText = "Hello";
+            document.getElementById("part1").appendChild(par);
+        }
+    </script>
+</article>
+
+<article id="part2">
+    <h2>Part 2 - add a table row</h2>
+    <style>
+        table {
+            border: 1px solid black;
+            border-spacing: 5px;
+        }
+        td {
+            border: 1px solid lightgray;
+            padding: 5px;
+        }
+    </style>
+    <button onclick="addRow()">Add a row</button>
+    <button onclick="removeLastRow()">Remove last row</button>
+    <table id="part2-table">
+        <tr>
+            <td>Hello</td>
+            <td>World</td>
+        </tr>
+    </table>
+    <script>
+        function addRow() {
+            var helloCell = document.createElement("td");
+            var worldCell = document.createElement("td");
+            helloCell.innerText = "Hello";
+            worldCell.innerText = "World";
+            var newRow = document.createElement("tr");
+            newRow.appendChild(helloCell);
+            newRow.appendChild(worldCell);
+            document.querySelector("#part2-table tbody").appendChild(newRow);
+        }
+
+        function removeLastRow() {
+            var tbody = document.querySelector("#part2-table tbody");
+            if (tbody.children.length > 1) {
+                var lastRow = tbody.children[tbody.children.length - 1];
+                tbody.removeChild(lastRow);
+            } else {
+                alert("Can't remove the last row");
+            }
+        }
+    </script>
+</article>
+
+<article id="part3">
+    <h2>Part 3 - the escaping Div</h2>
+    <style>
+        #running-man {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+    <p>Move the mouse over the green div.</p>
+    <div onmouseenter="escape(this)" id="running-man"></div>
+    <script>
+        function escape(runnerDiv) {
+            // We could find the runnerDiv by ID as well,
+            // just using another technique on how to pass data in event handler, here as an example
+
+            // Remove it from the parent
+            var currentParent = runnerDiv.parentElement;
+            currentParent.removeChild(runnerDiv);
+
+            // Flip a coin to get random row and column
+            var rowIndex = getRandomRowIndex();
+            var columnIndex = 0;
+            if (Math.random() > 0.5) {
+                columnIndex = 1;
+            }
+            console.log("Moving to row " + rowIndex + ", column " + columnIndex);
+
+            // Find target cell
+            // Table has tbody as the direct child
+            var tbody = document.querySelector("#part2-table tbody");
+            var targetRow = tbody.children[rowIndex];
+            var targetCell = targetRow.children[columnIndex];
+
+            // Move the
+            targetCell.appendChild(runnerDiv);
+
+        }
+
+        function getRandomRowIndex() {
+            // Based on the previous logic we are sure that the number of rows can't be less than 1
+            var rowCount = document.querySelector("#part2-table tbody").children.length;
+            // Get an integer in the interval [0, rowCount-1]
+            return Math.floor(Math.random() * rowCount);
+        }
+    </script>
+</article>
+
+</body>
+</html>
