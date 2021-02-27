@@ -22,7 +22,7 @@ $EXPECTED_KEY = "42";
 
 <h1>Demo script</h1>
 <p>This is a demo script used in an exercise. If you successfully send an HTTP POST with
-    username=<?= $EXPECTED_USERNAME; ?> and secretkey=<?= $EXPECTED_KEY; ?>,
+    username=<?= $EXPECTED_USERNAME; ?> and key=<?= $EXPECTED_KEY; ?>,
     you will get a "Success" messages, error messages otherwise.</p>
 <h1>Received data</h1>
 <p>You have POSTed the following data:</p>
