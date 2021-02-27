@@ -26,7 +26,7 @@ $EXPECTED_KEY = "42";
     you will get a "Success" messages, error messages otherwise.</p>
 <h1>Received data</h1>
 <p>You have POSTed the following data:</p>
-<p><?= print_r($_POST); ?></p>
+<p><?php print_r($_POST); ?></p>
 <h1>Status check</h1>
 <p>Checking your submission...</p>
 <ul>
