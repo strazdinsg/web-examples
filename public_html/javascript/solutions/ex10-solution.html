@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex10 Solution: Loading</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+    <style>
+        #spinner {
+            display: none; /* Hide the spinner by default */
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 10</h1>
+    <p>This is a solution for <a href="../exercises/ex10-busy-indicator.html">Exercise 10</a>.
+        See the source code for this file.</p>
+</article>
+
+    <button onclick="sendDiceRequest()">Throw a dice</button>
+    <p id="dice-val"></p>
+    <img id="spinner" src="../examples/img/spinner.gif" alt="Spinner"/>
+
+<script>
+    var request = new XMLHttpRequest();
+    request.onload = onResponseReceived;
+
+    function sendDiceRequest() {
+        showLoading();
+        request.open("GET", "https://web-tek.ninja/php_backend/delayed_dice.php");
+        request.send();
+    }
+
+    function onResponseReceived() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            hideLoading();
+            if (request.status === 200) {
+                showDiceValue(request.responseText);
+            }
+        }
+    }
+
+    function showDiceValue(diceValue) {
+        document.getElementById("dice-val").innerText = "You threw " + diceValue;
+    }
+
+    // Show the spinner, hide the result message
+    function showLoading() {
+        document.getElementById("dice-val").style.display = "none";
+        document.getElementById("spinner").style.display = "block";
+    }
+    // Hide the spinner, show the result message
+    function hideLoading() {
+        document.getElementById("dice-val").style.display = "block";
+        document.getElementById("spinner").style.display = "none";
+    }
+</script>
+
+
+</body>
+</html>
