@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parsing JSON response</title>
+    <style>
+        #joke {
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+            margin-top: 0;
+        }
+
+        #img-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<p>Here we show how you can send an asynchronous HTTP request and parse the JSON response.</p>
+<button onclick="fetchJoke()">Get a joke</button>
+
+<div id="img-container"></div>
+<p id="joke"></p>
+
+<script>
+    var asyncRequest = new XMLHttpRequest();
+    asyncRequest.onload = onResponseReceived;
+
+    /**
+     * Send Ajax request to the joke server
+     */
+    function fetchJoke() {
+        asyncRequest.open("GET", "https://api.chucknorris.io/jokes/random?category=dev");
+        asyncRequest.send();
+    }
+
+    /**
+     * This function is called when the response to the Ajax request is received
+     */
+    function onResponseReceived() {
+        if (asyncRequest.readyState === XMLHttpRequest.DONE) {
+            if (asyncRequest.status === 200) {
+                parseJsonJoke(asyncRequest.responseText);
+            } else {
+                console.error("Error " + asyncRequest.status);
+            }
+        }
+    }
+
+    /**
+     * Parse the JSON object, find out the necessary parts and pass them to functions which place the content
+     * in the necessary places
+     * @param {string} jsonJoke the string response returned from the joke server. It contains an object encoded in
+     * the JSON format
+     */
+    function parseJsonJoke(jsonJoke) {
+        var joke = JSON.parse(jsonJoke);
+        displayJoke(joke.value);
+        displayIcon(joke.icon_url);
+    }
+
+    /**
+     * Display a joke in the necessary container
+     * @param {string} joke_text The joke text
+     */
+    function displayJoke(joke_text) {
+        document.getElementById("joke").innerText = joke_text;
+    }
+
+    /**
+     * Display an icon (image) for the joke
+     * @param {string} icon_url URL to the image source
+     */
+    function displayIcon(icon_url) {
+        var imgNode = document.createElement("img");
+        imgNode.src = icon_url;
+        var imgContainer = document.getElementById("img-container");
+        imgContainer.innerText = ""; // Remove any previous images
+        imgContainer.appendChild(imgNode);
+    }
+
+</script>
+</body>
+</html>
