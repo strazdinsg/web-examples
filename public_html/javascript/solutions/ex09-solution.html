@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex09 Solution: Ajax</title>
+    <link rel="stylesheet" href="../exercise-base-style.css"/>
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 9</h1>
+    <p>This is a solution for <a href="../exercises/ex09-ajax-get.html">Exercise 9</a>.
+        See the source code for this file.</p>
+</article>
+
+<article id="part1">
+    <h2>Part 1 - throw a dice</h2>
+    <button onclick="sendDiceRequest()">Throw a dice</button>
+    <p id="dice-val"></p>
+</article>
+
+<script>
+    var request = new XMLHttpRequest();
+    request.onload = onResponseReceived;
+
+    function sendDiceRequest() {
+        request.open("GET", "https://web-tek.ninja/php_backend/throw_a_dice.php");
+        request.send();
+    }
+
+    function onResponseReceived() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                showDiceValue(request.responseText);
+            }
+        }
+    }
+
+    function showDiceValue(diceValue) {
+        document.getElementById("dice-val").innerText = "You threw " + diceValue;
+    }
+</script>
+
+<article id="part2">
+    <h2>Part 2 - extra challenge</h2>
+
+    <p>No solution for this part. Be creative! :)</p>
+</article>
+
+
+
+</body>
+</html>
