@@ -1,3 +1,6 @@
+<?php
+require("cors_handling.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

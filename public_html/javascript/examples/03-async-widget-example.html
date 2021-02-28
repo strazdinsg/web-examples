@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading widgets asynchronously</title>
+</head>
+<body>
+<p>Here we show how you can send an asynchronous HTTP request, which includes an HTML <i>widget</i> in response. We then
+    place the widget inside our own website.</p>
+<label>
+    How many news widgets to load:
+    <select id="article-count">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected="selected">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+</label>
+<button onclick="loadNews()">Load news articles</button>
+<div id="articles">
+
+</div>
+
+<script>
+    function loadNews() {
+        clearArticles();
+        articleCount = document.getElementById("article-count").value;
+        for (var i = 0; i < articleCount; ++i) {
+            var asyncRequest = new XMLHttpRequest();
+            asyncRequest.onload = function () {
+                if (this.readyState === XMLHttpRequest.DONE) {
+                    if (this.status === 200) {
+                        onArticleReceived(this.responseText);
+                    } else {
+                        console.error("Error " + this.status);
+                    }
+                }
+            };
+            asyncRequest.open("GET", "https://web-tek.ninja/php_backend/random_article.php");
+            asyncRequest.send();
+        }
+    }
+
+    function clearArticles() {
+        document.getElementById("articles").innerText = "";
+    }
+
+    function onArticleReceived(articleHtml) {
+        var articleDiv = document.createElement("div");
+        articleDiv.innerHTML = articleHtml;
+        document.getElementById("articles").appendChild(articleDiv);
+    }
+
+</script>
+</body>
+</html>

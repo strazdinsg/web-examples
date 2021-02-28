@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async HTTP POST example</title>
+</head>
+<body>
+
+<p>This is an example showing how we can send an asynchronous HTTP GET request in Javascript. We don't process the
+    response, we simply print it in the console. Click be button and look in the console. Check out the source code to
+    understand what is going on!</p>
+<button onclick="fetchJoke()">Get a joke</button>
+
+<script>
+    var asyncRequest = new XMLHttpRequest();
+    asyncRequest.onload = onResponseReceived;
+
+    function fetchJoke() {
+        asyncRequest.open("GET", "https://api.chucknorris.io/jokes/random");
+        asyncRequest.send();
+    }
+
+    function onResponseReceived() {
+        if (asyncRequest.readyState === XMLHttpRequest.DONE) {
+            if (asyncRequest.status === 200) {
+                console.log("Got response:");
+                console.log(asyncRequest.responseText);
+            } else {
+                console.error("Error " + asyncRequest.status);
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
