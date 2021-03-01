@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery example</title>
+    <style>
+        #container {
+            margin: 20px;
+            display: grid;
+            grid-template: repeat(3, 100px) / repeat(3, 100px);
+        }
+
+        .cell {
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+        }
+
+        .odd {
+            background-color: black;
+        }
+
+        .odd.selected { /* This style applies to elements having both classes: odd AND selected */
+            background-color: green;
+        }
+
+        .even {
+            background-color: white;
+        }
+
+        .even.selected {  /* This style applies to elements having both classes: even AND selected */
+            background-color: yellow;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p>Here we show how you can use jQuery to perform an action on a set of elements at once.</p>
+<p>We also see how jQuery can be used for Ajax requests</p>
+<button onclick="throwDice()">Throw 5 dice</button>
+<button onclick="toggleCellStyle()">Change cell style</button>
+
+<div id="dice-val"></div> <!-- Dice value will be displayed here -->
+
+<div id="container">
+    <div class="cell odd"></div>
+    <div class="cell even"></div>
+    <div class="cell odd"></div>
+    <div class="cell even"></div>
+    <div class="cell odd"></div>
+    <div class="cell even"></div>
+    <div class="cell odd"></div>
+    <div class="cell even"></div>
+    <div class="cell odd"></div>
+</div>
+
+
+<script>
+    function toggleCellStyle() {
+        $(".cell").toggleClass("selected");
+    }
+
+    function throwDice() {
+        // We send an HTTP POST
+        $.post(
+            // The following is a list of parameters for the jQuery.get function:
+            // 1) the URL on the server which will receive the request
+            "https://web-tek.ninja/php_backend/throw_a_dice.php",
+            // Data: we will pass one parameter: n=5
+            { n: 5 },
+            // Callback function which will be invoked when the response is received
+            function (receivedDiceValues) {
+                // Clear previous results
+                var dice_container = $("#dice-val");
+                dice_container.empty();
+
+                // For each item in the received array of dice, append one paragraph
+                // to the dice-val element
+                $.each(receivedDiceValues, function(index, diceVal) {
+                    dice_container.append("<p>You threw " + diceVal + "</p>");
+                })
+            },
+            // Expected data type: when we say "json", the response JSON will be automatically parsed into
+            // and object, array or simple value
+            "json"
+        );
+    }
+
+</script>
+</body>
+</html>
