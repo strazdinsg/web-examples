@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blocking execution</title>
+</head>
+<body>
+
+<p>Here we show that Javascript engine is single-threaded.</p>
+<p>When you press on Button A, it will consume the processor for some time and then add a paragraph to the DOM. When you
+    press on Button B, it will immediately add a paragraph to the DOM. To see that the JS engine is single-threaded, try
+    to press button A, and shortly after press button B a couple of times. You should see that nothing happens for a
+    while, and after that your button B clicks are processed. This shows the behaviour of event queue in Javascript -
+    the browser is multi-threaded and can capture user events, but it places it to JS engine event queue, and the
+    single-threaded JS engine processes those events one after another.</p>
+
+<button onclick="processButtonA()">Button A</button>
+<button onclick="processButtonB()">Button B</button>
+
+<script>
+
+    function processButtonA() {
+        busyWait(3);
+        appendParagraph("Button A pressed");
+    }
+
+    function processButtonB() {
+        appendParagraph("Button B pressed");
+    }
+
+    /**
+     * Append a paragraph of text to the body
+     * @param {string} text Text to put inside the paragraph
+     */
+    function appendParagraph(text) {
+        var p = document.createElement("p");
+        p.innerText = text;
+        document.body.appendChild(p);
+    }
+
+    /**
+     * Do busy-waiting for a specified amount of time. One CPU core goes 100% during this time.
+     * @param {number} seconds Number of seconds to keep spinning
+     */
+    function busyWait(seconds) {
+        var milliseconds = seconds * 1000;
+        var startTime = Date.now();
+        do {
+            // Wait until current time becomes at least X milliseconds after the start
+            var currentTime = Date.now();
+        } while (currentTime - startTime < milliseconds);
+    }
+
+</script>
+</body>
+</html>
