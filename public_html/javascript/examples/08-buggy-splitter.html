@@ -11,14 +11,14 @@
 
 <p>Input a text here, separated by commas. When you click on a button, the text will be split using commas as separators
     and a paragraph of text will be added for each part.
-    There is an intentional bug in the coresponsing Javascript code. Set a breakpoint in the <code>addSplitted()</code>
+    There is an intentional bug in the corresponding Javascript code. Set a breakpoint in the <code>addSplitted()</code>
     function and find the bug!
 </p>
 <label>
     Enter a comma-separated text here:
     <input type="text" id="input-field" value="Eeny,meeny,miny,moe"/>
 </label>
-<button onclick="addSplitted(inputField.value)">Split and add</button>
+<button onclick="splitAndAdd(inputField.value)">Split and add</button>
 
 <script>
     // Get a reference to the text input
@@ -29,7 +29,7 @@
      * it to the body.
      * @param {string} commaSeparatedText A comma-separated text
      */
-    function addSplitted(commaSeparatedText) {
+    function splitAndAdd(commaSeparatedText) {
         var parts = commaSeparatedText.split(" ");
         for (var i = 0; i < parts.length; ++i) {
             addParagraph(parts[i]);
