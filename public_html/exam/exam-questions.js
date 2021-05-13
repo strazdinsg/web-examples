@@ -318,7 +318,156 @@ const questions = {
     js: {
         categoryName: "Javascript",
         questions: [
-
+            {
+                english: {
+                    main: "Javascript",
+                    description: "what is it? How is javascript executed?",
+                    sub: []
+                },
+                norsk: {
+                    main: "Javascript",
+                    description: "hva er det? Hvordan kjøres Javascript?",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "Functions in Javascript",
+                    description: "",
+                    sub: ["What is special with them? (compared to Java, for example)"]
+                },
+                norsk: {
+                    main: "Funksjoner i Javascript",
+                    description: "",
+                    sub: ["Hva er spesielt med dem? (sammenlignet med, bl.a., Java)"]
+                }
+            },
+            {
+                english: {
+                    main: "Event handlers",
+                    description: "",
+                    sub: ["How can events be handled in Javascript?", "Give some examples."]
+                },
+                norsk: {
+                    main: "Event handlers",
+                    description: "",
+                    sub: ["Hvordan håndterer man `events` i Javascript?", "Gi noen eksempler."]
+                }
+            },
+            {
+                english: {
+                    main: "Access to DOM elements",
+                    description: "how do we get access to specific DOM elements? Name some example functions.",
+                    sub: []
+                },
+                norsk: {
+                    main: "Tilgang til DOM elementer",
+                    description: "hvordan aksesserer vi konkrete DOM elementer? Nevn noen funksjon-eksempler.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "Modifications to the DOM",
+                    description: "describe how we can modify the DOM tree.",
+                    sub: ["Adding new DOM elements", "Removing DOM elements", "Updating existing elements"]
+                },
+                norsk: {
+                    main: "Modifisering av DOM",
+                    description: "beskriv hvordan kan man modifisere DOM treet.",
+                    sub: ["Legge til nye DOM elementer", "Fjerne DOM elementer", "Oppdatere eksisterende elementer"]
+                }
+            },
+            {
+                english: {
+                    main: "Data submission",
+                    description: "sending data from frontend (Javascript) to backend (server application).",
+                    sub: ["With standard HTML forms", "With asynchronous requests (XMLHttpRequest, Ajax)"]
+                },
+                norsk: {
+                    main: "Data innsending",
+                    description: "sending av data fra frontend (Javascript) til backend (serverapplikasjon).",
+                    sub: ["Med standardskjema (HTML forms)", "med asynkrone kall (XMLHttpRequest, Ajax)"]
+                }
+            },
+            {
+                english: {
+                    main: "Cross Origin Resource Sharing (CORS)",
+                    description: "describe the challenge and name some solutions.",
+                    sub: []
+                },
+                norsk: {
+                    main: "Cross Origin Resource Sharing (CORS)",
+                    description: "beskriv utfordringen og nevn noen løsninger.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "Javascript libraries",
+                    description: "",
+                    sub: ["Use of JS libraries in general (why? how?)", "jQuery library"]
+                },
+                norsk: {
+                    main: "Javascript biblioteker",
+                    description: "",
+                    sub: ["Bruk av JS biblioteker generelt (hvorfor?, hvordan?)", "jQuery bibliotek"]
+                }
+            },
+            {
+                difficult: true,
+                english: {
+                    main: "Execution and scope",
+                    description: "",
+                    sub: ["Javascript execution phases: hoisting and invocation (execution)", "Variable scope"]
+                },
+                norsk: {
+                    main: "Execution and scope",
+                    description: "",
+                    sub: ["Faser av Javascript kjøring (hoisting og `invocation` (`execution`))", "`Scope` av variabler"]
+                }
+            },
+            {
+                difficult: true,
+                english: {
+                    main: "Objects",
+                    description: "four ways to work with objects in Javascript.",
+                    sub: ["Object literals", "Constructor functions", "Object.create", "Classes"]
+                },
+                norsk: {
+                    main: "Objekter",
+                    description: "fire måter å jobbe med objekter i Javascript.",
+                    sub: ["Object literals", "Constructor functions", "Object.create", "Klasser"]
+                }
+            },
+            {
+                difficult: true,
+                english: {
+                    main: "Prototype-based programming",
+                    description: "",
+                    sub: ["Explain the concept", "How is it different from object-oriented programming?",
+                        "How does Javascript use it?"]
+                },
+                norsk: {
+                    main: "Prototype-basert programmering",
+                    description: "",
+                    sub: ["Forklar konseptet", "Forskjell mellom prototyper og objekt-orientert programmering?",
+                        "Hvordan bruker Javascript prototyper?"]
+                }
+            },
+            {
+                difficult: true,
+                english: {
+                    main: "Advanced use of Javascript functions",
+                    description: "",
+                    sub: ["The value of `this`", "Binding `this` to specific objects"]
+                },
+                norsk: {
+                    main: "Avansert bruk av Javascript funksjoner",
+                    description: "",
+                    sub: ["Verdi av `this`", "Binding av `this` til konkrete objekter"]
+                }
+            },
         ]
     },
     react: {
