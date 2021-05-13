@@ -8,3 +8,7 @@
     border-right: 1px dashed darkgray;
     padding-right: 20px;
 }
+
+.difficult {
+    color: gray;
+}

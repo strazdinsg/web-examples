@@ -109,9 +109,16 @@ function getQuestions(categoryKey, language) {
 }
 
 function takeQuestionsInLanguage(questions, language) {
-    return questions.map(q => q[language.toLowerCase()]);
+    return questions.map(question => {
+        let q = question[language.toLowerCase()];
+        inheritDifficultyFrom(q, question);
+        return q;
+    });
 }
 
+function inheritDifficultyFrom(questionInLanguage, question) {
+    questionInLanguage.difficult = toBoolean(question.difficult);
+}
 
 function getSubQuestionTitle(language) {
     return subQuestionTitles[language.toLowerCase()];
@@ -119,7 +126,12 @@ function getSubQuestionTitle(language) {
 
 function createQuestionItem(question, language) {
     const listItem = document.createElement("li");
-    listItem.innerHTML = `<b>${question.main}</b> - ${question.description}`;
+    let difficultyMarker = "";
+    if (question.difficult) {
+        listItem.classList.add("difficult");
+        difficultyMarker = "(Difficult!) ";
+    }
+    listItem.innerHTML = `<b>${difficultyMarker}${question.main}</b> - ${question.description}`;
     if (hasSubQuestions(question)) {
         listItem.innerHTML += " " +  getSubQuestionTitle(language) + ":";
         listItem.appendChild(createSubQuestionList(question.sub));
@@ -155,3 +167,8 @@ function getAllQuestionContainer() {
 function getNumberOfLanguages() {
     return languages.length;
 }
+
+function toBoolean(anyVar) {
+    return !!anyVar;
+}
+
