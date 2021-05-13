@@ -5,7 +5,7 @@ window.addEventListener("load", displayExamQuestions);
 
 function displayExamQuestions() {
     console.log("Loading exam questions...");
-    getCategoryKeys().forEach((categoryKey, index) => displayQuestionCategory(index, categoryKey));
+    getQuestionCategoryKeys().forEach((categoryKey, index) => displayQuestionCategory(index, categoryKey));
     hideQuestionLoading();
 }
 
@@ -36,12 +36,96 @@ function createCategoryHeading(index, categoryKey) {
     return heading;
 }
 
-function createQuestionTable(category) {
-    const table = document.createElement("table");
+function createTableHeadColumn(columnTitle) {
+    const th = document.createElement("th");
+    th.innerText = columnTitle;
+    return th;
+}
+
+function createQuestionTable(categoryKey) {
+    const table = createQuestionTableElement();
+    table.appendChild(createQuestionTableHeading());
+    table.appendChild(createQuestionTableBody(categoryKey));
     return table;
 }
 
-function getCategoryKeys() {
+function createQuestionTableElement() {
+    const table = document.createElement("table");
+    table.classList.add("question-table");
+    return table;
+}
+
+function createQuestionTableHeading() {
+    const thead = document.createElement("thead");
+    const headRow = document.createElement("tr");
+    thead.appendChild(headRow);
+    languages.forEach(language => headRow.appendChild(createTableHeadColumn(language)));
+    return thead;
+}
+
+function createQuestionTableBody(categoryKey) {
+    const tbody = document.createElement("tbody");
+    const tr = document.createElement("tr");
+    tbody.appendChild(tr);
+    languages.forEach(language => tr.appendChild(createQuestionTableCell(categoryKey, language)));
+    return tbody;
+}
+
+function createQuestionTableCell(categoryKey, language) {
+    const cell = document.createElement("td");
+    cell.appendChild(createQuestionList(categoryKey, language));
+    return cell;
+}
+
+function createQuestionList(categoryKey, language) {
+    const questionList = document.createElement("ol");
+    getQuestions(categoryKey, language).forEach(question =>
+        questionList.appendChild(createQuestionItem(question, language)));
+    return questionList;
+}
+
+function getQuestions(categoryKey, language) {
+    return takeQuestionsInLanguage(questions[categoryKey].questions, language);
+}
+
+function takeQuestionsInLanguage(questions, language) {
+    return questions.map(q => q[language.toLowerCase()]);
+}
+
+
+function getSubQuestionTitle(language) {
+    return subQuestionTitles[language.toLowerCase()];
+}
+
+function createQuestionItem(question, language) {
+    console.log(question);
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `<b>${question.main}</b> - ${question.description}`;
+    if (hasSubQuestions(question)) {
+        listItem.innerHTML += " " +  getSubQuestionTitle(language) + ":";
+        listItem.appendChild(createSubQuestionList(question.sub));
+    }
+    return listItem;
+}
+
+function hasSubQuestions(question) {
+    return question.sub && question.sub.length > 0;
+}
+
+function createSubQuestionList(subQuestions) {
+    const list = document.createElement("ul");
+    subQuestions.forEach(q => list.appendChild(createSubQuestionItem(q)));
+    return list;
+}
+
+function createSubQuestionItem(subQuestion) {
+    const li = document.createElement("li");
+    li.innerText = subQuestion;
+    return li;
+}
+
+
+function getQuestionCategoryKeys() {
     return Object.keys(questions);
 }
 
