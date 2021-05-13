@@ -32,7 +32,7 @@ function getCategoryName(categoryKey) {
 
 function createCategoryHeading(index, categoryKey) {
     const heading = document.createElement("h2");
-    heading.innerText = `Section ${index + 1}: ${getCategoryName(categoryKey)}`;
+    heading.innerText = `Category ${index + 1}: ${getCategoryName(categoryKey)}`;
     return heading;
 }
 
