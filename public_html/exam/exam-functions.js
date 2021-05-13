@@ -78,10 +78,30 @@ function createQuestionTableCell(categoryKey, language) {
 }
 
 function createQuestionList(categoryKey, language) {
-    const questionList = document.createElement("ol");
+    const questionList = createQuestionListElement();
     getQuestions(categoryKey, language).forEach(question =>
         questionList.appendChild(createQuestionItem(question, language)));
     return questionList;
+}
+
+function createQuestionListElement() {
+    const listElement = document.createElement("ol");
+    listElement.classList.add("question-list");
+    continueNumbering(listElement);
+    return listElement;
+}
+
+function continueNumbering(questionList) {
+    questionList.setAttribute("start", getNumberOfQuestionsOnPage() + 1);
+}
+
+function getAllQuestionElements() {
+    return document.querySelectorAll(".question-list>li");
+}
+
+function getNumberOfQuestionsOnPage() {
+    const allQuestionCount = getAllQuestionElements().length;
+    return allQuestionCount / getNumberOfLanguages();
 }
 
 function getQuestions(categoryKey, language) {
@@ -98,7 +118,6 @@ function getSubQuestionTitle(language) {
 }
 
 function createQuestionItem(question, language) {
-    console.log(question);
     const listItem = document.createElement("li");
     listItem.innerHTML = `<b>${question.main}</b> - ${question.description}`;
     if (hasSubQuestions(question)) {
@@ -131,4 +150,8 @@ function getQuestionCategoryKeys() {
 
 function getAllQuestionContainer() {
     return document.getElementById("all-exam-questions");
+}
+
+function getNumberOfLanguages() {
+    return languages.length;
 }

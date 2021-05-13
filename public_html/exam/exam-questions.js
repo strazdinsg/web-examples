@@ -189,7 +189,126 @@ const questions = {
     css: {
         categoryName: "CSS",
         questions: [
-
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                },
+                norsk: {
+                    main: "",
+                    description: ".",
+                    sub: []
+                }
+            },
         ]
     },
     js: {
