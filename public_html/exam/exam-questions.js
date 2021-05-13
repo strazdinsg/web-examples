@@ -473,7 +473,128 @@ const questions = {
     react: {
         categoryName: "Frameworks and React",
         questions: [
-
+            {
+                english: {
+                    main: "Purpose",
+                    description: "the purpose of using Javascript frameworks in general.",
+                    sub: []
+                },
+                norsk: {
+                    main: "Hensikt",
+                    description: "hva er hensikt med Javascript rammeverk?",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "Reactive programming",
+                    description: "explain the concept and advantages.",
+                    sub: []
+                },
+                norsk: {
+                    main: "Reaktiv programmering",
+                    description: "forklar konseptet og fordeler.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "React framework",
+                    description: "advantages and drawbacks (pros and cons).",
+                    sub: []
+                },
+                norsk: {
+                    main: "React rammeverk",
+                    description: "fordeler og ulemper.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "Components in React",
+                    description: "explain the concept and advantages.",
+                    sub: []
+                },
+                norsk: {
+                    main: "Komponenter i React",
+                    description: "forklar konseptet og fordeler.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "Properties",
+                    description: "explain the concept and use of properties (props) in React.",
+                    sub: []
+                },
+                norsk: {
+                    main: "Egenskaper (properties)",
+                    description: "forklar konseptet og fordeler av `properties` (props) i React.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "State",
+                    description: "explain the concept of state in React. How is it different from properties (props)?",
+                    sub: []
+                },
+                norsk: {
+                    main: "Tilstand (state)",
+                    description: "forklar tilstandskonseptet (`state`) i React. Hva er forskjell mellom tilstand (`state`) og egenskaper (`properties`) i React?",
+                    sub: []
+                }
+            },
+            {
+                difficult: true,
+                english: {
+                    main: "React hooks",
+                    description: "explain the concept and give some examples.",
+                    sub: []
+                },
+                norsk: {
+                    main: "React hooks",
+                    description: "forklar konseptet og gi noen eksempler.",
+                    sub: []
+                }
+            },
+            {
+                english: {
+                    main: "React router",
+                    description: "explain the concept and it's application.",
+                    sub: []
+                },
+                norsk: {
+                    main: "React router",
+                    description: "forklar konseptet og anvendelser.",
+                    sub: []
+                }
+            },
+            {
+                difficult: true,
+                english: {
+                    main: "Redux",
+                    description: "explain how state management with Redux works.",
+                    sub: ["The general idea of Redux - what problem does it solve and how?", "React-redux binding - how does it work?"]
+                },
+                norsk: {
+                    main: "Redux",
+                    description: "forklar tilstandsforvaltning med Redux - hvordan fungerer det?",
+                    sub: ["Hvilken utfording er løst med Redux?", "React-redux binding - hvordan fungerer det?"]
+                }
+            },
+            {
+                english: {
+                    main: "API calls with React",
+                    description: "how do we send HTTP requests to a REST API from React?",
+                    sub: []
+                },
+                norsk: {
+                    main: "API",
+                    description: "hvordan sender man REST API kall (HTTP forespørsel) fra React?",
+                    sub: []
+                }
+            },
         ]
     },
 };
