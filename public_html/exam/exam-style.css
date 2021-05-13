@@ -1,0 +1,10 @@
+.question-table {
+    border-spacing: 0;
+}
+.question-table th {
+    border-bottom: 1px solid black;
+}
+.question-table td:nth-child(1) {
+    border-right: 1px dashed darkgray;
+    padding-right: 20px;
+}
