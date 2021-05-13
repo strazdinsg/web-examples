@@ -91,12 +91,12 @@ const questions = {
             {
                 english: {
                     main: "Block and inline elements",
-                    description: "describe the box model and the difference between inline and block elements.",
+                    description: "describe the difference between inline and block elements.",
                     sub: []
                 },
                 norsk: {
                     main: "Block og inline elementer",
-                    description: "beskrive boksmodellen og forskjell mellom block og inline elementer.",
+                    description: "beskrive forskjell mellom block og inline elementer.",
                     sub: []
                 }
             },
@@ -191,121 +191,125 @@ const questions = {
         questions: [
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "CS",
+                    description: "describe the purpose and use of CSS.",
+                    sub: ["Connection between HTML and CSS", "How to include CSS in HTML documents",
+                        "How to set style for one, specific element?",
+                        "How to set style for a set of elements?"]
+                },
+                norsk: {
+                    main: "CSS",
+                    description: "hensinkt og bruk.",
+                    sub: ["Sammenheng mellom HTML og CSS", "Hvordan inkludere CSS i HTML dokumenter?",
+                        "Hvordan sette stil for et konkret element?",
+                        "Hvordan sette stil for alle elementer i et sett?"]
+                }
+            },
+            {
+                english: {
+                    main: "Size units",
+                    description: "absolute and relative.",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
+                    main: "Størrelsesenheter",
+                    description: "absolute og relative.",
                     sub: []
                 }
             },
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "HTML forms",
+                    description: "",
+                    sub: ["Form elements", "Sending data with HTML forms"]
+                },
+                norsk: {
+                    main: "HTML forms",
+                    description: "",
+                    sub: ["Form-elementer", "Dataoverføring med HTML forms"]
+                }
+            },
+            {
+                english: {
+                    main: "Text formatting",
+                    description: "with CSS.",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
+                    main: "Formattering av tekst",
+                    description: "med CSS.",
                     sub: []
                 }
             },
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "Colors",
+                    description: "foreground and background.",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
+                    main: "Farger",
+                    description: "foreground and background.",
                     sub: []
                 }
             },
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "The box model",
+                    description: "describe the box model.",
+                    sub: ["Content size", "Padding", "Margin", "Border"]
+                },
+                norsk: {
+                    main: "Boksmodellen",
+                    description: "beskriv boksmodellen.",
+                    sub: ["Content size", "Padding", "Margin", "Border"]
+                }
+            },
+            {
+                english: {
+                    main: "CSS Flexbox",
+                    description: "describe the main features and usage areas of flexbox.",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
+                    main: "CSS Flexbox",
+                    description: "beskriv hovedfunksjonene og bruksområdene til flexbox.",
                     sub: []
                 }
             },
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "CSS Grid",
+                    description: "describe the main features and usage areas of CSS grid.",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
+                    main: "CSS Grid",
+                    description: "beskriv hovedfunksjonene og bruksområdene til CSS grid.",
                     sub: []
                 }
             },
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "Holy-grail layout",
+                    description: "what is it? How could we create it for a website?",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
+                    main: "Holy-grail layout",
+                    description: "hva er det? Hvordan kan man få det til for en webside?",
                     sub: []
                 }
             },
             {
                 english: {
-                    main: "",
-                    description: ".",
+                    main: "Responsive webdesign",
+                    description: "describe the main principles and example techniques of responsive webdesign.",
                     sub: []
                 },
                 norsk: {
-                    main: "",
-                    description: ".",
-                    sub: []
-                }
-            },
-            {
-                english: {
-                    main: "",
-                    description: ".",
-                    sub: []
-                },
-                norsk: {
-                    main: "",
-                    description: ".",
-                    sub: []
-                }
-            },
-            {
-                english: {
-                    main: "",
-                    description: ".",
-                    sub: []
-                },
-                norsk: {
-                    main: "",
-                    description: ".",
-                    sub: []
-                }
-            },
-            {
-                english: {
-                    main: "",
-                    description: ".",
-                    sub: []
-                },
-                norsk: {
-                    main: "",
-                    description: ".",
+                    main: "Responsivt webdesign",
+                    description: "beskriv hovedprinsipper og eksempelteknikker i responsiv webdesign.",
                     sub: []
                 }
             },
