@@ -10,7 +10,76 @@
 </head>
 <body>
 
+<article id="exam-question-set">
+    <h1>Randomizer</h1>
+    <p>Here you can generate a random question set.</p>
+    <div>
+        <label for="language-selector">
+            Select the language for questions:
+        </label>
+        <select id="language-selector">
+            <option>Loading...</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="question-selector">Question chosen by the student:</label>
+        <select id="question-selector">
+            <option value="0">Pick a question...</option>
+            <!--        <optgroup label="HTML">-->
+            <!--            <option value="1">Question 1</option>-->
+            <!--            <option value="2">Question 2</option>-->
+            <!--            <option value="3">Question 3</option>-->
+            <!--        </optgroup>-->
+            <!--        <optgroup label="CSS">-->
+            <!--            <option value="4">Question 4</option>-->
+            <!--            <option value="5">Question 5</option>-->
+            <!--            <option value="6">Question 6</option>-->
+            <!--        </optgroup>-->
+            <!--        <optgroup label="Javascript">-->
+            <!--            <option value="7">Question 7</option>-->
+            <!--            <option value="8">Question 8</option>-->
+            <!--            <option value="9">Question 9</option>-->
+            <!--        </optgroup>-->
+            <!--        <optgroup label="React">-->
+            <!--            <option value="10">Question 10</option>-->
+            <!--            <option value="11">Question 11</option>-->
+            <!--            <option value="12">Question 12</option>-->
+            <!--        </optgroup>-->
+        </select>
+    </div>
+    <button>Roll dice</button>
+    <h2>Question set</h2>
+    <table id="question-set">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>#</th>
+            <th>Question</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Loading...</td>
+        </tr>
+        <tr id="question-set-cat-html">
+            <td>HTML</td>
+            <td>3</td>
+            <td>Web servers and browsers - the question displayed here</td>
+        </tr>
+        <tr id="question-set-cat-CSS">
+            <td>CSS</td>
+            <td>16</td>
+            <td>Question 16 displayed here</td>
+        </tr>
+        </tbody>
+    </table>
+</article>
+
+<div id="spacing"></div>
+
 <article id="all-exam-questions">
+    <h1>All questions</h1>
     <p>Here are all the exam questions, categorized in sections.</p>
     <span id="questions-loading">Loading...</span>
 </article>

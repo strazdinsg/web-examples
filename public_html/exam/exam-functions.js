@@ -1,9 +1,15 @@
 // All the different functions for handling exam questions
 
-window.addEventListener("load", displayExamQuestions);
+window.addEventListener("load", loadAllQuestionData);
+
+function loadAllQuestionData() {
+    displayAllExamQuestions();
+    displayCategoriesInExamSet();
+    loadLanguageSelector();
+}
 
 
-function displayExamQuestions() {
+function displayAllExamQuestions() {
     console.log("Loading exam questions...");
     getQuestionCategoryKeys().forEach((categoryKey, index) => displayQuestionCategory(index, categoryKey));
     hideQuestionLoading();
@@ -172,3 +178,40 @@ function toBoolean(anyVar) {
     return !!anyVar;
 }
 
+function addCategoryRowToExamSetTable(categoryKey) {
+    const tr = document.createElement("tr");
+    tr.id = getExamSetRowId(categoryKey);
+    tr.innerHTML=`<td>${getCategoryName(categoryKey)}</td><td></td><td></td>`;
+    getExamSetTableBody().appendChild(tr);
+}
+
+function getExamSetRowId(categoryKey) {
+    return "question-set-cat-" + categoryKey;
+}
+
+function displayCategoriesInExamSet() {
+    clearAllContentOf(getExamSetTableBody());
+    getQuestionCategoryKeys().forEach(categoryKey => addCategoryRowToExamSetTable(categoryKey));
+}
+
+
+function getExamSetTableBody() {
+    return document.querySelector("#exam-question-set tbody");
+}
+
+function addLanguageToSelector(selector, language) {
+    const option = document.createElement("option");
+    option.innerText = language;
+    option.value = language.toLowerCase();
+    selector.appendChild(option);
+}
+
+function loadLanguageSelector() {
+    const selector = document.getElementById("language-selector");
+    clearAllContentOf(selector);
+    languages.forEach(language => addLanguageToSelector(selector, language));
+}
+
+function clearAllContentOf(htmlElement) {
+    htmlElement.innerHTML = "";
+}
