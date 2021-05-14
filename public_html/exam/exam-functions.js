@@ -2,6 +2,7 @@
 
 window.addEventListener("load", loadAllQuestionData);
 
+// This function is the high-level entry-point for all the functions. Start reading here if you want to track specific code!
 function loadAllQuestionData() {
     assignNumbersToQuestions();
     assignCategoriesToQuestions();
@@ -177,7 +178,6 @@ function createSubQuestionItem(subQuestion) {
     li.innerText = subQuestion;
     return li;
 }
-
 
 function getQuestionCategoryKeys() {
     return Object.keys(questions);
