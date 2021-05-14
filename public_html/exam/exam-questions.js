@@ -138,12 +138,12 @@ const questions = {
             },
             {
                 english: {
-                    main: "Images",
+                    main: "Image preparation",
                     description: "image preparation and characteristics of a good image.",
                     sub: []
                 },
                 norsk: {
-                    main: "Bilder",
+                    main: "Bildeforberedelse",
                     description: "forberedelse av bilder og kjennetegn av et godt bilde.",
                     sub: []
                 }
@@ -191,7 +191,7 @@ const questions = {
         questions: [
             {
                 english: {
-                    main: "CS",
+                    main: "CSS",
                     description: "describe the purpose and use of CSS.",
                     sub: ["Connection between HTML and CSS", "How to include CSS in HTML documents",
                         "How to set style for one, specific element?",

@@ -1,3 +1,9 @@
+h1 {
+    font-size: 32px;
+}
+h2 {
+    font-size: 24px;
+}
 .question-table {
     border-spacing: 0;
 }
@@ -11,4 +17,31 @@
 
 .difficult {
     color: gray;
+}
+
+#question-set {
+    border-spacing: 0;
+}
+
+#question-set th {
+    text-align: left;
+}
+
+#question-set th, #question-set td {
+    border-bottom: solid 1px gray;
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+#question-set th:nth-child(1), #question-set td:nth-child(1) {
+    text-align: right;
+}
+
+#spacing {
+    height: 10vh;
+}
+
+select {
+    margin: 10px 5px;
+    font: inherit;
 }
