@@ -138,12 +138,12 @@ const questions = {
             },
             {
                 english: {
-                    main: "Images",
+                    main: "Image preparation",
                     description: "image preparation and characteristics of a good image.",
                     sub: []
                 },
                 norsk: {
-                    main: "Bilder",
+                    main: "Bildeforberedelse",
                     description: "forberedelse av bilder og kjennetegn av et godt bilde.",
                     sub: []
                 }
