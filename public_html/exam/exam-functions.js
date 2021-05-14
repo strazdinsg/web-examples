@@ -4,20 +4,22 @@ window.addEventListener("load", loadAllQuestionData);
 
 function loadAllQuestionData() {
     assignNumbersToQuestions();
+    assignCategoriesToQuestions();
     displayAllExamQuestions();
     displayCategoriesInExamSet();
     loadLanguageSelector();
-    loadStudentQuestionSelector(getSelectedLanguage());
+    loadStudentQuestionSelector();
+    setupEventHandlers();
 }
 
 function assignNumbersToQuestions() {
-    let number = 1;
+    const allQuestions = getQuestionsFromAllCategories();
+    allQuestions.forEach((question, index) => question.number = index + 1);
+}
+
+function assignCategoriesToQuestions() {
     getQuestionCategoryKeys().forEach(categoryKey => {
-        questions[categoryKey].questions.forEach(question => {
-            question.number = number;
-            languages.forEach(language => question[language.toLowerCase()].number = number);
-            number++;
-        });
+        questions[categoryKey].questions.forEach(question => question.category = categoryKey);
     });
 }
 
@@ -201,6 +203,10 @@ function getExamSetRowId(categoryKey) {
     return "question-set-cat-" + categoryKey;
 }
 
+function getExamSetRowForCategory(categoryKey) {
+    return document.getElementById(getExamSetRowId(categoryKey));
+}
+
 function displayCategoriesInExamSet() {
     clearAllContentOf(getExamSetTableBody());
     getQuestionCategoryKeys().forEach(categoryKey => addCategoryRowToExamSetTable(categoryKey));
@@ -221,8 +227,12 @@ function clearAllContentOf(htmlElement) {
     htmlElement.innerHTML = "";
 }
 
+function getLanguageSelector() {
+    return document.getElementById("language-selector");
+}
+
 function getSelectedLanguage() {
-    return document.getElementById("language-selector").value;
+    return getLanguageSelector().value;
 }
 
 function addSelectOption(selector, humanText, value) {
@@ -232,8 +242,12 @@ function addSelectOption(selector, humanText, value) {
     selector.appendChild(option);
 }
 
-function loadStudentQuestionSelector(language) {
-    const selector = document.getElementById("question-selector");
+function getStudentQuestionSelector() {
+    return document.getElementById("question-selector");
+}
+
+function loadStudentQuestionSelector() {
+    const selector = getStudentQuestionSelector();
     clearAllContentOf(selector);
     addSelectOption(selector, "Pick a question...", 0);
     getQuestionCategoryKeys().forEach(categoryKey => selector.appendChild(createSelectableCategory(categoryKey)));
@@ -251,4 +265,76 @@ function createQuestionOption(question) {
     option.innerText = `${question.number}. ${question.main}`;
     option.value = question.number;
     return option;
+}
+
+function setupEventHandlers() {
+    getLanguageSelector().addEventListener("change", loadStudentQuestionSelector);
+    document.getElementById("roll-exam-dice").addEventListener("click", showRandomQuestions);
+}
+
+function showRandomQuestions() {
+    let chosenQuestions = [];
+    chosenQuestions.push(getStudentChosenOrRandomQuestion());
+    const remainingCategories = getCategoriesExcept(chosenQuestions.category);
+    remainingCategories.forEach(categoryKey => chosenQuestions.push(pickRandomEasyQuestionFromCategory(categoryKey)));
+    chosenQuestions.forEach(question => showChosenQuestion(question));
+}
+
+function getStudentChosenOrRandomQuestion() {
+    const result = getStudentChosenQuestion();
+    return result ? result : getRandomQuestion();
+}
+
+function getStudentChosenQuestion() {
+    return getQuestionByNumber(getStudentQuestionSelector().value);
+}
+
+function getQuestionByNumber(number) {
+    const allQuestions = getQuestionsFromAllCategories();
+    return number > 0 && number <= allQuestions.length ? allQuestions[number - 1] : null;
+}
+
+function getQuestionsFromAllCategories() {
+    let allQuestions = [];
+    getQuestionCategoryKeys().forEach(categoryKey => allQuestions.push(...questions[categoryKey].questions));
+    return allQuestions;
+}
+
+function getRandomQuestion() {
+    let allQuestions = getQuestionsFromAllCategories();
+    return allQuestions[getRandomIntInclusive(0, allQuestions.length - 1)];
+}
+
+// Code from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random#getting_a_random_integer_between_two_values_inclusive
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function getCategoriesExcept(unwantedCategoryKey) {
+    return getQuestionCategoryKeys().filter(categoryKey => categoryKey !== unwantedCategoryKey);
+}
+
+function pickRandomEasyQuestionFromCategory(category) {
+    const availableQuestions = getEasyQuestionsFromCategory(category);
+    const randomIndex = getRandomIntInclusive(0, availableQuestions.length - 1);
+    return availableQuestions[randomIndex];
+}
+
+function getEasyQuestionsFromCategory(categoryKey) {
+    return questions[categoryKey].questions.filter(q => !q.difficult);
+}
+
+function getQuestionSetColumn(category, columnNumber) {
+    return getExamSetRowForCategory(category).querySelector(`td:nth-child(${columnNumber})`)
+}
+
+function showChosenQuestion(question) {
+    getQuestionSetColumn(question.category, 2).innerText = question.number;
+    getQuestionSetColumn(question.category, 3).innerText = renderQuestionElement(question);
+}
+
+function renderQuestionElement(question) {
+    return question[getSelectedLanguage()].main; // TODO
 }
