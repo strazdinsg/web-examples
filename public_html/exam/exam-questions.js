@@ -191,7 +191,7 @@ const questions = {
         questions: [
             {
                 english: {
-                    main: "CS",
+                    main: "CSS",
                     description: "describe the purpose and use of CSS.",
                     sub: ["Connection between HTML and CSS", "How to include CSS in HTML documents",
                         "How to set style for one, specific element?",
