@@ -150,17 +150,19 @@ function getSubQuestionTitle(language) {
 
 function createQuestionItem(nodeType, question, language) {
     const questionElement = document.createElement(nodeType);
-    let difficultyMarker = "";
     if (question.difficult) {
         questionElement.classList.add("difficult");
-        difficultyMarker = "(Difficult!) ";
     }
-    questionElement.innerHTML = `<b>${difficultyMarker}${question.main}</b> - ${question.description}`;
+    questionElement.innerHTML = `<b>${getQuestionTitleAndDifficulty(question)}</b> - ${question.description}`;
     if (hasSubQuestions(question)) {
         questionElement.innerHTML += " " + getSubQuestionTitle(language) + ":";
         questionElement.appendChild(createSubQuestionList(question.sub));
     }
     return questionElement;
+}
+
+function getQuestionTitleAndDifficulty(question) {
+    return (question.difficult ? "(Difficult!) " : "") + question.main;
 }
 
 function hasSubQuestions(question) {
