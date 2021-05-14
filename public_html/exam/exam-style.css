@@ -30,6 +30,7 @@ h2 {
 #question-set th, #question-set td {
     border-bottom: solid 1px gray;
     padding: 5px 10px;
+    vertical-align: top;
 }
 
 #question-set th:nth-child(1), #question-set td:nth-child(1) {

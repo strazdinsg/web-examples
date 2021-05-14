@@ -14,7 +14,10 @@ function loadAllQuestionData() {
 
 function assignNumbersToQuestions() {
     const allQuestions = getQuestionsFromAllCategories();
-    allQuestions.forEach((question, index) => question.number = index + 1);
+    allQuestions.forEach((question, index) => {
+        question.number = index + 1;
+        languages.forEach(language => question[language.toLowerCase()].number = index + 1);
+    });
 }
 
 function assignCategoriesToQuestions() {
@@ -100,7 +103,7 @@ function createQuestionTableCell(categoryKey, language) {
 function createQuestionList(categoryKey, language) {
     const questionList = createQuestionListElement();
     getQuestions(categoryKey, language).forEach(question =>
-        questionList.appendChild(createQuestionItem(question, language)));
+        questionList.appendChild(createQuestionItem("li", question, language)));
     return questionList;
 }
 
@@ -144,19 +147,19 @@ function getSubQuestionTitle(language) {
     return subQuestionTitles[language.toLowerCase()];
 }
 
-function createQuestionItem(question, language) {
-    const listItem = document.createElement("li");
+function createQuestionItem(nodeType, question, language) {
+    const questionElement = document.createElement(nodeType);
     let difficultyMarker = "";
     if (question.difficult) {
-        listItem.classList.add("difficult");
+        questionElement.classList.add("difficult");
         difficultyMarker = "(Difficult!) ";
     }
-    listItem.innerHTML = `<b>${difficultyMarker}${question.main}</b> - ${question.description}`;
+    questionElement.innerHTML = `<b>${difficultyMarker}${question.main}</b> - ${question.description}`;
     if (hasSubQuestions(question)) {
-        listItem.innerHTML += " " + getSubQuestionTitle(language) + ":";
-        listItem.appendChild(createSubQuestionList(question.sub));
+        questionElement.innerHTML += " " + getSubQuestionTitle(language) + ":";
+        questionElement.appendChild(createSubQuestionList(question.sub));
     }
-    return listItem;
+    return questionElement;
 }
 
 function hasSubQuestions(question) {
@@ -275,7 +278,7 @@ function setupEventHandlers() {
 function showRandomQuestions() {
     let chosenQuestions = [];
     chosenQuestions.push(getStudentChosenOrRandomQuestion());
-    const remainingCategories = getCategoriesExcept(chosenQuestions.category);
+    const remainingCategories = getCategoriesExcept(chosenQuestions[0].category);
     remainingCategories.forEach(categoryKey => chosenQuestions.push(pickRandomEasyQuestionFromCategory(categoryKey)));
     chosenQuestions.forEach(question => showChosenQuestion(question));
 }
@@ -332,9 +335,8 @@ function getQuestionSetColumn(category, columnNumber) {
 
 function showChosenQuestion(question) {
     getQuestionSetColumn(question.category, 2).innerText = question.number;
-    getQuestionSetColumn(question.category, 3).innerText = renderQuestionElement(question);
-}
-
-function renderQuestionElement(question) {
-    return question[getSelectedLanguage()].main; // TODO
+    const contentColumn = getQuestionSetColumn(question.category, 3)
+    clearAllContentOf(contentColumn);
+    const language = getSelectedLanguage();
+    contentColumn.appendChild(createQuestionItem("div", question[language], language));
 }
