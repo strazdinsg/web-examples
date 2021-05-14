@@ -3,11 +3,23 @@
 window.addEventListener("load", loadAllQuestionData);
 
 function loadAllQuestionData() {
+    assignNumbersToQuestions();
     displayAllExamQuestions();
     displayCategoriesInExamSet();
     loadLanguageSelector();
+    loadStudentQuestionSelector(getSelectedLanguage());
 }
 
+function assignNumbersToQuestions() {
+    let number = 1;
+    getQuestionCategoryKeys().forEach(categoryKey => {
+        questions[categoryKey].questions.forEach(question => {
+            question.number = number;
+            languages.forEach(language => question[language.toLowerCase()].number = number);
+            number++;
+        });
+    });
+}
 
 function displayAllExamQuestions() {
     console.log("Loading exam questions...");
@@ -139,7 +151,7 @@ function createQuestionItem(question, language) {
     }
     listItem.innerHTML = `<b>${difficultyMarker}${question.main}</b> - ${question.description}`;
     if (hasSubQuestions(question)) {
-        listItem.innerHTML += " " +  getSubQuestionTitle(language) + ":";
+        listItem.innerHTML += " " + getSubQuestionTitle(language) + ":";
         listItem.appendChild(createSubQuestionList(question.sub));
     }
     return listItem;
@@ -181,7 +193,7 @@ function toBoolean(anyVar) {
 function addCategoryRowToExamSetTable(categoryKey) {
     const tr = document.createElement("tr");
     tr.id = getExamSetRowId(categoryKey);
-    tr.innerHTML=`<td>${getCategoryName(categoryKey)}</td><td></td><td></td>`;
+    tr.innerHTML = `<td>${getCategoryName(categoryKey)}</td><td></td><td></td>`;
     getExamSetTableBody().appendChild(tr);
 }
 
@@ -199,19 +211,44 @@ function getExamSetTableBody() {
     return document.querySelector("#exam-question-set tbody");
 }
 
-function addLanguageToSelector(selector, language) {
-    const option = document.createElement("option");
-    option.innerText = language;
-    option.value = language.toLowerCase();
-    selector.appendChild(option);
-}
-
 function loadLanguageSelector() {
     const selector = document.getElementById("language-selector");
     clearAllContentOf(selector);
-    languages.forEach(language => addLanguageToSelector(selector, language));
+    languages.forEach(language => addSelectOption(selector, language, language.toLowerCase()));
 }
 
 function clearAllContentOf(htmlElement) {
     htmlElement.innerHTML = "";
+}
+
+function getSelectedLanguage() {
+    return document.getElementById("language-selector").value;
+}
+
+function addSelectOption(selector, humanText, value) {
+    const option = document.createElement("option");
+    option.value = value;
+    option.innerText = humanText;
+    selector.appendChild(option);
+}
+
+function loadStudentQuestionSelector(language) {
+    const selector = document.getElementById("question-selector");
+    clearAllContentOf(selector);
+    addSelectOption(selector, "Pick a question...", 0);
+    getQuestionCategoryKeys().forEach(categoryKey => selector.appendChild(createSelectableCategory(categoryKey)));
+}
+
+function createSelectableCategory(categoryKey) {
+    const optGroup = document.createElement("optgroup");
+    optGroup.label = getCategoryName(categoryKey);
+    getQuestions(categoryKey, getSelectedLanguage()).forEach(question => optGroup.appendChild(createQuestionOption(question)));
+    return optGroup;
+}
+
+function createQuestionOption(question) {
+    const option = document.createElement("option");
+    option.innerText = `${question.number}. ${question.main}`;
+    option.value = question.number;
+    return option;
 }
