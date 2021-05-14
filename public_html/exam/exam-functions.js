@@ -265,7 +265,8 @@ function createSelectableCategory(categoryKey) {
 
 function createQuestionOption(question) {
     const option = document.createElement("option");
-    option.innerText = `${question.number}. ${question.main}`;
+    const difficultyRemark = question.difficult ? " (Difficult!)" : "";
+    option.innerText = `${question.number}. ${question.main}${difficultyRemark}`;
     option.value = question.number;
     return option;
 }
