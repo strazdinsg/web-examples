@@ -1,0 +1,11 @@
+/* This style is included first */
+
+/* We set red color first */
+p {
+    color: red;
+}
+
+/* Then we override it to blue */
+p {
+    color: blue;
+}
