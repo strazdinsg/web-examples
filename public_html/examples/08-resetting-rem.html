@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resetting REM to 10px</title>
+    <style>
+        /* This is how we reset 1rem to 10px */
+        html {
+            font-size: 62.5%;
+        }
+
+        /* The text would be very tiny, therefore we need to update sizes
+        for headings, paragraphs, etc. This is NOT part of resetting REM! */
+        h1 {
+            font-size: 4.8rem;
+        }
+
+        p {
+            font-size: 3.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Resetting REM</h1>
+<p>In this example we reset rem to 10px. This is a typical technique for web
+    developers - makes the usage of rem units easier. How do we do that? We
+    redefine the font size for <code>html</code> tag. Because that is rem by
+    definition: 1 rem = font size of <code>html</code> element.
+    Check out the <code>&lt;style&gt;</code> section in this document!</p>
+<p>After this manipulation, text becomes tiny. But we can easily fix that by
+    setting <code>font-size</code> to necessary elements.</p>
+</body>
+</html>
