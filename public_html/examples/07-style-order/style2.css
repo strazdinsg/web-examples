@@ -1,0 +1,9 @@
+/* This style file is included second */
+
+/* Here we reset the paragraph color. Again.
+   This is the first time we set text size. */
+p {
+    color: green;
+    font-size: medium;
+}
+

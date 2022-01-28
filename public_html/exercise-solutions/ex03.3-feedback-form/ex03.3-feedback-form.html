@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex 3.3 Solution: HTML form</title>
+</head>
+<body>
+
+<h1>Send feedback</h1>
+<form action="http://datakomm.work:8080/hello" method="post">
+    <label>
+        Your name:
+        <input name="name" type="text" value="Ddd">
+    </label>
+    <br>
+    <label>
+        Email:
+        <input name="email" type="email" value="chuck@noreply.com">
+    </label>
+    <br>
+    <label>
+        <textarea name="feedback" rows="5" cols="50"
+                  placeholder="Your feedback here"></textarea>
+    </label>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
