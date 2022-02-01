@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>More CSS selectors</title>
+    <style>
+        html {
+            font-size: 32px;
+            font-family: sans-serif;
+            margin: 0 40px;
+        }
+
+        /** All paragraphs which are descendants of <main> */
+        main p {
+            font-weight: bold;
+        }
+
+        /* All paragraphs which are direct children of <main> */
+        main > p {
+            color: blue;
+        }
+
+        aside p:nth-child(3) {
+            color: green;
+        }
+
+        a:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <h1>CSS selectors</h1>
+    <p>This is a paragraph which is a direct child of <code>&lt;main&gt;</code>.
+    </p>
+    <p>Here is one more paragraph - a direct child.</p>
+    <div class="comment">
+        <p>This is a paragraph inside a div - a descendant of
+            <code>&lt;main&gt;</code>, but not a direct child of <code>&lt;main&gt;</code>.
+        </p>
+    </div>
+    <a href="https://ntnu.no">Visit NTNU.no</a>
+</main>
+<aside>
+    <div class="separator">
+    </div>
+    <p>This is a paragraph inside an aside, a direct child of it.</p>
+    <p>This is the second paragraph of the aside. However, if we count the
+        children - this is the third child of <code>aside</code> - there is one
+        child <code>div</code> element which is invisible.</p>
+    <p>This is a paragraph inside an aside, a direct child of it. Fourth
+        child.</p>
+</aside>
+
+</body>
+</html>
