@@ -1,0 +1,18 @@
+/* You should not change anything here */
+
+
+html {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    /* We want the cards to be side-by side. We will use flexbox for it later,
+    but we have not learned it yet. */
+    float: left;
+}
+
+img {
+    /* We set display:block for the images to avoid a space right
+    after the image */
+    display: block;
+}
