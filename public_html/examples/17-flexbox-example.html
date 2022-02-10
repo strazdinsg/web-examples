@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox example</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+        html {
+            font-size: 63.5%; /* Reset 1rem to 10px */
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Reset sizing, remove default whitespace */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General styling */
+        main {
+            font-size: 2.4rem;
+            padding: 2rem;
+        }
+
+        p {
+            margin: 1.5rem 0 3rem;
+        }
+
+        /* Here we configure the flex container */
+        #flex-container {
+            display: flex;
+            width: 100%;
+            background-color: #59b1de;
+            height: 10rem;
+            margin-top: 2rem;
+        }
+
+        /* Config common for all flex items */
+        .flex-item {
+            background-color: #003f54;
+            color: white;
+            border: 1px solid black;
+            flex-basis: 10rem;
+            text-align: center;
+            font-size: 4rem;
+            line-height: 4rem;
+            /* Center the text vertically.
+            Item height is 100px, minus 2px for borders, Letter height is 40px.
+            58px of whitespace / 2 = 29px padding on each side vertically*/
+            padding: 2.9rem 0;
+
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        /* Config specifically for the third flex item */
+        .flex-item:nth-child(3) {
+            flex-grow: 3;
+            flex-shrink: 0;
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <section id="description" aria-label="Description of the example">
+        <h1>Flexbox example</h1>
+        <p>Here we see a flexbox with three flex items. The
+            <code>flex-basis</code> is set to <code>100px</code> for all of
+            them. The first two have been set to shrink and expand equally. The
+            third flex item is set to not shrink and expand 3x faster than the
+            other two items.</p>
+    </section>
+
+    <section id="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+    </section>
+</main>
+</body>
+</html>
