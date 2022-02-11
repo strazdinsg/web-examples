@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
 
         html {
-            font-size: 63.5%; /* Reset 1rem to 10px */
+            font-size: 62.5%; /* Reset 1rem to 10px */
             font-family: 'Poppins', sans-serif;
         }
 
@@ -43,7 +43,6 @@
             background-color: #003f54;
             color: white;
             border: 1px solid black;
-            flex-basis: 10rem;
             text-align: center;
             font-size: 4rem;
             line-height: 4rem;
@@ -52,14 +51,15 @@
             58px of whitespace / 2 = 29px padding on each side vertically*/
             padding: 2.9rem 0;
 
-            flex-grow: 1;
+            flex-basis: 10rem;
+            flex-grow: 0;
             flex-shrink: 1;
         }
 
         /* Config specifically for the third flex item */
         .flex-item:nth-child(3) {
-            flex-grow: 3;
-            flex-shrink: 0;
+            flex-grow: 1;
+            flex-shrink: 1;
             background-color: coral;
         }
     </style>
