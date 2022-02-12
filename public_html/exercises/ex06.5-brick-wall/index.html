@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6.5 - Brick wall</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+    <style>
+        /* -------------------------------------
+           Put your styles here
+           ------------------------------------- */
+
+
+        /* -------------------------------------
+           DON'T CHANGE STYLES BELOW!
+           ------------------------------------- */
+        #brick-wall-grid {
+            background-color: gray;
+            width: min-content;
+            margin: auto;
+            padding: 0 0.5rem 0.5rem 0;
+        }
+
+        .brick {
+            border: 1px solid black;
+            background-color: firebrick;
+            box-sizing: border-box;
+            margin: 0.5rem 0 0 0.5rem;
+            color: white;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+    <section>
+        <h1>Exercise 6.5</h1>
+        <p>This is Exercise #6.5, lecture on CSS Grid, used in the course <a
+                href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301
+            Web technologies</a> at NTNU, campus Aalesund. </p>
+
+        <h2>Purpose</h2>
+        <p>The purpose of the exercise is to get familiar with how we assign
+            items to grid regions.</p>
+    </section>
+
+    <section>
+        <h2>Instructions</h2>
+        <p>Start with this document as the template. Arrange the provided
+            elements within a grid according to the necessary layout. <strong>Don't
+                change the HTML elements, make the changes with CSS style
+                only!</strong></p>
+
+        <p><strong>Arrange the grid items below to match a brick wall
+            pattern.</strong> Each full brick should be 200px wide and 100px
+            high, including the padding and border. This is how the final result
+            should look:</p>
+        <img src="img/ref-image.png"
+             alt="Reference image - HTML elements laid out in a brick-wall pattern">
+
+        <h2>Extra challenge</h2>
+        <p>For an extra challenge: center the text vertically within the bricks!
+            The result of extra challenge looks like this:</p>
+        <img src="img/ref-image-extra.png"
+             alt="Reference image - HTML elements laid out in a brick-wall pattern, text vertically centered">
+
+
+        <p>Here is the grid you should work with (remember: apply CSS style
+            only, within the <code>&lt;style&gt;</code> block in the <code>&lt;head&gt;</code>
+            of the document):</p>
+    </section>
+
+    <section>
+        <!-- Don't change any elements here! -->
+        <div id="brick-wall-grid">
+            <!-- Here are the grid items, you should not change anything for these! -->
+            <div class="brick" id="brick1">!</div>
+            <div class="brick" id="brick2">lo</div>
+            <div class="brick" id="brick3">Hel</div>
+            <div class="brick" id="brick4">W</div>
+            <div class="brick" id="brick5">ld</div>
+            <div class="brick" id="brick6">or</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Solution</h2>
+        <p>You can find a solution in <a
+                href="../../exercise-solutions/ex06.5-brick-wall">
+            <code>../../exercise-solutions/ex06.5-brick-wall</code></a>.
+        </p>
+    </section>
+</main>
+
+
+</body>
+</html>
