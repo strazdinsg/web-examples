@@ -8,10 +8,14 @@ Common style for all exercises
 
 html {
     font-family: 'Poppins', sans-serif;
+    font-size: 62.5%; /* Reset 1 rem to 10px */
 }
 
 p {
     margin-top: 0;
+}
+p, li, pre {
+    font-size: 1.6rem;
 }
 
 p:first-letter {
@@ -19,7 +23,16 @@ p:first-letter {
 }
 
 h1, h2 {
-    margin: 1em 0 0 0;
+    margin: 1rem 0 0 0;
+}
+h1 {
+   font-size: 3.2rem; /* 32px */
+}
+h2 {
+    font-size: 2.4rem; /* 24px */
+}
+h3 {
+    font-size: 1.8rem; /* 18px */
 }
 
 .reference-img {
