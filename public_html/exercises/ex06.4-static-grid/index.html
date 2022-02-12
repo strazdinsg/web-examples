@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6.4 - Static grid</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+
+    <style>
+        /* Write YOUR STYLES HERE!!! */
+
+
+        /* Not necessary to change these styles! */
+        #main-column {
+            max-width: 100rem;
+            min-width: 40rem;
+            margin: auto;
+            border: 3px dashed lightblue;
+        }
+
+        #main-grid {
+            height: 60rem;
+            font-size: 1.6rem;
+        }
+
+        .item {
+            background-color: lightblue;
+            padding: 0.5rem;
+            margin: 0.5rem;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+<article>
+    <h1>Exercise 6.4</h1>
+    <p>This is Exercise #6.4, lecture on CSS Grid, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web
+            technologies</a>
+        at NTNU, campus Aalesund.
+    </p>
+
+    <h2>Purpose</h2>
+    <p>The purpose of the exercise is to <strong>get started with the Grid
+        layout.</strong>
+
+    <h2>Instructions</h2>
+    <p>Start with this document as the template. Arrange the provided elements
+        in a grid according to the following specification:
+    </p>
+    <ol>
+        <li>You should be able to solve the exercise by simply creating CSS
+            style for the grid container (div with <code>id="main-grid"</code>),
+            nothing else.
+        </li>
+        <li>The first row must be 200px high, the third row must be 100px high.
+            The second row should be flexible - fill the whole available height.
+            Note: the whole grid should fit the whole parent container (see the
+            dashed light-blue border).
+        </li>
+        <li>The first column must be 200px wide while the second column should
+            fill the whole
+            available width.
+        </li>
+    </ol>
+
+    <p>This is how the end result should look:</p>
+    <img src="img/ref-image.png"
+         alt="Image with a solution of this exercise">
+
+    <p>The following CSS properties may be handy:</p>
+    <pre><code>
+        display: grid;
+        grid-template-rows
+        grid-template-columns
+    </code></pre>
+
+    <h2>Template</h2>
+    <p>Use this file as the template.</p>
+
+    <p>Here is the grid:</p>
+
+    <!-- Don't change this div! -->
+    <div id="main-column">
+
+        <!-- Make this div to a grid container! -->
+        <div id="main-grid">
+
+            <!-- Here are the grid items, you should not change anything for these! -->
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+            <div class="item">Item 4</div>
+            <div class="item">Item 5</div>
+            <div class="item">Item 6</div>
+        </div>
+    </div>
+
+
+    <h2>Solution</h2>
+    <p>You can find a solution in <a
+            href="../../exercise-solutions/ex06.4-static-grid">
+        <code>../../exercise-solutions/ex06.4-static-grid</code></a>.
+    </p>
+
+</article>
+
+
+</body>
+</html>
