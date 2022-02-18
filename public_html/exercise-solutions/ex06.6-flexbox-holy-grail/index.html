@@ -20,7 +20,7 @@
             margin: 0;
         }
 
-        main {
+        #main-container {
             display: flex;
             flex-grow: 1;
         }
@@ -38,7 +38,7 @@
             text-align: center;
         }
 
-        #main-content {
+        main {
             min-width: 600px;
         }
 
@@ -91,7 +91,7 @@
             background-color: #59b1de;
         }
 
-        #main-content {
+        main {
             background-color: #efafb2;
             padding: 20px;
         }
@@ -120,8 +120,8 @@
     <h1>Welcome to a demo of the holy grail layout using flexbox CSS
         features!</h1>
 </header>
-<main>
-    <section id="main-content">
+<div id="main-container">
+    <main>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum
         eaque earum, eius eligendi, enim eos error esse, excepturi harum illum
         impedit laudantium molestias nemo nostrum officia pariatur praesentium
@@ -132,8 +132,9 @@
         facere fuga fugiat id mollitia numquam officia quidem quis quo
         recusandae, rem sequi similique sint temporibus totam ut velit vero. A,
         aut labore nemo omnis optio quod sequi sit totam ut.
-    </section>
-    <!-- According to the theory, the navigation bar should come after the main content in the markup -->
+    </main>
+    <!-- According to the theory, the navigation bar should come after the
+    main content in the markup -->
     <nav>
         <div id="home" class="nav-item">Home</div>
         <div id="gallery" class="nav-item">Gallery</div>
@@ -151,7 +152,7 @@
             <p>Ad Nr 3</p>
         </div>
     </aside>
-</main>
+</div>
 <footer><p>Copyright 2022</p></footer>
 
 </body>
