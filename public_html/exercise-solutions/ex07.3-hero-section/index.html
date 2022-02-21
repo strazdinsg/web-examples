@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Song of Fire and Water (SOFAW)</title>
+    <style>
+        /***********************************
+         General styles
+         ***********************************/
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        html {
+            font-size: 62.5%;
+            font-family: 'Montserrat', sans-serif;
+            color: #2a1100;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 2.4rem;
+        }
+
+        /* Links */
+        a, a:link, a:visited {
+            color: #2a1100;
+            transition-duration: 0.2s;
+        }
+
+        a:hover {
+            color: #d35400;
+        }
+
+        /* main container */
+        main {
+            width: 100%;
+            max-width: 160rem;
+            min-width: 90rem;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        /* Call-to-action buttons */
+        button.cta {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #943B00;
+            border: 0;
+            color: #f6ddcc;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            transition-duration: 0.2s;
+            cursor: pointer;
+        }
+
+        button.cta:hover {
+            background-color: #d35c00;
+            color: white;
+        }
+
+        /************************************
+         Header, navigation
+         ************************************/
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        #logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo-image {
+            height: 6rem;
+            /* Change the color hue for the logo to better match the color theme */
+            filter: hue-rotate(59deg);
+        }
+
+        #logo-text {
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 6rem;
+            margin-left: -1.2rem;
+            padding-top: 1.1rem;
+            z-index: 1;
+        }
+
+        nav {
+            left: 0;
+            margin: auto;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            height: 6rem;
+            align-items: center;
+        }
+
+        nav li {
+            list-style-type: none;
+        }
+
+        header .cta {
+            margin-right: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /************************************
+         Hero section
+         ************************************/
+        /* TODO - put your styles here */
+
+
+        /************************************
+         Experience/gallery section
+         ************************************/
+        #experience-section {
+            display: flex;
+            gap: 2rem;
+            margin-top: 8rem;
+        }
+
+        #gallery-container {
+            flex-basis: 60rem;
+            flex-grow: 2;
+            flex-shrink: 0;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(10rem, 30rem));
+            grid-gap: 2rem;
+            max-width: 94rem;
+        }
+
+        #gallery-container img {
+            width: 100%;
+            transition-duration: 0.2s;
+        }
+
+        /* Some liveliness for the images */
+        #gallery-container img:hover {
+            transform: scale(102%);
+        }
+
+        #experience-text-container {
+            flex-basis: 40rem;
+            flex-grow: 1;
+            flex-shrink: 0;
+            padding-right: 2rem;
+        }
+
+        #experience-text-container h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        #experience-text-container p {
+            line-height: 3.8rem;
+        }
+
+    </style>
+</head>
+<body>
+
+<main>
+    <header>
+        <div id="logo">
+            <img id="logo-image" src="img/logo.png" alt="Company logo"/>
+            <p id="logo-text">
+                <span>Song of</span>
+                <span>Fire &</span>
+                <span>Water</span>
+            </p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Our business</a></li>
+                <li><a href="#">Training</a></li>
+                <li><a href="#">Certification</a></li>
+                <li><a href="#">Buy equipment</a></li>
+            </ul>
+        </nav>
+        <button class="cta">Book training</button>
+    </header>
+
+    <section id="hero-section">
+        <!--        TODO - resize the image to be 1600px wide and crop so that the faces are-->
+        <!--        close to the top of the image. Save it as .JPG (.WebP will-->
+        <!--        not be much smaller, no need to introduce a format which is not-->
+        <!--        supported by all browsers)-->
+
+        <!--        TODO - place the image here -->
+        <!--        Overlay it with color #2A1100, 75% opacity-->
+        <!--        The image should fill the whole width of the main container-->
+
+        <!--        TODO - resize the hero-section height, according to the following rules:-->
+        <!--        * height should be 40% of viewport width-->
+        <!--        * max height of 600px-->
+        <!--        * min height of 370px-->
+        <!-- TODO Hero section must be at least 1000px wide -->
+
+
+        <h1>When the time comes,<br> you will be ready</h1>
+        <!--        TODO - style the heading in white color, font size 48px-->
+
+        <!--        TODO - place Call-To-action button - the same style as the one in the-->
+        <!--        navigation, just bigger font and more padding-->
+
+    </section>
+
+    <section id="experience-section">
+        <div id="gallery-container">
+            <img src="img/gallery-01-crop.jpg" alt="Firefighter training"><img
+                src="img/gallery-02-crop.jpg"
+                alt="Firefighter truck"><img
+                src="img/gallery-03-crop.jpg" alt="Firefighters and fire"><img
+                src="img/gallery-04-crop.jpg"
+                alt="Men testing a water hose"><img
+                src="img/gallery-05-crop.jpg"
+                alt="Firefighters in dark with flashlights"><img
+                src="img/gallery-06-crop.jpg"
+                alt="Fully equipped firefighter with a mask">
+        </div>
+        <div id="experience-text-container">
+            <h2><strong>20 years</strong> of experience</h2>
+            <p id="experience-description">
+                We have trained more than <strong>8000 professionals</strong>
+                from <strong>6 countries</strong>.
+                Our instructors are experts with experience from the field. They
+                can speak all Scandinavian languages, English, and German.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>
