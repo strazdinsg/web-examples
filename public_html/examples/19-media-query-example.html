@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media query example</title>
+    <link rel="stylesheet" href="../base-style.css">
+    <style>
+        html {
+            /* Default color for all texts */
+            color: #003f54;
+            margin: 2rem;
+        }
+
+        /* The section will be a grid container, 4 columns by default */
+        section {
+            display: grid;
+            grid-gap: 2rem;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        section div {
+            /* Give some style to grid items */
+            background-color: #58b0dd;
+            padding: 2rem;
+            font-size: 1.5rem;
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        @media (max-width: 50em) {
+            /* This style is applied when screen size is no more
+            than 50*16=800px */
+            h1 {
+                color: #59b1de;
+            }
+
+            section {
+                /* 2-column grid on medium screens */
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 4rem;
+            }
+        }
+
+        @media (max-width: 40em) {
+            /* This style is applied when screen size is no more
+            than 40*16=640px */
+            h1 {
+                color: #8e6abe;
+            }
+
+            section {
+                /* 1-column grid on small screens */
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Media query example</h1>
+
+<p>Resize this window to see how media queries work. The color of the heading is
+    changed on different screen widths.</p>
+
+<p>The grid below will have 4 columns on large screens, two columns on medium
+    screens and a single column on small screens.</p>
+
+<section>
+    <div>This is block Nr 1</div>
+    <div>This is block Nr 2</div>
+    <div>This is block Nr 3</div>
+    <div>This is block Nr 4</div>
+    <div>This is block Nr 5</div>
+    <div>This is block Nr 6</div>
+    <div>This is block Nr 7</div>
+    <div>This is block Nr 8</div>
+</section>
+
+</body>
+</html>
