@@ -1,0 +1,53 @@
+/* Don't change this file! */
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 2rem;
+}
+
+
+h1 {
+    font-size: 4.8rem;
+}
+
+p {
+    font-size: 2.0rem;
+}
+
+img {
+    /* We set display:block for the images to avoid a space right
+    after the image */
+    display: block;
+}
+
+body {
+    min-width: 40rem;
+}
+
+section#about {
+    display: grid;
+    grid-template-columns: 1fr 52rem;
+    margin-top: 4rem;
+    grid-gap: 4rem;
+    background-color: #024468;
+    color: white;
+    align-items: center;
+    justify-items: center;
+}
+
+section#about p {
+    margin: 2rem;
+}
+
+section#about img {
+    width: 90%;
+}
