@@ -19,7 +19,7 @@ p {
     margin-top: 0;
 }
 
-p, li, pre, code {
+p, li, pre, code, label {
     font-size: 1.6rem;
 }
 
