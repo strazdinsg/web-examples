@@ -33,7 +33,7 @@
         return s.indexOf(c) >= 0;
     }
 
-    var i = 1;
+    let i = 1;
     console.log("includeChars test ", i++, includeChars("Chuck", "uck"));
     console.log("includeChars test ", i++, includeChars("Chuck", "yuck"));
     console.log("includeChars test ", i++, includeChars("Chuck", "Duck"));
@@ -46,7 +46,7 @@
     /////////////////////////////////////////////
     function countChars(s, c) {
         // We try to split the string using char c as a separator. We will get N parts. The number of a's is N-1
-        var parts = s.split(c)
+        const parts = s.split(c)
         return parts.length - 1;
     }
 
@@ -55,6 +55,7 @@
     }
 
     console.log("countA(a)", countA("a"));
+    console.log("countA('')", countA(""));
     console.log("countA(aaaaa)", countA("aaaaa"));
     console.log("countA(Abrakadabra)", countA("Abrakadabra"));
     console.log("countA(Zumba)", countA("Zumba"));
