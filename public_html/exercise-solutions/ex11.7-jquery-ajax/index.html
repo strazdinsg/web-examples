@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex11.7 Solution: jQuery</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<h1>Solution for Exercise 11.7</h1>
+<p>This is a solution for <a href="../../exercises/ex11.7-jquery-ajax">Exercise 11.7</a>.
+    See the source code for this file.</p>
+
+<button onclick="sendDiceRequest()">Throw a dice</button>
+<p id="dice-val"></p>
+
+<script>
+    function sendDiceRequest() {
+        $.get("https://web-tek.ninja/php_backend/throw_a_dice.php", function (response) {
+            $("#dice-val").html("You threw " + response);
+        })
+    }
+</script>
+
+</body>
+</html>

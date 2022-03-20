@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ex11.6 Solution: jQuery</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 11.6</h1>
+    <p>This is a solution for <a href="../../exercises/ex11.6-jquery">Exercise 11.6</a>.
+        See the source code for this file.</p>
+</article>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, modi?</p>
+<p>Adipisci autem blanditiis ducimus error, iste nihil omnis quam veritatis.</p>
+<p>Dicta dolor eos eum ipsa necessitatibus neque, nesciunt repellendus suscipit.</p>
+<p>Aut, culpa dolores eum iste officiis perspiciatis sapiente tenetur voluptas.</p>
+<p>Officia quas, unde? Adipisci, beatae expedita fugit natus odit ratione.</p>
+
+<script>
+    // This will be called when the whole DOM is ready. Same as <body onload="...">
+    $(document).ready(function () {
+        // Select all <p> elements, then change the innerHTML to all of them
+        $("p").html("jQuery woz ere");
+    });
+</script>
+
+
+</body>
+</html>
