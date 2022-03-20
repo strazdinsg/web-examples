@@ -1,5 +1,8 @@
 // Here we include Javascript code
 
+// const API_BASE_URL = "http://localhost:8080"; // Use this for CORS problem demo
+const API_BASE_URL = "";
+
 // This function requests data from the API (/api/hello) and displays the
 // response in element with id="message"
 function requestData() {
@@ -16,6 +19,6 @@ function requestData() {
             }
         }
     }
-    apiRequest.open("GET", "/api/hello");
+    apiRequest.open("GET", API_BASE_URL + "/api/hello");
     apiRequest.send();
 }
