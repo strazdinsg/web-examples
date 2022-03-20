@@ -31,6 +31,10 @@ $articles = [
 
 $article_id = rand(0, count($articles) - 1);
 $article = $articles[$article_id];
+
+$SECONDS_TO_SLEEP = rand(1, 3);
+sleep($SECONDS_TO_SLEEP);
+
 ?>
 
 <div>
