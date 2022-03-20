@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 11.8: Typescript</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<h1>Exercise 11.8</h1>
+<p>This is Exercise 11.8, lecture on Typescript and other Javascript extensions, used in the course
+    <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+    at NTNU, campus Aalesund.
+</p>
+<p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+<h2>Purpose</h2>
+<p>The purpose of the exercise is to get your first experience with TypeScript. Note: be ready to use a bit of time. If
+    you have never used Typescript before, there will be a bit of setup. the browser can't run Typescript directly,
+    therefore you need to install a transpiler.
+</p>
+
+<h2>Instructions</h2>
+<ol>
+    <li>Install <a href="https://nodejs.org/en/">Node.js</a> on your computer. Node is a <em>headless</em> Javascript
+        engine: it
+        can run on the computer/server, outside the browser.
+    </li>
+    <li>Install Typescript transpiler using the following command in the terminal <code>npm install --global
+        typescript</code></li>
+    <li>Create a new project directory.</li>
+    <li>Inside the folder create a Typescript configuration file <code>tsconfig.js</code></li>
+    <li>Create file <code>hello.ts</code> and inside it create a TypeScript code:</li>
+    <pre>
+        const greet = (person: string) => {
+          console.log('TypeScript sends a greeting to ' + person);
+        };
+        greet('Chuck');</pre>
+    <li>To compile this file to Javascript, open terminal (in your IDE) and run the following command inside the project
+        directory: <code>tsc hello.ts</code></li>
+    <li>Note: if you are on Windows 10 and get the error <code>tsc.ps1 cannot be loaded because running scripts is
+        disabled on this system</code>, you can fix it as described
+        <a href="https://go.microsoft.com/fwlink/?LinkID=135170">here</a>:
+        Run a new PowerShell instance as the administrator and execute the following command:
+        <code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned</code> . Press <kbd>Y</kbd> when asked.
+    </li>
+    <li>If everything went well, now you have a Javascript file <code>hello.js</code> inside your project directory.
+    </li>
+    <li>Open the file in the IDE and look at the content. Plain Javascript, right?</li>
+    <li>Create an HTML file and include the <code>hello.js</code> Javascript there.</li>
+    <li>Open the HTML file in the browser and look into the Developer console. Do you see it printing the greeting?</li>
+</ol>
+
+<h2>Solution</h2>
+<p>You can find a solution <a href="../../exercise-solutions/ex11.8-typescript">here</a>.</p>
+
+</body>
+</html>
