@@ -9,10 +9,10 @@ if (isset($sleep) && $sleep) {
   sleep($number);
 }
 
-if (isset($_POST["n"])) {
+if (isset($_REQUEST["n"])) {
   // Multiple dice requested
   // Make sure we get an int within allowed boundaries
-  $num_dice = (int) $_POST["n"];
+  $num_dice = (int) $_REQUEST["n"];
   if ($num_dice < 1) {
     $num_dice = 1;
   } else if ($num_dice > 10) {
