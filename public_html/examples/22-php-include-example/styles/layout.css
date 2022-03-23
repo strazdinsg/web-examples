@@ -1,0 +1,26 @@
+body {
+    display: grid;
+    grid-template-rows: 10rem 1fr 10rem;
+    grid-template-columns: 20rem 1fr 20rem;
+    grid-template-areas:
+                "header header header"
+                "nav    main   ads"
+                "footer footer footer";
+    min-height: 100vh;
+}
+header {
+    grid-area: header;
+}
+nav {
+    grid-area: nav;
+}
+main {
+    grid-area: main;
+    min-width: 60rem;
+}
+aside {
+    grid-area: ads;
+}
+footer {
+    grid-area: footer;
+}
