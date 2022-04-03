@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buggy paragraph splitter</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<p>This is an example used for showing code tracing with breakpoints.</p>
+
+<p>Input a text here, separated by commas. When you click on a button, the text will be split using commas as separators
+    and a paragraph of text will be added for each part.
+    There is an intentional bug in the corresponding Javascript code. Set a breakpoint in the <code>addSplitted()</code>
+    function and find the bug!
+</p>
+<label>
+    Enter a comma-separated text here:
+    <input id="input-field" type="text" value="Eeny,meeny,miny,moe"/>
+</label>
+<button onclick="splitAndAdd(inputField.value)">Split and add</button>
+
+<script>
+    // Get a reference to the text input
+    const inputField = document.getElementById("input-field");
+
+    /**
+     * Takes a text, splits it into parts, using commas as separators. For each part, creates a <p> element and adds
+     * it to the body.
+     * @param {string} commaSeparatedText A comma-separated text
+     */
+    function splitAndAdd(commaSeparatedText) {
+        const parts = commaSeparatedText.split(" ");
+        for (let i = 0; i < parts.length; ++i) {
+            addParagraph(parts[i]);
+        }
+    }
+
+    /**
+     * Add a paragraph of text to the body
+     * @param {string} text Text content to put inside the paragraph
+     */
+    function addParagraph(text) {
+        const par = document.createElement("p");
+        par.innerText = text;
+        document.body.appendChild(par);
+    }
+
+</script>
+</body>
+</html>
