@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 13.5: Borrowing functions</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+</head>
+<body>
+
+<article>
+    <section>
+        <h1>Exercise 13.5</h1>
+        <p>This is Exercise 13.5, lecture on advanced functions in Javascript, used in the course
+            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+            at NTNU, campus Aalesund.
+        </p>
+        <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+        <h2>Purpose</h2>
+        <p>The purpose of the exercise is practice setting the <code>this</code>
+            "variable" using <code>.apply</code>.
+        </p>
+    </section>
+
+    <section>
+        <h2>Instructions</h2>
+        <p>Create a new HTML document, and include a Javascript file called <code>app.js</code>. Use that file to create
+            the following functionality.</p>
+        <ol>
+            <li>Create an object <code>person</code>, which has two properties: <code>firstname</code> and
+                <code>lastname</code>.
+            </li>
+            <li>Add a function named <code>printName</code> to that object. It should print the person's name to the
+                console.
+            </li>
+            <li>Create a new object called <code>student</code>, add the same two properties for it:
+                <code>firstname</code> and <code>lastname</code>. Set your values for it (your firstname or lastname,
+                unless you are Batman - then use "Bat" as firstname, "Man" (or "Woman") as lastname).
+                Note: the <code>student</code> object must <u>not</u> have the <code>person</code> as the prototype,
+                otherwise this exercise won't make sense.
+            </li>
+            <li>Now borrow the <code>person.printName()</code> method and call it on the <code>student</code> object.
+                Hint: you can use the <code>.apply()</code> function for it. Run it to see the output in the console.
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Solution</h2>
+        <p>You can find a solution <a href="../../exercise-solutions/ex13.5-borrow-function">here</a>.
+        </p>
+    </section>
+</article>
+
+
+</body>
+</html>
