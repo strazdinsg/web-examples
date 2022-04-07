@@ -43,8 +43,7 @@
         <code>application.properties</code> (Remember to replace <code>example.com</code> with your domain!):
         <pre>
 server.port: 8443
-security.require-ssl=true
-server.ssl.key-store:tls-key.p12
+server.ssl.key-store:keystore.p12
 server.ssl.key-store-password: your-password (if you don't use password for the key, still need this line, just without a value)
 server.ssl.keyStoreType: PKCS12
 server.ssl.keyAlias: tomcat
