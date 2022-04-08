@@ -42,11 +42,11 @@
     <li>Configure your Spring Boot app to use HTTPS, and only HTTPS. Add the following lines to your
         <code>application.properties</code> (Remember to replace <code>example.com</code> with your domain!):
         <pre>
-server.port: 8443
-server.ssl.key-store:keystore.p12
-server.ssl.key-store-password: your-password (if you don't use password for the key, still need this line, just without a value)
-server.ssl.keyStoreType: PKCS12
-server.ssl.keyAlias: tomcat
+server.port=8443
+server.ssl.key-store=classpath:keystore.p12
+server.ssl.key-store-password= your-password (if you don't use password for the key, still need this line, just without a value)
+server.ssl.keyStoreType= PKCS12
+server.ssl.keyAlias= tomcat
         </pre>
     </li>
     <li>Package the application in a <em>fat JAR</em> with the command <code>mvn package</code></li>
