@@ -2,7 +2,14 @@ import {Component} from "react";
 import {Square} from "./Square";
 import "./Board.css"
 
+/**
+ * A component representing "game" board
+ */
 export class Board extends Component {
+    /**
+     * Render the component (pass props to child components)
+     * @returns {JSX.Element}
+     */
     render() {
         return (
             <div className="board">
