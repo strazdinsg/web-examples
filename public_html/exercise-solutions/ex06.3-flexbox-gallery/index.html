@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solution for Exercise 6.3 - Flexbox gallery</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+    <style>
+        /*
+        ---------------------------------------
+        This is the minimum required styling
+        -----------------------------------------
+        */
+        .container {
+            display: flex;
+            border: 3px solid black;
+            margin: 0 50px;
+            /* Need to use min-height instead of height, the fancy pictures will need more space. */
+            min-height: 800px;
+            min-width: 500px;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+
+        img {
+            width: 200px;
+            height: 150px;
+            margin: 20px;
+        }
+
+
+        /*
+        ---------------------------------------
+        Fancy picture frame
+        ---------------------------------------
+        Idea adopted from https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/
+        */
+        .frame {
+            width: 270px;
+            height: 220px;
+            background: black;
+            box-shadow: 0 10px 7px -5px rgba(0, 0, 0, 0.3);
+            margin: 20px;
+        }
+
+        .mat {
+            position: relative;
+            background: white;
+            top: 5px;
+            left: 5px;
+            height: 210px;
+            width: 260px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5) inset;
+        }
+
+        .art-shadow {
+            content: '';
+            position: relative;
+            top: 30px;
+            left: 30px;
+            width: 200px;
+            height: 150px;
+            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5) inset;
+            z-index: 1; /* This mus be on top of the image */
+            margin: 0;
+        }
+
+        #second-container img {
+            margin: 0;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<article>
+    <h1>Solution for Exercise 6.3</h1>
+    <p>This is a solution for <a
+            href="../../exercises/ex06.3-flexbox-gallery/index.html">Exercise
+        6.3</a>. To see how it is done, look at the <code>&lt;style&gt;</code>
+        element in the source code of this page.</p>
+
+    <h2>Minimal solution</h2>
+    <div class="container" id="first-container">
+        <img src="https://picsum.photos/400/300?random_index=1"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=2"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=3"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=4"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=5"
+             alt="Random picture">
+    </div>
+
+    <h2>A more fancy solution</h2>
+    <p>Style adopted from <a
+            href="https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/">
+        "Creating Fully-Responsive Framed, Matted Pictures Using CSS" by
+        Jonathan Beer.
+    </a>
+    </p>
+    <p>The <code>grayscale</code> parameter added to the image url - the frame
+        and shadows looks better
+        on grayscale images.</p>
+
+    <div class="container" id="second-container">
+        <div class="frame">
+            <div class="mat">
+                <div class="art-shadow">
+                </div>
+                <img src="https://picsum.photos/400/300?random_index=1&grayscale"
+                     alt="Random pic">
+            </div>
+        </div>
+        <div class="frame">
+            <div class="mat">
+                <div class="art-shadow">
+                </div>
+                <img src="https://picsum.photos/400/300?random_index=2&grayscale"
+                     alt="Random pic">
+            </div>
+        </div>
+        <div class="frame">
+            <div class="mat">
+                <div class="art-shadow">
+                </div>
+                <img src="https://picsum.photos/400/300?random_index=3&grayscale"
+                     alt="Random pic">
+            </div>
+        </div>
+        <div class="frame">
+            <div class="mat">
+                <div class="art-shadow">
+                </div>
+                <img src="https://picsum.photos/400/300?random_index=4&grayscale"
+                     alt="Random pic">
+            </div>
+        </div>
+        <div class="frame">
+            <div class="mat">
+                <div class="art-shadow">
+                </div>
+                <img src="https://picsum.photos/400/300?random_index=5&grayscale"
+                     alt="Random pic">
+            </div>
+        </div>
+    </div>
+</article>
+
+</body>
+</html>

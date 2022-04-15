@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML elements</title>
+    <style>
+        /* Double the font size of everything */
+        html {
+            /*font-size: 2rem;*/
+            font-family: sans-serif;
+        }
+
+        th, td {
+            border: 1px solid gray;
+            padding: 5px 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        tr th {
+            background-color: #ececec;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-top: 0.5rem;
+        }
+
+        span {
+            background-color: #59b1de;
+            padding: 0.5rem;
+            border: 2px solid black;
+            margin-bottom: 2rem;
+        }
+
+        div {
+            background-color: #efafb2;
+            margin: 1rem 0;
+            padding: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        form {
+            margin: 1rem;
+            border: 1px dashed gray;
+            padding: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<h1>Primitive HTML elements</h1>
+<p>This site showcases primitive HTML elements which are used to construct
+    components.</p>
+
+<h2>Text</h2>
+<p>There are different possibilities to display text - paragraphs, headings. In
+    general, only the semantics (meaning) of
+    the different text blocks differs. Styling is the same for paragraphs,
+    headings and other text types. We can <em>emphasize</em> some parts of the
+    text in HTML. But that should be used only when it is semantically
+    necessary, not simply to get an italic text.</p>
+
+<h2>Links</h2>
+<p>It is also possible to have <a href="https://ntnu.no">Links pointing to other
+    sites</a>.</p>
+
+<h2>Images</h2>
+<img src="https://i.picsum.photos/id/1018/200/200.jpg?hmac=uHjw5VeUXsbJBBE5Ywaumr-fxWyViVwI_GRwrA3AQ2Q"
+     alt="A mountain road"/>
+<img src="https://i.picsum.photos/id/518/200/200.jpg?hmac=nY2cAnZ0_ItWhhAsJ_XL3RsNkDo7_zobodK8FWIoCDM"
+     alt="A road in a forest"/>
+<img src="https://i.picsum.photos/id/219/200/200.jpg?hmac=A55nsncpsnDAEPuZjs3_12i2n8HJNZ5-1SVCIN2fAgc"
+     alt="Leopard on a road looking back at you"/>
+
+<h2>Tables</h2>
+<table aria-label="Top scores">
+    <tr>
+        <th scope="col">Place</th>
+        <th scope="col">Name</th>
+        <th scope="col">Score</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Chuck</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>John</td>
+        <td>8</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Jolly</td>
+        <td>7.8</td>
+    </tr>
+</table>
+
+<h2>Forms</h2>
+<p>Forms are invisible as such, only their inputs are visible.</p>
+<form>
+    <label>
+        Email:
+        <input type="email" name="email" placeholder="email"/>
+    </label>
+    <label>
+        Sign up for newsletter:
+        <input type="checkbox" checked="checked">
+    </label>
+    <input type="submit" value="Sign up"/>
+</form>
+
+<h2>Buttons</h2>
+<p>HTML has buttons as both part of form-inputs, and also a separate tag <code>&lt;button&gt;</code>
+</p>
+<button>A button</button>
+
+<h2>Lists</h2>
+<ol>
+    <li>Ordered Item 1</li>
+    <li>Ordered Item 2</li>
+    <li>Ordered Item 3</li>
+    <li>Ordered Item 4</li>
+    <li>Ordered Item 5</li>
+</ol>
+<ul>
+    <li>Unordered Item</li>
+    <li>Unordered Item</li>
+    <li>Unordered Item</li>
+    <li>Unordered Item</li>
+</ul>
+
+<h2>Generic blocks</h2>
+<p>You often want to construct the layout from general-purpose blocks. There are
+    many options for that. Some
+    blocks have semantic meaning (section, navigation, etc.), some are just
+    blocks in general.</p>
+
+<div> This is a <code>&lt;div&gt;</code> block</div>
+
+<span> This is a <code>&lt;span&gt;</code> block</span>
+
+<h2>Embedded media</h2>
+
+<iframe width="420" height="315"
+        title="Example embedded youtube video - Bohemian Rhapsody by Muppet Music"
+        src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+
+</body>
+</html>

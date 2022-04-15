@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&display=swap');
+
+html {
+    color: blue;
+}
+
+h1 {
+    font-family: 'Inspiration', cursive;
+}

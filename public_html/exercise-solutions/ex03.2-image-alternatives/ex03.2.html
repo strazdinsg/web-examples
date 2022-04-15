@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Ex 3.2 - Image alternatives</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<picture>
+    <!-- Cropped image for phones -->
+    <source media="(max-width: 640px)" sizes="100vw"
+            srcset="images/bird-cropped.jpg 750w">
+    <!-- Two versions (2400px and 1200px) of WebP images for modern browsers -->
+    <source type="image/webp" sizes="80vw"
+            srcset="images/bird-1200.webp 1200w, images/bird-2400.webp 2400w">
+    <!-- Two versions (2400px and 1200px) of JPEG images for browsers not supporting WebP -->
+    <source type="image/jpeg" sizes="80vw"
+            srcset="images/bird-1200.jpg 1200w, images/bird-2400.jpg 2400w">
+    <!-- 1200px JPG as the default option -->
+    <img src="images/bird-1200.jpg" alt="A bird">
+</picture>
+
+<h1>Pictures are nice!</h1>
+
+</body>
+</html>

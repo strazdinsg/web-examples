@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 13.2: Debugging with breakpoints</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+    <style>
+        textarea {
+            display: block;
+            width: 30rem;
+            height: 20rem;
+        }
+    </style>
+</head>
+<body>
+
+<article>
+    <section>
+        <h1>Exercise 13.2</h1>
+        <p>This is Exercise 13.2, lecture on Javascript quirks, used in the course
+            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+            at NTNU, campus Aalesund.
+        </p>
+        <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+        <h2>Purpose</h2>
+        <p>The purpose of the exercise is practice debugging JS code with breakpoints and tracing the code step-by-step.
+        </p>
+    </section>
+
+    <section>
+        <h2>Instructions</h2>
+        <p>Use this document. There is one intentional bug in it. If you want to also fix the bug, creat ea copy of
+            this file, save it on your PC and use that file instead.
+        </p>
+        <p>Below you see an input field and a button. When you press on the button, the text in the input field
+            should be split into words using spaces as separators. Each word should be added as a new line in the
+            textarea. There is an (intentional) bug in the code though. Your task is to find the bug
+            using debugger with breakpoints and step-by-step tracing of the code.
+        </p>
+        <ol>
+            <li>Open this file in the browser. Try to click on the <code>"Add and split"</code> button. You will see
+                that it does not perform the desired action.
+            </li>
+            <li>Open Developer tools. (Ctrl+Shift+J)</li>
+            <li>Set a breakpoint on the first line of the function <code>splitAndAdd()</code>. You can find the
+                Javascript code by going to the "Sources" tab in the developer tools. Find the HTML file in the file
+                tree. Javascript code is placed at the end of the HTML file.
+            </li>
+            <li>Now hit the button <code>Add and split</code>, again you will find it below.</li>
+            <li>Trace the code step-by-step using <code>F10</code> key or the "step over next function call" button:
+                <img alt="Step over the next function call button from Developer tools" src="step-over-btn.png"/>
+            </li>
+            <li>Trace the code until you find a bug there! You can resume the operation (get out of debugger) by
+                pressing F8 or the "Resume" icon:
+                <img alt="Resume button from Developer tools" src="resume-btn.png"/>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>The input elements</h2>
+        <label>
+            Enter words separated by spaces here:
+            <input type="text" value="Eenie meenie miny moe"/>
+        </label>
+        <button onclick="splitAndAdd()">Add and split</button>
+        <div>
+            <label>The result:
+                <textarea id="result-text-area">Here you should see the split text, new line for each word</textarea>
+            </label>
+        </div>
+
+    </section>
+
+</article>
+
+<script>
+
+    function splitAndAdd() {
+        // Take the first input field on this page
+        const textInput = document.querySelector("input");
+        const textValue = textInput.value;
+
+        // Replace the spaces with newlines
+        const multiRowText = textValue.replaceAll(" ", "\n");
+
+        // Place the text inside the textarea
+        const textArea = document.getElementById("result_text_area");
+        if (textArea) {
+            textArea.value = multiRowText;
+        }
+    }
+
+</script>
+
+</body>
+</html>

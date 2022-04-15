@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam questions</title>
+    <link rel="stylesheet" href="../base-style.css"/>
+    <link rel="stylesheet" href="exam-style.css"/>
+    <script type="application/javascript" src="exam-questions.js"></script>
+    <script type="application/javascript" src="exam-functions.js"></script>
+</head>
+<body>
+
+<article id="exam-question-set">
+    <h1>Randomizer</h1>
+    <p>Here you can generate a random question set.</p>
+    <div>
+        <label for="language-selector">
+            Select the language for questions:
+        </label>
+        <select id="language-selector">
+            <option>Loading...</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="question-selector">Question chosen by the student:</label>
+        <select id="question-selector">
+            <option value="0">Pick a question...</option>
+        </select>
+    </div>
+    <button id="roll-exam-dice">Roll dice</button>
+
+    <h2>Question set</h2>
+    <table id="question-set">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>#</th>
+            <th>Question</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Loading...</td>
+        </tr>
+        </tbody>
+    </table>
+</article>
+
+<div id="spacing"></div>
+
+<article id="all-exam-questions">
+    <h1>All questions</h1>
+    <p>Here are all the exam questions, categorized in sections.</p>
+    <span id="questions-loading">Loading...</span>
+</article>
+
+</body>
+</html>

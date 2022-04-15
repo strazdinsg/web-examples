@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 13.1: Execution context</title>
+    <link href="../../base-style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<article>
+    <section>
+        <h1>Exercise 13.1</h1>
+        <p>This is Exercise 13.1, lecture on Javascript quirks, used in the course
+            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+            at NTNU, campus Aalesund.
+        </p>
+        <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+        <h2>Purpose</h2>
+        <p>The purpose of the exercise is practice understanding variable scope and creating variables in the scope you
+            want them to be.
+        </p>
+    </section>
+
+    <section>
+        <h2>Instructions</h2>
+        <ol>
+            <li>Create a new HTML document. Include a file named <code>app.js</code>. In this exercise you will be
+                placing all the Javascript code in <code>app.js</code>.
+            </li>
+            <li>Create a global variable named <code>g</code>, set value <code>g=3</code>.</li>
+            <li>Create a function <code>printG</code>. Inside it <i>print</i> a message <code>"The value of g is " +
+                g</code> (by
+                <i>print</i> we mean <code>console.log</code> in this exercise).
+            </li>
+            <li>Invoke the function <code>printG</code> after you have set value for <code>g</code>. (<i>invoke the
+                function</i> means "call the function, execute it").
+            </li>
+            <li>Invoke the function <code>printG</code> one more time. But this time put the invocation (function call)
+                on the first line of <code>app.js</code> file.
+            </li>
+            <li>Take a moment to think - why do you get the results you get? Hint: remember hoisting and execution!</li>
+            <li>Create two functions: <code>a</code> and <code>b</code>. Leave their body empty for now.</li>
+            <li>Invoke function <code>a</code> from the global context.</li>
+            <li>Invoke function <code>b</code> from the global context.</li>
+            <li>Create variable <code>x=12</code> - it must be available in both functions <code>a</code> and
+                <code>b</code> as well as the global context. To test if it works: print out <code>x</code> in function
+                <code>a</code>, function <code>b</code> and globally.
+            </li>
+            <li>Print <code>window.x</code> in the console. Did you see <code>12</code>?</li>
+            <li>Create a variable <code>y=15</code>. Choose the right place (lexical environment) for the variable: it
+                should be available only inside function <code>a</code> and
+                nowhere else. Test
+                if it works correctly: printing it should work from function <code>a</code>, but should fail from
+                function <code>b</code> and also from the global context.
+            </li>
+            <li>Create a new function <code>c</code> and have a variable <code>z=667</code> in such a way that
+                <code>z</code> is
+                available inside functions <code>b</code> and <code>c</code>, but nowhere else. Hints:
+                <ul>
+                    <li>Think about outer environments!</li>
+                    <li>What functions should you invoke to test that <code>z</code> is really acessible from inside
+                        <code>b</code> and <code>c</code>?
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Solution</h2>
+        <p>You can find a solution <a href="../../exercise-solutions/ex13.1-execution-context">here</a>.
+        </p>
+    </section>
+</article>
+
+
+</body>
+</html>

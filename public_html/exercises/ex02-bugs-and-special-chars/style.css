@@ -1,0 +1,10 @@
+/*Here are some basic styles. Don't worry, we have not learned about CSS yet :)*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body {
+    background-color: #003f54;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}

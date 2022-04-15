@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadows</title>
+    <style>
+        /* ----------------------------------------------
+           Sizing, padding. Styles not related to shadows
+           ---------------------------------------------- */
+        html {
+            /* Reset 1 rem to 10px */
+            font-size: 62.5%;
+            font-family: sans-serif;
+            padding: 2rem 4rem;
+        }
+
+        article {
+            min-width: 100rem;
+        }
+
+        h1 {
+            font-size: 4.8rem;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 3.2rem;
+        }
+
+        p, li {
+            font-size: 2rem;
+        }
+
+        #card-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .card {
+            margin: 4rem;
+            padding: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            width: 25rem;
+            height: 40rem;
+        }
+
+        .card img {
+            height: 15rem;
+        }
+
+        .card-description {
+            margin: 2rem;
+        }
+
+        .card-description p {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+        }
+
+
+        /* ----------------------------------------------
+           Shadow configuration here
+           ---------------------------------------------- */
+        .subtle-shadow {
+            box-shadow: 0 0 2rem 0 rgba(100, 100, 100, 0.2);
+        }
+
+        .large-shadow {
+            box-shadow: 0 0 5rem 0 rgba(128, 128, 128, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<main>
+    <section id="info">
+        <h1>Shadows</h1>
+        <p>This is how we can use shadows. The shadow uses for parameters:</p>
+        <ul>
+            <li>Horizontal offset - how much to the right the shadow is placed
+            </li>
+            <li>Vertical offset - how much down the shadow is placed</li>
+            <li>Blur - how large is the area when the shadow fades out</li>
+            <li>Spread - how large is the area where the shadow has a solid
+                "base" color
+            </li>
+        </ul>
+    </section>
+
+    <section id="card-container">
+        <div class="card subtle-shadow">
+            <img src="https://i.picsum.photos/id/527/250/150.jpg?hmac=eUPglLVMqaybn6wnCCMggd1L40qp8VH6mIVLlRLVPr0"
+                 alt="Compass and notebook on a desk">
+            <div class="card-description">
+                <h2>Product 1</h2>
+                <p>Here is a product card with a very subtle shadow</p>
+            </div>
+        </div>
+
+        <div class="card large-shadow">
+            <img src="https://i.picsum.photos/id/998/250/150.jpg?hmac=RNroOR_CZ5JWv5hB-sui9XFWExqGrJ1yXpS4aZ2nBPs"
+                 alt="Pack of letters and a pen">
+            <div class="card-description">
+                <h2>Product 2</h2>
+                <p>Here is another product with a much larger and stronger
+                    shadow. It looks like this card is higher
+                    than
+                    the other, right?</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

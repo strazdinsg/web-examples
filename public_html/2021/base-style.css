@@ -1,0 +1,35 @@
+/*
+---------------------------------------
+Common style for all exercises
+---------------------------------------
+*/
+
+body {
+    font-family: Garamond, serif;
+}
+
+p {
+    margin-top: 0;
+}
+
+p:first-letter {
+    font-size: 1.5em;
+}
+
+h1, h2 {
+    margin: 1em 0 0 0;
+}
+
+.reference-img {
+    min-width: 300px;
+    max-width: 1200px;
+    width: 100vw;
+}
+
+code, pre {
+    background-color: #eee;
+}
+
+ol {
+    margin-top: 0.2em;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 13.3: Creating objects</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+</head>
+<body>
+
+<article>
+    <section>
+        <h1>Exercise 13.3</h1>
+        <p>This is Exercise 13.34, lecture on objects and prototypes in Javascript, used in the course
+            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+            at NTNU, campus Aalesund.
+        </p>
+        <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+        <h2>Purpose</h2>
+        <p>The purpose of the exercise is practice different ways of creating objects in Javascript.
+        </p>
+    </section>
+
+    <section>
+        <h2>Instructions</h2>
+        <p>Create a new HTML document, and include a Javascript file called <code>app.js</code>. In that file, create
+            the following objects using four possible ways: with object literals, constructor functions, classes and
+            using <code>Object.create()</code> method. See the four methods explained in lecture slides.
+            Note: you must name the different objects differently!</p>
+        <ol>
+            <li>A <code>Person</code> object which has a firstname and a lastname.</li>
+            <li>Two <code>GameObject</code> objects (player and enemy).
+                Imagine that these are objects placed in a 2D game. Each <code>GameObject</code> must have the following
+                properties:
+                <ul>
+                    <li>x position: number</li>
+                    <li>y position: number</li>
+                    <li>name: string</li>
+                    <li>life: number</li>
+                </ul>
+                Each <code>GameObject</code> must have the following methods (functions):
+                <ul>
+                    <li>A constructor which allows to set the (x, y) position, name and life.</li>
+                    <li><code>decreaseLife(delta)</code> - decrease the life of the object by <code>delta</code>. The
+                        life does not go lower than zero.
+                    </li>
+                    <li><code>move(deltaX, deltaY)</code> - change the (x,y) position of the object by
+                        <code>deltaX</code> and <code>deltaY</code>.
+                    </li>
+                    <li><code>isAlive()</code> - returns true when the value of the <code>life</code> property is
+                        positive.
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Solution</h2>
+        <p>You can find a solution <a href="../../exercise-solutions/ex13.3-creating-objects">here</a>.
+        </p>
+    </section>
+</article>
+
+
+</body>
+</html>

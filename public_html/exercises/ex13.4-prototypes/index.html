@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 13.4: Prototypes</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+</head>
+<body>
+
+<article>
+    <section>
+        <h1>Exercise 13.4</h1>
+        <p>This is Exercise 13.4, lecture on prototype-based programming in Javascript, used in the course
+            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+            at NTNU, campus Aalesund.
+        </p>
+        <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+
+        <h2>Purpose</h2>
+        <p>The purpose of the exercise is practice creating objects with prototypes.
+        </p>
+    </section>
+
+    <section>
+        <h2>Instructions</h2>
+        <p>Create a new HTML document, and include a Javascript file called <code>app.js</code>. Use that file to create
+            the following:</p>
+        <ol>
+            <li>Create an object called <code>Vehicle</code>. Add three properties for it: <code>maxSpeed</code>,
+                <code>color</code> and <code>model</code>. Set default values of your own choice to them.
+            </li>
+            <li>Add a method named <code>drive(speed)</code> for the <code>Vehicle</code> object. This method should
+                print <code>"M of C color driving at S km/h!"</code> if the speed does not exceed max speed for the
+                vehicle. Replace <code>M</code> with vehicle's
+                model, <code>C</code> with it's color and S with the <code>speed</code> parameter passed to the
+                function. If the given <code>speed</code> exceeds the max speed of the vehicle, print a message
+                <code>"Sorry, M of C color can't go that fast"</code>.
+            </li>
+            <li>Create an object called <code>Car</code>. Set <code>Vehicle</code> as the prototype for
+                <code>Car</code> object.
+            </li>
+            <li> Add a new property to it: <code>numberOfSeats</code>, and a method:
+                <code>canSeat(numberOfPersons)</code> - it should return true, if <code>numberOfPersons</code> people
+                can sit in the car at the same time (legally, not how many can
+                <a href="https://www.youtube.com/watch?v=o_4XIKBTYNA">physically fit in there</a>).
+            </li>
+            <li>Create an object called <code>redPorsche</code>. Set <code>Car</code> as its prototype. Set the model,
+                color and top speed accordingly.
+            </li>
+            <li>Call method <code>.drive(200)</code> for the <code>redPorsche</code> object. Do you see the output in
+                the console?
+            </li>
+            <li>Add a new property for the <code>Vehicle</code> object: <code>numberOfWheels=4</code>.</li>
+            <li>Print <code>redPorsche.numberOfWheels</code> in the console. What value do you get? You did not
+                set number of wheels on the Porsche, how did the <code>redPorsche</code> object get access to the
+                property?
+            </li>
+            <li>Create a new object called <code>bike</code>. Set <code>Vehicle</code> as the prototype for it.</li>
+            <li>Set <code>bike.numberOfWheels = 2</code>.</li>
+            <li>Now print <code>Vehicle.numberOfWheels</code> in the console. Then print
+                <code>redPorsche.numberOfWheels</code> and <code>bike.numberOfWheels</code> in the console. Try to
+                understand why you got these results!
+            </li>
+            <li>Inspect the <code>bike</code> object in the console (you can simply type <code>bike</code> in the
+                console). What prototype does it have? What is the prototype of the prototype? Also, pay attention to
+                <code>numberOfWheels</code> (this is one notable difference from Java!).
+            </li>
+
+        </ol>
+    </section>
+
+    <section>
+        <h2>Solution</h2>
+        <p>You can find a solution in
+            <a href="../../exercise-solutions/ex13.4-prototypes"><code>../solutions/ex15-solution.html</code></a>.
+        </p>
+    </section>
+</article>
+
+
+</body>
+</html>

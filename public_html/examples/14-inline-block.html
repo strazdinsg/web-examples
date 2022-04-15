@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Block and inline boxes</title>
+    <style>
+        html {
+            font-size: 62.5%; /* Reset 1 rem to 10px */
+        }
+
+        div {
+            font-size: 2rem;
+            background-color: #59b1de;
+            padding: 2rem;
+            margin: 3rem;
+            width: 30rem;
+            height: 20rem;
+            border: 0.5rem solid green;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .inline {
+            display: inline;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="block">This element is defined as a block-level box. We can
+    specify width and
+    height for it.
+</div>
+
+<div class="inline">This element is defined as an inline element.
+</div>
+<div class="inline">Inline element again.</div>
+<div class="inline">Inline element again.</div>
+<div class="inline">Inline element again.</div>
+<div class="block">This element is block element.</div>
+<div class="inline-block">Inline-block element.</div>
+<div class="inline-block">Inline-block element.</div>
+<div class="inline-block">Inline-block element.</div>
+
+
+</body>
+</html>

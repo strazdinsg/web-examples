@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 10.1: Hello, Javascript!</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+</head>
+<body>
+
+<article>
+    <h1>Exercise 10.1</h1>
+    <p>This is Exercise 10.1, lecture on Javascript basics, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+        at NTNU, campus Aalesund.
+    </p>
+    <p>Go <a href="../..">back to exercise list</a>.</p>
+
+    <h2>Purpose</h2>
+    <p>The purpose of the exercise is to try javascript in several ways: to run a JS code in the console, to include
+        inline <code>&lt;script&gt;</code> block, and to include an external <code>.js</code> file.
+    </p>
+
+    <h2>Instructions</h2>
+    <h3>Step 1</h3>
+    <p>Try JS in the console:</p>
+    <ol>
+        <li>Open Developer tool console in your browser (Ctrl+Shift+J in Chrome)</li>
+        <li>Type the following command in the console: <code>console.log("Hello, Javascript");</code></li>
+        <li>You should see the text appearing in the console.</li>
+        <li>Now try to set value for two variables a=2 and b=3, and then print out a+b in the console.</li>
+    </ol>
+
+    <h3>Step 2</h3>
+    <p>Now let’s try to execute inline Javascript in HTML. Create a new HTML document, and create the
+        following block in the <code>head</code> section:</p>
+    <pre>
+        &lt;script type="application/javascript"&gt;
+            a = 2;
+            b = 3;
+            console.log("The sum of a + b is", a + b)
+        &lt;/script&gt;
+    </pre>
+
+    <p>
+        Open the file in the browser and look into the console. Do you see the output there?
+        Now put another <code>&lt;script&gt;</code> block inside the <code>body</code> part of the document:</p>
+    <pre>
+        &lt;script type="application/javascript"&gt;
+            b = 12;
+            console.log("Now (in the body) the sum of a + b is", a + b)
+        &lt;/script&gt;
+    </pre>
+    <p>What output do you see now in the console, if you refresh the page in the browser?</p>
+
+    <h3>Step 3</h3>
+    <p>Now let’s try to include an external JS file. Create a file <code>hello.js</code>, save it in the same folder
+        where you have the HTML file. Place the following code in the <code>hello.js</code> file:
+    <pre>
+        a = 4;
+        console.log("a times b is", a * b);
+    </pre>
+    <p>In the <code>head</code> section include an external Javascript file. You do that by inserting the following line
+        of code <u>after</u> the existing inline <code>&lt;script&gt;</code>
+        block:</p>
+    <code>
+        &lt;script type="application/javascript" src="hello.js"&gt;&lt;/script&gt;
+    </code>
+
+    <p>What happens if you move the import of the <code>hello.js</code> file <u>before</u> the inline-script block (the
+        one you created in step 2)? Try that! Hint: you will see what happens when you try to use an unknown variable in
+        Javascript.</p>
+
+    <h2>Solution</h2>
+    <p>You can find a solution for steps 2 and 3 in <a href="../../exercise-solutions/ex10.1-hello-js/">here</a>.
+    </p>
+
+</article>
+
+
+</body>
+</html>

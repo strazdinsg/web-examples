@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 6.3 - Flexible Image gallery!</title>
+    <link rel="stylesheet" href="../../base-style.css"/>
+</head>
+
+<body>
+
+<article>
+    <h1>Exercise 6.3</h1>
+    <p>This is Exercise #6.3, lecture on CSS Flexbox, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web
+            technologies</a> at NTNU, campus Aalesund.
+    </p>
+    <p>Go <a href="../..">back to exercise list</a>.</p>
+
+    <h2>Purpose</h2>
+    <p>The purpose of the exercise is to practice configuring container
+        properties for CSS flexbox. You may need to set some properties for the
+        images, but no <code>flexbox-item</code> properties.
+    </p>
+
+    <h2>Instructions</h2>
+    <p>Use this document as a template. You see a set of images below. Configure
+        the following behaviour for the flexbox container:
+    </p>
+    <ol>
+        <li>The images should be in a flexbox container.</li>
+        <li>Each image should be 200px wide and 150px high.</li>
+        <li>The container should fill the whole width of the page, with 50px
+            margins on the sides.
+        </li>
+        <li>The container should not shrink to less than 500px horizontally
+            (hint: <code>min-width</code> property).
+        </li>
+        <li>The container should be 800px high.</li>
+        <li>The images should be laid out horizontally and have equal spacing
+            between them
+            and on the sides.
+        </li>
+        <li>If there is not enough space to lay out the images in a single row,
+            the gallery
+            should have an "automatic wrapping" - the images should be wrapped
+            to a new line.
+        </li>
+        <li>The images should be centered vertically within the container. Add
+            some border to the
+            container to see that they are centered.
+        </li>
+        <li>The images should have a minimum margin of 20px. I.e., there could
+            be more space between
+            each two the images, but no less than 2*20px.
+        </li>
+    </ol>
+
+    <p>The following CSS properties may be handy (for the container):</p>
+    <pre><code>
+        display: flex;
+        justify-content
+        align-content
+        flex-wrap
+    </code></pre>
+
+    <p>Here you can see an example of how the gallery could look on a wide
+        screen:</p>
+    <img src="img/gallery-preview01.jpg"
+         alt="Five images laid out on a single row"/>
+    <p>And this is how it could look on a narrow screen:</p>
+    <img src="img/gallery-preview02.jpg"
+         alt="Five images laid out on three rows: two, two and one on each row"/>
+
+    <h2>Extra challenge</h2>
+    <p>If you are done with the exercise too fast and want extra challenge, you
+        can practice CSS: add some fancy effects, such as shadows, hover
+        effects,
+        <a href="https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/">a
+            picture
+            frame</a>,
+        or even a <a href="https://codepen.io/chris22smith/pen/PbBwjp">very
+            fancy frame</a>.
+    </p>
+
+
+    <h2>Template</h2>
+    <p>Start with this file as a template. It should be enough by creating only
+        the CSS style, the HTML elements are in place already.</p>
+    <h3>The gallery</h3>
+    <div id="gallery-container">
+        <img src="https://picsum.photos/400/300?random_index=1"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=2"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=3"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=4"
+             alt="Random picture">
+        <img src="https://picsum.photos/400/300?random_index=5"
+             alt="Random picture">
+    </div>
+
+    <h2>Solution</h2>
+    <p><strong>Warning!</strong> Give the exercise a try before you look at a
+        solution! That way you will learn much more!</p>
+    <p>You can find a solution in <a
+            href="../../exercise-solutions/ex06.3-flexbox-gallery">
+        <code>../../exercise-solutions/ex06.3-flexbox-gallery</code></a>.
+    </p>
+
+</article>
+
+</body>
+</html>
