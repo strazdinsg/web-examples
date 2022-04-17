@@ -1,0 +1,42 @@
+/* Styles for the navigation bar */
+nav ul {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+nav li {
+    list-style-type: none;
+    padding: 2rem 4rem;
+    cursor: pointer;
+}
+
+.dark-theme-switch {
+    margin-right: 0.8rem;
+    margin-top: 0;
+}
+
+/* Themed colors */
+nav ul.dark {
+    background-color: #444;
+}
+
+nav ul.light, nav li.light {
+    background-color: #003c77;
+    color: white;
+}
+
+li.light:hover, li.light.selected:hover {
+    background-color: #0071e0;
+}
+
+li.light.selected {
+    background-color: #004894;
+}
+
+li.dark.selected {
+    background-color: #666;
+}
+
+li.dark:hover, li.dark.selected:hover {
+    background-color: #999;
+}
