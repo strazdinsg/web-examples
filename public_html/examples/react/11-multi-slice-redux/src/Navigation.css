@@ -1,0 +1,25 @@
+/* Styles for the navigation bar */
+nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #003c77;
+    color: white;
+}
+nav li {
+    list-style-type: none;
+    padding: 2rem 4rem;
+    cursor: pointer;
+}
+
+li:hover, li.selected:hover {
+    background-color: #0071e0;
+}
+
+li.selected {
+    background-color: #004894;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
