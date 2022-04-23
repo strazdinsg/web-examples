@@ -1,0 +1,19 @@
+/* Styles for the AddToCartButton */
+.add-to-cart-button {
+    position: absolute;
+    bottom: 2rem;
+    width: 21rem;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    background-color: #eee;
+    border: 1px solid darkgray;
+    left: 2rem;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+    color: white;
+    background-color: #003c77;
+    border-color: white;
+}

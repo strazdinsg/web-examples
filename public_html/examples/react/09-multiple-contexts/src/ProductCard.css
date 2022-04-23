@@ -1,0 +1,56 @@
+/* Styles for a product card */
+.product-card {
+    margin: 4rem 2rem;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 25rem;
+    height: 40rem;
+    transition-duration: 0.5s;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.product-card.light {
+    box-shadow: 0 0 2rem 0 rgba(100, 100, 100, 0.2);
+}
+
+.product-card.dark {
+    box-shadow: 0 0 2rem 0 rgba(200, 200, 200, 0.2);
+}
+
+.product-card-image {
+    height: 15rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.product-card-image img {
+    height: 100%;
+    margin: auto;
+}
+
+
+.product-card-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 2rem;
+}
+
+.product-card-description {
+    margin: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 4rem 0 rgba(100, 100, 150, 0.4);
+    transform: translateY(-0.5rem);
+}
+
+.product-card-price {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    color: #666;
+}
