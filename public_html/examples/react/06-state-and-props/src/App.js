@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Navigation} from "./Navigation";
 import {ProductGrid} from "./ProductGrid";
 
@@ -35,7 +35,7 @@ const PRODUCT_LOAD_TIMEOUT = 3000;
 export function App() {
     const [products, setProducts] = useState([]);
 
-    loadProducts(); // Start loading products at startup
+    useEffect(() => loadProducts()); // Load products at startup
 
     return (
         <>
@@ -50,7 +50,10 @@ export function App() {
      * Pretend that we are loading products
      */
     function loadProducts() {
-        setTimeout(setFakeProducts, PRODUCT_LOAD_TIMEOUT);
+        if (products.length === 0) {
+            console.log("Load products");
+            setTimeout(setFakeProducts, PRODUCT_LOAD_TIMEOUT);
+        }
     }
 
     /**
