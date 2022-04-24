@@ -35,7 +35,8 @@ const PRODUCT_LOAD_TIMEOUT = 3000;
 export function App() {
     const [products, setProducts] = useState([]);
 
-    useEffect(() => loadProducts()); // Load products at startup
+    // Call loadProducts() on every re-render of the component (including the first one)
+    useEffect(loadProducts);
 
     return (
         <>
@@ -51,8 +52,10 @@ export function App() {
      */
     function loadProducts() {
         if (products.length === 0) {
-            console.log("Load products");
+            console.log("Loading products...");
             setTimeout(setFakeProducts, PRODUCT_LOAD_TIMEOUT);
+        } else {
+            console.log("loadProducts() called (again), but we don't fetch the data again");
         }
     }
 

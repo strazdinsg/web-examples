@@ -14,7 +14,7 @@ export function App() {
 
     return (
         <main>
-            <h1>Managed component example</h1>
+            <h1>Controlled component example</h1>
             <p>This application shows how a React component can synchronize state with an HTML element. Try to update
                 the name or email in the input fields.</p>
             <h2>Hi, {name}!</h2>
