@@ -1,4 +1,4 @@
-# State nad props example
+# State and props example
 
 A React project showing using state and props - products stored as state for the application, propagated down to all
 child components as props.
