@@ -1,6 +1,6 @@
 import {Navigation} from "./Navigation";
 import {ProductContext} from "./ProductContext";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {MainSection} from "./MainSection";
 
 // Pretend that these products are loaded from a backend
@@ -36,7 +36,13 @@ const PRODUCT_LOAD_TIMEOUT = 3000;
 export function App() {
     const [products, setProducts] = useState([]);
 
-    loadProducts(); // Start loading products at startup
+    // This effect is called every time when the component is updated and (re)mounted
+    // Therefore we need to do a check before re-loading products every time
+    useEffect(() => {
+        if (products.length === 0) {
+            loadProducts();
+        }
+    });
 
     // We wrap the application in a ProductContext and bind the products from the App's state to the products
     // inside the ProductContext
@@ -51,6 +57,7 @@ export function App() {
      * Pretend that we are loading products
      */
     function loadProducts() {
+        console.log("Loading products...");
         setTimeout(setFakeProducts, PRODUCT_LOAD_TIMEOUT);
     }
 

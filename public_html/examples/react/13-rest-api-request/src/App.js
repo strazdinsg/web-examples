@@ -13,7 +13,13 @@ export function App() {
     // we want to keep this example simple
     const [products, setProducts] = useState([]);
 
-    useEffect(() => loadProducts()); // Load products at startup
+    // This effect is called every time when the component is updated and (re)mounted
+    // Therefore we need to do a check before re-loading products every time
+    useEffect(() => {
+        if (products.length === 0) {
+            loadProducts();
+        }
+    });
 
     return (
         <>
@@ -28,11 +34,8 @@ export function App() {
      * Pretend that we are loading products
      */
     function loadProducts() {
-        // Only send request once, when no products are loaded. Otherwise, we get a never-ending fetch+update loop
-        if (products.length === 0) {
-            sendApiRequest("GET", "/products", function (p) {
-                setProducts(p);
-            });
-        }
+        sendApiRequest("GET", "/products", function (p) {
+            setProducts(p);
+        });
     }
 }

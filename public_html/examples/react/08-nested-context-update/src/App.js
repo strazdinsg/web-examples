@@ -16,6 +16,7 @@ export function App() {
     const [products, setProducts] = useState([]);
 
     // This effect is called every time when the component is updated and (re)mounted
+    // Therefore we need to do a check before re-loading products every time
     useEffect(() => {
         if (products.length === 0) {
             loadProducts();
