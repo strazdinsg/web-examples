@@ -18,7 +18,6 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
  * @param errorCallback A function called when the response code is not 200
  */
 export function sendApiRequest(method, url, callback, requestBody, errorCallback) {
-    console.log("base url: " + API_BASE_URL);
     const request = new XMLHttpRequest();
     request.onload = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
@@ -35,7 +34,9 @@ export function sendApiRequest(method, url, callback, requestBody, errorCallback
             }
         }
     };
-    request.open(method, API_BASE_URL + url);
+    const fullUrl = API_BASE_URL + url;
+    console.log("Sending request to " + fullUrl);
+    request.open(method, fullUrl);
 
     // Set JWT token, if it is stored in a cookie
     const jwtToken = getCookie("jwt");
