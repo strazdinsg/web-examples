@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {Navigation} from "./Navigation";
-import {ProductGrid} from "./ProductGrid";
+import {MainPage} from "./MainPage";
 
 // Pretend that these products are loaded from a backend
 const FAKE_PRODUCTS = [
@@ -40,10 +40,8 @@ export function App() {
 
     return (
         <>
-            <Navigation/>
-            <main>
-                <ProductGrid products={products}/>
-            </main>
+            <Navigation products={products}/>
+            <MainPage products={products}/>
         </>
     );
 
