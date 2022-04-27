@@ -27,8 +27,7 @@ export function App() {
     return (
         <ProductContext.Provider value={{products: products, handleDelete: deleteProduct}}>
             <Navigation/>
-            <MainSection>
-            </MainSection>
+            <MainSection/>
         </ProductContext.Provider>
     );
 
