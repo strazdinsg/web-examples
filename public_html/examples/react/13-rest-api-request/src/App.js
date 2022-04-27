@@ -12,6 +12,7 @@ export function App() {
     // Store the products in the state of the App component. It would be better to save it in Redux store, but
     // we want to keep this example simple
     const [products, setProducts] = useState([]);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     // This effect is called every time when the component is updated and (re)mounted
     // Therefore we need to do a check before re-loading products every time
@@ -25,7 +26,7 @@ export function App() {
         <>
             <Navigation/>
             <main>
-                <ProductGrid products={products}/>
+                <ProductGrid products={products} errorMessage={errorMessage}/>
             </main>
         </>
     );
@@ -36,6 +37,10 @@ export function App() {
     function loadProducts() {
         sendApiRequest("GET", "/products", function (p) {
             setProducts(p);
-        });
+        }, null, onProductLoadError);
+    }
+
+    function onProductLoadError() {
+        setErrorMessage("Could not receive products from the backend API!");
     }
 }

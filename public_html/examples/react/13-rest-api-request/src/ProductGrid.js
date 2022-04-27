@@ -14,6 +14,8 @@ export function ProductGrid(props) {
                 product => <ProductCard product={product} key={product.id}/>
             )}
         </div>;
+    } else if (props.errorMessage) {
+        return <p className="error">{props.errorMessage}</p>;
     } else {
         return <p className="loading">Loading products...</p>;
     }
