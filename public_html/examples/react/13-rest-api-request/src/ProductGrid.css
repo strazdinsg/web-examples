@@ -8,7 +8,15 @@
 }
 
 .loading {
-    text-align: center;
     margin-top: 2rem;
+}
+
+.loading, .error {
+    text-align: center;
     font-size: 2rem;
+}
+
+.error {
+    background-color: #ffd5d5;
+    padding: 2rem;
 }

@@ -16,11 +16,12 @@ const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
  * @param url relative URL of the API endpoint
  * @param callback Callback function to call on success, with response data (JSON-decoded) as the parameter
  * @param requestBody When supplied, send this data in the request body. Does not work with HTTP GET!
- * @param errorCallback A function called when the response code is not 200
+ * @param errorCallback A function called when the response code is not 200. Two parameters will be passed
+ * to the function: HTTP response code and response body (as text)
  */
 export function sendApiRequest(method, url, callback, requestBody, errorCallback) {
     const request = new XMLHttpRequest();
-    request.onload = function () {
+    request.onreadystatechange = function () {
         if (request.readyState === XMLHttpRequest.DONE) {
             if (request.status === 200) {
                 let responseJson = "";
@@ -29,7 +30,7 @@ export function sendApiRequest(method, url, callback, requestBody, errorCallback
                 }
                 callback(responseJson);
             } else if (errorCallback) {
-                errorCallback(request.responseText);
+                errorCallback(request.status, request.responseText);
             } else {
                 console.error("Error in API request");
             }
