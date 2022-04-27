@@ -1,0 +1,18 @@
+/* Styles for the ProductDeleteButton */
+button.product-delete {
+    position: absolute;
+    bottom: 2rem;
+    width: 21rem;
+    padding: 1rem 0;
+    border-radius: 0.5rem;
+    border: 1px solid darkgray;
+    left: 2rem;
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+
+button.product-delete:hover {
+    color: white;
+    background-color: #003c77;
+    border-color: white;
+}
