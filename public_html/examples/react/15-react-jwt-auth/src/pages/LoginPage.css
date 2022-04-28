@@ -1,0 +1,15 @@
+/* Styles for login form */
+form {
+    width: 20rem;
+    margin: auto;
+}
+
+input, button {
+    width: 20rem;
+    font-size: 2rem;
+    padding: 0.5rem;
+    margin: 1rem 0 0 0;
+}
+.sr-only {
+    display: none;
+}
