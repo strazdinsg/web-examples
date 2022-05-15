@@ -3,9 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Exam questions</title>
+    <link rel="stylesheet" href="../base-style.css"/>
+    <link rel="stylesheet" href="exam-style.css"/>
+    <script type="application/javascript" src="exam-questions.js"></script>
+    <script type="application/javascript" src="exam-functions.js"></script>
 </head>
 <body>
-<img src="cowboy_hat.jpg"
-     alt="A cowboy hat hanging on a log. Those careful enough will notice a very subtle engraving on its inside saying `I'll be back! -- Chuck`">
+
+<article id="exam-question-set">
+    <h1>Randomizer</h1>
+    <p>Here you can generate a random question set.</p>
+    <div>
+        <div id="language-selector-section">
+            <span>Language:</span>
+            <label>
+                <input class="language-selector" type="radio" name="language" checked value="english"/>
+                English
+            </label>
+            <label>
+                <input class="language-selector" type="radio" name="language" value="norsk"/>
+                Norsk
+            </label>
+        </div>
+    </div>
+
+    <div>
+        <label for="question-selector">Question chosen by the student:</label>
+        <select id="question-selector">
+            <option value="0">Pick a question...</option>
+        </select>
+    </div>
+    <button id="roll-exam-dice">Roll dice</button>
+
+    <h2>Question set</h2>
+    <table id="question-set">
+        <thead>
+        <tr>
+            <th>Category</th>
+            <th>#</th>
+            <th>Question</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Loading...</td>
+        </tr>
+        </tbody>
+    </table>
+</article>
+
+<article id="all-exam-questions">
+    <h1>All questions</h1>
+    <p>Here are all the exam questions, categorized in sections. You can use this list when learning for the exam.</p>
+    <span id="questions-loading">Loading...</span>
+</article>
+
 </body>
 </html>

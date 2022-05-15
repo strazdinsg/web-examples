@@ -19,8 +19,12 @@ p {
     margin-top: 0;
 }
 
-p, li, pre, code, label {
+p, li, pre, code, label, select, option, optgroup, input, span, table {
     font-size: 1.6rem;
+}
+
+select {
+    font-family: 'Poppins', sans-serif;
 }
 
 p:first-letter {
