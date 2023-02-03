@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ex 6.3 Solution: HTML form</title>
+</head>
+<body>
+
+<h1>Checkout</h1>
+<p>Product: Learning Web design, 5th Edition (440 NOK)</p>
+<p>Enter the necessary details below.</p>
+<form action="http://webtek.datakomm.work:8080/checkout" method="post">
+  <label>
+    Your name:
+    <input name="name" type="text" placeholder="Firstname Lastname">
+  </label>
+  <br>
+  <label>
+    Address:
+    <input name="address" type="text" placeholder="">
+  </label>
+  <br>
+  <label>
+    Email:
+    <input name="email" type="email" placeholder="chuck@noreply.com">
+  </label>
+  <br>
+  <label>
+        <textarea name="comment" rows="5" cols="50"
+                  placeholder="Your comments here"></textarea>
+  </label>
+  <br>
+  <input type="hidden" name="productTitle" value="Learning Web Design, 5th Edition">
+  <input type="hidden" name="productPrice" value="440">
+  <input type="submit" value="Place the order">
+</form>
+
+</body>
+</html>
