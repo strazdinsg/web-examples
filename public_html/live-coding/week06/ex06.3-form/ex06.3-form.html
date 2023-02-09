@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Checkout form</title>
+  </head>
+  <body>
+    <h1>Checkout</h1>
+    <p>Product: Learning Web Design, 5th Edition (440 NOK).</p>
+    <p>Enter the necessary details below.</p>
+
+    <form method="post" action="http://webtek.datakomm.work:8080/checkout">
+      <label>
+        Your name:
+        <input name="name" type="text" placeholder="Firstname Lastname" />
+      </label>
+      <br />
+      <label>
+        Shipping address:
+        <input name="address" type="text" placeholder="Address" />
+      </label>
+      <br />
+      <label>
+        Your email:
+        <input name="email" type="email" />
+      </label>
+      <br />
+      <label>
+        Any comments?
+        <textarea name="comment" placeholder="Send us a message"></textarea>
+      </label>
+      <input
+        type="hidden"
+        name="productTitle"
+        value="Learning Web Design, 5th Edition"
+      />
+      <input type="hidden" name="productPrice" value="440" />
+      <input type="submit" value="Place the order" />
+    </form>
+  </body>
+</html>
