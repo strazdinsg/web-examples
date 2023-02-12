@@ -1,0 +1,35 @@
+/* Don't modify these styles! Go to colors.css */
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+main {
+  min-width: 1200px;
+}
+
+#heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#globe-container {
+  height: 480px;
+  width: 480px;
+}
+
+#content,
+aside {
+  max-width: 1200px;
+  margin: auto;
+}
