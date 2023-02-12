@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Ex 6.2 - Image alternatives</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <picture>
+      <source media="(max-width: 640px)" srcset="images/bird-cropped.jpg" />
+      <source
+        type="image/webp"
+        srcset="images/bird-2400.webp 2400w, images/bird-1200.webp 1200w"
+      />
+      <source
+        type="image/jpeg"
+        srcset="images/bird-2400.jpg 2400w, images/bird-1200.jpg 1200w"
+      />
+      <img
+        src="images/bird-1200.jpg"
+        alt="a bird sitting on a branch with yellow leaves around it"
+      />
+    </picture>
+
+    <h1>Pictures are nice!</h1>
+  </body>
+</html>
