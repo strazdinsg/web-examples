@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+html {
+  font-family: Roboto, sans-serif;
+  /*font-size: 62.5%;*/
+}
+
+aside p {
+  color: green;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+#first-section > p {
+  text-decoration: underline;
+}
+
+h1,
+h2 {
+  font-style: italic;
+}
+
+.small {
+  font-variant: small-caps;
+}
+
+#comment {
+  background-color: lightblue;
+}
+
+#first-section ul {
+  list-style-type: none;
+}
