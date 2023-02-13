@@ -60,3 +60,7 @@ code, pre {
 ol {
     margin-top: 0.2em;
 }
+
+.yellow-bg {
+    background-color: yellow;
+}
