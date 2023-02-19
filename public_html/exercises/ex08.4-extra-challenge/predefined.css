@@ -1,0 +1,71 @@
+/* You should not change anything here */
+
+html {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ----------------------------------------------
+   Sizing, padding. Styles not related to shadows
+   ---------------------------------------------- */
+html {
+  /* Reset 1 rem to 10px */
+  font-size: 62.5%;
+  font-family: sans-serif;
+  padding: 2rem 4rem;
+}
+
+main {
+  min-width: 80rem;
+}
+
+h1 {
+  font-size: 4.8rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 2.6rem;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.card {
+  margin: 4rem;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  width: 25rem;
+  height: 40rem;
+  box-shadow: 0 0 2rem 0 rgba(100, 100, 100, 0.2);
+}
+
+.card img {
+  height: 15rem;
+}
+
+.card-description {
+  margin: 2rem;
+}
+
+.card-description p {
+  font-size: 1.6rem;
+}
+
+.tag {
+  background-color: yellow;
+  padding: 0.5rem 2rem;
+  font-variant: small-caps;
+  width: 5rem;
+  text-align: center;
+  font-size: 2rem;
+}
