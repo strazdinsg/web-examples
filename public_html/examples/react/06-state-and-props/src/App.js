@@ -37,6 +37,8 @@ export function App() {
 
     // Call loadProducts() on every re-render of the component (including the first one)
     useEffect(loadProducts);
+    // Alternatively, we could include [] as a dependency. This would mean that loadProducts would be called only once
+    // useEffect(loadProducts, []);
 
     return (
         <>
