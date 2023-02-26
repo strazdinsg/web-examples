@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solution for Exercise 9.5 - Static grid</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+    <style>
+      /* -------------------------------
+    The solution STYLES HERE!!!
+    ---------------------------------- */
+      #main-grid {
+        display: grid;
+        grid-template-rows: 20rem 1fr 10rem;
+        grid-template-columns: 20rem auto;
+      }
+
+      /* --- EOF Solution styles --- */
+
+      /* Not necessary to change these styles! */
+      #main-column {
+        max-width: 100rem;
+        min-width: 40rem;
+        margin: auto;
+        border: 3px dashed lightblue;
+      }
+
+      #main-grid {
+        height: 60rem;
+        font-size: 1.6rem;
+      }
+
+      .item {
+        background-color: lightblue;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <h1>Solution for Exercise 9.5</h1>
+      <p>
+        This is a solution for
+        <a href="../../exercises/ex09.5-static-grid">Exercise 9.5</a>.
+      </p>
+
+      <!-- Don't change this div! -->
+      <div id="main-column">
+        <!-- Make this div to a grid container! -->
+        <div id="main-grid">
+          <!-- Here are the grid items, you should not change anything for these! -->
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>
