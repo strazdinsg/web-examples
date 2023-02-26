@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solution for Exercise 9.1 - Hello, Flexbox!</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+    <link
+      rel="stylesheet"
+      href="../../exercises/ex09.1-hello-flexbox/starter-style.css"
+    />
+  </head>
+  <style>
+    /*
+---------------------------------------
+Solution for the first part
+---------------------------------------
+*/
+    .container {
+      display: flex;
+    }
+    /*
+---------------------------------------
+Solution for the second part
+---------------------------------------
+*/
+    #second-container {
+      flex-direction: row-reverse;
+    }
+  </style>
+
+  <body>
+    <article>
+      <h1>Solution for Exercise 9.1</h1>
+      <p>
+        This is a solution for
+        <a href="../../exercises/ex09.1-hello-flexbox/index.html"
+          >Exercise 9.1</a
+        >.
+      </p>
+
+      <h2>Solution for the first part</h2>
+      <div class="container" id="first-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+      </div>
+
+      <h2>Solution for the second part</h2>
+      <div class="container" id="second-container">
+        <div id="item1">1</div>
+        <div id="item2">2</div>
+        <div id="item3">3</div>
+        <div id="item4">4</div>
+        <div id="item5">5</div>
+      </div>
+    </article>
+  </body>
+</html>
