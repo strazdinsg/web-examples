@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solution for Exercise 9.3 - Flexbox navigation</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <style>
+    /* Remove whitespace for the body */
+    * {
+      margin: 0;
+    }
+
+    /* Configure the colors */
+    #menu-flexbox {
+      background-color: #272834;
+      color: white;
+    }
+
+    /* Size the logo image. Make it a block-element to remove
+       the annoying space. */
+    #logo-image {
+      height: 3rem;
+      display: block;
+    }
+
+    /* Remove the bullets and their space for all li items inside navigation */
+    nav li {
+      list-style-type: none;
+      padding-inline-start: 0;
+    }
+
+    /* This is the main flexbox holding the navigation items. */
+    #menu-flexbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 65rem;
+    }
+
+    /* Set some spacing around all items in the navigation */
+    #menu-flexbox > li {
+      margin: 2rem;
+    }
+
+    /* Set a double margin for the last menu item so that it looks symmetric */
+    #menu-flexbox > li:last-child {
+      margin-right: 4rem;
+    }
+
+    /* The logo says "hey, fill all the space on my right with a margin".
+    This effectively moves the logo to the left and all menu items to the right. */
+    li#logo-item {
+      margin-right: auto;
+    }
+
+    article {
+      margin: 2rem;
+    }
+  </style>
+
+  <body>
+    <nav>
+      <ul id="menu-flexbox">
+        <li id="logo-item">
+          <img src="img/ntnu_logo.png" alt="NTNU logo" id="logo-image" />
+        </li>
+        <li>Studies</li>
+        <li>Research</li>
+        <li>Administration</li>
+      </ul>
+    </nav>
+
+    <article>
+      <h1>Solution for Exercise 9.3</h1>
+      <p>
+        This is a solution for
+        <a href="../../exercises/ex09.3-flexbox-navigation/index.html"
+          >Exercise 9.3</a
+        >. Look at the source: the <code>&lt;nav&gt;</code> element and the
+        <code>&lt;style&gt;</code> block.
+      </p>
+    </article>
+  </body>
+</html>
