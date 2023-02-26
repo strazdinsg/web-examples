@@ -1,15 +1,14 @@
-import {createContext} from "react";
+import { createContext } from "react";
 
 export const lightTheme = {
-    "themeClass": "light"
+  themeClass: "light",
 };
 
 export const darkTheme = {
-    "themeClass": "dark"
+  themeClass: "dark",
 };
 
-
 export const ThemeContext = createContext({
-    theme: lightTheme, toggleTheme: function () {
-    }
+  theme: lightTheme,
+  toggleTheme: function () {},
 });

@@ -1,6 +1,6 @@
-import {Navigation} from "./navigation/Navigation";
-import {MainSection} from "./MainSection";
-import {BrowserRouter as Router} from "react-router-dom";
+import { Navigation } from "./navigation/Navigation";
+import { MainSection } from "./MainSection";
+import { BrowserRouter as Router } from "react-router-dom";
 
 /**
  * A component representing the whole application
@@ -8,10 +8,10 @@ import {BrowserRouter as Router} from "react-router-dom";
  * @constructor
  */
 export function App() {
-    return (
-        <Router>
-            <Navigation/>
-            <MainSection />
-        </Router>
-    );
+  return (
+    <Router>
+      <Navigation />
+      <MainSection />
+    </Router>
+  );
 }

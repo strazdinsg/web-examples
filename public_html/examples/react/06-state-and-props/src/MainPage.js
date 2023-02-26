@@ -1,4 +1,4 @@
-import {ProductGrid} from "./ProductGrid";
+import { ProductGrid } from "./ProductGrid";
 
 /**
  * Component representing the main page
@@ -7,7 +7,9 @@ import {ProductGrid} from "./ProductGrid";
  * @constructor
  */
 export function MainPage(props) {
-    return <main>
-        <ProductGrid products={props.products}/>
-    </main>;
+  return (
+    <main>
+      <ProductGrid products={props.products} />
+    </main>
+  );
 }

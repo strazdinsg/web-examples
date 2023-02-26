@@ -1,4 +1,4 @@
-import "./ProductDeleteButton.css"
+import "./ProductDeleteButton.css";
 
 /**
  * Represents the component for deleting the product
@@ -7,5 +7,12 @@ import "./ProductDeleteButton.css"
  * @constructor
  */
 export function ProductDeleteButton(props) {
-    return <button className="product-delete" onClick={() => props.deleteFunction(props.productId)}>Delete</button>;
+  return (
+    <button
+      className="product-delete"
+      onClick={() => props.deleteFunction(props.productId)}
+    >
+      Delete
+    </button>
+  );
 }

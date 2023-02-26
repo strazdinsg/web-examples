@@ -1,5 +1,6 @@
 /* Global styles */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 html {
     font-size: 62.5%; /* Reset 1rem to 10px */
     font-family: 'Roboto', sans-serif;
@@ -41,6 +42,7 @@ nav ul {
     background-color: #003c77;
     color: white;
 }
+
 nav li {
     list-style-type: none;
 }

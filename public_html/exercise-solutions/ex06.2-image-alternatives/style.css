@@ -4,27 +4,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap');
 
 html {
-  text-align: center;
-  font-family: 'Sedgwick Ave', cursive;
+    text-align: center;
+    font-family: 'Sedgwick Ave', cursive;
 }
 
 h1 {
-  font-size: 4rem;
+    font-size: 4rem;
 }
 
 /* Image formatting according to exercise description */
 img {
-  width: 80%;
-  max-width: 75rem;
+    width: 80%;
+    max-width: 75rem;
 }
 
 @media (max-width: 40em) {
-  img {
-    width: 100%;
-  }
+    img {
+        width: 100%;
+    }
 
-  /** Resize the heading font to avoid wrapping */
-  h1 {
-    font-size: 2.5em;
-  }
+    /** Resize the heading font to avoid wrapping */
+    h1 {
+        font-size: 2.5em;
+    }
 }

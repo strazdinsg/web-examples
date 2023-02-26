@@ -1,50 +1,50 @@
 /* Put your styles here according to exercise description */
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1 {
-  font-size: 4.8rem;
+    font-size: 4.8rem;
 }
 
 h2 {
-  font-size: 3.2rem;
+    font-size: 3.2rem;
 }
 
 p {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 body {
-  margin: 2rem;
+    margin: 2rem;
 }
 
 .card {
-  width: 25rem;
-  height: 40rem;
-  margin: 4rem 2rem 0 2rem;
-  border: 1px dashed gray;
-  border-radius: 1rem;
+    width: 25rem;
+    height: 40rem;
+    margin: 4rem 2rem 0 2rem;
+    border: 1px dashed gray;
+    border-radius: 1rem;
 }
 
 .card-description {
-  margin: 1.5rem;
+    margin: 1.5rem;
 }
 
 
 .card {
-  overflow: hidden;
-  box-shadow: 0 0 0.5rem 0 lightgray;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem 0 lightgray;
 }
 
 .highlighted {
-  box-shadow: 0 0 2rem 1rem rgba(200, 200, 200, 0.75);
+    box-shadow: 0 0 2rem 1rem rgba(200, 200, 200, 0.75);
 }
 

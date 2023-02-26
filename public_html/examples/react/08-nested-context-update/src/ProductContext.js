@@ -1,6 +1,6 @@
-import {createContext} from "react";
+import { createContext } from "react";
 
 export const ProductContext = createContext({
-    products: [],
-    handleDelete: function() {}
+  products: [],
+  handleDelete: function () {},
 });

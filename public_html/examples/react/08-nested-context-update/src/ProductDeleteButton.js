@@ -1,6 +1,6 @@
-import "./ProductDeleteButton.css"
-import {useContext} from "react";
-import {ProductContext} from "./ProductContext";
+import "./ProductDeleteButton.css";
+import { useContext } from "react";
+import { ProductContext } from "./ProductContext";
 
 /**
  * Represents the component for deleting the product
@@ -9,8 +9,12 @@ import {ProductContext} from "./ProductContext";
  * @constructor
  */
 export function ProductDeleteButton(props) {
-    const productContext = useContext(ProductContext);
-    const deleteFunction = productContext.handleDelete;
+  const productContext = useContext(ProductContext);
+  const deleteFunction = productContext.handleDelete;
 
-    return <button className="product-delete" onClick={() => deleteFunction(props.id)}>Delete</button>;
+  return (
+    <button className="product-delete" onClick={() => deleteFunction(props.id)}>
+      Delete
+    </button>
+  );
 }

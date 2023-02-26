@@ -1,9 +1,9 @@
-import {useDispatch, useSelector} from "react-redux";
-import {setUser, unsetUser} from "./redux/userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser, unsetUser } from "./redux/userSlice";
 
 const FAKE_USER = {
-    name: "Chuck",
-    email: "microsoft@com.chuck"
+  name: "Chuck",
+  email: "microsoft@com.chuck",
 };
 
 /**
@@ -12,11 +12,11 @@ const FAKE_USER = {
  * @constructor
  */
 export function LogInOutNavItem() {
-    const dispatch = useDispatch();
-    const user = useSelector(state => state.userStore.user);
-    if (user) {
-        return <li onClick={() => dispatch(unsetUser())}>Log out</li>;
-    } else {
-        return <li onClick={() => dispatch(setUser(FAKE_USER))}>Log in</li>;
-    }
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userStore.user);
+  if (user) {
+    return <li onClick={() => dispatch(unsetUser())}>Log out</li>;
+  } else {
+    return <li onClick={() => dispatch(setUser(FAKE_USER))}>Log in</li>;
+  }
 }

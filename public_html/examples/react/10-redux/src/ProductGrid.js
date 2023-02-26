@@ -1,6 +1,6 @@
-import {ProductCard} from "./ProductCard";
-import "./ProductGrid.css"
-import {useSelector} from "react-redux";
+import { ProductCard } from "./ProductCard";
+import "./ProductGrid.css";
+import { useSelector } from "react-redux";
 
 /**
  * Component representing the product grid
@@ -8,12 +8,14 @@ import {useSelector} from "react-redux";
  * @constructor
  */
 export function ProductGrid() {
-    const products = useSelector(state => state.productStore.products);
+  const products = useSelector((state) => state.productStore.products);
 
-    if (products.length > 0) {
-        const cards = products.map(product => <ProductCard product={product} key={product.id}/>);
-        return <div className="product-container">{cards}</div>;
-    } else {
-        return <p className="loading">Loading products...</p>;
-    }
+  if (products.length > 0) {
+    const cards = products.map((product) => (
+      <ProductCard product={product} key={product.id} />
+    ));
+    return <div className="product-container">{cards}</div>;
+  } else {
+    return <p className="loading">Loading products...</p>;
+  }
 }

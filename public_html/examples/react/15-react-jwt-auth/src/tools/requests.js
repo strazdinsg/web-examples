@@ -14,36 +14,36 @@ const API_BASE_URL = process.env.REACT_APP_BASE_URL;
  * @param errorCallback A function called when the response code is not 200
  */
 export function sendApiRequest(method, url, callback, requestBody, errorCallback) {
-    const request = new XMLHttpRequest();
-    request.onreadystatechange = function () {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                let responseJson = "";
-                if (request.responseText) {
-                    responseJson = JSON.parse(request.responseText);
-                }
-                callback(responseJson);
-            } else if (errorCallback) {
-                errorCallback(request.responseText);
-            } else {
-                console.error("Error in API request");
-            }
+  const request = new XMLHttpRequest();
+  request.onreadystatechange = function () {
+    if (request.readyState === XMLHttpRequest.DONE) {
+      if (request.status === 200) {
+        let responseJson = "";
+        if (request.responseText) {
+          responseJson = JSON.parse(request.responseText);
         }
-    };
-    request.open(method, API_BASE_URL + url);
-    const jwtToken = getCookie("jwt");
-    if (jwtToken) {
-        request.setRequestHeader("Authorization", "Bearer " + jwtToken);
+        callback(responseJson);
+      } else if (errorCallback) {
+        errorCallback(request.responseText);
+      } else {
+        console.error("Error in API request");
+      }
     }
-    if (requestBody) {
-        if (method.toLowerCase() !== "get") {
-            request.setRequestHeader('Content-Type', 'application/json');
-            request.send(JSON.stringify(requestBody));
-        } else {
-            console.error("Trying to send request data with HTTP GET, not allowed!")
-            request.send();
-        }
+  };
+  request.open(method, API_BASE_URL + url);
+  const jwtToken = getCookie("jwt");
+  if (jwtToken) {
+    request.setRequestHeader("Authorization", "Bearer " + jwtToken);
+  }
+  if (requestBody) {
+    if (method.toLowerCase() !== "get") {
+      request.setRequestHeader('Content-Type', 'application/json');
+      request.send(JSON.stringify(requestBody));
     } else {
-        request.send();
+      console.error("Trying to send request data with HTTP GET, not allowed!")
+      request.send();
     }
+  } else {
+    request.send();
+  }
 }

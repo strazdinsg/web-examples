@@ -1,4 +1,4 @@
-import {createContext} from "react";
+import { createContext } from "react";
 
 /**
  * Store the products in a globally available context

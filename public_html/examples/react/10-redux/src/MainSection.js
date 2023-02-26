@@ -1,5 +1,5 @@
-import {ProductGrid} from "./ProductGrid";
-import {useSelector} from "react-redux";
+import { ProductGrid } from "./ProductGrid";
+import { useSelector } from "react-redux";
 
 /**
  * Component representing the main section
@@ -7,11 +7,11 @@ import {useSelector} from "react-redux";
  * @constructor
  */
 export function MainSection() {
-    const products = useSelector(state => state.productStore.products);
+  const products = useSelector((state) => state.productStore.products);
 
-    if (products.length > 0) {
-        return <ProductGrid />;
-    } else {
-        return <p className="loading">Loading products...</p>;
-    }
+  if (products.length > 0) {
+    return <ProductGrid />;
+  } else {
+    return <p className="loading">Loading products...</p>;
+  }
 }

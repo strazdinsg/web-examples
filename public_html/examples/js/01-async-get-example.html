@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Async HTTP POST example</title>
-    <link rel="stylesheet" href="../../base-style.css">
+  <meta charset="UTF-8">
+  <title>Async HTTP POST example</title>
+  <link rel="stylesheet" href="../../base-style.css">
 </head>
 <body>
 
 <p>This is an example showing how we can send an asynchronous HTTP GET request in Javascript. We don't process the
-    response, we simply print it in the console. Click be button and look in the console. Check out the source code to
-    understand what is going on!</p>
+  response, we simply print it in the console. Click be button and look in the console. Check out the source code to
+  understand what is going on!</p>
 <button onclick="fetchJoke()">Get a joke</button>
 
 <script>
-    const asyncRequest = new XMLHttpRequest();
-    asyncRequest.onload = onResponseReceived;
+  const asyncRequest = new XMLHttpRequest();
+  asyncRequest.onload = onResponseReceived;
 
-    function fetchJoke() {
-        asyncRequest.open("GET", "https://api.chucknorris.io/jokes/random?category=dev");
-        asyncRequest.send();
-    }
+  function fetchJoke() {
+    asyncRequest.open("GET", "https://api.chucknorris.io/jokes/random?category=dev");
+    asyncRequest.send();
+  }
 
-    function onResponseReceived() {
-        if (asyncRequest.readyState === XMLHttpRequest.DONE) {
-            if (asyncRequest.status === 200) {
-                console.log("Got response:");
-                console.log(asyncRequest.responseText);
-            } else {
-                console.error("Error " + asyncRequest.status);
-            }
-        }
+  function onResponseReceived() {
+    if (asyncRequest.readyState === XMLHttpRequest.DONE) {
+      if (asyncRequest.status === 200) {
+        console.log("Got response:");
+        console.log(asyncRequest.responseText);
+      } else {
+        console.error("Error " + asyncRequest.status);
+      }
     }
+  }
 </script>
 
 </body>

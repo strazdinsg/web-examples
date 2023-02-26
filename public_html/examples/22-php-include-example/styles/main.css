@@ -1,42 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 /************************************
  Resetting the global styles
  ************************************/
 html {
-    font-size: 62.5%; /* Reset 1rem to 10px */
+  font-size: 62.5%; /* Reset 1rem to 10px */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /************************************
  Colors, fonts
  ************************************/
-header, footer {
-    background-color: #58b0dd;
+header,
+footer {
+  background-color: #58b0dd;
 }
 
-nav, aside {
-    background-color: #8e6abd;
+nav,
+aside {
+  background-color: #8e6abd;
 }
 
 main {
-    background-color: #efafb2;
+  background-color: #efafb2;
 }
 
 h1 {
-    font-size: 3.2rem;
-    font-weight: bold;
+  font-size: 3.2rem;
+  font-weight: bold;
 }
 
-p, li {
-    font-size: 2.0rem;
+p,
+li {
+  font-size: 2rem;
 }
 
 html {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }

@@ -1,4 +1,4 @@
-import "./Navigation.css"
+import "./Navigation.css";
 
 /**
  * Represents navigation.
@@ -7,13 +7,13 @@ import "./Navigation.css"
  * @constructor
  */
 export function Navigation() {
-    return (
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li className="selected">Products</li>
-                <li>Profile</li>
-            </ul>
-        </nav>
-    );
+  return (
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li className="selected">Products</li>
+        <li>Profile</li>
+      </ul>
+    </nav>
+  );
 }

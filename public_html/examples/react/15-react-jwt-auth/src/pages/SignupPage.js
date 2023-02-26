@@ -1,47 +1,73 @@
-import {useNavigate} from "react-router-dom";
-import {sendApiRequest} from "../tools/requests";
-import {useState} from "react";
+import { useNavigate } from "react-router-dom";
+import { sendApiRequest } from "../tools/requests";
+import { useState } from "react";
 
 export function SignupPage() {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
-    let errorMessage = null;
-    if (error) {
-        errorMessage = <p className="error">{error}</p>;
-    }
+  let errorMessage = null;
+  if (error) {
+    errorMessage = <p className="error">{error}</p>;
+  }
 
-    return <form>
-        <h2>Sign up</h2>
-        <label className="sr-only" htmlFor="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Username" value={username}
-               onChange={event => setUsername(event.target.value)}/>
-        <label className="sr-only" htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password" value={password}
-               onChange={event => setPassword(event.target.value)}/>
-        {errorMessage}
-        <button id="signup-button" type="submit" onClick={submitForm}>Sign up</button>
-    </form>;
+  return (
+    <form>
+      <h2>Sign up</h2>
+      <label className="sr-only" htmlFor="username">
+        Username
+      </label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        placeholder="Username"
+        value={username}
+        onChange={(event) => setUsername(event.target.value)}
+      />
+      <label className="sr-only" htmlFor="password">
+        Password
+      </label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Password"
+        value={password}
+        onChange={(event) => setPassword(event.target.value)}
+      />
+      {errorMessage}
+      <button id="signup-button" type="submit" onClick={submitForm}>
+        Sign up
+      </button>
+    </form>
+  );
 
-    /**
-     * Submit the sign-up form
-     * @param event
-     */
-    function submitForm(event) {
-        event.preventDefault();
-        const signupData = {
-            "username": username,
-            "password": password
-        };
-        sendApiRequest("POST", "/signup", onSignupSuccess, signupData, errorMessage => setError(errorMessage));
-    }
+  /**
+   * Submit the sign-up form
+   * @param event
+   */
+  function submitForm(event) {
+    event.preventDefault();
+    const signupData = {
+      username: username,
+      password: password,
+    };
+    sendApiRequest(
+      "POST",
+      "/signup",
+      onSignupSuccess,
+      signupData,
+      (errorMessage) => setError(errorMessage)
+    );
+  }
 
-    /**
-     * This function is called when signup was successful
-     */
-    function onSignupSuccess() {
-        navigate("/");
-    }
+  /**
+   * This function is called when signup was successful
+   */
+  function onSignupSuccess() {
+    navigate("/");
+  }
 }

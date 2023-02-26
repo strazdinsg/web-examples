@@ -5,7 +5,7 @@
  * @param name
  */
 export function greet(name) {
-    console.log("Hello, " + name);
+  console.log("Hello, " + name);
 }
 
 /**
@@ -13,7 +13,7 @@ export function greet(name) {
  * @param parentElement The parent element where the time will be shown
  */
 export function appendTime(parentElement) {
-    const timeElem = document.createElement("p");
-    timeElem.innerText = "Time now is " + new Date().toLocaleTimeString();
-    parentElement.appendChild(timeElem);
+  const timeElem = document.createElement("p");
+  timeElem.innerText = "Time now is " + new Date().toLocaleTimeString();
+  parentElement.appendChild(timeElem);
 }

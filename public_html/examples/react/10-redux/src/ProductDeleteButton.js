@@ -1,6 +1,6 @@
-import "./ProductDeleteButton.css"
-import {useDispatch} from "react-redux";
-import {deleteProduct} from "./redux/productSlice";
+import "./ProductDeleteButton.css";
+import { useDispatch } from "react-redux";
+import { deleteProduct } from "./redux/productSlice";
 
 /**
  * Represents the component for deleting the product
@@ -9,7 +9,14 @@ import {deleteProduct} from "./redux/productSlice";
  * @constructor
  */
 export function ProductDeleteButton(props) {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    return <button className="product-delete" onClick={() => dispatch(deleteProduct(props.id))}>Delete</button>;
+  return (
+    <button
+      className="product-delete"
+      onClick={() => dispatch(deleteProduct(props.id))}
+    >
+      Delete
+    </button>
+  );
 }

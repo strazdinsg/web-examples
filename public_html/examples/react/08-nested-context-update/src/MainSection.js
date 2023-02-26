@@ -1,6 +1,6 @@
-import {useContext} from "react";
-import {ProductContext} from "./ProductContext";
-import {ProductGrid} from "./ProductGrid";
+import { useContext } from "react";
+import { ProductContext } from "./ProductContext";
+import { ProductGrid } from "./ProductGrid";
 
 /**
  * Component representing the main section
@@ -8,12 +8,12 @@ import {ProductGrid} from "./ProductGrid";
  * @constructor
  */
 export function MainSection() {
-    const productContext = useContext(ProductContext);
-    const products = productContext.products;
+  const productContext = useContext(ProductContext);
+  const products = productContext.products;
 
-    if (products.length > 0) {
-        return <ProductGrid />;
-    } else {
-        return <p className="loading">Loading products...</p>;
-    }
+  if (products.length > 0) {
+    return <ProductGrid />;
+  } else {
+    return <p className="loading">Loading products...</p>;
+  }
 }

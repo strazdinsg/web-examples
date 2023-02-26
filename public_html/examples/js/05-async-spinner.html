@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Loading indicator</title>
-    <link href="../../base-style.css" rel="stylesheet">
-    <style>
-        #busy-spinner, #loading-dots {
-            display: none; /* All the loading indicators are hidden by default */
-        }
+  <meta charset="UTF-8">
+  <title>Loading indicator</title>
+  <link href="../../base-style.css" rel="stylesheet">
+  <style>
+    #busy-spinner, #loading-dots {
+      display: none; /* All the loading indicators are hidden by default */
+    }
 
-        #busy-spinner {
-            width: 50px;
-        }
-    </style>
+    #busy-spinner {
+      width: 50px;
+    }
+  </style>
 </head>
 <body>
 <p>Here we show how you can Show some kind of progress indicator to the user while we wait for a response from an
-    API.</p>
+  API.</p>
 <p>P.S. We should probably disable the buttons while request is in progress. I leave this task to you ;)</p>
 <button onclick="throwDice(startDots, stopDots)">Throw a dice, show dots</button>
 <button onclick="throwDice(showSpinner, hideSpinner)">Throw a dice, show indicator</button>
@@ -27,88 +27,88 @@
 <p id="loading-dots">Loading</p>
 
 <script>
-    const asyncRequest = new XMLHttpRequest();
-    let dotTimer = null; // We will use this to display dots every X milliseconds
+  const asyncRequest = new XMLHttpRequest();
+  let dotTimer = null; // We will use this to display dots every X milliseconds
 
-    /**
-     * Send an Ajax request to the server and start a busy indicator.
-     * @param {function} showBusyIndicator A function to call at the beginning. It should start a busy indicator.
-     * @param {function} hideBusyIndicator A function to call at the end. It should stop the busy indicator.
-     */
-    function throwDice(showBusyIndicator, hideBusyIndicator) {
-        showBusyIndicator();
-        asyncRequest.onload = function () {
-            if (isAjaxRequestComplete()) {
-                hideBusyIndicator();
-                if (isResponseSuccessfullyReceived()) {
-                    showDiceValue(asyncRequest.responseText);
-                } else {
-                    console.error("Error " + asyncRequest.status);
-                }
-            }
+  /**
+   * Send an Ajax request to the server and start a busy indicator.
+   * @param {function} showBusyIndicator A function to call at the beginning. It should start a busy indicator.
+   * @param {function} hideBusyIndicator A function to call at the end. It should stop the busy indicator.
+   */
+  function throwDice(showBusyIndicator, hideBusyIndicator) {
+    showBusyIndicator();
+    asyncRequest.onload = function () {
+      if (isAjaxRequestComplete()) {
+        hideBusyIndicator();
+        if (isResponseSuccessfullyReceived()) {
+          showDiceValue(asyncRequest.responseText);
+        } else {
+          console.error("Error " + asyncRequest.status);
         }
-        asyncRequest.open("GET", "https://web-tek.ninja/php_backend/delayed_dice.php");
-        asyncRequest.send();
+      }
     }
+    asyncRequest.open("GET", "https://web-tek.ninja/php_backend/delayed_dice.php");
+    asyncRequest.send();
+  }
 
-    /**
-     * Returns true if the Ajax request is done (response received)
-     * @returns {boolean}
-     */
-    function isAjaxRequestComplete() {
-        return asyncRequest.readyState === XMLHttpRequest.DONE;
+  /**
+   * Returns true if the Ajax request is done (response received)
+   * @returns {boolean}
+   */
+  function isAjaxRequestComplete() {
+    return asyncRequest.readyState === XMLHttpRequest.DONE;
+  }
+
+  /**
+   * Returns true if the response code for the Ajax request is 200 OK
+   * @returns {boolean}
+   */
+  function isResponseSuccessfullyReceived() {
+    return asyncRequest.status === 200;
+  }
+
+  /**
+   * Start showing dots
+   */
+  function startDots() {
+    // Show the "Loading"
+    const dotNode = document.getElementById("loading-dots");
+    dotNode.innerText = "Loading"; // Reset the text
+    dotNode.style.display = "block"; // Show the HTML element used for dots
+
+    // Append a new dot every X milliseconds
+    dotTimer = setInterval(showNewDot, 300);
+  }
+
+  /**
+   * Show another dot in the "Loading..." element
+   */
+  function showNewDot() {
+    document.getElementById("loading-dots").innerText += ".";
+  }
+
+  /**
+   * Stop showing the dots and hide the dotted indicator
+   */
+  function stopDots() {
+    if (dotTimer) {
+      clearInterval(dotTimer);
+      dotTimer = null;
     }
+    document.getElementById("loading-dots").style.display = "none";
+  }
 
-    /**
-     * Returns true if the response code for the Ajax request is 200 OK
-     * @returns {boolean}
-     */
-    function isResponseSuccessfullyReceived() {
-        return asyncRequest.status === 200;
-    }
+  function showSpinner() {
+    document.getElementById("busy-spinner").style.display = "inline";
+  }
 
-    /**
-     * Start showing dots
-     */
-    function startDots() {
-        // Show the "Loading"
-        const dotNode = document.getElementById("loading-dots");
-        dotNode.innerText = "Loading"; // Reset the text
-        dotNode.style.display = "block"; // Show the HTML element used for dots
+  function hideSpinner() {
+    document.getElementById("busy-spinner").style.display = "none";
+  }
 
-        // Append a new dot every X milliseconds
-        dotTimer = setInterval(showNewDot, 300);
-    }
-
-    /**
-     * Show another dot in the "Loading..." element
-     */
-    function showNewDot() {
-        document.getElementById("loading-dots").innerText += ".";
-    }
-
-    /**
-     * Stop showing the dots and hide the dotted indicator
-     */
-    function stopDots() {
-        if (dotTimer) {
-            clearInterval(dotTimer);
-            dotTimer = null;
-        }
-        document.getElementById("loading-dots").style.display = "none";
-    }
-
-    function showSpinner() {
-        document.getElementById("busy-spinner").style.display = "inline";
-    }
-
-    function hideSpinner() {
-        document.getElementById("busy-spinner").style.display = "none";
-    }
-
-    function showDiceValue(diceValue) {
-        document.getElementById("dice-val").innerText = "You threw " + diceValue;
-    }
+  function showDiceValue(diceValue) {
+    document.getElementById("dice-val").innerText = "You threw " + diceValue;
+  }
 
 </script>
 </body>

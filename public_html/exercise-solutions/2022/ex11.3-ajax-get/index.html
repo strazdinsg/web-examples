@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ex11.3 Solution: Ajax</title>
-    <link href="../../base-style.css" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <title>Ex11.3 Solution: Ajax</title>
+  <link href="../../base-style.css" rel="stylesheet"/>
 </head>
 
 <body>
 
 <article>
-    <h1>Solution for Exercise 11.3</h1>
-    <p>This is a solution for <a href="../../exercises/ex11.3-ajax-get">Exercise 11.3</a>.
-        See the source code for this file.</p>
+  <h1>Solution for Exercise 11.3</h1>
+  <p>This is a solution for <a href="../../exercises/ex11.3-ajax-get">Exercise 11.3</a>.
+    See the source code for this file.</p>
 </article>
 
 <h2>Part 1 - throw a dice</h2>
@@ -19,32 +19,32 @@
 <p id="dice-val"></p>
 
 <script>
-    // Create a request and register the function to be called when the response comes. No request sent yet!
-    const request = new XMLHttpRequest();
-    request.onload = onResponseReceived;
+  // Create a request and register the function to be called when the response comes. No request sent yet!
+  const request = new XMLHttpRequest();
+  request.onload = onResponseReceived;
 
-    /**
-     * Send request to the API (backend)
-     */
-    function sendDiceRequest() {
-        request.open("GET", "https://web-tek.ninja/php_backend/throw_a_dice.php");
-        request.send();
-    }
+  /**
+   * Send request to the API (backend)
+   */
+  function sendDiceRequest() {
+    request.open("GET", "https://web-tek.ninja/php_backend/throw_a_dice.php");
+    request.send();
+  }
 
-    /**
-     * This function is called when the HTTP response from the API comes
-     */
-    function onResponseReceived() {
-        if (request.readyState === XMLHttpRequest.DONE) {
-            if (request.status === 200) {
-                showDiceValue(request.responseText);
-            }
-        }
+  /**
+   * This function is called when the HTTP response from the API comes
+   */
+  function onResponseReceived() {
+    if (request.readyState === XMLHttpRequest.DONE) {
+      if (request.status === 200) {
+        showDiceValue(request.responseText);
+      }
     }
+  }
 
-    function showDiceValue(diceValue) {
-        document.getElementById("dice-val").innerText = "You threw " + diceValue;
-    }
+  function showDiceValue(diceValue) {
+    document.getElementById("dice-val").innerText = "You threw " + diceValue;
+  }
 </script>
 
 </body>

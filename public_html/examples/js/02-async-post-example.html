@@ -1,61 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Async HTTP POST example</title>
-    <link href="../../base-style.css" rel="stylesheet">
-    <style>
-        textarea {
-            display: block;
-            width: 100%;
-            height: 800px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Async HTTP POST example</title>
+  <link href="../../base-style.css" rel="stylesheet">
+  <style>
+    textarea {
+      display: block;
+      width: 100%;
+      height: 800px;
+    }
+  </style>
 </head>
 <body>
 
 <p>This is an example showing how we can send an asynchronous HTTP POST request with data (parameters) in Javascript. We
-    don't process the response, we simply print it in the textarea. Check out the source code to understand what is
-    going on!</p>
+  don't process the response, we simply print it in the textarea. Check out the source code to understand what is
+  going on!</p>
 <label>
-    Username:
-    <input id="uname" type="text" value="Bill"/>
+  Username:
+  <input id="uname" type="text" value="Bill"/>
 </label>
 
 <button onclick="postForm()">Post the data</button>
 
 <div>
-    <label>
-        Response:
-        <textarea id="response"></textarea>
-    </label>
+  <label>
+    Response:
+    <textarea id="response"></textarea>
+  </label>
 </div>
 
 <script>
-    const asyncRequest = new XMLHttpRequest();
-    asyncRequest.onload = onResponseReceived;
+  const asyncRequest = new XMLHttpRequest();
+  asyncRequest.onload = onResponseReceived;
 
-    function postForm() {
-        const formData = new FormData();
-        formData.append("username", document.getElementById("uname").value);
-        asyncRequest.open("POST", "https://web-tek.ninja/php_backend/dummy_login.php");
-        asyncRequest.send(formData);
-    }
+  function postForm() {
+    const formData = new FormData();
+    formData.append("username", document.getElementById("uname").value);
+    asyncRequest.open("POST", "https://web-tek.ninja/php_backend/dummy_login.php");
+    asyncRequest.send(formData);
+  }
 
-    /**
-     * This function will be called when the status of HTTP response updates.
-     * Typically, when the response has come completely, but for large responses this method could be called several
-     * times during the download of the response. We therefore need to check the .readyState and .status properties.
-     */
-    function onResponseReceived() {
-        if (asyncRequest.readyState === XMLHttpRequest.DONE) {
-            if (asyncRequest.status === 200) {
-                document.getElementById("response").innerText = asyncRequest.responseText;
-            } else {
-                console.error("Error " + asyncRequest.status);
-            }
-        }
+  /**
+   * This function will be called when the status of HTTP response updates.
+   * Typically, when the response has come completely, but for large responses this method could be called several
+   * times during the download of the response. We therefore need to check the .readyState and .status properties.
+   */
+  function onResponseReceived() {
+    if (asyncRequest.readyState === XMLHttpRequest.DONE) {
+      if (asyncRequest.status === 200) {
+        document.getElementById("response").innerText = asyncRequest.responseText;
+      } else {
+        console.error("Error " + asyncRequest.status);
+      }
     }
+  }
 </script>
 
 </body>

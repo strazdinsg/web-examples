@@ -1,6 +1,6 @@
-import "./Navigation.css"
-import {useContext} from "react";
-import {ProductContext} from "./ProductContext";
+import "./Navigation.css";
+import { useContext } from "react";
+import { ProductContext } from "./ProductContext";
 
 /**
  * Represents navigation
@@ -9,17 +9,17 @@ import {ProductContext} from "./ProductContext";
  * @constructor
  */
 export function Navigation() {
-    const productContext = useContext(ProductContext);
-    const products = productContext.products;
-    const productCountHint = products.length > 0 ? `(${products.length})` : "";
+  const productContext = useContext(ProductContext);
+  const products = productContext.products;
+  const productCountHint = products.length > 0 ? `(${products.length})` : "";
 
-    return (
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li className="selected">Products {productCountHint}</li>
-                <li>Profile</li>
-            </ul>
-        </nav>
-    );
+  return (
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li className="selected">Products {productCountHint}</li>
+        <li>Profile</li>
+      </ul>
+    </nav>
+  );
 }

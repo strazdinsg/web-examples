@@ -5,7 +5,6 @@ cssHeading.classList.add("yellow-bg");
 
 let article = document.getElementById("css-exercises");
 
-
 function handleButtonClick() {
   console.log("Clicked!");
 }
@@ -17,7 +16,6 @@ console.log("Counter is " + counter);
 var counter = 0;
 
 function periodicHandler() {
-
   console.log(`Woke up again ${++counter}`);
   if (counter === 3) {
     clearInterval(intervalFunc);
@@ -26,7 +24,6 @@ function periodicHandler() {
     newParagraph.innerText = "This is a new paragraph!";
     article.appendChild(newParagraph);
   }
-
 }
 
 function bigLoop() {

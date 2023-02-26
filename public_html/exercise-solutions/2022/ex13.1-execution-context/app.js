@@ -7,23 +7,25 @@ var x = 12;
 printG();
 
 function printG() {
-    console.log("The value of g is " + g);
+  console.log("The value of g is " + g);
 }
 
 function a() {
-    console.log("inside a: x = " + x);
-    var y = 15;
-    console.log("y = " + y);
+  console.log("inside a: x = " + x);
+  var y = 15;
+  console.log("y = " + y);
 }
 
 function b() {
-    console.log("inside b: x = " + x);
-    var z = 677;
-    console.log("inside b: z = " + z);
-    function c() {
-        console.log("inside c: z = " + z);
-    }
-    c();
+  console.log("inside b: x = " + x);
+  var z = 677;
+  console.log("inside b: z = " + z);
+
+  function c() {
+    console.log("inside c: z = " + z);
+  }
+
+  c();
 }
 
 console.log("globally: x = " + x);
