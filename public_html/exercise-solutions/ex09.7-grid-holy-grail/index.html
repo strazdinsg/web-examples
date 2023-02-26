@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Read more on the Holy Grail layout in the Wikipedia: https://en.wikipedia.org/wiki/Holy_grail_(web_design) -->
+
+    <meta charset="UTF-8" />
+    <title>Demo of the Holy Grail layout, using Grid</title>
+
+    <style>
+      /* --------------- */
+      /* Grid alignment  */
+      /* --------------- */
+      body {
+        display: grid;
+        grid-template-rows: 100px 1fr 100px;
+        grid-template-columns: 200px 1fr 200px;
+        height: 100vh;
+        grid-template-areas:
+          "header header header"
+          "nav main ads"
+          "footer footer footer";
+        /*min-height: 100vh; !* Without this one the content will not fill the whole page! *!*/
+        margin: 0;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+
+      header,
+      footer {
+        /* Center the text both horizontally and vertically */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      main {
+        grid-area: main;
+        min-width: 600px;
+      }
+
+      nav {
+        grid-area: nav;
+      }
+
+      #ads {
+        grid-area: ads;
+      }
+
+      /* --------------------------- */
+      /* Borders around the sections */
+      /* --------------------------- */
+      nav {
+        border-right: 3px dashed black;
+      }
+
+      footer {
+        border-top: 3px dashed black;
+      }
+
+      header {
+        border-bottom: 3px dashed black;
+      }
+
+      #ads {
+        border-left: 3px dashed black;
+      }
+
+      /* --------------- */
+      /* Polish the look */
+      /* --------------- */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
+      html {
+        font-size: 1.2em;
+        font-family: "Poppins", sans-serif;
+      }
+
+      nav {
+        background-color: #8e6abe;
+      }
+
+      .nav-item {
+        padding: 10px;
+        border: 1px dashed black;
+        margin: 10px;
+        text-align: center;
+      }
+
+      header,
+      footer {
+        background-color: #59b1de;
+      }
+
+      main {
+        background-color: #efafb2;
+        padding: 20px;
+      }
+
+      #ads {
+        background-color: #8e6abe;
+      }
+
+      .ad {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .ad p {
+        margin: auto;
+        border: 1px dashed black;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to a demo of the holy grail layout using Grid!</h1>
+    </header>
+    <main>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum
+      eaque earum, eius eligendi, enim eos error esse, excepturi harum illum
+      impedit laudantium molestias nemo nostrum officia pariatur praesentium
+      provident quaerat quibusdam quo quod repellat sapiente sequi sint tempore
+      unde veritatis vitae. Ab at eos error, eum hic itaque magni maiores, minus
+      nam nisi pariatur qui ratione temporibus tenetur voluptatibus! Commodi
+      consequatur debitis, dolor doloremque ea enim, facere fuga fugiat id
+      mollitia numquam officia quidem quis quo recusandae, rem sequi similique
+      sint temporibus totam ut velit vero. A, aut labore nemo omnis optio quod
+      sequi sit totam ut.
+    </main>
+    <!-- According to the theory, the navigation bar should come after the main content in the markup -->
+    <nav>
+      <div id="home" class="nav-item">Home</div>
+      <div id="gallery" class="nav-item">Gallery</div>
+      <div id="aboutus" class="nav-item">About us</div>
+      <div id="contacts" class="nav-item">Contacts</div>
+    </nav>
+    <aside id="ads">
+      <div class="ad">
+        <p>Ad Nr 1</p>
+      </div>
+      <div class="ad">
+        <p>Ad Nr 2</p>
+      </div>
+      <div class="ad">
+        <p>Ad Nr 3</p>
+      </div>
+    </aside>
+    <footer><p>Copyright 2022</p></footer>
+  </body>
+</html>

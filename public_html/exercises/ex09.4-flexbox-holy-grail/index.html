@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 9.4 - Holy grail with Flexbox</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+
+  <body>
+    <article>
+      <h1>Exercise 9.4</h1>
+      <p>
+        This is Exercise #9.4, lecture on CSS Flexbox, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to practice using flexbox in realistic
+        layouts.
+        <a href="https://en.wikipedia.org/wiki/Holy_grail_(web_design)"
+          >Holy grail</a
+        >
+        is a classic layout, many web pages use some form of it. Here is an
+        example of a holy grail layout:
+      </p>
+      <img
+        src="img/holy-grail-example.jpg"
+        class="reference-img"
+        alt="Holy grail layout example"
+      />
+
+      <h2>Instructions</h2>
+      <p>
+        Create an HTML document from scratch. Arrange the elements in a
+        holy-grail layout. Requirements:
+      </p>
+      <ol>
+        <li>
+          There should be a header, footer, main content area, navigation bar
+          and an aside (with ads).
+        </li>
+        <li>
+          Both the header and the footer must have fixed height and fill the
+          whole width of the page.
+        </li>
+        <li>
+          Both the navigation bar and aside (ad bar) must have fixed width and
+          fill the whole available height.
+        </li>
+        <li>
+          To have a bit of extra challenge: the navigation block should come
+          after the main content in the HTML, but must be positioned on the left
+          by CSS.
+        </li>
+        <li>
+          Width of the main content area must be flexible - the content should
+          fill the whole available space.
+        </li>
+        <li>The main content area must have a minimum width of 600px.</li>
+      </ol>
+
+      <p>The following CSS properties may be handy:</p>
+      <pre><code>
+        display: flex;
+        flex-basis, flex-grow, flex-shrink
+        order
+        min-width, margin, padding
+        text-align
+    </code></pre>
+
+      <h2>Template</h2>
+      <p>No template for this exercise.</p>
+
+      <h2>Solution</h2>
+      <p>
+        You can find a solution
+        <a href="../../exercise-solutions/ex09.4-flexbox-holy-grail/index.html"
+          >here</a
+        >.
+      </p>
+    </article>
+  </body>
+</html>
