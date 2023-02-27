@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox experiments</title>
+    <style>
+      #flex-container {
+        background-color: #57b1dc;
+        display: flex;
+      }
+      .flex-item {
+        background-color: #8e6abd;
+        padding: 20px;
+        margin: 10px;
+        flex-basis: 50px;
+        flex-shrink: 1;
+      }
+      .flex-item:nth-child(3) {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+      .flex-item:nth-child(4) {
+        flex-grow: 2;
+        order: 1;
+      }
+      .flex-item:nth-child(2) {
+        order: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Experiments with flexbox</h1>
+    <div id="flex-container">
+      <p class="flex-item">1</p>
+      <p class="flex-item">2</p>
+      <p class="flex-item">3</p>
+      <p class="flex-item">4</p>
+      <p class="flex-item">5</p>
+    </div>
+  </body>
+</html>
