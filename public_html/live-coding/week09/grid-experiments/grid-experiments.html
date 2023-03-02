@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Grid experiments</title>
+    <style>
+      main {
+        display: grid;
+        grid-template-columns: 100px 1fr 200px;
+        grid-template-rows: 200px 1fr 100px;
+        grid-template-areas:
+          "header header header"
+          "nav main ads"
+          "footer footer footer";
+      }
+      main div {
+        background-color: #57b1dc;
+        border: 1px solid black;
+      }
+      #header {
+        grid-area: header;
+      }
+      #main-content {
+        grid-area: main;
+      }
+      #footer {
+        grid-row: 3 / span 1;
+        grid-column: 1 / -1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grid experiments</h1>
+    <main>
+      <div id="header">Header</div>
+      <div>Menu here</div>
+      <div>Ads here</div>
+      <div id="main-content">Main content</div>
+      <div id="footer">Footer</div>
+    </main>
+  </body>
+</html>
