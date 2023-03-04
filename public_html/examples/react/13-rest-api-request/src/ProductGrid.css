@@ -1,22 +1,23 @@
 /* Styles for the product grid */
 .product-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 2rem;
-    min-width: 80rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2rem;
+  min-width: 80rem;
 }
 
 .loading {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
-.loading, .error {
-    text-align: center;
-    font-size: 2rem;
+.loading,
+.error {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .error {
-    background-color: #ffd5d5;
-    padding: 2rem;
+  background-color: #ffd5d5;
+  padding: 2rem;
 }

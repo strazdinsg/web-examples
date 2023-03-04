@@ -1,11 +1,11 @@
 /* Styles for DeleteCartItemButton */
 .delete-cart-item-button {
-    width: 2rem;
-    cursor: pointer;
-    margin: auto;
-    transition-duration: 0.2s;
+  width: 2rem;
+  cursor: pointer;
+  margin: auto;
+  transition-duration: 0.2s;
 }
 
 .delete-cart-item-button:hover {
-    color: #003c77;
+  color: #003c77;
 }

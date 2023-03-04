@@ -1,11 +1,11 @@
 // Here we manage the Redux store slice responsible for holding user state
 
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const userSlice = createSlice({
   name: "user",
   initialState: {
-    user: null
+    user: null,
   },
   reducers: {
     setUser: function (state, action) {
@@ -13,10 +13,9 @@ export const userSlice = createSlice({
     },
     unsetUser: function (state, action) {
       state.user = null;
-    }
-  }
+    },
+  },
 });
 
-export const {setUser, unsetUser} = userSlice.actions;
+export const { setUser, unsetUser } = userSlice.actions;
 export default userSlice.reducer;
-

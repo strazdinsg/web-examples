@@ -1,11 +1,11 @@
 // Here we manage the Redux store slice responsible for holding shopping cart state
 
-import {createSlice} from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    cart: {}
+    cart: {},
   },
   reducers: {
     /**
@@ -18,7 +18,7 @@ export const cartSlice = createSlice({
       const propertyName = generateItemPropertyName(product.id);
       if (!state.cart[propertyName]) {
         // No item of the same type already in the cart
-        state.cart[propertyName] = {product: product, count: 1};
+        state.cart[propertyName] = { product: product, count: 1 };
       } else {
         // Item already in the cart, increase count
         state.cart[propertyName].count++;
@@ -36,11 +36,11 @@ export const cartSlice = createSlice({
     },
     emptyCart: function (state, action) {
       state.cart = {};
-    }
-  }
+    },
+  },
 });
 
-export const {addItemToCart, emptyCart, removeCartItem} = cartSlice.actions;
+export const { addItemToCart, emptyCart, removeCartItem } = cartSlice.actions;
 export default cartSlice.reducer;
 
 /**

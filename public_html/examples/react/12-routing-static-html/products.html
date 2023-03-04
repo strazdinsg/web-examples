@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Static web example</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Static web example</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="selected">Products</a></li>
+        <li><a href="cart.html">Shopping cart</a></li>
+        <li><a href="profile.html">Hi, Chuck!</a></li>
+      </ul>
+    </nav>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html" class="selected">Products</a></li>
-    <li><a href="cart.html">Shopping cart</a></li>
-    <li><a href="profile.html">Hi, Chuck!</a></li>
-  </ul>
-</nav>
+    <main>
+      <div class="product-container">
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="img/products/1.jpg" alt="Blue Jeans" />
+          </div>
+          <h2 class="product-card-title">Jeans</h2>
+          <h3 class="product-card-price">123 Kr</h3>
+          <div class="product-card-description">Blue Jeans</div>
+        </div>
 
-<main>
-  <div class="product-container">
-    <div class="product-card">
-      <div class="product-card-image">
-        <img src="img/products/1.jpg" alt="Blue Jeans"/>
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="img/products/2.jpg" alt="Sneakers" />
+          </div>
+          <h2 class="product-card-title">Sneakers</h2>
+          <h3 class="product-card-price">226.99 Kr</h3>
+          <div class="product-card-description">Regular Sneakers</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-image">
+            <img src="img/products/3.jpg" alt="Green t-shirt" />
+          </div>
+          <h2 class="product-card-title">T-shirt</h2>
+          <h3 class="product-card-price">57 Kr</h3>
+          <div class="product-card-description">
+            A shirt that reminds everyone of 'green thinking'
+          </div>
+        </div>
       </div>
-      <h2 class="product-card-title">Jeans</h2>
-      <h3 class="product-card-price">123 Kr</h3>
-      <div class="product-card-description">Blue Jeans</div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-card-image">
-        <img src="img/products/2.jpg" alt="Sneakers"/>
-      </div>
-      <h2 class="product-card-title">Sneakers</h2>
-      <h3 class="product-card-price">226.99 Kr</h3>
-      <div class="product-card-description">Regular Sneakers</div>
-    </div>
-
-    <div class="product-card">
-      <div class="product-card-image">
-        <img src="img/products/3.jpg" alt="Green t-shirt"/>
-      </div>
-      <h2 class="product-card-title">T-shirt</h2>
-      <h3 class="product-card-price">57 Kr</h3>
-      <div class="product-card-description">A shirt that reminds everyone of 'green thinking'</div>
-    </div>
-
-  </div>
-
-</main>
-
-</body>
+    </main>
+  </body>
 </html>

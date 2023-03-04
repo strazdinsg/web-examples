@@ -11,19 +11,19 @@ export function ProductPage(props) {
   } else {
     let productContent;
     if (props.products.length > 0) {
-      productContent = props.products.map(product =>
+      productContent = props.products.map((product) => (
         <li key={product.id}>{product.name + " ($" + product.price + ")"}</li>
-      );
+      ));
     } else {
       productContent = <p>Loading...</p>;
     }
-    content = <>
-      <h1>Products</h1>
-      <p>Here you can see all our products.</p>
-      <ul id="product-container">
-        {productContent}
-      </ul>
-    </>;
+    content = (
+      <>
+        <h1>Products</h1>
+        <p>Here you can see all our products.</p>
+        <ul id="product-container">{productContent}</ul>
+      </>
+    );
   }
 
   return content;

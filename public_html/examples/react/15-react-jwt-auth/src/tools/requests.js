@@ -1,7 +1,7 @@
 // All code for sending requests to backend is stored in this file
 
 // The base path where the API is running, loaded from the REACT_BASE_URL environment variable
-import {getCookie} from "./cookies";
+import { getCookie } from "./cookies";
 
 const API_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -13,7 +13,13 @@ const API_BASE_URL = process.env.REACT_APP_BASE_URL;
  * @param requestBody When supplied, send this data in the request body. Does not work with HTTP GET!
  * @param errorCallback A function called when the response code is not 200
  */
-export function sendApiRequest(method, url, callback, requestBody, errorCallback) {
+export function sendApiRequest(
+  method,
+  url,
+  callback,
+  requestBody,
+  errorCallback
+) {
   const request = new XMLHttpRequest();
   request.onreadystatechange = function () {
     if (request.readyState === XMLHttpRequest.DONE) {
@@ -37,10 +43,10 @@ export function sendApiRequest(method, url, callback, requestBody, errorCallback
   }
   if (requestBody) {
     if (method.toLowerCase() !== "get") {
-      request.setRequestHeader('Content-Type', 'application/json');
+      request.setRequestHeader("Content-Type", "application/json");
       request.send(JSON.stringify(requestBody));
     } else {
-      console.error("Trying to send request data with HTTP GET, not allowed!")
+      console.error("Trying to send request data with HTTP GET, not allowed!");
       request.send();
     }
   } else {

@@ -1,178 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Source used in videos 06.3.x</title>
-  <style>
-    /************************************
-     Resetting the global styles
-     ************************************/
-    html {
-      font-size: 62.5%; /* Reset 1rem to 10px */
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <title>Source used in videos 06.3.x</title>
+    <style>
+      /************************************
+         Resetting the global styles
+         ************************************/
+      html {
+        font-size: 62.5%; /* Reset 1rem to 10px */
+      }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-    /************************************
-     Colors, fonts
-     ************************************/
-    header, footer {
-      background-color: #58b0dd;
-    }
+      /************************************
+         Colors, fonts
+         ************************************/
+      header,
+      footer {
+        background-color: #58b0dd;
+      }
 
-    nav, aside {
-      background-color: #8e6abd;
-    }
+      nav,
+      aside {
+        background-color: #8e6abd;
+      }
 
-    main {
-      background-color: #efafb2;
-    }
+      main {
+        background-color: #efafb2;
+      }
 
-    h1 {
-      font-size: 3.2rem;
-      font-weight: bold;
-    }
+      h1 {
+        font-size: 3.2rem;
+        font-weight: bold;
+      }
 
-    p, li {
-      font-size: 2.0rem;
-    }
+      p,
+      li {
+        font-size: 2rem;
+      }
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-    html {
-      font-family: 'Poppins', sans-serif;
-    }
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+      html {
+        font-family: "Poppins", sans-serif;
+      }
 
-    /************************************
-     Layout with Grid
-     ************************************/
-    body {
-      display: grid;
-      grid-template-rows: 10rem 1fr 10rem;
-      grid-template-columns: 20rem 1fr 20rem;
-      grid-template-areas:
-                "header header header"
-                "nav    main   ads"
-                "footer footer footer";
-      min-height: 100vh;
-    }
+      /************************************
+         Layout with Grid
+         ************************************/
+      body {
+        display: grid;
+        grid-template-rows: 10rem 1fr 10rem;
+        grid-template-columns: 20rem 1fr 20rem;
+        grid-template-areas:
+          "header header header"
+          "nav    main   ads"
+          "footer footer footer";
+        min-height: 100vh;
+      }
 
-    header {
-      grid-area: header;
-    }
+      header {
+        grid-area: header;
+      }
 
-    nav {
-      grid-area: nav;
-    }
+      nav {
+        grid-area: nav;
+      }
 
-    main {
-      grid-area: main;
-      min-width: 60rem;
-    }
+      main {
+        grid-area: main;
+        min-width: 60rem;
+      }
 
-    aside {
-      grid-area: ads;
-    }
+      aside {
+        grid-area: ads;
+      }
 
-    footer {
-      grid-area: footer;
-    }
+      footer {
+        grid-area: footer;
+      }
 
-    /************************************
-     Layout with Flexbox
-     ************************************/
-    /*body {*/
-    /*    display: flex;*/
-    /*    flex-direction: column;*/
-    /*    min-height: 100vh;*/
-    /*    min-width: 100rem;*/
-    /*}*/
+      /************************************
+         Layout with Flexbox
+         ************************************/
+      /*body {*/
+      /*    display: flex;*/
+      /*    flex-direction: column;*/
+      /*    min-height: 100vh;*/
+      /*    min-width: 100rem;*/
+      /*}*/
 
-    /*header, footer {*/
-    /*    flex-basis: 10rem;*/
-    /*    flex-grow: 0;*/
-    /*    flex-shrink: 0;*/
-    /*}*/
+      /*header, footer {*/
+      /*    flex-basis: 10rem;*/
+      /*    flex-grow: 0;*/
+      /*    flex-shrink: 0;*/
+      /*}*/
 
-    /*#main-container {*/
-    /*    flex-grow: 1;*/
-    /*    display: flex;*/
-    /*}*/
+      /*#main-container {*/
+      /*    flex-grow: 1;*/
+      /*    display: flex;*/
+      /*}*/
 
-    /*nav, aside {*/
-    /*    flex-basis: 20rem;*/
-    /*    flex-shrink: 0;*/
-    /*}*/
+      /*nav, aside {*/
+      /*    flex-basis: 20rem;*/
+      /*    flex-shrink: 0;*/
+      /*}*/
 
-    /*main {*/
-    /*    flex-basis: 60rem;*/
-    /*    flex-grow: 1;*/
-    /*    flex-shrink: 0;*/
-    /*}*/
+      /*main {*/
+      /*    flex-basis: 60rem;*/
+      /*    flex-grow: 1;*/
+      /*    flex-shrink: 0;*/
+      /*}*/
 
-    /************************************
-     Final touches
-     ************************************/
-    main {
-      padding: 1.6rem;
-    }
+      /************************************
+         Final touches
+         ************************************/
+      main {
+        padding: 1.6rem;
+      }
 
-    li, .ad {
-      text-align: center;
-      list-style-type: none;
-      border: 1px dashed black;
-      padding: 1rem;
-      margin: 1rem;
-    }
+      li,
+      .ad {
+        text-align: center;
+        list-style-type: none;
+        border: 1px dashed black;
+        padding: 1rem;
+        margin: 1rem;
+      }
 
-    header, footer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-  </style>
-</head>
-<body>
-<header><h1>Welcome to our page!</h1></header>
-<!-- This container is needed only if we use flexbox for layout -->
-<!--<div id="main-container">-->
-<nav>
-  <ul>
-    <li>Home</li>
-    <li>Gallery</li>
-    <li>About us</li>
-    <li>Contact</li>
-  </ul>
-</nav>
-<main>
-  <p>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-    architecto asperiores aut blanditiis consectetur, consequuntur,
-    deleniti doloremque, eveniet iste necessitatibus nemo perferendis
-    quas recusandae saepe sed! Delectus doloremque hic molestias
-    mollitia obcaecati porro provident quasi. Adipisci atque, nisi
-    nostrum quas quod vel! Aperiam iusto perspiciatis quae quod
-    repellendus suscipit, vel.
-  </p>
-</main>
-<aside>
-  <div class="ad">
-    <p>Ad Nr 1</p>
-  </div>
-  <div class="ad">
-    <p>Ad Nr 2</p>
-  </div>
-  <div class="ad">
-    <p>Ad Nr 3</p>
-  </div>
-</aside>
-<!--</div>-->
-<footer>
-  <p>Copyright 2022</p>
-</footer>
-</body>
+      header,
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>Welcome to our page!</h1></header>
+    <!-- This container is needed only if we use flexbox for layout -->
+    <!--<div id="main-container">-->
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>Gallery</li>
+        <li>About us</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <main>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto
+        asperiores aut blanditiis consectetur, consequuntur, deleniti
+        doloremque, eveniet iste necessitatibus nemo perferendis quas recusandae
+        saepe sed! Delectus doloremque hic molestias mollitia obcaecati porro
+        provident quasi. Adipisci atque, nisi nostrum quas quod vel! Aperiam
+        iusto perspiciatis quae quod repellendus suscipit, vel.
+      </p>
+    </main>
+    <aside>
+      <div class="ad">
+        <p>Ad Nr 1</p>
+      </div>
+      <div class="ad">
+        <p>Ad Nr 2</p>
+      </div>
+      <div class="ad">
+        <p>Ad Nr 3</p>
+      </div>
+    </aside>
+    <!--</div>-->
+    <footer>
+      <p>Copyright 2022</p>
+    </footer>
+  </body>
 </html>

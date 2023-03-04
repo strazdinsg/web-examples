@@ -1,30 +1,32 @@
 /** Styles for navigation */
 
 .navigation {
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    background-color: #d6edf8;
-    padding: 2rem 0;
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  background-color: #d6edf8;
+  padding: 2rem 0;
 }
 
 nav li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 button.link {
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-size: 1.6rem;
-    text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.6rem;
+  text-decoration: underline;
 }
 
-a, a:visited, a:link, button.link {
-    color: #871299;
-    font-family: Poppins, sans-serif;
-    width: auto;
-    cursor: pointer;
+a,
+a:visited,
+a:link,
+button.link {
+  color: #871299;
+  font-family: Poppins, sans-serif;
+  width: auto;
+  cursor: pointer;
 }
-

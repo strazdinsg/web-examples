@@ -1,11 +1,11 @@
 /* Styles specifically for the Board component */
 .board {
-    border-top: 1px solid black;
-    border-left: 1px solid black;
-    border-bottom: 0;
-    border-right: 0;
-    display: grid;
-    width: 30rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 10rem);
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 0;
+  border-right: 0;
+  display: grid;
+  width: 30rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 10rem);
 }

@@ -2,10 +2,10 @@
 
 /* We set red color first */
 p {
-    color: red;
+  color: red;
 }
 
 /* Then we override it to blue */
 p {
-    color: blue;
+  color: blue;
 }

@@ -1,25 +1,29 @@
 /* Global styles */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 html {
-    font-size: 62.5%; /* Reset 1rem to 10px */
-    font-family: 'Roboto', sans-serif;
+  font-size: 62.5%; /* Reset 1rem to 10px */
+  font-family: "Roboto", sans-serif;
 }
 
-p, label, input, button {
-    font-size: 1.6rem;
+p,
+label,
+input,
+button {
+  font-size: 1.6rem;
 }
 
 h1 {
-    font-size: 3.2rem;
+  font-size: 3.2rem;
 }
 
 h2 {
-    font-size: 2.4rem;
+  font-size: 2.4rem;
 }
 
-input, button {
-    margin-top: 0.6rem;
-    display: block;
-    margin-bottom: 2rem;
+input,
+button {
+  margin-top: 0.6rem;
+  display: block;
+  margin-bottom: 2rem;
 }

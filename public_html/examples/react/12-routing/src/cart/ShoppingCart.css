@@ -1,56 +1,57 @@
 /* Styles for the ShoppingCart */
 
 .cart-container {
-    width: 84rem;
-    margin: auto;
-    font-size: 2rem;
+  width: 84rem;
+  margin: auto;
+  font-size: 2rem;
 }
 
 .cart-table {
-    width: 100%;
-    border-spacing: 0;
-    margin-top: 1rem;
+  width: 100%;
+  border-spacing: 0;
+  margin-top: 1rem;
 }
 
 .cart-table thead {
-    background-color: #333;
-    color: white;
+  background-color: #333;
+  color: white;
 }
 
-.cart-table th, .cart-table td {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+.cart-table th,
+.cart-table td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 tr.cart-item:nth-child(odd) {
-    background-color: #eee;
+  background-color: #eee;
 }
 
 .cart-item-name {
-    text-align: left;
-    padding-left: 2rem;
-    width: 45%;
+  text-align: left;
+  padding-left: 2rem;
+  width: 45%;
 }
 
 .cart-item-qty {
-    text-align: center;
-    width: 20%;
+  text-align: center;
+  width: 20%;
 }
 
 .cart-item-price {
-    text-align: left;
-    width: 20%;
+  text-align: left;
+  width: 20%;
 }
 
 .cart-item-action {
-    width: 5%;
+  width: 5%;
 }
 
 .total-price-row {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .total-price-title {
-    text-align: right;
-    padding-right: 2rem;
+  text-align: right;
+  padding-right: 2rem;
 }

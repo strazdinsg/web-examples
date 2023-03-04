@@ -1,34 +1,34 @@
 /* Styles for the ProductDeleteButton */
 button.product-delete {
-    position: absolute;
-    bottom: 2rem;
-    width: 21rem;
-    padding: 1rem 0;
-    border-radius: 0.5rem;
-    left: 2rem;
-    transition-duration: 0.2s;
-    cursor: pointer;
+  position: absolute;
+  bottom: 2rem;
+  width: 21rem;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+  left: 2rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
 }
 
 /* Themed colors */
 .product-delete.light {
-    border: 1px solid darkgray;
+  border: 1px solid darkgray;
 }
 
 .product-delete.dark {
-    border: 1px solid lightgray;
-    background-color: #333;
-    color: white;
+  border: 1px solid lightgray;
+  background-color: #333;
+  color: white;
 }
 
 .product-delete.light:hover {
-    color: white;
-    background-color: #003c77;
-    border-color: white;
+  color: white;
+  background-color: #003c77;
+  border-color: white;
 }
 
 button.product-delete.dark:hover {
-    color: white;
-    background-color: #666;
-    border-color: white;
+  color: white;
+  background-color: #666;
+  border-color: white;
 }

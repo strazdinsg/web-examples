@@ -3,9 +3,9 @@
  * @return {JSX.Element}
  * @constructor
  */
-import {useEffect, useState} from "react";
-import {sendApiRequest} from "../tools/requests";
-import "./ProfilePage.css"
+import { useEffect, useState } from "react";
+import { sendApiRequest } from "../tools/requests";
+import "./ProfilePage.css";
 
 export function ProfilePage(props) {
   const [bio, setBio] = useState("Loading data...");
@@ -20,7 +20,9 @@ export function ProfilePage(props) {
 
   let errorMessage = null;
   if (!props.username) {
-    errorMessage = <p className="error">Need to log in to access profile page!</p>;
+    errorMessage = (
+      <p className="error">Need to log in to access profile page!</p>
+    );
   } else if (error) {
     errorMessage = <p className="error">{error}</p>;
   }
@@ -29,16 +31,27 @@ export function ProfilePage(props) {
     successMessage = <p className="success">{success}</p>;
   }
 
-  return <form className="bio">
-    <p>Here you can see and modify your profile:</p>
-    <label htmlFor="bio" className="sr-only"></label>
-    <textarea name="bio" id="bio" value={bio} onChange={event => setBio(event.target.value)}
-              disabled={editsDisabled}/>
-    {errorMessage}
-    {successMessage}
-    <input type="submit" value="Save" disabled={editsDisabled} onClick={submitForm}/>
-  </form>;
-
+  return (
+    <form className="bio">
+      <p>Here you can see and modify your profile:</p>
+      <label htmlFor="bio" className="sr-only"></label>
+      <textarea
+        name="bio"
+        id="bio"
+        value={bio}
+        onChange={(event) => setBio(event.target.value)}
+        disabled={editsDisabled}
+      />
+      {errorMessage}
+      {successMessage}
+      <input
+        type="submit"
+        value="Save"
+        disabled={editsDisabled}
+        onClick={submitForm}
+      />
+    </form>
+  );
 
   function loadData() {
     if (!dataLoaded && props.username) {
@@ -67,11 +80,16 @@ export function ProfilePage(props) {
   function submitForm(event) {
     event.preventDefault();
     const profileData = {
-      "bio": bio
+      bio: bio,
     };
     setEditsDisabled(true);
-    sendApiRequest("PUT", "/users/" + props.username, profileSaveSuccess, profileData, profileSaveError);
-
+    sendApiRequest(
+      "PUT",
+      "/users/" + props.username,
+      profileSaveSuccess,
+      profileData,
+      profileSaveError
+    );
   }
 
   /**

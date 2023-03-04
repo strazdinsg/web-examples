@@ -1,7 +1,7 @@
 // Authentication stuff
 
-import {sendApiRequest} from "./requests";
-import {deleteCookie, getCookie, setCookie} from "./cookies";
+import { sendApiRequest } from "./requests";
+import { deleteCookie, getCookie, setCookie } from "./cookies";
 
 /**
  * Get the currently authenticated user
@@ -14,9 +14,9 @@ export function getAuthenticatedUser() {
   if (username && commaSeparatedRoles) {
     const roles = commaSeparatedRoles.split(",");
     user = {
-      "username": username,
-      "roles": roles
-    }
+      username: username,
+      roles: roles,
+    };
   }
   return user;
 }
@@ -37,13 +37,19 @@ export function isAdmin(user) {
  * @param successCallback Function to call on success
  * @param errorCallback Function to call on error, with response text as the parameter
  */
-export function sendAuthenticationRequest(username, password, successCallback, errorCallback) {
+export function sendAuthenticationRequest(
+  username,
+  password,
+  successCallback,
+  errorCallback
+) {
   const postData = {
-    "username": username,
-    "password": password
+    username: username,
+    password: password,
   };
   sendApiRequest(
-    "POST", "/authenticate",
+    "POST",
+    "/authenticate",
     function (jwtResponse) {
       setCookie("jwt", jwtResponse.jwt);
       const userData = parseJwtUser(jwtResponse.jwt);
@@ -67,11 +73,16 @@ export function sendAuthenticationRequest(username, password, successCallback, e
  * @returns {any} Decoded JWT object
  */
 function parseJwt(token) {
-  const base64Url = token.split('.')[1];
-  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
-    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-  }).join(''));
+  const base64Url = token.split(".")[1];
+  const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  const jsonPayload = decodeURIComponent(
+    atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
 
   return JSON.parse(jsonPayload);
 }
@@ -86,13 +97,12 @@ function parseJwtUser(jwtString) {
   const jwtObject = parseJwt(jwtString);
   if (jwtObject) {
     user = {
-      "username": jwtObject.sub,
-      "roles": jwtObject.roles.map(r => r.authority)
-    }
+      username: jwtObject.sub,
+      roles: jwtObject.roles.map((r) => r.authority),
+    };
   }
   return user;
 }
-
 
 /**
  * Delete all cookies related to authorization (user session)

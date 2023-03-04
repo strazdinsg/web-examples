@@ -18,7 +18,7 @@ function requestData() {
         console.error("Error " + this.status);
       }
     }
-  }
+  };
   apiRequest.open("GET", API_BASE_URL + "/api/hello");
   apiRequest.send();
 }

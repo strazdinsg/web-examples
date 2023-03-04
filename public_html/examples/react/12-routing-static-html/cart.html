@@ -1,55 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Static web example</title>
-  <link rel="stylesheet" href="style.css"/>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Static web example</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="cart.html" class="selected">Shopping cart</a></li>
+        <li><a href="profile.html">Hi, Chuck!</a></li>
+      </ul>
+    </nav>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="products.html">Products</a></li>
-    <li><a href="cart.html" class="selected">Shopping cart</a></li>
-    <li><a href="profile.html">Hi, Chuck!</a></li>
-  </ul>
-</nav>
+    <main>
+      <div class="cart-container">
+        <h1>Order details</h1>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th class="cart-item-name">Item</th>
+              <th class="cart-item-qty">Quantity</th>
+              <th class="cart-item-price">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="cart-item">
+              <td class="cart-item-name">T-shirt</td>
+              <td class="cart-item-qty">2</td>
+              <td class="cart-item-price">114.00 Kr</td>
+            </tr>
 
-<main>
-  <div class="cart-container">
-    <h1>Order details</h1>
-    <table class="cart-table">
-      <thead>
-      <tr>
-        <th class="cart-item-name">Item</th>
-        <th class="cart-item-qty">Quantity</th>
-        <th class="cart-item-price">Price</th>
-      </tr>
-      </thead>
-      <tbody>
+            <tr class="cart-item">
+              <td class="cart-item-name">Sneakers</td>
+              <td class="cart-item-qty">1</td>
+              <td class="cart-item-price">226.99 Kr</td>
+            </tr>
 
-      <tr class="cart-item">
-        <td class="cart-item-name">T-shirt</td>
-        <td class="cart-item-qty">2</td>
-        <td class="cart-item-price">114.00 Kr</td>
-      </tr>
-
-      <tr class="cart-item">
-        <td class="cart-item-name">Sneakers</td>
-        <td class="cart-item-qty">1</td>
-        <td class="cart-item-price">226.99 Kr</td>
-      </tr>
-
-      <tr class="total-price-row">
-        <td class="total-price-title" colSpan="2">Total:</td>
-        <td class="total-price-value">340.99 Kr</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</main>
-
-</body>
+            <tr class="total-price-row">
+              <td class="total-price-title" colspan="2">Total:</td>
+              <td class="total-price-value">340.99 Kr</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>
