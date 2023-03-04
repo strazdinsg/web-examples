@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <title>Exercise 10.1: Hello, Javascript!</title>
     <link rel="stylesheet" href="../../base-style.css" />
+    <script>
+      a = 2;
+      b = 3;
+      console.log("The sum of a + b is", a + b);
+    </script>
   </head>
   <body>
     <article>
@@ -15,7 +20,7 @@
         >
         at NTNU, campus Aalesund.
       </p>
-      <p>Go <a href="../..">back to exercise list</a>.</p>
+      <p>Go <a href="..">back to exercise list</a>.</p>
 
       <h2>Purpose</h2>
       <p>
@@ -50,13 +55,12 @@
         <code>head</code> section:
       </p>
       <pre>
-        &lt;script type="application/javascript"&gt;
+        &lt;script&gt;
             a = 2;
             b = 3;
             console.log("The sum of a + b is", a + b)
         &lt;/script&gt;
-    </pre
-      >
+      </pre>
 
       <p>
         Open the file in the browser and look into the console. Do you see the
@@ -64,12 +68,11 @@
         the <code>body</code> part of the document:
       </p>
       <pre>
-        &lt;script type="application/javascript"&gt;
+        &lt;script&gt;
             b = 12;
             console.log("Now (in the body) the sum of a + b is", a + b)
         &lt;/script&gt;
-    </pre
-      >
+      </pre>
       <p>
         What output do you see now in the console, if you refresh the page in
         the browser?
@@ -85,17 +88,13 @@
       <pre>
         a = 4;
         console.log("a times b is", a * b);
-    </pre
-      >
+      </pre>
       <p>
         In the <code>head</code> section include an external Javascript file.
         You do that by inserting the following line of code <u>after</u> the
         existing inline <code>&lt;script&gt;</code> block:
       </p>
-      <code>
-        &lt;script type="application/javascript"
-        src="hello.js"&gt;&lt;/script&gt;
-      </code>
+      <code> &lt;script src="hello.js"&gt;&lt;/script&gt; </code>
 
       <p>
         What happens if you move the import of the <code>hello.js</code> file
@@ -106,7 +105,7 @@
 
       <h2>Solution</h2>
       <p>
-        You can find a solution for steps 2 and 3 in
+        You can find a solution for steps 2 and 3
         <a href="../../exercise-solutions/ex10.1-hello-js/">here</a>.
       </p>
     </article>
