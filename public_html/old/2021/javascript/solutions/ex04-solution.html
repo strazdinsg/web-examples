@@ -1,77 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Solution for Exercise 4 - DOM #1</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
-</head>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
 
-<body>
+  <body>
+    <article>
+      <h1>Solution for Exercise 4</h1>
+      <p>
+        This is a solution for
+        <a href="../exercises/ex04-access-dom1.html">Exercise 4</a>. See the
+        source code for this file, and check the output in the console.
+      </p>
+    </article>
 
-<article>
-    <h1>Solution for Exercise 4</h1>
-    <p>This is a solution for <a href="../exercises/ex04-access-dom1.html">Exercise 4</a>. See the source code for this
-        file, and check the output in the console.</p>
-</article>
+    <p id="hello-paragraph">Loading...</p>
+    <p>
+      <span id="x-span">X</span> seconds have passed since the page was loaded.
+    </p>
 
+    <div>
+      <label for="a-input">A:</label
+      ><input type="text" id="a-input" value="3" />
+    </div>
+    <div>
+      <label for="b-input">B:</label
+      ><input type="text" id="b-input" value="5" />
+    </div>
+    <p>The two numbers multiplied are <i id="x-output">X</i></p>
 
-<p id="hello-paragraph">Loading...</p>
-<p><span id="x-span">X</span> seconds have passed since the page was loaded.</p>
+    <script type="application/javascript">
+      /////////////////////////////////////////////
+      // Step 1
+      /////////////////////////////////////////////
+      // We could call this on body.onload as well...
+      var hello_p = document.getElementById("hello-paragraph");
+      hello_p.innerText = "Hello";
 
-<div><label for="a-input">A:</label><input type="text" id="a-input" value="3"/></div>
-<div><label for="b-input">B:</label><input type="text" id="b-input" value="5"/></div>
-<p>The two numbers multiplied are <i id="x-output">X</i></p>
+      /////////////////////////////////////////////
+      // Step 2
+      /////////////////////////////////////////////
+      // We can get a reference to the element globally
+      var second_span = document.getElementById("x-span");
+      var seconds = 1;
 
-<script type="application/javascript">
-    /////////////////////////////////////////////
-    // Step 1
-    /////////////////////////////////////////////
-    // We could call this on body.onload as well...
-    var hello_p = document.getElementById("hello-paragraph");
-    hello_p.innerText = "Hello";
-
-
-
-
-    /////////////////////////////////////////////
-    // Step 2
-    /////////////////////////////////////////////
-    // We can get a reference to the element globally
-    var second_span = document.getElementById("x-span");
-    var seconds = 1;
-
-    function updateSeconds() {
+      function updateSeconds() {
         second_span.innerText = "" + seconds;
         seconds++;
-    }
+      }
 
-    // Call it once every second
-    setInterval(updateSeconds, 1000);
+      // Call it once every second
+      setInterval(updateSeconds, 1000);
 
+      /////////////////////////////////////////////
+      // Step 3
+      /////////////////////////////////////////////
+      var a_input = document.getElementById("a-input");
+      var b_input = document.getElementById("b-input");
 
-
-
-    /////////////////////////////////////////////
-    // Step 3
-    /////////////////////////////////////////////
-    var a_input = document.getElementById("a-input");
-    var b_input = document.getElementById("b-input");
-
-    function updateMultiplication() {
+      function updateMultiplication() {
         var a = a_input.value;
         var b = b_input.value;
-        document.getElementById("x-output").innerText = "" + (a * b);
-    }
+        document.getElementById("x-output").innerText = "" + a * b;
+      }
 
-    // Update the multiplication right from the start
-    updateMultiplication();
+      // Update the multiplication right from the start
+      updateMultiplication();
 
-    // And react on changes in the text
-    a_input.addEventListener("keyup", updateMultiplication);
-    b_input.addEventListener("keyup", updateMultiplication);
-
-</script>
-
-
-</body>
+      // And react on changes in the text
+      a_input.addEventListener("keyup", updateMultiplication);
+      b_input.addEventListener("keyup", updateMultiplication);
+    </script>
+  </body>
 </html>

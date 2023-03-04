@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Solution for Exercise 10.3 - Events</title>
-  <link rel="stylesheet" href="../../base-style.css"/>
-  <style>
-    #button-container {
-      margin-bottom: 2rem;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solution for Exercise 10.3 - Events</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+    <style>
+      #button-container {
+        margin-bottom: 2rem;
+      }
+    </style>
+  </head>
 
-<body onload="printSqrt()">
+  <body onload="printSqrt()">
+    <article>
+      <h1>Solution for Exercise 10.3</h1>
+      <p>
+        This is a solution for
+        <a href="../../exercises/ex10.3-events">Exercise 10.3</a>. See the
+        source code for this file, and check the output in the console.
+      </p>
+    </article>
 
-<article>
-  <h1>Solution for Exercise 10.3</h1>
-  <p>This is a solution for <a href="../../exercises/ex10.3-events">Exercise
-    10.3</a>. See the source code for this file, and check the output in the
-    console.</p>
-</article>
+    <script type="application/javascript">
+      /////////////////////////////////////////////
+      // Step 1
+      /////////////////////////////////////////////
+      function printSqrt() {
+        console.log("Square root of 1764 is", Math.sqrt(1764));
+      }
 
-<script type="application/javascript">
-  /////////////////////////////////////////////
-  // Step 1
-  /////////////////////////////////////////////
-  function printSqrt() {
-    console.log("Square root of 1764 is", Math.sqrt(1764));
-  }
+      /////////////////////////////////////////////
+      // Step 2
+      /////////////////////////////////////////////
+      let counter = 1;
 
-  /////////////////////////////////////////////
-  // Step 2
-  /////////////////////////////////////////////
-  let counter = 1;
+      function printCounter() {
+        console.log("Hello, " + counter++);
+      }
 
-  function printCounter() {
-    console.log("Hello, " + counter++);
-  }
+      setInterval(printCounter, 1000); // Call printCounter every 1000 milliseconds
 
-  setInterval(printCounter, 1000); // Call printCounter every 1000 milliseconds
+      /////////////////////////////////////////////
+      // Step 3
+      /////////////////////////////////////////////
+      function printMessage(message) {
+        console.log(message);
+      }
+    </script>
 
+    <div id="button-container">
+      <input
+        type="button"
+        value="Button A"
+        onclick="printMessage('Button A pressed')"
+      />
+      <input
+        type="button"
+        value="Button B"
+        onclick="printMessage('Button B pressed')"
+      />
+    </div>
 
-  /////////////////////////////////////////////
-  // Step 3
-  /////////////////////////////////////////////
-  function printMessage(message) {
-    console.log(message);
-  }
-
-</script>
-
-<div id="button-container">
-  <input type="button" value="Button A"
-         onclick="printMessage('Button A pressed')"/>
-  <input type="button" value="Button B"
-         onclick="printMessage('Button B pressed')"/>
-</div>
-
-<!--
+    <!--
 ///////////////////////////////////////////////////
 Step 4
 ///////////////////////////////////////////////////
@@ -66,10 +71,9 @@ field.
 Note: try to press shift! The onkeyup event is fired, even though the text
 has not really changed!
 -->
-<label>
-  Type a text here:
-  <input type="text" onkeyup="console.log('The text changed')"/>
-</label>
-
-</body>
+    <label>
+      Type a text here:
+      <input type="text" onkeyup="console.log('The text changed')" />
+    </label>
+  </body>
 </html>

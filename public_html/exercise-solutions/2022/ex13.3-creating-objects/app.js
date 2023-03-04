@@ -7,7 +7,7 @@
 //////// Object literal /////////
 let person1 = {
   firstname: "John",
-  lastname: "Doe"
+  lastname: "Doe",
 };
 
 ///// Constructor function //////
@@ -56,7 +56,7 @@ const player1 = {
   },
   isAlive: function () {
     return this.life > 0;
-  }
+  },
 };
 
 // Notice the duplication of functions? Object literals are good for one-of-a-kind objects
@@ -77,7 +77,7 @@ const enemy1 = {
   },
   isAlive: function () {
     return this.life > 0;
-  }
+  },
 };
 
 ///// Constructor function //////
@@ -92,16 +92,16 @@ function GameObject(x, y, life, name) {
     if (this.life < 0) {
       this.life = 0;
     }
-  }
+  };
 
   this.move = function (deltaX, deltaY) {
     this.x += deltaX;
     this.y += deltaY;
-  }
+  };
 
   this.isAlive = function () {
     return this.life > 0;
-  }
+  };
 }
 
 const player2 = new GameObject(10, 20, 30, "Player 2");

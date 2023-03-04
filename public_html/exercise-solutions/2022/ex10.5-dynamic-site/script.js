@@ -6,7 +6,6 @@ function showHello() {
   hello_p.innerText = "Hello";
 }
 
-
 /////////////////////////////////////////////
 // Step 2
 /////////////////////////////////////////////
@@ -22,7 +21,6 @@ function showSecondCounter() {
 // Call it once every second
 setInterval(showSecondCounter, 1000);
 
-
 /////////////////////////////////////////////
 // Step 3
 /////////////////////////////////////////////
@@ -32,7 +30,7 @@ let b_input = document.getElementById("b-input");
 function updateMultiplication() {
   let a = a_input.value;
   let b = b_input.value;
-  document.getElementById("x-output").innerText = "" + (a * b);
+  document.getElementById("x-output").innerText = "" + a * b;
 }
 
 // Update the multiplication right from the start
@@ -41,4 +39,3 @@ updateMultiplication();
 // And react on changes in the text
 a_input.addEventListener("keyup", updateMultiplication);
 b_input.addEventListener("keyup", updateMultiplication);
-

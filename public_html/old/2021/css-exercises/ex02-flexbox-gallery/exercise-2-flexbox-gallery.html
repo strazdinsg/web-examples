@@ -1,104 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Exercise 2 - Flexible Image gallery!</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
-</head>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
 
-<body>
-
-<article>
-    <h1>Exercise 2</h1>
-    <p>This is Exercise #2, lecture on CSS Flexbox, used in the course
-        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+  <body>
+    <article>
+      <h1>Exercise 2</h1>
+      <p>
+        This is Exercise #2, lecture on CSS Flexbox, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
         at NTNU, campus Aalesund.
-    </p>
-    <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+      </p>
+      <p>Go <a href="../../index.html">back to exercise list</a>.</p>
 
-    <h2>Purpose</h2>
-    <p>The purpose of the exercise is to practice configuring container properties for CSS flexbox.
-        You may need to set some properties for the images, but no flexbox-related item properties.
-    </p>
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to practice configuring container
+        properties for CSS flexbox. You may need to set some properties for the
+        images, but no flexbox-related item properties.
+      </p>
 
-    <h2>Instructions</h2>
-    <p>Use this document as a template. You see a set of images below. Configure the following
-        behaviour for the flexbox container:
-    </p>
-    <ol>
+      <h2>Instructions</h2>
+      <p>
+        Use this document as a template. You see a set of images below.
+        Configure the following behaviour for the flexbox container:
+      </p>
+      <ol>
         <li>The images should be in a flexbox container.</li>
         <li>Each image should be 200px wide and 150px high.</li>
-        <li>The container should fill the whole width of the page, with 50px margins on the sides.
+        <li>
+          The container should fill the whole width of the page, with 50px
+          margins on the sides.
         </li>
-        <li>The container should not shrink to less than 500px horizontally
-            (hint: <code>min-width</code> property).
+        <li>
+          The container should not shrink to less than 500px horizontally (hint:
+          <code>min-width</code> property).
         </li>
         <li>The container should be 800px high.</li>
-        <li>The images should be laid out horizontally and have equal spacing between them
-            and on the sides.
+        <li>
+          The images should be laid out horizontally and have equal spacing
+          between them and on the sides.
         </li>
-        <li>If there is not enough space to lay out the images in a single row, the gallery
-            should have an "automatic wrapping" - the images should be wrapped to a new line.
+        <li>
+          If there is not enough space to lay out the images in a single row,
+          the gallery should have an "automatic wrapping" - the images should be
+          wrapped to a new line.
         </li>
-        <li>The images should be centered vertically within the container. Add some border to the
-            container to see that they are centered.
+        <li>
+          The images should be centered vertically within the container. Add
+          some border to the container to see that they are centered.
         </li>
-        <li>The images should have a minimum margin of 20px. I.e., there could be more space between
-            each two the images, but no less than 2*20px.
+        <li>
+          The images should have a minimum margin of 20px. I.e., there could be
+          more space between each two the images, but no less than 2*20px.
         </li>
-    </ol>
+      </ol>
 
-    <p>The following CSS properties may be handy (for the container):</p>
-    <pre><code>
+      <p>The following CSS properties may be handy (for the container):</p>
+      <pre><code>
         display: flex;
         justify-content
         align-content
         flex-wrap
     </code></pre>
 
-    <p>Here you can see a an example of how the gallery could look on a wide screen:</p>
-    <img src="img/gallery-preview01.jpg" alt="Five images laid out on a single row"/>
-    <p>And this is how it could look on a narrow screen:</p>
-    <img src="img/gallery-preview02.jpg"
-         alt="Five images laid out on three rows: two, two and one on each row"/>
+      <p>
+        Here you can see a an example of how the gallery could look on a wide
+        screen:
+      </p>
+      <img
+        src="img/gallery-preview01.jpg"
+        alt="Five images laid out on a single row"
+      />
+      <p>And this is how it could look on a narrow screen:</p>
+      <img
+        src="img/gallery-preview02.jpg"
+        alt="Five images laid out on three rows: two, two and one on each row"
+      />
 
-    <h2>Extra challenge</h2>
-    <p>If you are done with the exercise too fast and are bored, you can practice CSS:
-        add some fancy effects, such as shadows, hover effects,
-        <a href="https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/">a picture
-            frame</a>,
-        or even a <a href="https://codepen.io/chris22smith/pen/PbBwjp">very fancy frame</a>.
-    </p>
+      <h2>Extra challenge</h2>
+      <p>
+        If you are done with the exercise too fast and are bored, you can
+        practice CSS: add some fancy effects, such as shadows, hover effects,
+        <a
+          href="https://thinkux.ca/blog/Creating-Framed-Matted-Pictures-Using-CSS/"
+          >a picture frame</a
+        >, or even a
+        <a href="https://codepen.io/chris22smith/pen/PbBwjp">very fancy frame</a
+        >.
+      </p>
 
+      <h2>Template</h2>
+      <p>
+        Start with this file as a template. It should be enough by creating only
+        the CSS style, the HTML elements are in place already.
+      </p>
+      <h3>The gallery</h3>
+      <img
+        src="https://picsum.photos/400/300?random_index=1"
+        alt="Random picture"
+      />
+      <img
+        src="https://picsum.photos/400/300?random_index=2"
+        alt="Random picture"
+      />
+      <img
+        src="https://picsum.photos/400/300?random_index=3"
+        alt="Random picture"
+      />
+      <img
+        src="https://picsum.photos/400/300?random_index=4"
+        alt="Random picture"
+      />
+      <img
+        src="https://picsum.photos/400/300?random_index=5"
+        alt="Random picture"
+      />
 
-    <h2>Template</h2>
-    <p>Start with this file as a template. It should be enough by creating only the CSS style,
-        the HTML elements are in place already.</p>
-    <h3>The gallery</h3>
-    <img src="https://picsum.photos/400/300?random_index=1" alt="Random picture">
-    <img src="https://picsum.photos/400/300?random_index=2" alt="Random picture">
-    <img src="https://picsum.photos/400/300?random_index=3" alt="Random picture">
-    <img src="https://picsum.photos/400/300?random_index=4" alt="Random picture">
-    <img src="https://picsum.photos/400/300?random_index=5" alt="Random picture">
+      <h2>Solution</h2>
+      <p>
+        You can find a solution in
+        <a href="../solutions/ex02-solution.html">
+          <code>../solutions/ex02-solution.html</code></a
+        >.
+      </p>
 
-    <h2>Solution</h2>
-    <p>You can find a solution in <a href="../solutions/ex02-solution.html">
-        <code>../solutions/ex02-solution.html</code></a>.
-    </p>
-
-    <h2>Side note(s)</h2>
-    <p>You can find nice random pictures at <a href="https://picsum.photos/">Lorem Picsum</a>.
-    <p>The images in the gallery were created using the following Emmet shortcut:
-        <code>img[src="https://picsum.photos/400/300?random_index=$"][alt="Random picture"]*5</code>.
-    </p>
-    <p>The <code>?random_index=...</code> was added to make sure that the URLs for images are
-        unique. Otherwise the browser would decide that it is five equal images and display the same
-        image in all five places. A nice "hack" that may be handy sometimes to avoid file caching -
-        add something random to the URL, for example, the timestamp. :)
-    </p>
-
-</article>
-
-
-</body>
+      <h2>Side note(s)</h2>
+      <p>
+        You can find nice random pictures at
+        <a href="https://picsum.photos/">Lorem Picsum</a>.
+      </p>
+      <p>
+        The images in the gallery were created using the following Emmet
+        shortcut:
+        <code
+          >img[src="https://picsum.photos/400/300?random_index=$"][alt="Random
+          picture"]*5</code
+        >.
+      </p>
+      <p>
+        The <code>?random_index=...</code> was added to make sure that the URLs
+        for images are unique. Otherwise the browser would decide that it is
+        five equal images and display the same image in all five places. A nice
+        "hack" that may be handy sometimes to avoid file caching - add something
+        random to the URL, for example, the timestamp. :)
+      </p>
+    </article>
+  </body>
 </html>

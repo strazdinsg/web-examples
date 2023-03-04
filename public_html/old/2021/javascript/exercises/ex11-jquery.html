@@ -1,61 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>JS exercise #11: jquery</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
-</head>
-<body>
-
-<article>
-    <section>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <article>
+      <section>
         <h1>Exercise 11</h1>
-        <p>This is Exercise #11, lecture on using the jQuery library, used in the course
-            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
-            at NTNU, campus Aalesund.
+        <p>
+          This is Exercise #11, lecture on using the jQuery library, used in the
+          course
+          <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+            >IDATA2301 Web technologies</a
+          >
+          at NTNU, campus Aalesund.
         </p>
         <p>Go <a href="../../index.html">back to exercise list</a>.</p>
 
         <h2>Purpose</h2>
-        <p>The purpose of the exercise is practice using the <i>fancy</i> features of jQuery library.
+        <p>
+          The purpose of the exercise is practice using the
+          <i>fancy</i> features of jQuery library.
         </p>
-    </section>
+      </section>
 
-    <h2>Instructions</h2>
-    <section>
+      <h2>Instructions</h2>
+      <section>
         <h3>Part 1 - replacing a set of elements with jQuery</h3>
         <ol>
-            <li>Create a new HTML document. Include jQuery library in it. There are several ways to do that. Suggested
-                way: include this external <code>.js</code> file:
-                <code>https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js</code>
-            </li>
-            <li>Create five text paragraphs with any text inside. Hint: if your IDE supports emmet, you can write the
-                following expression to get 5 paragraphs with <i>Lorem Ipsum</i> text with `0 words in each paragraph:
-                <code>(p>lipsum10)*5</code>.
-            </li>
-            <li>When the document is loaded, run a jQuery code which replaces text in all paragraphs on the page with
-                "jQuery woz ere". Hint: in jQuery you can use <code>$(document).ready(function() {...})</code> to execute code
-                when the document is loaded. See <a href="https://api.jquery.com/ready/">jQuery documentation</a>.
-            </li>
-            <li>Add a button to the page with text "Throw dice".</li>
+          <li>
+            Create a new HTML document. Include jQuery library in it. There are
+            several ways to do that. Suggested way: include this external
+            <code>.js</code> file:
+            <code
+              >https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js</code
+            >
+          </li>
+          <li>
+            Create five text paragraphs with any text inside. Hint: if your IDE
+            supports emmet, you can write the following expression to get 5
+            paragraphs with <i>Lorem Ipsum</i> text with `0 words in each
+            paragraph: <code>(p>lipsum10)*5</code>.
+          </li>
+          <li>
+            When the document is loaded, run a jQuery code which replaces text
+            in all paragraphs on the page with "jQuery woz ere". Hint: in jQuery
+            you can use <code>$(document).ready(function() {...})</code> to
+            execute code when the document is loaded. See
+            <a href="https://api.jquery.com/ready/">jQuery documentation</a>.
+          </li>
+          <li>Add a button to the page with text "Throw dice".</li>
         </ol>
-    </section>
-    <section>
+      </section>
+      <section>
         <h3>Part 2 - send Ajax request with jQuery</h3>
-        <p>Re-do the <a href="ex09-ajax-get.html">exercise # 9</a> (throwing a dice) using jQuery. Instead of using
-            the XMLHttpRequest, use <a href="https://api.jquery.com/jQuery.get/"><code>$.get()</code></a> to send an HTTP GET request to the server, then display
-            the dice value, as you did in <a href="ex09-ajax-get.html">exercise # 9</a>.
+        <p>
+          Re-do the <a href="ex09-ajax-get.html">exercise # 9</a> (throwing a
+          dice) using jQuery. Instead of using the XMLHttpRequest, use
+          <a href="https://api.jquery.com/jQuery.get/"><code>$.get()</code></a>
+          to send an HTTP GET request to the server, then display the dice
+          value, as you did in <a href="ex09-ajax-get.html">exercise # 9</a>.
         </p>
-    </section>
+      </section>
 
-    <section>
+      <section>
         <h2>Solution</h2>
-        <p>You can find a solution in <a
-                href="../solutions/ex11-solution.html"><code>../solutions/ex11-solution.html</code></a>.
+        <p>
+          You can find a solution in
+          <a href="../solutions/ex11-solution.html"
+            ><code>../solutions/ex11-solution.html</code></a
+          >.
         </p>
-    </section>
-</article>
-
-
-</body>
+      </section>
+    </article>
+  </body>
 </html>

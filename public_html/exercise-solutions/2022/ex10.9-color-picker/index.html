@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ex 10.9 Solution: Color picker</title>
-  <link href="../../base-style.css" rel="stylesheet"/>
-  <style>
-    #color-example {
-      width: 220px;
-      height: 150px;
-      border: 1px solid black;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ex 10.9 Solution: Color picker</title>
+    <link href="../../base-style.css" rel="stylesheet" />
+    <style>
+      #color-example {
+        width: 220px;
+        height: 150px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
 
-<body>
+  <body>
+    <h1>Solution for Exercise 10.9</h1>
+    <p>
+      This is a solution for
+      <a href="../../exercises/ex10.9-color-picker">Exercise 10.9</a>. See the
+      source code for this file.
+    </p>
 
-<h1>Solution for Exercise 10.9</h1>
-<p>This is a solution for <a href="../../exercises/ex10.9-color-picker">Exercise 10.9</a>.
-  See the source code for this file.</p>
+    <label
+      >Pick your favorite color:
+      <select id="color-picker" onchange="onColorSelected()">
+        <option value="#ff0000">Red</option>
+        <!-- Note: we can use any value, as long as it is a valid background color -->
+        <option value="green">Green</option>
+        <option value="#00f">Blue</option>
+        <option value="magenta">Magenta</option>
+        <option value="him">Roundhouse kick</option>
+      </select>
+    </label>
+    <p>I see that your favorite color is <span id="chosen-color">...</span></p>
+    <div id="color-example"></div>
 
-<label>Pick your favorite color:
-  <select id="color-picker" onchange="onColorSelected()">
-    <option value="#ff0000">Red</option>
-    <!-- Note: we can use any value, as long as it is a valid background color -->
-    <option value="green">Green</option>
-    <option value="#00f">Blue</option>
-    <option value="magenta">Magenta</option>
-    <option value="him">Roundhouse kick</option>
-  </select>
-</label>
-<p>I see that your favorite color is <span id="chosen-color">...</span></p>
-<div id="color-example"></div>
+    <script>
+      function onColorSelected() {
+        const color = document.getElementById("color-picker").value;
+        showColorName();
+        if (color !== "him") {
+          showColorPatch(color);
+        } else {
+          showHim();
+        }
+      }
 
-<script>
-  function onColorSelected() {
-    const color = document.getElementById("color-picker").value;
-    showColorName();
-    if (color !== "him") {
-      showColorPatch(color);
-    } else {
-      showHim();
-    }
-  }
+      function showColorName() {
+        const selectbox = document.getElementById("color-picker");
+        const selectedText = selectbox.options[selectbox.selectedIndex].text;
+        document.getElementById("chosen-color").innerText = selectedText;
+      }
 
-  function showColorName() {
-    const selectbox = document.getElementById("color-picker");
-    const selectedText = selectbox.options[selectbox.selectedIndex].text;
-    document.getElementById("chosen-color").innerText = selectedText;
-  }
+      function showColorPatch(color) {
+        const patch = document.getElementById("color-example");
+        patch.style.backgroundColor = color;
+        // Need to clear the background image in case there was one
+        patch.style.backgroundImage = "";
+      }
 
-  function showColorPatch(color) {
-    const patch = document.getElementById("color-example");
-    patch.style.backgroundColor = color;
-    // Need to clear the background image in case there was one
-    patch.style.backgroundImage = "";
-  }
-
-  function showHim() {
-    document.getElementById("color-example").style.backgroundImage = "url('https://media.tenor.com/images/4e4d8f2858faa1bda487a7c6ae68bd49/tenor.gif')";
-  }
-</script>
-
-</body>
+      function showHim() {
+        document.getElementById("color-example").style.backgroundImage =
+          "url('https://media.tenor.com/images/4e4d8f2858faa1bda487a7c6ae68bd49/tenor.gif')";
+      }
+    </script>
+  </body>
 </html>

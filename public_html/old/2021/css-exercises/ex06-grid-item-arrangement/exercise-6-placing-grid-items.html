@@ -1,204 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Exercise 6 - Placing grid items</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
+    <link rel="stylesheet" href="../../base-style.css" />
     <style>
-        /* -------------------------------------
+      /* -------------------------------------
            Put your styles here
            ------------------------------------- */
 
-
-        /* -------------------------------------
+      /* -------------------------------------
            DON'T CHANGE STYLES BELOW!
            ------------------------------------- */
-        #brick-wall-grid {
-            background-color: gray;
-            width: 330px;
-            margin: auto;
-            padding: 0 5px 5px 0;
-        }
+      #brick-wall-grid {
+        background-color: gray;
+        width: 330px;
+        margin: auto;
+        padding: 0 5px 5px 0;
+      }
 
-        .brick {
-            border: 1px solid black;
-            background-color: firebrick;
-            box-sizing: border-box;
-            padding: 5px;
-            margin: 5px 0 0 5px;
-            color: white;
-            text-align: center;
-        }
+      .brick {
+        border: 1px solid black;
+        background-color: firebrick;
+        box-sizing: border-box;
+        padding: 5px;
+        margin: 5px 0 0 5px;
+        color: white;
+        text-align: center;
+      }
 
-        header, footer {
-            padding: 20px;
-            background-color: #59b1de;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+      header,
+      footer {
+        padding: 20px;
+        background-color: #59b1de;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        header h1, footer p {
-            margin: 0 auto;
-        }
+      header h1,
+      footer p {
+        margin: 0 auto;
+      }
 
-        nav {
-            background-color: #8e6abe;
-        }
+      nav {
+        background-color: #8e6abe;
+      }
 
-        .nav-item {
-            padding: 10px;
-            border: 1px dashed black;
-            margin: 10px;
-            text-align: center;
-        }
+      .nav-item {
+        padding: 10px;
+        border: 1px dashed black;
+        margin: 10px;
+        text-align: center;
+      }
 
-        main {
-            background-color: #efafb2;
-            padding: 20px;
-        }
+      main {
+        background-color: #efafb2;
+        padding: 20px;
+      }
 
-        #ads {
-            background-color: #8e6abe;
-        }
+      #ads {
+        background-color: #8e6abe;
+      }
 
-        .ad {
-            padding: 10px;
-            text-align: center;
-        }
+      .ad {
+        padding: 10px;
+        text-align: center;
+      }
 
-        .ad p {
-            margin: auto;
-            border: 1px dashed black;
-            padding: 10px;
-        }
+      .ad p {
+        margin: auto;
+        border: 1px dashed black;
+        padding: 10px;
+      }
 
-        #holy-grail-container {
-            min-height: 600px;
-            min-width: 800px;
-        }
-
+      #holy-grail-container {
+        min-height: 600px;
+        min-width: 800px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
-<article>
-    <section>
+  <body>
+    <article>
+      <section>
         <h1>Exercise 6</h1>
-        <p>This is Exercise #6, lecture on CSS Grid, used in the course
-            <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
-            at NTNU, campus Aalesund.
+        <p>
+          This is Exercise #6, lecture on CSS Grid, used in the course
+          <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+            >IDATA2301 Web technologies</a
+          >
+          at NTNU, campus Aalesund.
         </p>
         <p>Go <a href="../../index.html">back to exercise list</a>.</p>
 
         <h2>Purpose</h2>
-        <p>The purpose of the exercise is to get familiar with how we assign items to grid regions.
+        <p>
+          The purpose of the exercise is to get familiar with how we assign
+          items to grid regions.
+        </p>
 
         <h2>Instructions</h2>
-        <p>Start with this document as the template. Arrange the provided elements within a grid
-            according to the necessary layout. <strong>Don't change the HTML elements, make the
-                changes
-                with CSS
-                style only!</strong>
+        <p>
+          Start with this document as the template. Arrange the provided
+          elements within a grid according to the necessary layout.
+          <strong
+            >Don't change the HTML elements, make the changes with CSS style
+            only!</strong
+          >
         </p>
-    </section>
+      </section>
 
-    <section>
+      <section>
         <h3>Exercise 6.1 - Brick wall</h3>
-        <p>Arrange the grid items below to match a brick wall pattern.
-            Each full brick should be 100px wide and 50px high, including the padding and border.
-            This is how the final result should look:</p>
-        <img src="img/brick-wall.jpg"
-             alt="Reference image - HTML elements laid out in a brick-wall pattern">
+        <p>
+          Arrange the grid items below to match a brick wall pattern. Each full
+          brick should be 100px wide and 50px high, including the padding and
+          border. This is how the final result should look:
+        </p>
+        <img
+          src="img/brick-wall.jpg"
+          alt="Reference image - HTML elements laid out in a brick-wall pattern"
+        />
 
-        <p>Here is the grid you should work with (remember: apply CSS style only, within the
-            <code>&lt;style&gt;</code> block in the <code>&lt;head&gt;</code> of the document):</p>
+        <p>
+          Here is the grid you should work with (remember: apply CSS style only,
+          within the <code>&lt;style&gt;</code> block in the
+          <code>&lt;head&gt;</code> of the document):
+        </p>
 
         <!-- Don't change any elements here! -->
         <div id="brick-wall-grid">
-            <!-- Here are the grid items, you should not change anything for these! -->
-            <div class="brick" id="brick1">Brick 1</div>
-            <div class="brick" id="brick2">Brick 2</div>
-            <div class="brick" id="brick3">Brick 3</div>
-            <div class="brick" id="brick4">Brick 4</div>
-            <div class="brick" id="brick5">Brick 5</div>
-            <div class="brick" id="brick6">Brick 6</div>
+          <!-- Here are the grid items, you should not change anything for these! -->
+          <div class="brick" id="brick1">Brick 1</div>
+          <div class="brick" id="brick2">Brick 2</div>
+          <div class="brick" id="brick3">Brick 3</div>
+          <div class="brick" id="brick4">Brick 4</div>
+          <div class="brick" id="brick5">Brick 5</div>
+          <div class="brick" id="brick6">Brick 6</div>
         </div>
-    </section>
+      </section>
 
-    <section>
+      <section>
         <h3>Exercise 6.2 - Holy grail layout</h3>
-        <p>Now it's time to create a holy grail layout with CSS grid! It is actually easier than
-            with flexbox! We will create the layout in a limited container, but it would work the
-            same in a full-page layout.</p>
-        <p>The task is the same: look at the elements created below, create CSS styles to arrange
-            them in a holy grail layout without changing the structure or order of the elements in
-            the HTML code.
+        <p>
+          Now it's time to create a holy grail layout with CSS grid! It is
+          actually easier than with flexbox! We will create the layout in a
+          limited container, but it would work the same in a full-page layout.
+        </p>
+        <p>
+          The task is the same: look at the elements created below, create CSS
+          styles to arrange them in a holy grail layout without changing the
+          structure or order of the elements in the HTML code.
         </p>
         <p>Some requirements for the sizes:</p>
         <ol>
-            <li>The header and footer should have fixed height of 100px.</li>
-            <li>The navigation and aside should have a fixed width: 200px.</li>
-            <li>The main content are with the lorem ipsum text should resize dynamically based on
-                available width.
-            </li>
+          <li>The header and footer should have fixed height of 100px.</li>
+          <li>The navigation and aside should have a fixed width: 200px.</li>
+          <li>
+            The main content are with the lorem ipsum text should resize
+            dynamically based on available width.
+          </li>
         </ol>
-        <p>Hint: what about trying out the naming the grid regions with
-            <code>grid-template-areas</code> and assigning them to items using
-            <code>grid-area</code>?</p>
+        <p>
+          Hint: what about trying out the naming the grid regions with
+          <code>grid-template-areas</code> and assigning them to items using
+          <code>grid-area</code>?
+        </p>
 
         <p>Here is how it should look when you are done:</p>
-        <img src="img/holy-grail-result.jpg" alt="Elements laid out in a holy grail layout"/>
+        <img
+          src="img/holy-grail-result.jpg"
+          alt="Elements laid out in a holy grail layout"
+        />
 
         <p>Here are the elements you should work with:</p>
         <div id="holy-grail-container">
-            <header><h1>Welcome to a demo of the holy grail layout using CSS Grid!</h1></header>
-            <main>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum eaque
-                earum, eius eligendi, enim
-                eos error esse, excepturi harum illum impedit laudantium molestias nemo nostrum
-                officia pariatur praesentium
-                provident quaerat quibusdam quo quod repellat sapiente sequi sint tempore unde
-                veritatis vitae. Ab at eos
-                error, eum hic itaque magni maiores, minus nam nisi pariatur qui ratione
-                temporibus tenetur voluptatibus!
-                Commodi consequatur debitis, dolor doloremque ea enim, facere fuga fugiat id
-                mollitia numquam officia quidem
-                quis quo recusandae, rem sequi similique sint temporibus totam ut velit vero. A,
-                aut labore nemo omnis optio
-                quod sequi sit totam ut.
-            </main>
-            <!-- According to the theory, the navigation bar should come after the main content in the markup -->
-            <nav>
-                <div id="home" class="nav-item">Home</div>
-                <div id="gallery" class="nav-item">Gallery</div>
-                <div id="aboutus" class="nav-item">About us</div>
-                <div id="contacts" class="nav-item">Contacts</div>
-            </nav>
-            <aside id="ads">
-                <div class="ad">
-                    <p>Ad Nr 1</p>
-                </div>
-                <div class="ad">
-                    <p>Ad Nr 2</p>
-                </div>
-                <div class="ad">
-                    <p>Ad Nr 3</p>
-                </div>
-            </aside>
-            <footer><p>Copyright 2021</p></footer>
+          <header>
+            <h1>Welcome to a demo of the holy grail layout using CSS Grid!</h1>
+          </header>
+          <main>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at
+            cum eaque earum, eius eligendi, enim eos error esse, excepturi harum
+            illum impedit laudantium molestias nemo nostrum officia pariatur
+            praesentium provident quaerat quibusdam quo quod repellat sapiente
+            sequi sint tempore unde veritatis vitae. Ab at eos error, eum hic
+            itaque magni maiores, minus nam nisi pariatur qui ratione temporibus
+            tenetur voluptatibus! Commodi consequatur debitis, dolor doloremque
+            ea enim, facere fuga fugiat id mollitia numquam officia quidem quis
+            quo recusandae, rem sequi similique sint temporibus totam ut velit
+            vero. A, aut labore nemo omnis optio quod sequi sit totam ut.
+          </main>
+          <!-- According to the theory, the navigation bar should come after the main content in the markup -->
+          <nav>
+            <div id="home" class="nav-item">Home</div>
+            <div id="gallery" class="nav-item">Gallery</div>
+            <div id="aboutus" class="nav-item">About us</div>
+            <div id="contacts" class="nav-item">Contacts</div>
+          </nav>
+          <aside id="ads">
+            <div class="ad">
+              <p>Ad Nr 1</p>
+            </div>
+            <div class="ad">
+              <p>Ad Nr 2</p>
+            </div>
+            <div class="ad">
+              <p>Ad Nr 3</p>
+            </div>
+          </aside>
+          <footer><p>Copyright 2021</p></footer>
         </div>
-    </section>
+      </section>
 
-    <section>
+      <section>
         <h2>Solution</h2>
-        <p>You can find a solution in <a href="../solutions/ex06-solution.html">
-            <code>../solutions/ex06-solution.html</code></a>.
+        <p>
+          You can find a solution in
+          <a href="../solutions/ex06-solution.html">
+            <code>../solutions/ex06-solution.html</code></a
+          >.
         </p>
-    </section>
-</article>
-
-
-</body>
+      </section>
+    </article>
+  </body>
 </html>

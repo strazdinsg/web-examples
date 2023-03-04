@@ -1,151 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-
+  <head>
     <!-- Read more on the Holy Grail layout in the Wikipedia: https://en.wikipedia.org/wiki/Holy_grail_(web_design) -->
 
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Demo of the Holy Grail layout, using flexbox</title>
 
     <style type="text/css">
+      /* --------------- */
+      /* Flex alignment  */
+      /* --------------- */
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Without this one the content will not fill the whole page! */
+        margin: 0;
+      }
 
+      main {
+        display: flex;
+        flex-grow: 1;
+      }
 
-        /* --------------- */
-        /* Flex alignment  */
-        /* --------------- */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Without this one the content will not fill the whole page! */
-            margin: 0;
-        }
+      nav {
+        order: -1; /* The navigation should always come first, despite it's location in the markup */
+      }
 
-        main {
-            display: flex;
-            flex-grow: 1;
-        }
+      nav,
+      #ads {
+        flex-basis: 200px;
+        flex-shrink: 0;
+      }
 
-        nav {
-            order: -1; /* The navigation should always come first, despite it's location in the markup */
-        }
+      header,
+      footer {
+        text-align: center;
+      }
 
-        nav, #ads {
-            flex-basis: 200px;
-            flex-shrink: 0;
-        }
+      #main-content {
+        min-width: 600px;
+      }
 
-        header, footer {
-            text-align: center;
-        }
+      /* --------------------------- */
+      /* Borders around the sections */
+      /* --------------------------- */
+      nav {
+        border-right: 3px dashed black;
+      }
 
-        #main-content {
-            min-width: 600px;
-        }
+      footer {
+        border-top: 3px dashed black;
+      }
 
+      header {
+        border-bottom: 3px dashed black;
+      }
 
-        /* --------------------------- */
-        /* Borders around the sections */
-        /* --------------------------- */
-        nav {
-            border-right: 3px dashed black;
-        }
+      #ads {
+        border-left: 3px dashed black;
+      }
 
-        footer {
-            border-top: 3px dashed black;
-        }
+      /* --------------- */
+      /* Polish the look */
+      /* --------------- */
+      html {
+        font-size: 1.2em;
+        font-family: Arial, serif;
+      }
 
-        header {
-            border-bottom: 3px dashed black;
-        }
+      header,
+      footer {
+        padding: 20px;
+      }
 
-        #ads {
-            border-left: 3px dashed black;
-        }
+      nav {
+        background-color: #8e6abe;
+      }
 
+      .nav-item {
+        padding: 10px;
+        border: 1px dashed black;
+        margin: 10px;
+        text-align: center;
+      }
 
-        /* --------------- */
-        /* Polish the look */
-        /* --------------- */
-        html {
-            font-size: 1.2em;
-            font-family: Arial, serif;
-        }
+      header,
+      footer {
+        background-color: #59b1de;
+      }
 
-        header, footer {
-            padding: 20px;
-        }
+      #main-content {
+        background-color: #efafb2;
+        padding: 20px;
+      }
 
-        nav {
-            background-color: #8e6abe;
-        }
+      #ads {
+        background-color: #8e6abe;
+      }
 
-        .nav-item {
-            padding: 10px;
-            border: 1px dashed black;
-            margin: 10px;
-            text-align: center;
-        }
+      .ad {
+        padding: 10px;
+        text-align: center;
+      }
 
-        header, footer {
-            background-color: #59b1de;
-        }
-
-        #main-content {
-            background-color: #efafb2;
-            padding: 20px;
-        }
-
-        #ads {
-            background-color: #8e6abe;
-        }
-
-        .ad {
-            padding: 10px;
-            text-align: center;
-        }
-
-        .ad p {
-            margin: auto;
-            border: 1px dashed black;
-            padding: 10px;
-        }
-
+      .ad p {
+        margin: auto;
+        border: 1px dashed black;
+        padding: 10px;
+      }
     </style>
-</head>
-<body>
-
-
-<header><h1>Welcome to a demo of the holy grail layout using flexbox CSS features!</h1></header>
-<main>
-    <section id="main-content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum eaque earum, eius eligendi, enim
-        eos error esse, excepturi harum illum impedit laudantium molestias nemo nostrum officia pariatur praesentium
-        provident quaerat quibusdam quo quod repellat sapiente sequi sint tempore unde veritatis vitae. Ab at eos
-        error, eum hic itaque magni maiores, minus nam nisi pariatur qui ratione temporibus tenetur voluptatibus!
-        Commodi consequatur debitis, dolor doloremque ea enim, facere fuga fugiat id mollitia numquam officia quidem
-        quis quo recusandae, rem sequi similique sint temporibus totam ut velit vero. A, aut labore nemo omnis optio
-        quod sequi sit totam ut.
-    </section>
-    <!-- According to the theory, the navigation bar should come after the main content in the markup -->
-    <nav>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Welcome to a demo of the holy grail layout using flexbox CSS features!
+      </h1>
+    </header>
+    <main>
+      <section id="main-content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias at cum
+        eaque earum, eius eligendi, enim eos error esse, excepturi harum illum
+        impedit laudantium molestias nemo nostrum officia pariatur praesentium
+        provident quaerat quibusdam quo quod repellat sapiente sequi sint
+        tempore unde veritatis vitae. Ab at eos error, eum hic itaque magni
+        maiores, minus nam nisi pariatur qui ratione temporibus tenetur
+        voluptatibus! Commodi consequatur debitis, dolor doloremque ea enim,
+        facere fuga fugiat id mollitia numquam officia quidem quis quo
+        recusandae, rem sequi similique sint temporibus totam ut velit vero. A,
+        aut labore nemo omnis optio quod sequi sit totam ut.
+      </section>
+      <!-- According to the theory, the navigation bar should come after the main content in the markup -->
+      <nav>
         <div id="home" class="nav-item">Home</div>
         <div id="gallery" class="nav-item">Gallery</div>
         <div id="aboutus" class="nav-item">About us</div>
         <div id="contacts" class="nav-item">Contacts</div>
-    </nav>
-    <aside id="ads">
+      </nav>
+      <aside id="ads">
         <div class="ad">
-            <p>Ad Nr 1</p>
+          <p>Ad Nr 1</p>
         </div>
         <div class="ad">
-            <p>Ad Nr 2</p>
+          <p>Ad Nr 2</p>
         </div>
         <div class="ad">
-            <p>Ad Nr 3</p>
+          <p>Ad Nr 3</p>
         </div>
-    </aside>
-</main>
-<footer><p>Copyright 2020</p></footer>
-
-</body>
+      </aside>
+    </main>
+    <footer><p>Copyright 2020</p></footer>
+  </body>
 </html>

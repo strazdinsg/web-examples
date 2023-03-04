@@ -1,49 +1,53 @@
 #language-selector-section {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 #language-selector-section label {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 #roll-exam-dice {
-    font-size: 2rem;
-    margin: 1rem 0 2rem 0;
+  font-size: 2rem;
+  margin: 1rem 0 2rem 0;
 }
 
 .question-table {
-    border-spacing: 0;
+  border-spacing: 0;
 }
+
 .question-table th {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
+
 .question-table td:nth-child(1) {
-    border-right: 1px dashed darkgray;
-    padding-right: 2rem;
+  border-right: 1px dashed darkgray;
+  padding-right: 2rem;
 }
 
 .difficult {
-    color: gray;
+  color: gray;
 }
 
 #question-set {
-    border-spacing: 0;
+  border-spacing: 0;
 }
 
 #question-set th {
-    text-align: left;
+  text-align: left;
 }
 
-#question-set th, #question-set td {
-    border-bottom: solid 1px gray;
-    padding: 0.5rem 1rem;
-    vertical-align: top;
+#question-set th,
+#question-set td {
+  border-bottom: solid 1px gray;
+  padding: 0.5rem 1rem;
+  vertical-align: top;
 }
 
-#question-set th:nth-child(1), #question-set td:nth-child(1) {
-    text-align: right;
+#question-set th:nth-child(1),
+#question-set td:nth-child(1) {
+  text-align: right;
 }
 
 #exam-question-set {
-    margin-bottom: 20rem;
+  margin-bottom: 20rem;
 }

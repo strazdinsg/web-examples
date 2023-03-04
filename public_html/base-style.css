@@ -4,59 +4,71 @@ Common style for all exercises
 ---------------------------------------
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 html {
-    font-family: 'Poppins', sans-serif;
-    font-size: 62.5%; /* Reset 1 rem to 10px */
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%; /* Reset 1 rem to 10px */
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 p {
-    margin-top: 0;
+  margin-top: 0;
 }
 
-p, li, pre, code, label, select, option, optgroup, input, span, table {
-    font-size: 1.6rem;
+p,
+li,
+pre,
+code,
+label,
+select,
+option,
+optgroup,
+input,
+span,
+table {
+  font-size: 1.6rem;
 }
 
 select {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 p:first-letter {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
-h1, h2 {
-    margin: 1rem 0 0 0;
+h1,
+h2 {
+  margin: 1rem 0 0 0;
 }
 
 h1 {
-    font-size: 3.2rem; /* 32px */
+  font-size: 3.2rem; /* 32px */
 }
 
 h2 {
-    font-size: 2.4rem; /* 24px */
+  font-size: 2.4rem; /* 24px */
 }
 
 h3 {
-    font-size: 1.8rem; /* 18px */
+  font-size: 1.8rem; /* 18px */
 }
 
 .reference-img {
-    min-width: 300px;
-    max-width: 1200px;
-    width: 100vw;
+  min-width: 300px;
+  max-width: 1200px;
+  width: 100vw;
 }
 
-code, pre {
-    background-color: #eee;
+code,
+pre {
+  background-color: #eee;
 }
 
 ol {
-    margin-top: 0.2em;
+  margin-top: 0.2em;
 }

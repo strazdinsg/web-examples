@@ -1,63 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Solution for Exercise 5 - Static grid</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
+    <link rel="stylesheet" href="../../base-style.css" />
     <style>
-        /* The solution STYLES HERE!!! */
-        #main-grid {
-            display: grid;
-            grid-template-rows: 200px 1fr 100px;
-            grid-template-columns: 200px auto;
-        }
+      /* The solution STYLES HERE!!! */
+      #main-grid {
+        display: grid;
+        grid-template-rows: 200px 1fr 100px;
+        grid-template-columns: 200px auto;
+      }
 
-        /* Not necessary to change these styles! */
-        #main-column {
-            max-width: 1000px;
-            min-width: 400px;
-            margin: auto;
-            border: 3px dashed lightblue;
-        }
+      /* Not necessary to change these styles! */
+      #main-column {
+        max-width: 1000px;
+        min-width: 400px;
+        margin: auto;
+        border: 3px dashed lightblue;
+      }
 
-        #main-grid {
-            height: 600px;
-        }
+      #main-grid {
+        height: 600px;
+      }
 
-        .item {
-            background-color: lightblue;
-            padding: 5px;
-            margin: 5px;
-            border: 1px solid black;
-        }
+      .item {
+        background-color: lightblue;
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid black;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <article>
+      <h1>Solution for Exercise 5</h1>
+      <p>
+        This is a solution for
+        <a href="../ex05-grid-static/exercise-5-static-grid.html">Exercise 5</a
+        >.
+      </p>
 
-<article>
-    <h1>Solution for Exercise 5</h1>
-    <p>This is a solution for
-        <a href="../ex05-grid-static/exercise-5-static-grid.html">Exercise 5</a>.
-    </p>
-
-    <!-- Don't change this div! -->
-    <div id="main-column">
-
+      <!-- Don't change this div! -->
+      <div id="main-column">
         <!-- Make this div to a grid container! -->
         <div id="main-grid">
-
-            <!-- Here are the grid items, you should not change anything for these! -->
-            <div class="item">Item 1</div>
-            <div class="item">Item 2</div>
-            <div class="item">Item 3</div>
-            <div class="item">Item 4</div>
-            <div class="item">Item 5</div>
-            <div class="item">Item 6</div>
+          <!-- Here are the grid items, you should not change anything for these! -->
+          <div class="item">Item 1</div>
+          <div class="item">Item 2</div>
+          <div class="item">Item 3</div>
+          <div class="item">Item 4</div>
+          <div class="item">Item 5</div>
+          <div class="item">Item 6</div>
         </div>
-    </div>
-
-</article>
-
-</body>
+      </div>
+    </article>
+  </body>
 </html>

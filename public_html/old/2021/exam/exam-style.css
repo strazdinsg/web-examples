@@ -1,47 +1,53 @@
 h1 {
-    font-size: 32px;
+  font-size: 32px;
 }
+
 h2 {
-    font-size: 24px;
+  font-size: 24px;
 }
+
 .question-table {
-    border-spacing: 0;
+  border-spacing: 0;
 }
+
 .question-table th {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
+
 .question-table td:nth-child(1) {
-    border-right: 1px dashed darkgray;
-    padding-right: 20px;
+  border-right: 1px dashed darkgray;
+  padding-right: 20px;
 }
 
 .difficult {
-    color: gray;
+  color: gray;
 }
 
 #question-set {
-    border-spacing: 0;
+  border-spacing: 0;
 }
 
 #question-set th {
-    text-align: left;
+  text-align: left;
 }
 
-#question-set th, #question-set td {
-    border-bottom: solid 1px gray;
-    padding: 5px 10px;
-    vertical-align: top;
+#question-set th,
+#question-set td {
+  border-bottom: solid 1px gray;
+  padding: 5px 10px;
+  vertical-align: top;
 }
 
-#question-set th:nth-child(1), #question-set td:nth-child(1) {
-    text-align: right;
+#question-set th:nth-child(1),
+#question-set td:nth-child(1) {
+  text-align: right;
 }
 
 #spacing {
-    height: 10vh;
+  height: 10vh;
 }
 
 select {
-    margin: 10px 5px;
-    font: inherit;
+  margin: 10px 5px;
+  font: inherit;
 }

@@ -1,42 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Ex11 Solution: jQuery</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
+    <link rel="stylesheet" href="../../base-style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
+    <article>
+      <h1>Solution for Exercise 11</h1>
+      <p>
+        This is a solution for
+        <a href="../exercises/ex11-jquery.html">Exercise 11</a>. See the source
+        code for this file.
+      </p>
+    </article>
 
-<article>
-    <h1>Solution for Exercise 11</h1>
-    <p>This is a solution for <a href="../exercises/ex11-jquery.html">Exercise 11</a>.
-        See the source code for this file.</p>
-</article>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, modi?
+    </p>
+    <p>
+      Adipisci autem blanditiis ducimus error, iste nihil omnis quam veritatis.
+    </p>
+    <p>
+      Dicta dolor eos eum ipsa necessitatibus neque, nesciunt repellendus
+      suscipit.
+    </p>
+    <p>
+      Aut, culpa dolores eum iste officiis perspiciatis sapiente tenetur
+      voluptas.
+    </p>
+    <p>
+      Officia quas, unde? Adipisci, beatae expedita fugit natus odit ratione.
+    </p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, modi?</p>
-<p>Adipisci autem blanditiis ducimus error, iste nihil omnis quam veritatis.</p>
-<p>Dicta dolor eos eum ipsa necessitatibus neque, nesciunt repellendus suscipit.</p>
-<p>Aut, culpa dolores eum iste officiis perspiciatis sapiente tenetur voluptas.</p>
-<p>Officia quas, unde? Adipisci, beatae expedita fugit natus odit ratione.</p>
+    <button onclick="sendDiceRequest()">Throw a dice</button>
+    <div id="dice-val"></div>
 
-<button onclick="sendDiceRequest()">Throw a dice</button>
-<div id="dice-val"></div>
-
-<script>
-    // This will be called when the whole DOM is ready. Same as <body onload="...">
-    $(document).ready(function () {
+    <script>
+      // This will be called when the whole DOM is ready. Same as <body onload="...">
+      $(document).ready(function () {
         $("p").html("jQuery woz ere");
-    });
+      });
 
-    function sendDiceRequest() {
-        $.get("https://web-tek.ninja/php_backend/throw_a_dice.php", function(response) {
+      function sendDiceRequest() {
+        $.get(
+          "https://web-tek.ninja/php_backend/throw_a_dice.php",
+          function (response) {
             $("#dice-val").html("You threw " + response);
-        })
-    }
-</script>
-
-
-</body>
+          }
+        );
+      }
+    </script>
+  </body>
 </html>

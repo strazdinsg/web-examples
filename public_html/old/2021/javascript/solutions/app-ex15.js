@@ -2,24 +2,28 @@
 
 // 1, 2
 var vehicle = {
-    maxSpeed: 200,
-    color: "gray",
-    model: "VW",
-    drive: function(speed) {
-        if (speed < this.maxSpeed) {
-            console.log(`${this.model} of ${this.color} color driving at ${speed} km/h`);
-        } else {
-            console.log(`Sorry, ${this.model} of ${this.color} color can't go that fast`);
-        }
+  maxSpeed: 200,
+  color: "gray",
+  model: "VW",
+  drive: function (speed) {
+    if (speed < this.maxSpeed) {
+      console.log(
+        `${this.model} of ${this.color} color driving at ${speed} km/h`
+      );
+    } else {
+      console.log(
+        `Sorry, ${this.model} of ${this.color} color can't go that fast`
+      );
     }
+  },
 };
 
 // 3
 var car = Object.create(vehicle);
 car.numberOfSeets = 5;
-car.canSeat = function(numberOfPersons) {
-    return numberOfPersons <= this.numberOfSeets;
-}
+car.canSeat = function (numberOfPersons) {
+  return numberOfPersons <= this.numberOfSeets;
+};
 
 // 4
 var redPorsche = Object.create(car);

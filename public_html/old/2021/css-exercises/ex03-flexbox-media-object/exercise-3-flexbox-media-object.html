@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Exercise 3 - Media object</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
-</head>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
 
-<body>
-
-<article>
-    <h1>Exercise 3</h1>
-    <p>This is Exercise #3, lecture on CSS Flexbox, used in the course
-        <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
+  <body>
+    <article>
+      <h1>Exercise 3</h1>
+      <p>
+        This is Exercise #3, lecture on CSS Flexbox, used in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
         at NTNU, campus Aalesund.
-    </p>
-    <p>Go <a href="../../index.html">back to exercise list</a>.</p>
+      </p>
+      <p>Go <a href="../../index.html">back to exercise list</a>.</p>
 
-    <h2>Purpose</h2>
-    <p>The purpose of the exercise is to practice configuring flexbox, including item properties.
-        There is a popular pattern in web development, called "media pattern". The idea is to
-        display an image and text side by side, without wrapping the text around the image.
-        An example could be a comment on a blog article.
-        In this exercise you will create a flexible container for displaying the media object and a
-        text.
-    </p>
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to practice configuring flexbox,
+        including item properties. There is a popular pattern in web
+        development, called "media pattern". The idea is to display an image and
+        text side by side, without wrapping the text around the image. An
+        example could be a comment on a blog article. In this exercise you will
+        create a flexible container for displaying the media object and a text.
+      </p>
 
-    <h2>Instructions</h2>
-    <p>Create an HTML document with an image and a text or reasonable length (how about Emmet
-        expression <code>lipsum800</code> ?). You can use images from
-        <a href="https://picsum.photos/">Lorem Picsum</a>.
-        Align them as in the media object pattern:
-    </p>
-    <ol>
+      <h2>Instructions</h2>
+      <p>
+        Create an HTML document with an image and a text or reasonable length
+        (how about Emmet expression <code>lipsum800</code> ?). You can use
+        images from <a href="https://picsum.photos/">Lorem Picsum</a>. Align
+        them as in the media object pattern:
+      </p>
+      <ol>
         <li>Image on the left, text on the right.</li>
         <li>Image should fill 30% of the available width, the text: 70%.</li>
-        <li>Minimum width for the image: 150px. Minimum width for the text column: 350px.</li>
-        <li>Both image and text containers should dynamically expand if there is more space
-            available.
+        <li>
+          Minimum width for the image: 150px. Minimum width for the text column:
+          350px.
+        </li>
+        <li>
+          Both image and text containers should dynamically expand if there is
+          more space available.
         </li>
         <li>Image should have correct proportions.</li>
-        <li>The image should have 20px margin on the sides (not on the top).</li>
-        <li>If there is not enough horizontal space available, a scrollbar should appear. I.e., the
-            text should not wrap under the image.
+        <li>
+          The image should have 20px margin on the sides (not on the top).
         </li>
-        <li>Now try to align the image on the right. If you have done it correctly, it should be a
-            single additional line of CSS code.
+        <li>
+          If there is not enough horizontal space available, a scrollbar should
+          appear. I.e., the text should not wrap under the image.
         </li>
-    </ol>
+        <li>
+          Now try to align the image on the right. If you have done it
+          correctly, it should be a single additional line of CSS code.
+        </li>
+      </ol>
 
-    <p>The following CSS properties may be handy (for the container):</p>
-    <pre><code>
+      <p>The following CSS properties may be handy (for the container):</p>
+      <pre><code>
         display: flex;
         flex-wrap
         flex-basis
@@ -61,29 +73,34 @@
         margin
     </code></pre>
 
-    <p>Here you can see a an example of how it could look:</p>
-    <img src="img/media-object-example.jpg"
-         alt="An image with a woman on the left and a text paragraph on the right"/>
-    <p>And this is how it could look when you move the image to the right:</p>
-    <img src="img/media-object-example2.jpg"
-         alt="An image with a woman on the right and a text paragraph on the left"/>
+      <p>Here you can see a an example of how it could look:</p>
+      <img
+        src="img/media-object-example.jpg"
+        alt="An image with a woman on the left and a text paragraph on the right"
+      />
+      <p>And this is how it could look when you move the image to the right:</p>
+      <img
+        src="img/media-object-example2.jpg"
+        alt="An image with a woman on the right and a text paragraph on the left"
+      />
 
-    <h2>Extra challenge</h2>
-    <p>Try nesting the image and text. It should work "out of the box". This could be useful in
-        blogs with commenting feature. P.S. There could be some issues with the min-width though.
-    </p>
+      <h2>Extra challenge</h2>
+      <p>
+        Try nesting the image and text. It should work "out of the box". This
+        could be useful in blogs with commenting feature. P.S. There could be
+        some issues with the min-width though.
+      </p>
 
+      <h2>Template</h2>
+      <p>No template for this exercise.</p>
 
-    <h2>Template</h2>
-    <p>No template for this exercise.</p>
-
-    <h2>Solution</h2>
-    <p>You can find a solution in <a href="../solutions/ex03-solution.html">
-        <code>../solutions/ex03-solution.html</code></a>.
-    </p>
-
-</article>
-
-
-</body>
+      <h2>Solution</h2>
+      <p>
+        You can find a solution in
+        <a href="../solutions/ex03-solution.html">
+          <code>../solutions/ex03-solution.html</code></a
+        >.
+      </p>
+    </article>
+  </body>
 </html>

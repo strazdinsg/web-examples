@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Ex08 Solution: Forms</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
-</head>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
 
-<body>
+  <body>
+    <article>
+      <h1>Solution for Exercise 8</h1>
+      <p>
+        This is a solution for
+        <a href="../exercises/ex08-html-form.html">Exercise 8</a>. See the
+        source code for this file.
+      </p>
+    </article>
 
-<article>
-    <h1>Solution for Exercise 8</h1>
-    <p>This is a solution for <a href="../exercises/ex08-html-form.html">Exercise 8</a>.
-        See the source code for this file.</p>
-</article>
-
-<article id="part1">
-    <h2>Part 1 - a "login" form</h2>
-    <form method="post" action="https://web-tek.ninja/php_backend/dummy_login.php">
+    <article id="part1">
+      <h2>Part 1 - a "login" form</h2>
+      <form
+        method="post"
+        action="https://web-tek.ninja/php_backend/dummy_login.php"
+      >
         <label>
-            Username:
-            <input type="text" name="username" value="john"/>
+          Username:
+          <input type="text" name="username" value="john" />
         </label>
         <label>
-            Password:
-            <input type="password" name="key"/>
+          Password:
+          <input type="password" name="key" />
         </label>
-        <input type="hidden" name="perseverance" value="gold!"/>
-        <input type="submit" value="Submit form"/>
-    </form>
+        <input type="hidden" name="perseverance" value="gold!" />
+        <input type="submit" value="Submit form" />
+      </form>
+    </article>
 
-</article>
+    <article id="part2">
+      <h2>Part 2 - extra challenge</h2>
 
-<article id="part2">
-    <h2>Part 2 - extra challenge</h2>
-
-    <p>Here you can search products on jula.no webpage.</p>
-    <form method="get" action="https://www.jula.no/search/">
+      <p>Here you can search products on jula.no webpage.</p>
+      <form method="get" action="https://www.jula.no/search/">
         <label>
-            Search:
-            <input type="text" name="query" placeholder="Write the search keywords here..."/>
+          Search:
+          <input
+            type="text"
+            name="query"
+            placeholder="Write the search keywords here..."
+          />
         </label>
-        <input type="submit" value="Det er jula snart!"/>
-    </form>
-
-</article>
-
-</body>
+        <input type="submit" value="Det er jula snart!" />
+      </form>
+    </article>
+  </body>
 </html>

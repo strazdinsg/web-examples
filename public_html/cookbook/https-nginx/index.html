@@ -1,67 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>HTTPS Setup for Nginx</title>
-    <link href="../../base-style.css" rel="stylesheet">
+    <link href="../../base-style.css" rel="stylesheet" />
     <style>
-        img {
-            display: block;
-            margin: 2rem auto;
-            max-width: 100%;
-        }
+      img {
+        display: block;
+        margin: 2rem auto;
+        max-width: 100%;
+      }
     </style>
-</head>
-<body>
-<h1>HTTPS Setup for Nginx web server</h1>
-<p>This is a short step-by-step <i>recipe</i> for setup of secure HTTPS connections for Nginx web server, using the free
-    <a href="https://letsencrypt.org/">"Let's Encrypt"</a> service. This recipe is used in
-    courses <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
-    and <a href="https://www.ntnu.edu/studies/courses/IDATA2306">IDATA2306 Application Development</a>
-    at <a href="https://ntnu.edu">NTNU</a>, campus <a href="https://www.ntnu.edu/alesund">Aalesund</a>.
-</p>
+  </head>
+  <body>
+    <h1>HTTPS Setup for Nginx web server</h1>
+    <p>
+      This is a short step-by-step <i>recipe</i> for setup of secure HTTPS
+      connections for Nginx web server, using the free
+      <a href="https://letsencrypt.org/">"Let's Encrypt"</a> service. This
+      recipe is used in courses
+      <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+        >IDATA2301 Web technologies</a
+      >
+      and
+      <a href="https://www.ntnu.edu/studies/courses/IDATA2306"
+        >IDATA2306 Application Development</a
+      >
+      at <a href="https://ntnu.edu">NTNU</a>, campus
+      <a href="https://www.ntnu.edu/alesund">Aalesund</a>.
+    </p>
 
-<p>This recipe is based on the guide <a
-        href="https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/">
-    "Using Free Let’s Encrypt SSL/TLS Certificates with NGINX"</a>.
-</p>
+    <p>
+      This recipe is based on the guide
+      <a
+        href="https://www.nginx.com/blog/using-free-ssltls-certificates-from-lets-encrypt-with-nginx/"
+      >
+        "Using Free Let’s Encrypt SSL/TLS Certificates with NGINX"</a
+      >.
+    </p>
 
-<p>Before you begin - you should get a domain name for your server. This step is optional, but recommended.
-    Alternatively, you can use HTTPS for an IP address, but that is not conventional. Domain registration is not
-    described here.</p>
+    <p>
+      Before you begin - you should get a domain name for your server. This step
+      is optional, but recommended. Alternatively, you can use HTTPS for an IP
+      address, but that is not conventional. Domain registration is not
+      described here.
+    </p>
 
-<p><strong>Instructions:</strong></p>
-<ol>
-    <li>Log into your server using SSH</li>
-    <li>Install Certbot command-line tool, provided by Let's Encrypt. To do that, run the following commands:
+    <p><strong>Instructions:</strong></p>
+    <ol>
+      <li>Log into your server using SSH</li>
+      <li>
+        Install Certbot command-line tool, provided by Let's Encrypt. To do
+        that, run the following commands:
         <pre>
     sudo apt update
     sudo apt install certbot python3-certbot-nginx
         </pre>
-    </li>
-    <li>Let Nginx know which domain you are using - edit the config file:
-        <code>sudo nano /etc/nginx/sites-enabled/default</code>.
-        There you specify line <code>server_name yourDomain;</code>
-        For example, if the domain is <code>example.com</code>, then the file looks as follows:
-        <img alt="Nginx configuration file with server name marked" src="01-nginx-server-name.png">
-    </li>
-    <li>Restart the Nginx web server: <code>sudo /etc/init.d/nginx restart</code></li>
-    <li>Run CertBot to obtain certificate for your domain (replace <code>example.com</code> with your domain!)
+      </li>
+      <li>
+        Let Nginx know which domain you are using - edit the config file:
+        <code>sudo nano /etc/nginx/sites-enabled/default</code>. There you
+        specify line <code>server_name yourDomain;</code> For example, if the
+        domain is <code>example.com</code>, then the file looks as follows:
+        <img
+          alt="Nginx configuration file with server name marked"
+          src="01-nginx-server-name.png"
+        />
+      </li>
+      <li>
+        Restart the Nginx web server:
+        <code>sudo /etc/init.d/nginx restart</code>
+      </li>
+      <li>
+        Run CertBot to obtain certificate for your domain (replace
+        <code>example.com</code> with your domain!)
         <pre>sudo certbot --nginx -d example.com</pre>
-    </li>
-    <li>Answer the questions asked. Suggested: redirect all traffic to HTTPS.</li>
-    <li>If you take a look in the config file, you see that Certbot has added the necessary config lines. It has also
-        saved the <code>.pem</code> file with the certificate, including the private key. Keep it secret! See the lines
-        added by Certbot marked in the picture below.
-        <img alt="Nginx config file with some lines added by Certbot" src="02-certbot-additions.png">
-    </li>
-    <li>To set up automatic certificate renewal, add the following line to cron tasks (command to edit cron tasks:
-        <code>sudo crontab -e</code>):
+      </li>
+      <li>
+        Answer the questions asked. Suggested: redirect all traffic to HTTPS.
+      </li>
+      <li>
+        If you take a look in the config file, you see that Certbot has added
+        the necessary config lines. It has also saved the <code>.pem</code> file
+        with the certificate, including the private key. Keep it secret! See the
+        lines added by Certbot marked in the picture below.
+        <img
+          alt="Nginx config file with some lines added by Certbot"
+          src="02-certbot-additions.png"
+        />
+      </li>
+      <li>
+        To set up automatic certificate renewal, add the following line to cron
+        tasks (command to edit cron tasks: <code>sudo crontab -e</code>):
         <pre>0 12 * * * /usr/bin/certbot renew --quiet</pre>
-    </li>
-</ol>
+      </li>
+    </ol>
 
-<p><a href="https://www.youtube.com/watch?v=b9434BoGkNQ">That's all, Folks!</a></p>
-
-</body>
+    <p>
+      <a href="https://www.youtube.com/watch?v=b9434BoGkNQ"
+        >That's all, Folks!</a
+      >
+    </p>
+  </body>
 </html>

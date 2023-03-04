@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Ex06 Solution: Modify DOM</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
 
-</head>
+  <body>
+    <article>
+      <h1>Solution for Exercise 6</h1>
+      <p>
+        This is a solution for
+        <a href="../exercises/ex06-modify-dom.html">Exercise 6</a>. See the
+        source code for this file.
+      </p>
+    </article>
 
-<body>
-
-<article>
-    <h1>Solution for Exercise 6</h1>
-    <p>This is a solution for <a href="../exercises/ex06-modify-dom.html">Exercise 6</a>.
-        See the source code for this file.</p>
-</article>
-
-<article>
-    <h2>Part 1 - add/remove class</h2>
-    <p id="my-paragraph">Here is a paragraph of text.</p>
-    <button onclick="addClass()">Add</button>
-    <button onclick="removeClass()">Remove</button>
-    <style>
+    <article>
+      <h2>Part 1 - add/remove class</h2>
+      <p id="my-paragraph">Here is a paragraph of text.</p>
+      <button onclick="addClass()">Add</button>
+      <button onclick="removeClass()">Remove</button>
+      <style>
         /** In general - not a good idea to mix and match HTML, JS and CSS code in bigger projects.
             CSS should be in the head only.
             Here we place it directly inside the article to have a more "compact" solution - everything in one place
          */
         .yellow {
-            background-color: yellow;
-            font-family: "Courier New", monospace;
+          background-color: yellow;
+          font-family: "Courier New", monospace;
         }
-    </style>
-    <script>
+      </style>
+      <script>
         function addClass() {
-            var par = document.getElementById("my-paragraph");
-            par.classList.add("yellow");
+          var par = document.getElementById("my-paragraph");
+          par.classList.add("yellow");
         }
 
         function removeClass() {
-            var par = document.getElementById("my-paragraph");
-            par.classList.remove("yellow");
+          var par = document.getElementById("my-paragraph");
+          par.classList.remove("yellow");
         }
-    </script>
-</article>
+      </script>
+    </article>
 
-<article>
-    <h2>Part 2 - color picker</h2>
-    <p>Pick your favorite color.</p>
-    <select id="color-picker" onchange="onColorSelected()">
+    <article>
+      <h2>Part 2 - color picker</h2>
+      <p>Pick your favorite color.</p>
+      <select id="color-picker" onchange="onColorSelected()">
         <option value="#ff0000">Red</option>
         <!-- Note: we can use any value, as long as it is a valid background color -->
         <option value="green">Green</option>
         <option value="#00f">Blue</option>
         <option value="magenta">Magenta</option>
         <option value="him">Roundhouse kick</option>
-    </select>
-    <p>I see that your favorite color is <span id="chosen-color">...</span></p>
-    <div id="color-example"></div>
-    <style>
+      </select>
+      <p>
+        I see that your favorite color is <span id="chosen-color">...</span>
+      </p>
+      <div id="color-example"></div>
+      <style>
         #color-example {
-            width: 220px;
-            height: 150px;
-            border: 1px solid black;
+          width: 220px;
+          height: 150px;
+          border: 1px solid black;
         }
-    </style>
-    <script>
+      </style>
+      <script>
         function onColorSelected() {
-            var color = document.getElementById("color-picker").value;
-            showColorName();
-            if (color !== "him") {
-                showColorPatch(color);
-            } else {
-                showHim();
-            }
+          var color = document.getElementById("color-picker").value;
+          showColorName();
+          if (color !== "him") {
+            showColorPatch(color);
+          } else {
+            showHim();
+          }
         }
 
         function showColorName() {
-            var selectbox = document.getElementById("color-picker");
-            var selectedText = selectbox.options[selectbox.selectedIndex].text;
-            document.getElementById("chosen-color").innerText = selectedText;
+          var selectbox = document.getElementById("color-picker");
+          var selectedText = selectbox.options[selectbox.selectedIndex].text;
+          document.getElementById("chosen-color").innerText = selectedText;
         }
 
         function showColorPatch(color) {
-            var patch = document.getElementById("color-example");
-            patch.style.backgroundColor = color;
-            // Need to clear the background image in case there was one
-            patch.style.backgroundImage = "";
+          var patch = document.getElementById("color-example");
+          patch.style.backgroundColor = color;
+          // Need to clear the background image in case there was one
+          patch.style.backgroundImage = "";
         }
 
         function showHim() {
-            document.getElementById("color-example").style.backgroundImage = "url('https://media.tenor.com/images/4e4d8f2858faa1bda487a7c6ae68bd49/tenor.gif')";
+          document.getElementById("color-example").style.backgroundImage =
+            "url('https://media.tenor.com/images/4e4d8f2858faa1bda487a7c6ae68bd49/tenor.gif')";
         }
-    </script>
-
-</article>
-
-</body>
+      </script>
+    </article>
+  </body>
 </html>

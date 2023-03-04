@@ -1,46 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>HTTPS Setup for Spring Boot</title>
-    <link href="../../base-style.css" rel="stylesheet">
-</head>
-<body>
-<h1>HTTPS Setup for Spring Boot</h1>
-<p>This is a short step-by-step <i>recipe</i> for setup of secure HTTPS connections for Spring Boot server applications
-    (REST API). This recipe is used in
-    courses <a href="https://www.ntnu.edu/studies/courses/IDATA2301">IDATA2301 Web technologies</a>
-    and <a href="https://www.ntnu.edu/studies/courses/IDATA2306">IDATA2306 Application Development</a>
-    at <a href="https://ntnu.edu">NTNU</a>, campus <a href="https://www.ntnu.edu/alesund">Aalesund</a>.
-</p>
+    <link href="../../base-style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>HTTPS Setup for Spring Boot</h1>
+    <p>
+      This is a short step-by-step <i>recipe</i> for setup of secure HTTPS
+      connections for Spring Boot server applications (REST API). This recipe is
+      used in courses
+      <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+        >IDATA2301 Web technologies</a
+      >
+      and
+      <a href="https://www.ntnu.edu/studies/courses/IDATA2306"
+        >IDATA2306 Application Development</a
+      >
+      at <a href="https://ntnu.edu">NTNU</a>, campus
+      <a href="https://www.ntnu.edu/alesund">Aalesund</a>.
+    </p>
 
-<p>This recipe is based on the guide <a
-        href="https://dzone.com/articles/spring-boot-secured-by-lets-encrypt">
-    "Spring Boot Secured By Let's Encrypt"</a>.
-</p>
+    <p>
+      This recipe is based on the guide
+      <a href="https://dzone.com/articles/spring-boot-secured-by-lets-encrypt">
+        "Spring Boot Secured By Let's Encrypt"</a
+      >.
+    </p>
 
-<p>Here we assume that you have a .pem file containing the TLS certificate with your private key. See recipe on
-    <a href="../https-nginx">HTTPS for Nginx</a> on how to generate it. </p>
+    <p>
+      Here we assume that you have a .pem file containing the TLS certificate
+      with your private key. See recipe on
+      <a href="../https-nginx">HTTPS for Nginx</a> on how to generate it.
+    </p>
 
-<p><strong>Instructions:</strong></p>
-<ol>
-    <li>Open the terminal as a root. If you have logged in as a non-root user, become root by using command <code>sudo
-        su</code></li>
-    <li>Convert the Certbot-generated key to PKCS12 format. Certbot saved your key in directory
-        <code>/etc/letsencrypt/live/yourdomain</code>.
-        For example, if your domain is <code>example.com</code>, the key is saved in directory
-        <code>/etc/letsencrypt/live/example.com</code>. Go to that directory:
-        <code>cd /etc/letsencrypt/live/example.com</code>. Then Convert the key:
-        <pre>openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -name tomcat -CAfile chain.pem -caname root</pre>
-        You can protect the key with a password, but using no password is OK as well. If everything went well, now you
-        have a file <code>/etc/letsencrypt/live/example.com/keystore.p12</code>
-    </li>
-    <li>Copy the <code>keystore.p12</code> to project files: <code>src/main/resources</code> - the same directory where
-        the <code>application.properties</code> is
-    </li>
-    <li>Change the permissions for the file so that the non-root user can read it: <code>sudo chmod a+r src/main/resources/keystore.p12</code></li>
-    <li>Configure your Spring Boot app to use HTTPS, and only HTTPS. Add the following lines to your
-        <code>application.properties</code> (Remember to replace <code>example.com</code> with your domain!):
+    <p><strong>Instructions:</strong></p>
+    <ol>
+      <li>
+        Open the terminal as a root. If you have logged in as a non-root user,
+        become root by using command <code>sudo su</code>
+      </li>
+      <li>
+        Convert the Certbot-generated key to PKCS12 format. Certbot saved your
+        key in directory <code>/etc/letsencrypt/live/yourdomain</code>. For
+        example, if your domain is <code>example.com</code>, the key is saved in
+        directory <code>/etc/letsencrypt/live/example.com</code>. Go to that
+        directory: <code>cd /etc/letsencrypt/live/example.com</code>. Then
+        Convert the key:
+        <pre>
+openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -name tomcat -CAfile chain.pem -caname root</pre
+        >
+        You can protect the key with a password, but using no password is OK as
+        well. If everything went well, now you have a file
+        <code>/etc/letsencrypt/live/example.com/keystore.p12</code>
+      </li>
+      <li>
+        Copy the <code>keystore.p12</code> to project files:
+        <code>src/main/resources</code> - the same directory where the
+        <code>application.properties</code> is
+      </li>
+      <li>
+        Change the permissions for the file so that the non-root user can read
+        it: <code>sudo chmod a+r src/main/resources/keystore.p12</code>
+      </li>
+      <li>
+        Configure your Spring Boot app to use HTTPS, and only HTTPS. Add the
+        following lines to your <code>application.properties</code> (Remember to
+        replace <code>example.com</code> with your domain!):
         <pre>
 server.port=8443
 server.ssl.key-store=classpath:keystore.p12
@@ -48,12 +75,21 @@ server.ssl.key-store-password= your-password (if you don't use password for the 
 server.ssl.keyStoreType= PKCS12
 server.ssl.keyAlias= tomcat
         </pre>
-    </li>
-    <li>Package the application in a <em>fat JAR</em> with the command <code>mvn package</code></li>
-    <li>You can run the application by running <code>java -jar target/*.jar</code></li>
-</ol>
+      </li>
+      <li>
+        Package the application in a <em>fat JAR</em> with the command
+        <code>mvn package</code>
+      </li>
+      <li>
+        You can run the application by running
+        <code>java -jar target/*.jar</code>
+      </li>
+    </ol>
 
-<p><a href="https://www.youtube.com/watch?v=b9434BoGkNQ">That's all, Folks!</a></p>
-
-</body>
+    <p>
+      <a href="https://www.youtube.com/watch?v=b9434BoGkNQ"
+        >That's all, Folks!</a
+      >
+    </p>
+  </body>
 </html>

@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="../../base-style.css" />
     <style>
       /*
-    /* -------------------------------------
-       The solution STYLES HERE!!!
-       ------------------------------------- */
+        /* -------------------------------------
+           The solution STYLES HERE!!!
+           ------------------------------------- */
       #brick-wall-grid {
         display: grid;
         grid-template-rows: 100px 100px 100px;
@@ -16,13 +16,13 @@
         grid-template-columns: 110px 110px 110px;
 
         /* We could also be fancy and write:
-      grid-template-rows: repeat(3, 100px);
-      grid-template-columns: repeat(3, 110px);
-       */
+              grid-template-rows: repeat(3, 100px);
+              grid-template-columns: repeat(3, 110px);
+               */
       }
 
       /* There are different ways to do it.
-    We could assign names to grid areas as well */
+        We could assign names to grid areas as well */
 
       /* Place the bricks in the right rows */
       #brick2,
@@ -41,7 +41,7 @@
       }
 
       /* Now configure the right columns for the long bricks.
-    The small ones will "fall into place" automatically */
+        The small ones will "fall into place" automatically */
       #brick3 {
         grid-column: 1 / span 2;
       }
@@ -55,10 +55,10 @@
       }
 
       /* ----------------------------------------------------------
-       EXTRA CHALLENGE: Vertical centering of text
-        We make each brick also a flex container and align
-        the content in the center (cross axis = vertical axis)
-       ---------------------------------------------------------- */
+           EXTRA CHALLENGE: Vertical centering of text
+            We make each brick also a flex container and align
+            the content in the center (cross axis = vertical axis)
+           ---------------------------------------------------------- */
       .brick {
         display: flex;
         justify-content: center;
@@ -66,8 +66,8 @@
       }
 
       /* -------------------------------------
-       These styles were provides in the template
-       ------------------------------------- */
+           These styles were provides in the template
+           ------------------------------------- */
       #brick-wall-grid {
         background-color: gray;
         width: min-content;

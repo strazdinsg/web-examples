@@ -1,90 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Solution for Exercise 2 - Functions</title>
-    <link rel="stylesheet" href="../../base-style.css"/>
-</head>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
 
-<body>
+  <body>
+    <article>
+      <h1>Solution for Exercise 2</h1>
+      <p>
+        This is a solution for
+        <a href="../exercises/ex02-functions.html">Exercise 2</a>. See the
+        source code for this file, and check the output in the console.
+      </p>
+    </article>
 
-<article>
-    <h1>Solution for Exercise 2</h1>
-    <p>This is a solution for <a href="../exercises/ex02-functions.html">Exercise 2</a>. See the source code for this
-        file, and check the output in the console.</p>
-</article>
-
-<script type="application/javascript">
-    /////////////////////////////////////////////
-    // Steps 1 and 2
-    /////////////////////////////////////////////
-    function hello(firstname, lastname) {
+    <script type="application/javascript">
+      /////////////////////////////////////////////
+      // Steps 1 and 2
+      /////////////////////////////////////////////
+      function hello(firstname, lastname) {
         lastname = lastname || "Norris";
         console.log("Hello, ", firstname, lastname);
-    }
+      }
 
-    hello("Chuck", "Dorris");
-    hello("Chuck");
+      hello("Chuck", "Dorris");
+      hello("Chuck");
 
-    /////////////////////////////////////////////
-    // Step 3
-    /////////////////////////////////////////////
-    function includeChars(s, c) {
+      /////////////////////////////////////////////
+      // Step 3
+      /////////////////////////////////////////////
+      function includeChars(s, c) {
         return s.indexOf(c) >= 0;
-    }
+      }
 
-    var i = 1;
-    console.log("includeChars test ", i++, includeChars("Chuck", "uck"));
-    console.log("includeChars test ", i++, includeChars("Chuck", "yuck"));
-    console.log("includeChars test ", i++, includeChars("Chuck", "Duck"));
-    console.log("includeChars test ", i++, includeChars("Chuck", "C"));
-    console.log("includeChars test ", i++, includeChars("Chuck", "K"));
-    console.log("includeChars test ", i++, includeChars("Chuck", "DDD"));
+      var i = 1;
+      console.log("includeChars test ", i++, includeChars("Chuck", "uck"));
+      console.log("includeChars test ", i++, includeChars("Chuck", "yuck"));
+      console.log("includeChars test ", i++, includeChars("Chuck", "Duck"));
+      console.log("includeChars test ", i++, includeChars("Chuck", "C"));
+      console.log("includeChars test ", i++, includeChars("Chuck", "K"));
+      console.log("includeChars test ", i++, includeChars("Chuck", "DDD"));
 
-    /////////////////////////////////////////////
-    // Steps 4, 5 and 6
-    /////////////////////////////////////////////
-    function countChars(s, c) {
+      /////////////////////////////////////////////
+      // Steps 4, 5 and 6
+      /////////////////////////////////////////////
+      function countChars(s, c) {
         // We try to split the string using char c as a separator. We will get N parts. The number of a's is N-1
-        var parts = s.split(c)
+        var parts = s.split(c);
         return parts.length - 1;
-    }
+      }
 
-    function countA(s) {
+      function countA(s) {
         return countChars(s, "a");
-    }
+      }
 
-    console.log("countA(a)", countA("a"));
-    console.log("countA(aaaaa)", countA("aaaaa"));
-    console.log("countA(Abrakadabra)", countA("Abrakadabra"));
-    console.log("countA(Zumba)", countA("Zumba"));
-    console.log("countA(Pepperoni with cheese)", countA("Pepperoni with cheese"));
+      console.log("countA(a)", countA("a"));
+      console.log("countA(aaaaa)", countA("aaaaa"));
+      console.log("countA(Abrakadabra)", countA("Abrakadabra"));
+      console.log("countA(Zumba)", countA("Zumba"));
+      console.log(
+        "countA(Pepperoni with cheese)",
+        countA("Pepperoni with cheese")
+      );
 
-    console.log("countChars(Pizza, z)", countChars("Pizza", "z"));
-    console.log("countChars(Pizza, zz)", countChars("Pizza", "zz"));
-    console.log("countChars(Pepperoni with cheese, e)", countChars("Pepperoni with cheese", "e"));
+      console.log("countChars(Pizza, z)", countChars("Pizza", "z"));
+      console.log("countChars(Pizza, zz)", countChars("Pizza", "zz"));
+      console.log(
+        "countChars(Pepperoni with cheese, e)",
+        countChars("Pepperoni with cheese", "e")
+      );
 
-    /////////////////////////////////////////////
-    // Step 7
-    /////////////////////////////////////////////
+      /////////////////////////////////////////////
+      // Step 7
+      /////////////////////////////////////////////
 
-    // You can find a solution by simply Googling "Javascript check if a string is an email"
-    // This function was found on https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
-    // To understand it, you need to understand regular expressions :/
-    function isEmail(s) {
-        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      // You can find a solution by simply Googling "Javascript check if a string is an email"
+      // This function was found on https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+      // To understand it, you need to understand regular expressions :/
+      function isEmail(s) {
+        const re =
+          /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(s).toLowerCase());
-    }
+      }
 
-    console.log("isEmail(chuck@microsoft.com)", isEmail("chuck@microsoft.com"));
-    console.log("isEmail(microsoft@chuck.com)", isEmail("microsoft@chuck.com"));
-    console.log("isEmail(microsoft@chuck)", isEmail("microsoft@chuck"));
-    console.log("isEmail(@chuck)", isEmail("@chuck"));
-    console.log("isEmail(@chuck.com)", isEmail("@chuck.com"));
-    console.log("isEmail(___@chuck.com)", isEmail("___@chuck.com"));
-    console.log("isEmail(r@undhou.se)", isEmail("r@undhou.se"));
-
-</script>
-
-</body>
+      console.log(
+        "isEmail(chuck@microsoft.com)",
+        isEmail("chuck@microsoft.com")
+      );
+      console.log(
+        "isEmail(microsoft@chuck.com)",
+        isEmail("microsoft@chuck.com")
+      );
+      console.log("isEmail(microsoft@chuck)", isEmail("microsoft@chuck"));
+      console.log("isEmail(@chuck)", isEmail("@chuck"));
+      console.log("isEmail(@chuck.com)", isEmail("@chuck.com"));
+      console.log("isEmail(___@chuck.com)", isEmail("___@chuck.com"));
+      console.log("isEmail(r@undhou.se)", isEmail("r@undhou.se"));
+    </script>
+  </body>
 </html>
