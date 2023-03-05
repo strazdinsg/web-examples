@@ -51,15 +51,37 @@
     <script>
       const tbodyElement = document.querySelector("#part1-table tbody");
 
+      /**
+       * Add a "Hello World" row to the table.
+       */
       function addRow() {
-        const helloCell = document.createElement("td");
-        const worldCell = document.createElement("td");
-        helloCell.innerText = "Hello";
-        worldCell.innerText = "World";
-        const newRow = document.createElement("tr");
-        newRow.appendChild(helloCell);
-        newRow.appendChild(worldCell);
-        tbodyElement.appendChild(newRow);
+        const columns = [createCell("Hello"), createCell("World")];
+        const row = createRow(columns);
+        tbodyElement.appendChild(row);
+      }
+
+      /**
+       * Create a table cell, with given text as its body.
+       * @param {string} cellText Text to include inside the cell
+       * @return {HTMLTableCellElement} A <td> element
+       */
+      function createCell(cellText) {
+        const cell = document.createElement("td");
+        cell.innerText = cellText;
+        return cell;
+      }
+
+      /**
+       * Create a row element.
+       * @param {array} columns The column elements to add as its children
+       * @return {HTMLTableRowElement} A <tr> element
+       */
+      function createRow(columns) {
+        const row = document.createElement("tr");
+        for (let i = 0; i < columns.length; ++i) {
+          row.appendChild(columns[i]);
+        }
+        return row;
       }
 
       function removeLastRow() {
@@ -80,16 +102,14 @@
 
       <script>
         /**
-         * Move the runner div to a random row and column within the table
-         * @param runnerDiv
+         * Move the runner div to a random row and column within the table.
+         * @param {HTMLElement} runnerDiv Reference to the DIV element that needs to escape
          */
         function escape(runnerDiv) {
           // We could find the runnerDiv by ID as well,
           // just using another technique on how to pass data in event handler, here as an example
 
-          // Remove it from the parent
-          const currentParent = runnerDiv.parentElement;
-          currentParent.removeChild(runnerDiv);
+          removeFromParent(runnerDiv);
 
           // Flip a coin to get random row and column
           const rowIndex = getRandomRowIndex();
@@ -97,7 +117,6 @@
           console.log("Moving to row " + rowIndex + ", column " + columnIndex);
 
           // Find target cell
-          // Table has tbody as the direct child
           const targetRow = tbodyElement.children[rowIndex];
           const targetCell = targetRow.children[columnIndex];
 
@@ -105,12 +124,17 @@
           targetCell.appendChild(runnerDiv);
         }
 
+        function removeFromParent(element) {
+          element.parentElement.removeChild(element);
+        }
+
         /**
          * Get index for one of existing table rows
          * @returns {number} an integer in the interval [0, rowCount-1]
          */
         function getRandomRowIndex() {
-          // Based on the previous logic we are sure that the number of rows can't be less than 1
+          // Based on the previous logic we are sure that the number of
+          // rows can't be less than 1
           const rowCount = tbodyElement.children.length;
           // Get an integer in the interval [0, rowCount-1]
           return Math.floor(Math.random() * rowCount);

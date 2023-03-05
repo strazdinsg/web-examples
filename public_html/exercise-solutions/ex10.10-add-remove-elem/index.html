@@ -16,7 +16,11 @@
 
     <h2>Part 1 - add a paragraph on button-click</h2>
     <button onclick="addParagraph()">Add</button>
-    <button disabled="disabled" id="removeButton" onclick="removeParagraph()">
+    <button
+      disabled="disabled"
+      id="removeButton"
+      onclick="removeFirstParagraph()"
+    >
       Remove
     </button>
     <section id="paragraphs"></section>
@@ -36,12 +40,12 @@
         removeButton.disabled = false; // A paragraph exists, can remove now
       }
 
-      function removeParagraph() {
+      function removeFirstParagraph() {
         // Select only the paragraphs, skip the "text nodes" which can be inside the parent sections
         const paragraphElements = parentSection.querySelectorAll("p");
         if (paragraphElements.length > 0) {
           if (paragraphElements.length === 1) {
-            // Last element left
+            // Only one element left
             removeButton.disabled = true;
           }
           paragraphElements[0].remove();
