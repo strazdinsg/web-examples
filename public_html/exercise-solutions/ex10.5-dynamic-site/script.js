@@ -1,5 +1,5 @@
 /////////////////////////////////////////////
-// Step 1
+// Step 2
 /////////////////////////////////////////////
 function showHello() {
   let hello_p = document.getElementById("hello-paragraph");
@@ -7,9 +7,9 @@ function showHello() {
 }
 
 /////////////////////////////////////////////
-// Step 2
+// Step 3
 /////////////////////////////////////////////
-// We can get a reference to the element globally
+// We can store a reference to the element in a global variable as well
 let second_span = document.getElementById("second-counter");
 let seconds = 1;
 
@@ -18,11 +18,11 @@ function showSecondCounter() {
   seconds++;
 }
 
-// Call it once every second
+// Call `showSecondCounter` once every second (every 1000ms)
 setInterval(showSecondCounter, 1000);
 
 /////////////////////////////////////////////
-// Step 3
+// Step 4
 /////////////////////////////////////////////
 let a_input = document.getElementById("a-input");
 let b_input = document.getElementById("b-input");
@@ -33,7 +33,7 @@ function updateMultiplication() {
   document.getElementById("x-output").innerText = "" + a * b;
 }
 
-// Update the multiplication right from the start
+// Update the multiplication right at the start
 updateMultiplication();
 
 // And react on changes in the text
