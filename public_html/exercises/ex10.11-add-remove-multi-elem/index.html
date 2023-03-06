@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 10.11: Add/remove DOM elements</title>
+    <link href="../../base-style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <article>
+      <h1>Exercise 10.11</h1>
+      <p>
+        This is Exercise 10.11, lecture on modifying DOM with Javascript, used
+        in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to learn how you can remove elements from
+        the DOM and add new ones.
+      </p>
+
+      <h2>Instructions</h2>
+      <section>
+        <h3>Part 1 - Add/remove a table row</h3>
+        <ol>
+          <li>Create a document and add a table with two columns.</li>
+          <li>Add three rows in it, with any content you want.</li>
+          <li>Add a button with text "Add a row".</li>
+          <li>
+            Every time the user clicks on the button, add a new row to the table
+            with text "Hello" in one column and "World" in the other column.
+            Hint: <code>&lt;table&gt;</code> has <code>&lt;tbody&gt;</code> as
+            the direct child, rows should be added to the
+            <code>&lt;tbody&gt;</code> element not to the
+            <code>&lt;table&gt;</code> directly!
+          </li>
+          <li>
+            Extend the previous example: add a button "Remove last row". When
+            the user clicks on it, the last row of the table is removed.
+          </li>
+          <li>
+            If the table has three or fever rows left, an alert must be shown
+            saying "Can't remove the last 3 rows", and the row must not be
+            removed.
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>Part 2 - div inside a box</h3>
+        <ol>
+          <li>
+            Add a <code>&lt;div&gt;</code> element to the page, set its height
+            and width to <code>20px</code>, background color to
+            <code>green</code>.
+          </li>
+          <li>
+            Make the <code>&lt;div&gt;</code> element escape - when the user
+            moves the mouse over it, the <code>&lt;div&gt;</code> element is
+            removed from the place it currently <i>sits</i> and is moved to a
+            random place in the table above. I.e, it is added to a random row
+            and random column inside the table you created in the previous
+            steps.
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>Part 3 - div outside the box</h3>
+        <p>
+          Extra challenge: add some more content to the page (some headings,
+          paragraphs, etc.) and make the div escape randomly at any place in the
+          DOM tree. I.e., don't limit its placement to the table.
+        </p>
+      </section>
+
+      <section>
+        <h2>Solution</h2>
+        <p>
+          You can find a solution
+          <a href="../../exercise-solutions/ex10.11-add-remove-multi-elem"
+            >here</a
+          >.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>

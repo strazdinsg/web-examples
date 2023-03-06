@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 10.6: Query multiple elements</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Exercise 10.6</h1>
+      <p>
+        This is Exercise 10.6, lecture on traversing DOM with Javascript, used
+        in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to learn how you can select more than one
+        element
+      </p>
+
+      <h2>Instructions</h2>
+
+      <p>
+        Go to <a href="https://web-tek.ninja">https://web-tek.ninja</a> in your
+        browser (preferably in another tab), open developer tool console and
+        explore the DOM:
+      </p>
+      <ol>
+        <li>
+          Select all <code>h2</code> elements on the site: type
+          <code>document.querySelectorAll('h2')</code> in the console, press
+          <kbd>Enter</kbd>. Explore the NodeList you get in return. Open it.
+          What happens when you move the mouse over the first element in the
+          array?
+        </li>
+        <li>
+          Select all elements with class <code>css-exercise</code>. You should
+          get all 7 <code>&lt;li&gt;</code>
+          elements containing links to CSS exercises. But you probably got only
+          6 items, right. Can you find what is missing? P.S. Debugging and
+          finding mistakes in HTML, CSS and Javascript is an essential skill!
+        </li>
+        <li>
+          Select the first <code>&lt;article&gt;</code> element on the page,
+          store it in a variable.
+        </li>
+        <li>
+          Now use that variable to find all <code>&lt;h3&gt;</code> elements
+          inside that article. How many did you get? What do they refer to?
+        </li>
+      </ol>
+    </article>
+  </body>
+</html>

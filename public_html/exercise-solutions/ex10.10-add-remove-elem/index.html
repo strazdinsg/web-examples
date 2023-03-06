@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ex10.10 Solution: Add/remove</title>
+    <link href="../../base-style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <h1>Solution for Exercise 10.10</h1>
+    <p>
+      This is a solution for
+      <a href="../../exercises/ex10.10-add-remove-elem">Exercise 10.10</a>. See
+      the source code for this file.
+    </p>
+
+    <h2>Part 1 - add a paragraph on button-click</h2>
+    <button onclick="addParagraph()">Add</button>
+    <button
+      disabled="disabled"
+      id="removeButton"
+      onclick="removeFirstParagraph()"
+    >
+      Remove
+    </button>
+    <section id="paragraphs"></section>
+
+    <script>
+      let counter = 1;
+
+      // At this point the DOM should be ready, so we can store references to the elements as global variables
+      const parentSection = document.getElementById("paragraphs");
+      const removeButton = document.getElementById("removeButton");
+
+      function addParagraph() {
+        const paragraph = document.createElement("p");
+        paragraph.innerText = "Hello " + counter + "!";
+        counter++;
+        parentSection.appendChild(paragraph);
+        removeButton.disabled = false; // A paragraph exists, can remove now
+      }
+
+      function removeFirstParagraph() {
+        // Select only the paragraphs, skip the "text nodes" which can be inside the parent sections
+        const paragraphElements = parentSection.querySelectorAll("p");
+        if (paragraphElements.length > 0) {
+          if (paragraphElements.length === 1) {
+            // Only one element left
+            removeButton.disabled = true;
+          }
+          paragraphElements[0].remove();
+        }
+      }
+    </script>
+  </body>
+</html>

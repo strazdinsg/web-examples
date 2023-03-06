@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solution for Exercise 10.5 - Dynamic site</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+
+  <!-- onload is needed for Step 2 -->
+  <body onload="showHello()">
+    <article>
+      <h1>Solution for Exercise 10.5</h1>
+      <p>
+        This is a solution for
+        <a href="../../exercises/ex10.5-dynamic-site">Exercise 10.5</a>. See the
+        source code for this file and the <code>script.js</code> file, and check
+        the output in the console.
+      </p>
+    </article>
+
+    <!-- Step 1 -->
+    <p id="hello-paragraph">Loading...</p>
+
+    <p>
+      <span id="second-counter">X</span> seconds have passed since the page was
+      loaded.
+    </p>
+
+    <div>
+      <label
+        >A:
+        <input type="text" id="a-input" value="3" />
+      </label>
+    </div>
+    <div>
+      <label
+        >B:
+        <input type="text" id="b-input" value="5" />
+      </label>
+    </div>
+    <p>The two numbers multiplied are <i id="multiplication-output">X</i></p>
+
+    <!-- We include the script at the very end with the hope that when it executes, the whole document is already loaded -->
+    <script src="script.js"></script>
+  </body>
+</html>

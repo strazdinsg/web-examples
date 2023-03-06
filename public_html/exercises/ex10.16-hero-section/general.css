@@ -1,0 +1,63 @@
+/***********************************
+ General styles
+ ***********************************/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  color: #2a1100;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 3.2rem;
+  font-weight: normal;
+}
+
+p {
+  font-size: 2.4rem;
+}
+
+/* Links */
+a,
+a:link,
+a:visited {
+  color: #2a1100;
+  transition-duration: 0.2s;
+}
+
+a:hover {
+  color: #d35400;
+}
+
+/* main container */
+main {
+  width: 100%;
+  max-width: 160rem;
+  min-width: 90rem;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Call-to-action buttons */
+button.cta {
+  font-family: "Montserrat", sans-serif;
+  background-color: #943b00;
+  border: 0;
+  color: #f6ddcc;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+button.cta:hover {
+  background-color: #d35c00;
+  color: white;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS exercise 10.7: Tic Tac Toe</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Exercise 10.7</h1>
+      <p>
+        This is Exercise 10.7, lecture on traversing DOM with Javascript, used
+        in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to learn how you can select more than one
+        element and traverse the children.
+      </p>
+
+      <h2>Instructions</h2>
+      <ol>
+        <li>
+          Create an HTML document with a 3x3 grid container. An opportunity to
+          remember how CSS grids work ;).
+        </li>
+        <li>Put 9 div elements inside it.</li>
+        <li>
+          For even div elements add <code>class="even"</code> (div number 2, 4,
+          …, 8), for odd elements (div number 1, 3, …, 9) add
+          <code>class="odd"</code>.
+        </li>
+        <li>
+          Write a Javascript code (execute it when the page is loaded) which
+          sets text to "X" for all odd elements (those with
+          <code>class="odd"</code>) and sets text to "O" for all elements with
+          <code>class="even"</code>.
+        </li>
+
+        <li>
+          Extra challenge: find out how you can do the same even if you don't
+          assign any classes to the nine divs. I.e., you can access odd and even
+          child elements separately, with specific selectors. Hint: how would
+          you access those in CSS?
+        </li>
+      </ol>
+
+      <p>It should look something like this in the end:</p>
+      <img
+        src="reference.png"
+        alt="Tic tac toe with X on diagonals and O in other places"
+      />
+
+      <h2>Solution</h2>
+      <p>
+        You can find a solution
+        <a href="../../exercise-solutions/ex10.7-tic-tac-toe">here</a>.
+      </p>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 10.4: Access DOM by ID</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Exercise 10.4</h1>
+      <p>
+        This is Exercise 10.4, lecture on traversing DOM with Javascript, used
+        in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to learn how you can access specific
+        elements in the DOM tree.
+      </p>
+
+      <h2>Instructions</h2>
+      <p>
+        Go to <a href="https://web-tek.ninja">https://web-tek.ninja</a> in your
+        browser (preferably in another tab), open developer tool console and
+        explore the DOM:
+      </p>
+      <ol>
+        <li>
+          type <code>document.body</code> in the console, hit
+          <code>Enter</code>. What do you see?
+        </li>
+        <li>
+          Select the heading "CSS exercises" and save the reference to it in a
+          variable <code>heading1</code>. You can do that by issuing the
+          following command in the console:
+          <code
+            >let heading1 =
+            document.getElementById('css-exercise-heading');</code
+          >
+        </li>
+        <li>Now change the text of the heading to "Cool exercises".</li>
+        <li>
+          Find the ID of the heading "CSS Grid exercises". Hint: you can
+          right-click on it with the mouse, select Inspect. The Elements tab of
+          dev tools will be opened, and the element selected. Do you see the
+          id="..."?
+        </li>
+        <li>
+          Now change the text of this heading (from the previous step) to
+          "Hei!".
+        </li>
+      </ol>
+    </article>
+  </body>
+</html>

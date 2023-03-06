@@ -1,0 +1,53 @@
+/************************************
+ Header, navigation
+ ************************************/
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+}
+
+#logo-image {
+  height: 6rem;
+  /* Change the color hue for the logo to better match the color theme */
+  filter: hue-rotate(59deg);
+}
+
+#logo-text {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 6rem;
+  margin-left: -1.2rem;
+  padding-top: 1.1rem;
+  z-index: 1;
+}
+
+nav {
+  left: 0;
+  margin: auto;
+  font-size: 1.8rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  height: 6rem;
+  align-items: center;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+header .cta {
+  margin-right: 2rem;
+  font-size: 1.8rem;
+}

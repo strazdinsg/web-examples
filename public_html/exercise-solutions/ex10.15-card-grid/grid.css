@@ -1,0 +1,12 @@
+/*******************************
+  Grid styling
+ *******************************/
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 40rem);
+  grid-gap: 2rem;
+  max-width: 166rem;
+  min-width: 82rem;
+  margin: auto;
+  justify-content: center;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ex10.11 Solution: Add/remove</title>
+    <link href="../../base-style.css" rel="stylesheet" />
+    <style>
+      table {
+        border: 1px solid black;
+        border-spacing: 5px;
+      }
+
+      td {
+        border: 1px solid lightgray;
+        padding: 5px;
+      }
+
+      #running-man {
+        width: 20px;
+        height: 20px;
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Solution for Exercise 10.11</h1>
+    <p>
+      This is a solution for
+      <a href="../../exercises/ex10.11-add-remove-multi-elem">Exercise 10.11</a
+      >. See the source code for this file.
+    </p>
+
+    <h2>Part 1 - add/remove a table row</h2>
+    <button onclick="addRow()">Add a row</button>
+    <button onclick="removeLastRow()">Remove last row</button>
+    <table id="part1-table">
+      <tr>
+        <td>Hello</td>
+        <td>World</td>
+      </tr>
+      <tr>
+        <td>Hei</td>
+        <td>Verden</td>
+      </tr>
+      <tr>
+        <td>Sveika</td>
+        <td>Pasaule</td>
+      </tr>
+    </table>
+    <script>
+      const tbodyElement = document.querySelector("#part1-table tbody");
+
+      /**
+       * Add a "Hello World" row to the table.
+       */
+      function addRow() {
+        const columns = [createCell("Hello"), createCell("World")];
+        const row = createRow(columns);
+        tbodyElement.appendChild(row);
+      }
+
+      /**
+       * Create a table cell, with given text as its body.
+       * @param {string} cellText Text to include inside the cell
+       * @return {HTMLTableCellElement} A <td> element
+       */
+      function createCell(cellText) {
+        const cell = document.createElement("td");
+        cell.innerText = cellText;
+        return cell;
+      }
+
+      /**
+       * Create a row element.
+       * @param {array} columns The column elements to add as its children
+       * @return {HTMLTableRowElement} A <tr> element
+       */
+      function createRow(columns) {
+        const row = document.createElement("tr");
+        for (let i = 0; i < columns.length; ++i) {
+          row.appendChild(columns[i]);
+        }
+        return row;
+      }
+
+      function removeLastRow() {
+        if (tbodyElement.children.length > 3) {
+          const lastRow =
+            tbodyElement.children[tbodyElement.children.length - 1];
+          tbodyElement.removeChild(lastRow);
+        } else {
+          alert("Can't remove the last 3 rows");
+        }
+      }
+    </script>
+
+    <article id="part2">
+      <h2>Part 2 - The escaping Div</h2>
+      <p>Move the mouse over the green div.</p>
+      <div id="running-man" onmouseenter="escape(this)"></div>
+
+      <script>
+        /**
+         * Move the runner div to a random row and column within the table.
+         * @param {HTMLElement} runnerDiv Reference to the DIV element that needs to escape
+         */
+        function escape(runnerDiv) {
+          // We could find the runnerDiv by ID as well,
+          // just using another technique on how to pass data in event handler, here as an example
+
+          removeFromParent(runnerDiv);
+
+          // Flip a coin to get random row and column
+          const rowIndex = getRandomRowIndex();
+          const columnIndex = getRandomZeroOrOne();
+          console.log("Moving to row " + rowIndex + ", column " + columnIndex);
+
+          // Find target cell
+          const targetRow = tbodyElement.children[rowIndex];
+          const targetCell = targetRow.children[columnIndex];
+
+          // Move the
+          targetCell.appendChild(runnerDiv);
+        }
+
+        function removeFromParent(element) {
+          element.parentElement.removeChild(element);
+        }
+
+        /**
+         * Get index for one of existing table rows
+         * @returns {number} an integer in the interval [0, rowCount-1]
+         */
+        function getRandomRowIndex() {
+          // Based on the previous logic we are sure that the number of
+          // rows can't be less than 1
+          const rowCount = tbodyElement.children.length;
+          // Get an integer in the interval [0, rowCount-1]
+          return Math.floor(Math.random() * rowCount);
+        }
+
+        /**
+         * Throw a die - return 0 or 1 with 50% chance
+         * @returns {number} 0 or 1
+         */
+        function getRandomZeroOrOne() {
+          return Math.random() > 0.5 ? 1 : 0;
+        }
+      </script>
+    </article>
+  </body>
+</html>

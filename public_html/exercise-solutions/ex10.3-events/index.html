@@ -11,6 +11,7 @@
     </style>
   </head>
 
+  <!-- the onload here implements Step 2 -->
   <body onload="printSqrt()">
     <article>
       <h1>Solution for Exercise 10.3</h1>
@@ -21,7 +22,7 @@
       </p>
     </article>
 
-    <script type="application/javascript">
+    <script>
       /////////////////////////////////////////////
       // Step 1
       /////////////////////////////////////////////
@@ -30,7 +31,7 @@
       }
 
       /////////////////////////////////////////////
-      // Step 2
+      // Step 3
       /////////////////////////////////////////////
       let counter = 1;
 
@@ -41,7 +42,7 @@
       setInterval(printCounter, 1000); // Call printCounter every 1000 milliseconds
 
       /////////////////////////////////////////////
-      // Step 3
+      // Step 4
       /////////////////////////////////////////////
       function printMessage(message) {
         console.log(message);
@@ -62,15 +63,15 @@
     </div>
 
     <!--
-///////////////////////////////////////////////////
-Step 4
-///////////////////////////////////////////////////
-We could define a function externally, but here I choose to have an inline
-code block that is executed every time a key is pressed within the text input
-field.
-Note: try to press shift! The onkeyup event is fired, even though the text
-has not really changed!
--->
+    ///////////////////////////////////////////////////
+    Step 5
+    ///////////////////////////////////////////////////
+    We could define a separate function, but here I choose to have an inline
+    code block that is executed every time a key is pressed within the text input
+    field.
+    Note: try to press shift! The onkeyup event is fired, even though the text
+    has not really changed!
+    -->
     <label>
       Type a text here:
       <input type="text" onkeyup="console.log('The text changed')" />

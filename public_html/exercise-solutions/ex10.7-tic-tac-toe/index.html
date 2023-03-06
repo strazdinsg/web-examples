@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Solution for Exercise 10.7 - Tic Tac Toe</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+
+    <style>
+      .container {
+        display: grid;
+        grid-template: repeat(3, 50px) / repeat(3, 50px);
+        grid-gap: 10px;
+        margin-bottom: 50px;
+        align-items: center;
+      }
+
+      .container div {
+        text-align: center;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <article>
+      <h1>Solution for Exercise 10.7</h1>
+      <p>
+        This is a solution for
+        <a href="../../exercises/ex10.7-tic-tac-toe">Exercise 10.7</a>. See the
+        source code for this file for details.
+      </p>
+    </article>
+
+    <div id="container1" class="container">
+      <div class="odd"></div>
+      <div class="even"></div>
+      <div class="odd"></div>
+      <div class="even"></div>
+      <div class="odd"></div>
+      <div class="even"></div>
+      <div class="odd"></div>
+      <div class="even"></div>
+      <div class="odd"></div>
+    </div>
+
+    <div id="container2" class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <script>
+      /////////////////////////////////////////////
+      // Step 4 - use classes
+      /////////////////////////////////////////////
+      setTextForElementsWithClass("odd", "X");
+      setTextForElementsWithClass("even", "O");
+
+      /**
+       * Select all elements with given class, set their content to `text`.
+       * @param {string} className Class of the elements to select
+       * @param {string} text The text to place inside them
+       */
+      function setTextForElementsWithClass(className, text) {
+        let elements = document.getElementsByClassName(className);
+        for (let i = 0; i < elements.length; ++i) {
+          elements[i].innerText = text;
+        }
+      }
+
+      /////////////////////////////////////////////
+      // Step 5 - select without classes
+      /////////////////////////////////////////////
+      // We can use "fancier" selectors
+      // We can also refactor the code to avoid lots of copied code
+
+      /**
+       * Set inner text for given elements.
+       * @param {HTMLCollectionOf<Element>} elements List of elements to update
+       * @param {string} text The text to set inside the elements
+       */
+      function setTextToElements(elements, text) {
+        for (let i = 0; i < elements.length; ++i) {
+          elements[i].innerText = text;
+        }
+      }
+
+      let odd = document.querySelectorAll("#container2 div:nth-child(odd)");
+      let even = document.querySelectorAll("#container2 div:nth-child(even)");
+      setTextToElements(odd, "X");
+      setTextToElements(even, "O");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+/************************************
+ Experience/gallery section
+ ************************************/
+#experience-section {
+  display: flex;
+  gap: 2rem;
+  margin-top: 8rem;
+}
+
+#gallery-container {
+  flex-basis: 60rem;
+  flex-grow: 2;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(10rem, 30rem));
+  grid-gap: 2rem;
+  max-width: 94rem;
+}
+
+#gallery-container img {
+  width: 100%;
+  transition-duration: 0.2s;
+}
+
+/* Some liveliness for the images */
+#gallery-container img:hover {
+  transform: scale(102%);
+}
+
+#experience-text-container {
+  flex-basis: 40rem;
+  flex-grow: 1;
+  flex-shrink: 0;
+  padding-right: 2rem;
+}
+
+#experience-text-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+#experience-text-container p {
+  line-height: 3.8rem;
+}

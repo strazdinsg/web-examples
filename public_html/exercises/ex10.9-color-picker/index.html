@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS exercise 10.9: Color picker</title>
+    <link href="../../base-style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <article>
+      <h1>Exercise 10.9</h1>
+      <p>
+        This is Exercise 10.9, lecture on modifying DOM with Javascript, used in
+        the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to learn how you can access and modify
+        some properties of DOM elements.
+      </p>
+
+      <h2>Instructions</h2>
+      <ol>
+        <li>
+          Find out, how you can <i>catch</i> the event of user picking a value
+          in selectbox, and how you can read the value.
+        </li>
+        <li>
+          Create a page with a text "Pick your favorite color", and a selectbox
+          with values ["Red", "Green" "Roundhouse kick"].
+        </li>
+
+        <li>
+          Add a text which says: "I see that your favorite color is …". Hint it
+          is probably a good idea to create a paragraph for the whole sentence
+          and include a span for the placeholder of the color. Something along
+          these lines:
+          <code
+            >&lt;p&gt;I see that your favorite color
+            is&lt;span&gt;...&lt;/span&gt;&lt;/p&gt;</code
+          >. You probably also want an ID for the span to get a reference to it
+          in Javascript.
+        </li>
+        <li>
+          Add Javascript which reacts on user picking a color and replaces the
+          "…" with the name of the chosen color.
+        </li>
+        <li>
+          Extend the solution of the previous exercise, add some more colors to
+          the selectbox.
+        </li>
+        <li>
+          Add a div of a certain size (for example, 220x150 pixels), set
+          <code>id="color-example"</code> for it.
+        </li>
+        <li>
+          Whenever the user picks a color in the selectbox, set the background
+          color of that div to the chosen color. Hint: you probably want to
+          define color codes (such as <code>#ff0000</code>) as values for the
+          selecbox options, in addition to the values displayed for the user. An
+          example:
+          <code>&lt;option value="#ff0000"&gt;Red&lt;/option&gt;</code>. You
+          will also need to modify the code displaying the user-friendly value
+          of the color. Find out on the net how you can access the index of
+          selected item for a selectbox, and then text of the selected option.
+        </li>
+        <li>
+          Extra challenge: when "Roundhouse kick" is selected, set background
+          image of the div with <code>id="color-example"</code> to a picture of
+          <i>you know whom.</i>
+        </li>
+      </ol>
+
+      <h2>Solution</h2>
+      <p>
+        You can find a solution in
+        <a href="../../exercise-solutions/ex10.9-color-picker">here</a>.
+      </p>
+    </article>
+  </body>
+</html>

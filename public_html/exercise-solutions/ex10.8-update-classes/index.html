@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ex 10.8 Solution: Add/remove classes</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+    <style>
+      .yellow {
+        background-color: yellow;
+        font-family: "Courier New", monospace;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Solution for Exercise 10.8</h1>
+    <p>
+      This is a solution for
+      <a href="../../exercises/ex10.8-update-classes">Exercise 10.8</a>. See the
+      source code for this file.
+    </p>
+
+    <p id="my-paragraph">Here is a paragraph of text.</p>
+    <button onclick="addClass()">Add</button>
+    <button onclick="removeClass()">Remove</button>
+    <script>
+      function addClass() {
+        // Note: we could have the paragraph element global as well
+        const paragraph = document.getElementById("my-paragraph");
+        paragraph.classList.add("yellow");
+      }
+
+      function removeClass() {
+        const paragraph = document.getElementById("my-paragraph");
+        paragraph.classList.remove("yellow");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 10.5: Your first dynamic website</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <article>
+      <h1>Exercise 10.5</h1>
+      <p>
+        This is Exercise 10.5, lecture on traversing DOM with Javascript, used
+        in the course
+        <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+          >IDATA2301 Web technologies</a
+        >
+        at NTNU, campus Aalesund.
+      </p>
+      <p>Go <a href="../..">back to exercise list</a>.</p>
+
+      <h2>Purpose</h2>
+      <p>
+        The purpose of the exercise is to learn how you can modify text inside
+        HTML elements when an event happens.
+      </p>
+
+      <h2>Instructions</h2>
+      <ol>
+        <li>
+          Create a new HTML document which has one paragraph
+          (<code>&lt;p&gt;</code>) element in it. The text inside it should be
+          "Loading...".
+        </li>
+        <li>
+          Add a Javascript to the page, which sets the text in the
+          <code>&lt;p&gt;</code> element to "Hello" when the document is loaded.
+          (Hint: <code>&lt;body onload="..."&gt;</code>).
+        </li>
+        <li>
+          Add a paragraph to the same HTML document that shows a text: "<i>X</i>
+          seconds have passed since the page was loaded”. Update <i>X</i> every
+          second.
+        </li>
+        <li>
+          Create a "calculator":
+          <ol type="i">
+            <li>
+              Two text inputs (let us call them A and B), the user can input a
+              number in each of them. Set A=3, B=5 by default.
+            </li>
+            <li>A text saying: "the two numbers multiplied are <i>Y</i>".</li>
+            <li>
+              Update the <i>Y</i> to be A*B whenever text changes in any of the
+              inputs.
+            </li>
+            <li>
+              Extra challenge: show "Not a number!" when either A or B (or both)
+              are not numbers.
+            </li>
+          </ol>
+        </li>
+      </ol>
+
+      <h2>Solution</h2>
+      <p>
+        You can find a solution
+        <a href="../../exercise-solutions/ex10.5-dynamic-site">here</a>.
+      </p>
+    </article>
+  </body>
+</html>
