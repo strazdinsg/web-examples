@@ -30,7 +30,7 @@ let b_input = document.getElementById("b-input");
 function updateMultiplication() {
   let a = a_input.value;
   let b = b_input.value;
-  document.getElementById("x-output").innerText = "" + a * b;
+  document.getElementById("multiplication-output").innerText = "" + a * b;
 }
 
 // Update the multiplication right at the start
