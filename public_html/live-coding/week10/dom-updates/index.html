@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM element updates</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="modifying.js"></script>
+  </head>
+  <body onload="modifyDom()">
+    <h1>DOM update demo</h1>
+    <p>This is a demo of updating DOM elements with Javascript.</p>
+    <p id="classy-paragraph">
+      This paragraph will get a class assigned and hence will change its style.
+    </p>
+    <p>This paragraph will get a style applied directly by Javascript.</p>
+    <p>Here we have an unordered list, where items will be placed with JS:</p>
+    <ul></ul>
+    <p>
+      And here we have some checkboxes. One of them will be checked with
+      Javascript.
+    </p>
+    <label>
+      <input type="checkbox" />
+      Unchecked
+    </label>
+    <label>
+      <input type="checkbox" />
+      Checked
+    </label>
+    <label>
+      <input type="checkbox" id="js-controlled-checkbox" />
+      Checked with JS
+    </label>
+  </body>
+</html>

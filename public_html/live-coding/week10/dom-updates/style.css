@@ -1,0 +1,8 @@
+.yellow {
+  background-color: yellow;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+}

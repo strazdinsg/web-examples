@@ -1,0 +1,25 @@
+/* Put your styles here */
+
+/* Portrait tablet styles */
+@media (max-width: 960px) {
+  #product-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 640px) {
+  #product-container {
+    grid-template-columns: 100%;
+  }
+  h1 {
+    font-size: 3.8rem;
+  }
+}
+
+/* Landscape tablet / desktop styles */
+@media (max-width: 1280px) and (min-width: 961px) {
+  #product-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
