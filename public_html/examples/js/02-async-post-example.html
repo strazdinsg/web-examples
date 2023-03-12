@@ -8,7 +8,7 @@
       textarea {
         display: block;
         width: 100%;
-        height: 800px;
+        height: 80rem;
       }
     </style>
   </head>
@@ -34,33 +34,38 @@
     </div>
 
     <script>
-      const asyncRequest = new XMLHttpRequest();
-      asyncRequest.onload = onResponseReceived;
+      /**
+       * Send and HTTP POST request, include the username in the POST data.
+       * Shows the response as a simple text inside the textarea.
+       * Uses blocking calls with await instead of promises.
+       *
+       * @returns {Promise<void>} A promise to complete this operation at some time.
+       */
+      async function postForm() {
+        const username = document.getElementById("uname").value;
 
-      function postForm() {
         const formData = new FormData();
-        formData.append("username", document.getElementById("uname").value);
-        asyncRequest.open(
-          "POST",
-          "https://web-tek.ninja/php_backend/dummy_login.php"
+        formData.append("username", username);
+
+        const requestParameters = {
+          method: "POST",
+          body: formData,
+        };
+        const response = await fetch(
+          "https://web-tek.ninja/php_backend/dummy_login.php",
+          requestParameters
         );
-        asyncRequest.send(formData);
+
+        const responseBodyText = await response.text();
+        showResponseInTextArea(responseBodyText);
       }
 
       /**
-       * This function will be called when the status of HTTP response updates.
-       * Typically, when the response has come completely, but for large responses this method could be called several
-       * times during the download of the response. We therefore need to check the .readyState and .status properties.
+       * Show HTTP response text in the textarea.
+       * @param {string} responseText The body of the HTTP response, as a simple string
        */
-      function onResponseReceived() {
-        if (asyncRequest.readyState === XMLHttpRequest.DONE) {
-          if (asyncRequest.status === 200) {
-            document.getElementById("response").innerText =
-              asyncRequest.responseText;
-          } else {
-            console.error("Error " + asyncRequest.status);
-          }
-        }
+      function showResponseInTextArea(responseText) {
+        document.getElementById("response").innerText = responseText;
       }
     </script>
   </body>
