@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTTP GET with fetch</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <p>
+      This is an example showing how we can send an asynchronous HTTP GET
+      request in Javascript, using the <code>fetch</code> API. This example is
+      similar to <a href="01-async-get-example.html">Example 01</a>. The logic
+      is the same, but here we use <code>fetch</code> instead of
+      <code>XMLHttpRequest</code>.
+    </p>
+    <button onclick="fetchJoke()">Get a joke</button>
+
+    <script>
+      /**
+       * This function fetches a joke - sends an HTTP GET request to an external API.
+       * It also specifies which other functions must be called in a "cascade", because the fetch() function
+       * uses promises.
+       */
+      function fetchJoke() {
+        console.log("Starting fetchJoke()...");
+
+        fetch("https://api.chucknorris.io/jokes/random?category=dev")
+          .then(fetchResponseBodyAsJson)
+          .then(onResponseReceived)
+          .catch((err) => console.log("HTTP Error: " + err));
+
+        console.log("fetchJoke() function done");
+      }
+
+      /**
+       * This function takes an HTTP response, starts reading all the body of the response and returns it in
+       * a JSON format.
+       * Note: the response may have a long body which may not be fetched from the server just yet!
+       * Therefore, the body fetching and converting to a JSON returns a Promise that this work will be completed
+       * some time in the future.
+       *
+       * @param {Response} httpResponse HTTP response received from an HTTP request.
+       * @returns {Promise<JSON>} A promise to resolve the body in a JSON format (some time later).
+       */
+      function fetchResponseBodyAsJson(httpResponse) {
+        console.log("JSON body fetching...");
+        return httpResponse.json();
+      }
+
+      /**
+       * Callback function - handles the response - prints it to the console.
+       * @param {JSON} jsonResponse A JSON object representing the response from the server
+       */
+      function onResponseReceived(jsonResponse) {
+        console.log("Got response:");
+        console.log(jsonResponse);
+      }
+    </script>
+  </body>
+</html>

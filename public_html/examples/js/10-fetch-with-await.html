@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTTP GET with await</title>
+    <link rel="stylesheet" href="../../base-style.css" />
+  </head>
+  <body>
+    <p>
+      This is an example showing how we can send an asynchronous HTTP GET
+      request in Javascript, using the <code>fetch</code> API and using
+      <code>await</code> instead of promises. This example is similar to
+      <a href="09-async-fetch.html">Example 09</a>. The logic is the same, but
+      here we use <code>await</code> instead of Promises.
+    </p>
+    <button onclick="fetchJoke()">Get a joke</button>
+
+    <script>
+      /**
+       * This function fetches a joke - sends an HTTP GET request to an external API.
+       * It is implemented as an async function and uses `await` instead of promises.
+       */
+      async function fetchJoke() {
+        console.log("Starting fetchJoke()...");
+
+        // Send a request, get a Response back, the body is not fetched yet!
+        const response = await fetch(
+          "https://api.chucknorris.io/jokes/random?category=dev"
+        );
+
+        // Get the whole response body, treat it as a JSON object
+        const jsonBody = await response.json();
+
+        handleResponse(jsonBody);
+      }
+
+      /**
+       * Handle the received JSON response.
+       * @param {JSON} jsonResponse A JSON object representing the response from the server
+       */
+      function handleResponse(jsonResponse) {
+        console.log("Got response:");
+        console.log(jsonResponse);
+      }
+    </script>
+  </body>
+</html>
