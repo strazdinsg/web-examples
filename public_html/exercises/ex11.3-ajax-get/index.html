@@ -19,9 +19,25 @@
 
     <h2>Purpose</h2>
     <p>
-      The purpose of the exercise is practice sending asynchronous HTTP requests
-      with <code>XMLHttpRequest</code> (Ajax).
+      The purpose of the exercise is practice sending asynchronous HTTP
+      requests. There are several ways how to do it, you can choose any of it.
+      The three ways shown in the lectures are:
     </p>
+    <ul>
+      <li>
+        <code>XMLHttpRequest</code>, see
+        <a href="../../examples/js/01-async-get-example.html">example here</a>.
+      </li>
+      <li>
+        The <code>fetch()</code> function, with Promises, see
+        <a href="../../examples/js/09-async-fetch.html">example here</a>.
+      </li>
+      <li>
+        The <code>fetch()</code> function, with <code>async</code> and
+        <code>await</code> , see
+        <a href="../../examples/js/10-fetch-with-await.html">example here</a>.
+      </li>
+    </ul>
 
     <h2>Instructions</h2>
     <p>
@@ -34,8 +50,8 @@
     <ol>
       <li>Create a page with a button, with a text "Throw a die".</li>
       <li>
-        When the button is clicked, use <code>XMLHttpRequest</code> to send an
-        asynchronous HTTP GET request to the address
+        When the button is clicked, send an asynchronous HTTP GET request to the
+        address
         <code>https://web-tek.ninja/php_backend/throw_a_dice.php</code>
       </li>
       <li>

@@ -16,37 +16,26 @@
       </p>
     </article>
 
-    <h2>Part 1 - throw a dice</h2>
-    <button onclick="sendDiceRequest()">Throw a dice</button>
+    <button onclick="showDiceFromApi()">Throw a dice</button>
     <p id="dice-val"></p>
 
     <script>
-      // Create a request and register the function to be called when the response comes. No request sent yet!
-      const request = new XMLHttpRequest();
-      request.onload = onResponseReceived;
-
       /**
-       * Send request to the API (backend)
+       * Send request to the API (backend) and show the result (dice value) in the document.
+       * @returns {Promise<void>}
        */
-      function sendDiceRequest() {
-        request.open(
-          "GET",
+      async function showDiceFromApi() {
+        const response = await fetch(
           "https://web-tek.ninja/php_backend/throw_a_dice.php"
         );
-        request.send();
+        const responseText = await response.text();
+        showDiceValue(responseText);
       }
 
       /**
-       * This function is called when the HTTP response from the API comes
+       * Show value of the dice inside an HTML element (on the page).
+       * @param {string} diceValue The value of the dice, as received from the API.
        */
-      function onResponseReceived() {
-        if (request.readyState === XMLHttpRequest.DONE) {
-          if (request.status === 200) {
-            showDiceValue(request.responseText);
-          }
-        }
-      }
-
       function showDiceValue(diceValue) {
         document.getElementById("dice-val").innerText =
           "You threw " + diceValue;
