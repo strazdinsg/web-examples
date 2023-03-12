@@ -1,30 +1,82 @@
 <?php
 require_once("cors_handling.php");
-// A script that returns a random number 1-6, simulates a throw of a dice.
-$number = rand(1, 6);
+// A script that returns a random number 1-6, simulates a throw of a die.
+// If parameter `n` is specified in the request, return an array of n dice
 
-// Check if the external wrapper requested a sleep
-if (isset($sleep) && $sleep) {
-  // Sleep time is the same as the value of the dice
-  sleep($number);
+$dieValue = throwDie();
+
+if (isSleepRequired()) {
+  sleep($dieValue);
 }
 
-if (isset($_REQUEST["n"])) {
-  // Multiple dice requested
-  // Make sure we get an int within allowed boundaries
-  $num_dice = (int) $_REQUEST["n"];
-  if ($num_dice < 1) {
-    $num_dice = 1;
-  } else if ($num_dice > 10) {
-    $num_dice = 10;
-  }
-  $dice = [];
-  for ($i = 0; $i < $num_dice; ++$i) {
-    $dice[] = rand(1, 6);
-  }
-  echo json_encode($dice);
+$numOfDice = getRequestedNumOfDice();
+
+if ($numOfDice > 1) {
+  $response = getJsonArrayOfDice($numOfDice);
 } else {
-  // Single dice requested
-  echo $number;
+  $response = $dieValue;
 }
 
+// Return this in the HTTP response body
+echo $response;
+
+
+
+/**
+ * Throw a die.
+ * @return int Value of the die, in the range 1-6.
+ */
+function throwDie() {
+  return rand(1, 6);
+}
+
+/**
+ * Get the number of requested dic, look into the HTTP request arguments.
+ * @return int
+ */
+function getRequestedNumOfDice() {
+  $numOfDice = 1;
+  if (isset($_REQUEST["n"])) {
+    $numOfDice = ensureValueInRange($_REQUEST["n"], 1, 10));
+  }
+  return $numOfDice;
+}
+
+/**
+ * Ensure the value n is within range [min, max].
+ * @param int $n The value to check
+ * @param int $min Min allowed value
+ * @param int $max Max allowed value
+ * @return int The value of n, enforced in the given range.
+ */
+function ensureValueInRange($n, $min, $max) {
+  if ($n < $min) {
+    $n = $min;
+  } else if ($n > $max) {
+    $n = $max;
+  }
+  return $n;
+}
+
+/**
+ * Throw a set of dice, return a JSON array with their values.
+ * @param int $numOfDice Number of dice to throw
+ * @return string JSON representation of an array containing the dice values
+ */
+function getJsonArrayOfDice($numOfDice) {
+  $dice = [];
+  for ($i = 0; $i < $numOfDice; ++$i) {
+    $dice[] = throwDie();
+  }
+  return json_encode($dice);
+}
+
+/**
+ * Check if sleep is requested by a wrapper script.
+ * @return bool True when sleep is required, false otherwise.
+ */
+function isSleepRequired() {
+  global $sleep; // We assume that sleep is required when a global variable $sleep is set to a
+  // non-false value
+  return isset($sleep) && $sleep == true;
+}
