@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Async HTTP POST example</title>
+    <title>Async HTTP GET example</title>
     <link rel="stylesheet" href="../../base-style.css" />
   </head>
   <body>
@@ -15,19 +15,34 @@
     <button onclick="fetchJoke()">Get a joke</button>
 
     <script>
+      // Creating an asynchronous request
       const asyncRequest = new XMLHttpRequest();
+
+      // Setting up a callback function - this will be called when the HTTP request is complete
+      // (response is received)
       asyncRequest.onload = onResponseReceived;
 
+      /**
+       * This function fetches a joke - sends an HTTP GET request to an external API
+       */
       function fetchJoke() {
+        // Here we simply start building the request: HTTP GET to the given URL
         asyncRequest.open(
           "GET",
           "https://api.chucknorris.io/jokes/random?category=dev"
         );
+        // Here we actually send the request
         asyncRequest.send();
       }
 
+      /**
+       * Callback function - handles the response
+       */
       function onResponseReceived() {
+        // This function may be called several times when the status of the request is changing
+        // With this IF we check whether the request is complete
         if (asyncRequest.readyState === XMLHttpRequest.DONE) {
+          // Here we check whether we got response code 200 OK
           if (asyncRequest.status === 200) {
             console.log("Got response:");
             console.log(asyncRequest.responseText);
