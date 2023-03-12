@@ -26,7 +26,7 @@ echo $response;
  * Throw a die.
  * @return int Value of the die, in the range 1-6.
  */
-function throwDie() {
+function throwDie(): int {
   return rand(1, 6);
 }
 
@@ -34,7 +34,7 @@ function throwDie() {
  * Get the number of requested dic, look into the HTTP request arguments.
  * @return int
  */
-function getRequestedNumOfDice() {
+function getRequestedNumOfDice(): int {
   $numOfDice = 1;
   if (isset($_REQUEST["n"])) {
     $numOfDice = ensureValueInRange($_REQUEST["n"], 1, 10);
@@ -49,7 +49,7 @@ function getRequestedNumOfDice() {
  * @param int $max Max allowed value
  * @return int The value of n, enforced in the given range.
  */
-function ensureValueInRange($n, $min, $max) {
+function ensureValueInRange(int $n, int $min, int $max): int {
   if ($n < $min) {
     $n = $min;
   } else if ($n > $max) {
@@ -63,7 +63,7 @@ function ensureValueInRange($n, $min, $max) {
  * @param int $numOfDice Number of dice to throw
  * @return string JSON representation of an array containing the dice values
  */
-function getJsonArrayOfDice($numOfDice) {
+function getJsonArrayOfDice(int $numOfDice): string {
   $dice = [];
   for ($i = 0; $i < $numOfDice; ++$i) {
     $dice[] = throwDie();
@@ -75,7 +75,7 @@ function getJsonArrayOfDice($numOfDice) {
  * Check if sleep is requested by a wrapper script.
  * @return bool True when sleep is required, false otherwise.
  */
-function isSleepRequired() {
+function isSleepRequired(): bool {
   global $sleep; // We assume that sleep is required when a global variable $sleep is set to a
   // non-false value
   return isset($sleep) && $sleep == true;
