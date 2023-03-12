@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MacOS aliases</title>
+    <link href="../../base-style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>MAC OS aliases</h1>
+    <p>
+      Are you using a Mac? Tired of typing long commands with many parameters
+      again and again? Well, you can define <em>aliases</em>.
+    </p>
+    <p>
+      This recipe is used in courses
+      <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
+        >IDATA2301 Web technologies</a
+      >
+      and
+      <a href="https://www.ntnu.edu/studies/courses/IDATA2306"
+        >IDATA2306 Application Development</a
+      >
+      at <a href="https://ntnu.edu">NTNU</a>, campus
+      <a href="https://www.ntnu.edu/alesund">Aalesund</a>.
+    </p>
+
+    <p><strong>Instructions:</strong></p>
+    <ol>
+      <li>
+        You need to know the command you will want to make a shortcut (alias)
+        for. For example, you may log into your server using SSH with the
+        following command:
+        <pre>ssh -i ~/.ssh/my-secret-key.pem ubuntu@my-server-ip</pre>
+      </li>
+      <li>
+        The aliases are defined in the file <code>~/.zshrc</code>. You need to
+        edit that file and put your aliases there. To edit the file, run the
+        following command in the terminal:
+        <pre>nano ~/.zshrc</pre>
+      </li>
+      <li>
+        Each alias in that file is defined as a line in the following format:
+        <pre>alias youraliasname='the code you want to execute'</pre>
+        For example, if you want to make a shortcut named
+        <code>ssh-into-server</code> which will execute the command
+        <code>ssh -i ~/.ssh/my-secret-key.pem ubuntu@my-server-ip</code>, then
+        you add the following line to the file:
+        <pre>
+alias ssh-into-server='ssh -i ~/.ssh/my-secret-key.pem ubuntu@my-server-ip'</pre
+        >
+      </li>
+      <li>
+        Save the file and exit the editor: press <kbd>Ctrl+X</kbd>, then
+        <kbd>Y</kbd>, then <kbd>Enter</kbd>.
+      </li>
+      <li>
+        Close all terminal windows (to force import of the aliases next time you
+        open a new terminal window).
+      </li>
+    </ol>
+
+    <p>
+      <a href="https://www.youtube.com/watch?v=b9434BoGkNQ"
+        >That's all, Folks!</a
+      >
+      From now on you can use the <code>ssh-into-server</code> command instead
+      of the long command with all the parameters.
+    </p>
+  </body>
+</html>
