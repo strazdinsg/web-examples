@@ -27,25 +27,14 @@
     <img alt="Spinner" id="spinner" src="spinner.gif" />
 
     <script>
-      const request = new XMLHttpRequest();
-      request.onload = onResponseReceived;
-
-      function sendDiceRequest() {
+      async function sendDiceRequest() {
         showLoading();
-        request.open(
-          "GET",
+        const response = await fetch(
           "https://web-tek.ninja/php_backend/delayed_dice.php"
         );
-        request.send();
-      }
-
-      function onResponseReceived() {
-        if (request.readyState === XMLHttpRequest.DONE) {
-          hideLoading();
-          if (request.status === 200) {
-            showDiceValue(request.responseText);
-          }
-        }
+        const responseText = await response.text();
+        showDiceValue(responseText);
+        hideLoading();
       }
 
       function showDiceValue(diceValue) {
