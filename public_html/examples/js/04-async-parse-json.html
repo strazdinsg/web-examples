@@ -27,47 +27,29 @@
     <p id="joke"></p>
 
     <script>
-      const asyncRequest = new XMLHttpRequest();
-      asyncRequest.onload = onResponseReceived;
-
       /**
        * Send an Ajax request to the joke server
        */
-      function fetchJoke() {
-        asyncRequest.open(
-          "GET",
+      async function fetchJoke() {
+        const response = await fetch(
           "https://api.chucknorris.io/jokes/random?category=dev"
         );
-        asyncRequest.send();
-      }
-
-      /**
-       * This function is called when the response to the Ajax request is received
-       */
-      function onResponseReceived() {
-        if (asyncRequest.readyState === XMLHttpRequest.DONE) {
-          if (asyncRequest.status === 200) {
-            parseJsonJoke(asyncRequest.responseText);
-          } else {
-            console.error("Error " + asyncRequest.status);
-          }
-        }
+        const responseJson = await response.json();
+        handleJsonJoke(responseJson);
       }
 
       /**
        * Parse the JSON object, find out the necessary parts and pass them to functions which place the content
-       * in the necessary places
-       * @param {string} jsonJoke the string response returned from the joke server. It contains an object encoded in
-       * the JSON format
+       * in the necessary places.
+       * @param {JSON} joke A JSON object returned from the joke server.
        */
-      function parseJsonJoke(jsonJoke) {
-        const joke = JSON.parse(jsonJoke);
+      function handleJsonJoke(joke) {
         displayJoke(joke.value);
         displayIcon(joke.icon_url);
       }
 
       /**
-       * Display a joke in the necessary container
+       * Display a joke in the necessary container.
        * @param {string} joke_text The joke text
        */
       function displayJoke(joke_text) {
@@ -75,7 +57,7 @@
       }
 
       /**
-       * Display an icon (image) for the joke
+       * Display an icon (image) for the joke.
        * @param {string} icon_url URL to the image source
        */
       function displayIcon(icon_url) {
