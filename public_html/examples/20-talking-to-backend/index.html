@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Backend+frontend demo app</title>
+    <link href="../../base-style.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
     <script src="scripts.js"></script>
   </head>
@@ -15,8 +16,12 @@ successfully loaded -->
       This app demonstrates how a frontend app can communicate with a backend
       (which can be a Spring Boot app, but can be any app providing a REST API).
     </p>
+    <p>
+      For this to work, you must handle the CORS problem in one way or
+      another...
+    </p>
 
     <p>The message here will be loaded from the backend using Javascript:</p>
-    <p id="message">[the message will be here, loading...]</p>
+    <p id="message">[The message will be here, loading...]</p>
   </body>
 </html>
