@@ -37,7 +37,7 @@ function throwDie() {
 function getRequestedNumOfDice() {
   $numOfDice = 1;
   if (isset($_REQUEST["n"])) {
-    $numOfDice = ensureValueInRange($_REQUEST["n"], 1, 10));
+    $numOfDice = ensureValueInRange($_REQUEST["n"], 1, 10);
   }
   return $numOfDice;
 }
