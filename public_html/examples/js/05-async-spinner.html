@@ -11,7 +11,7 @@
       }
 
       #busy-spinner {
-        width: 50px;
+        width: 5rem;
       }
     </style>
   </head>
@@ -37,51 +37,36 @@
     <p id="loading-dots">Loading</p>
 
     <script>
-      const asyncRequest = new XMLHttpRequest();
       let dotTimer = null; // We will use this to display dots every X milliseconds
 
       /**
        * Send an Ajax request to the server and start a busy indicator.
-       * @param {function} showBusyIndicator A function to call at the beginning. It should start a busy indicator.
-       * @param {function} hideBusyIndicator A function to call at the end. It should stop the busy indicator.
+       * @param {function} showBusyIndicator A function to call at the beginning.
+       * It should start a busy indicator.
+       * @param {function} hideBusyIndicator A function to call at the end.
+       * It should stop the busy indicator.
        */
-      function throwDice(showBusyIndicator, hideBusyIndicator) {
+      async function throwDice(showBusyIndicator, hideBusyIndicator) {
         showBusyIndicator();
-        asyncRequest.onload = function () {
-          if (isAjaxRequestComplete()) {
-            hideBusyIndicator();
-            if (isResponseSuccessfullyReceived()) {
-              showDiceValue(asyncRequest.responseText);
-            } else {
-              console.error("Error " + asyncRequest.status);
-            }
-          }
-        };
-        asyncRequest.open(
-          "GET",
+        const response = await fetch(
           "https://web-tek.ninja/php_backend/delayed_dice.php"
         );
-        asyncRequest.send();
+        const responseText = await response.text();
+        showDiceValue(responseText);
+        hideBusyIndicator();
       }
 
       /**
-       * Returns true if the Ajax request is done (response received)
-       * @returns {boolean}
+       * Show dice value in the HTML body.
+       * @param {string} diceValue Dice value, as a string, received from the backend.
        */
-      function isAjaxRequestComplete() {
-        return asyncRequest.readyState === XMLHttpRequest.DONE;
+      function showDiceValue(diceValue) {
+        document.getElementById("dice-val").innerText =
+          "You threw " + diceValue;
       }
 
       /**
-       * Returns true if the response code for the Ajax request is 200 OK
-       * @returns {boolean}
-       */
-      function isResponseSuccessfullyReceived() {
-        return asyncRequest.status === 200;
-      }
-
-      /**
-       * Start showing dots
+       * Start showing dots.
        */
       function startDots() {
         // Show the "Loading"
@@ -94,14 +79,14 @@
       }
 
       /**
-       * Show another dot in the "Loading..." element
+       * Show another dot in the "Loading..." element.
        */
       function showNewDot() {
         document.getElementById("loading-dots").innerText += ".";
       }
 
       /**
-       * Stop showing the dots and hide the dotted indicator
+       * Stop showing the dots and hide the dotted indicator.
        */
       function stopDots() {
         if (dotTimer) {
@@ -117,11 +102,6 @@
 
       function hideSpinner() {
         document.getElementById("busy-spinner").style.display = "none";
-      }
-
-      function showDiceValue(diceValue) {
-        document.getElementById("dice-val").innerText =
-          "You threw " + diceValue;
       }
     </script>
   </body>
