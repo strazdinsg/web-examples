@@ -6,39 +6,38 @@
     <link href="../../base-style.css" rel="stylesheet" />
     <style>
       #container {
-        margin: 20px;
+        margin: 2rem;
         display: grid;
-        grid-template: repeat(3, 100px) / repeat(3, 100px);
+        grid-template: repeat(3, 10rem) / repeat(3, 10rem);
       }
 
       .cell {
-        width: 80px;
-        height: 80px;
+        width: 8rem;
+        height: 8rem;
         border: 1px solid black;
       }
 
-      .odd {
+      .cell:nth-child(odd) {
         background-color: black;
       }
 
-      .odd.selected {
+      .cell:nth-child(odd).selected {
         /* This style applies to elements having both classes: odd AND selected */
         background-color: green;
       }
 
-      .even {
+      .cell:nth-child(even) {
         background-color: white;
       }
 
-      .even.selected {
+      .cell:nth-child(even).selected {
         /* This style applies to elements having both classes: even AND selected */
         background-color: yellow;
       }
     </style>
     <!-- Include jQuery, as suggested here: https://releases.jquery.com/ -->
     <script
-      src="https://code.jquery.com/jquery-3.6.3.min.js"
-      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
       crossorigin="anonymous"
     ></script>
   </head>
@@ -55,15 +54,15 @@
     <!-- Dice value will be displayed here -->
 
     <div id="container">
-      <div class="cell odd"></div>
-      <div class="cell even"></div>
-      <div class="cell odd"></div>
-      <div class="cell even"></div>
-      <div class="cell odd"></div>
-      <div class="cell even"></div>
-      <div class="cell odd"></div>
-      <div class="cell even"></div>
-      <div class="cell odd"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
     </div>
 
     <script>
@@ -88,8 +87,8 @@
             const dice_container = $("#dice-val");
             dice_container.empty();
 
-            // For each item in the received array of dice, append one paragraph
-            // to the dice-val element
+            // For each item in the received array of dice call the given function
+            // The function will append one paragraph to the dice-val element
             $.each(receivedDiceValues, function (index, diceVal) {
               dice_container.append("<p>You threw " + diceVal + "</p>");
             });
