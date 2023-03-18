@@ -62,7 +62,14 @@ openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -n
       </li>
       <li>
         Change the permissions for the file so that the non-root user can read
-        it: <code>sudo chmod a+r src/main/resources/keystore.p12</code>
+        it: <code>sudo chmod a+r src/main/resources/keystore.p12</code> Note:
+        this will make the key file (including the private key) readable for ALL
+        users on your server. If this is not what you need, you can make it
+        readable only to your user. For example, if the username of your user is
+        `dev`, then you can make `dev` the owner of the key with this command:
+        <code>sudo chown dev:root src/main/resources/keystore.p12</code> The
+        important thing is that the key file is readable for the user which will
+        run the Spring Boot application.
       </li>
       <li>
         Configure your Spring Boot app to use HTTPS, and only HTTPS. Add the
@@ -71,10 +78,10 @@ openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -n
         <pre>
 server.port=8443
 server.ssl.key-store=classpath:keystore.p12
-server.ssl.key-store-password= your-password (if you don't use password for the key, still need this line, just without a value)
-server.ssl.keyStoreType= PKCS12
-server.ssl.keyAlias= tomcat
-        </pre>
+server.ssl.key-store-password=your-password (if you don't use password for the key, still need this line, just without a value)
+server.ssl.keyStoreType=PKCS12
+server.ssl.keyAlias=tomcat</pre
+        >
       </li>
       <li>
         Package the application in a <em>fat JAR</em> with the command
