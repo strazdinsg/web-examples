@@ -1,4 +1,4 @@
-// Solution for exercise 12
+// Solution for exercise 12.1
 printG();
 
 var g = 3;
