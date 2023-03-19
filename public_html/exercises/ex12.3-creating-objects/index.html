@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Exercise 13.3: Creating objects</title>
+    <title>Exercise 12.3: Creating objects</title>
     <link rel="stylesheet" href="../../base-style.css" />
   </head>
   <body>
     <article>
       <section>
-        <h1>Exercise 13.3</h1>
+        <h1>Exercise 12.3</h1>
         <p>
-          This is Exercise 13.34, lecture on objects and prototypes in
+          This is Exercise 12.3, lecture on objects and prototypes in
           Javascript, used in the course
           <a href="https://www.ntnu.edu/studies/courses/IDATA2301"
             >IDATA2301 Web technologies</a
@@ -30,25 +30,38 @@
         <h2>Instructions</h2>
         <p>
           Create a new HTML document, and include a Javascript file called
-          <code>app.js</code>. In that file, create the following objects using
-          four possible ways: with object literals, constructor functions,
-          classes and using <code>Object.create()</code> method. See the four
-          methods explained in lecture slides. Note: you must name the different
-          objects differently!
+          <code>app.js</code>. In that file, create objects using four possible
+          ways:
+        </p>
+        <ol>
+          <li>object literals</li>
+          <li>constructor functions</li>
+          <li>classes</li>
+          <li><code>Object.create()</code> method</li>
+        </ol>
+        <p>
+          See the four methods explained in lecture slides. Note: you must name
+          the different objects differently (for example, <code>person1</code>,
+          <code>person2</code>, <code>person3</code>, and <code>person4</code>)!
+          Create the following objects:
         </p>
         <ol>
           <li>
-            A <code>Person</code> object which has a firstname and a lastname.
+            Four <code>Person</code> objects which have a firstname and a
+            lastname.
           </li>
           <li>
-            Two <code>GameObject</code> objects (player and enemy). Imagine that
-            these are objects placed in a 2D game. Each
+            Two <code>GameObject</code> objects (player and enemy). Note: if you
+            are ambitious, you can create these objects using all the four ways
+            mentioned above. But you can also choose just one of the ways. For
+            example, create both <code>GameObject</code> instances using a
+            class. Imagine that these are objects placed in a 2D game. Each
             <code>GameObject</code> must have the following properties:
             <ul>
-              <li>x position: number</li>
-              <li>y position: number</li>
-              <li>name: string</li>
-              <li>life: number</li>
+              <li><code>x_position</code>: number</li>
+              <li><code>y_position</code>: number</li>
+              <li><code>name</code>: string</li>
+              <li><code>life</code>: number</li>
             </ul>
             Each <code>GameObject</code> must have the following methods
             (functions):
@@ -79,7 +92,7 @@
         <h2>Solution</h2>
         <p>
           You can find a solution
-          <a href="../../exercise-solutions/ex13.3-creating-objects">here</a>.
+          <a href="../../exercise-solutions/ex12.3-creating-objects">here</a>.
         </p>
       </section>
     </article>

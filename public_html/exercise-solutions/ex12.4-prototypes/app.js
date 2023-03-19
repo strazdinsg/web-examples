@@ -1,7 +1,7 @@
-// Solution for exercise 13.4
+// Solution for exercise 12.4
 
 // 1, 2
-const vehicle = {
+const Vehicle = {
   maxSpeed: 200,
   color: "gray",
   model: "VW",
@@ -19,34 +19,38 @@ const vehicle = {
 };
 
 // 3
-const car = Object.create(vehicle);
-car.numberOfSeets = 5;
-car.canSeat = function (numberOfPersons) {
+const Car = Object.create(Vehicle);
+
+// 4
+Car.numberOfSeets = 5;
+Car.canSeat = function (numberOfPersons) {
   return numberOfPersons <= this.numberOfSeets;
 };
 
-// 4
-const redPorsche = Object.create(car);
+// 5
+const redPorsche = Object.create(Car);
 redPorsche.model = "Porsche";
 redPorsche.color = "red";
 redPorsche.maxSpeed = 320;
 
-// 5
+// 6
 redPorsche.drive(200);
 
-// 6
-vehicle.numberOfWheels = 4;
-
 // 7
-console.log(`The Porsche has ${redPorsche.numberOfWheels} wheels`);
+Vehicle.numberOfWheels = 4;
 
 // 8
-const bike = Object.create(vehicle);
+console.log(`The Porsche has ${redPorsche.numberOfWheels} wheels`);
 
 // 9
-bike.numberOfWheels = 2;
+const bike = Object.create(Vehicle);
 
 // 10
-console.log(`Vehicle has ${vehicle.numberOfWheels} wheels`);
-console.log(`Porsche has ${redPorsche.numberOfWheels}`);
+bike.numberOfWheels = 2;
+
+// 11
+console.log(`Vehicle has ${Vehicle.numberOfWheels} wheels`);
+console.log(`Porsche has ${redPorsche.numberOfWheels} wheels`);
 console.log(`Bike has ${bike.numberOfWheels} wheels`);
+
+// 12 - this one you need to do in the console ;)
