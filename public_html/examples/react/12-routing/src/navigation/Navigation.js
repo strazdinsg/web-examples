@@ -1,6 +1,6 @@
 import "./Navigation.css";
 import { ProfileNavItem } from "./ProfileNavItem";
-import { ActiveLink } from "./ActiveLink";
+import {NavLink} from "react-router-dom";
 
 /**
  * Represents navigation
@@ -13,13 +13,13 @@ export function Navigation() {
     <nav>
       <ul>
         <li>
-          <ActiveLink to="/">Home</ActiveLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <ActiveLink to="/products">Products</ActiveLink>
+          <NavLink to="/products">Products</NavLink>
         </li>
         <li>
-          <ActiveLink to="/cart">Shopping cart</ActiveLink>
+          <NavLink to="/cart">Shopping cart</NavLink>
         </li>
         <ProfileNavItem />
       </ul>
