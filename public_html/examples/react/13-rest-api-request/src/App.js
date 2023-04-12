@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigation } from "./Navigation";
 import { ProductGrid } from "./ProductGrid";
-import { sendApiRequest } from "./tools/requests";
+import { asyncApiRequest } from "./tools/requests";
 
 /**
  * A component representing the whole application
@@ -19,6 +19,8 @@ export function App() {
   useEffect(() => {
     if (products.length === 0) {
       loadProducts();
+    } else {
+      console.log("useEffect called again, but products already loaded");
     }
   });
 
@@ -34,19 +36,18 @@ export function App() {
   /**
    * Pretend that we are loading products
    */
-  function loadProducts() {
-    sendApiRequest(
-      "GET",
-      "/products",
-      function (p) {
-        setProducts(p);
-      },
-      null,
-      onProductLoadError
-    );
+  async function loadProducts() {
+    console.log("Fetching products from the backend...");
+    try {
+      const p = await asyncApiRequest("GET", "/products", null);
+      setProducts(p);
+    } catch (error) {
+      onProductLoadError(error);
+    }
   }
 
-  function onProductLoadError() {
+  function onProductLoadError(error) {
     setErrorMessage("Could not receive products from the backend API!");
+    console.error(error.message);
   }
 }
