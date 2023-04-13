@@ -1,0 +1,12 @@
+html {
+  font-size: 62.5%; /* Reset 1 rem unit to 10px */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p {
+  font-size: 1.6rem;
+}
