@@ -1,7 +1,7 @@
 import { ProductCard } from "./ProductCard";
 import "./ProductGrid.css";
 import { useContext } from "react";
-import { ProductContext } from "./ProductContext";
+import { ProductContext } from "../context/ProductContext";
 
 /**
  * Component representing the product grid
@@ -9,8 +9,7 @@ import { ProductContext } from "./ProductContext";
  * @constructor
  */
 export function ProductGrid() {
-  const productContext = useContext(ProductContext);
-  const products = productContext.products;
+  const { products } = useContext(ProductContext);
 
   if (products.length > 0) {
     const cards = products.map((product) => (

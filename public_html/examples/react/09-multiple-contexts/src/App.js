@@ -1,9 +1,9 @@
-import { Navigation } from "./Navigation";
-import { ProductContext } from "./ProductContext";
+import { Navigation } from "./components/Navigation";
+import { ProductContext } from "./context/ProductContext";
 import { useEffect, useState } from "react";
-import { MainSection } from "./MainSection";
+import { MainSection } from "./components/MainSection";
 import { FAKE_PRODUCTS } from "./ProductData";
-import { darkTheme, lightTheme, ThemeContext } from "./ThemeContext";
+import { darkTheme, lightTheme, ThemeContext } from "./context/ThemeContext";
 
 // Products loading takes 3 seconds
 const PRODUCT_LOAD_TIMEOUT = 3000;

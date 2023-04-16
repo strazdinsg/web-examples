@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { ProductContext } from "./ProductContext";
+import { ProductContext } from "../context/ProductContext";
 import { ProductGrid } from "./ProductGrid";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import "./MainSection.css";
 
 /**
@@ -10,10 +10,8 @@ import "./MainSection.css";
  * @constructor
  */
 export function MainSection() {
-  const productContext = useContext(ProductContext);
-  const products = productContext.products;
-  const themeContext = useContext(ThemeContext);
-  const theme = themeContext.theme;
+  const { products } = useContext(ProductContext);
+  const { theme } = useContext(ThemeContext);
 
   let content;
   if (products.length > 0) {

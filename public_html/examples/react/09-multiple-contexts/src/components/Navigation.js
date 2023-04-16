@@ -1,7 +1,7 @@
 import "./Navigation.css";
 import { useContext } from "react";
-import { ProductContext } from "./ProductContext";
-import { ThemeContext } from "./ThemeContext";
+import { ProductContext } from "../context/ProductContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 /**
  * Represents navigation
@@ -10,8 +10,7 @@ import { ThemeContext } from "./ThemeContext";
  * @constructor
  */
 export function Navigation() {
-  const productContext = useContext(ProductContext);
-  const products = productContext.products;
+  const { products } = useContext(ProductContext);
   const productCountHint = products.length > 0 ? `(${products.length})` : "";
   const themeContext = useContext(ThemeContext);
   const theme = themeContext.theme;

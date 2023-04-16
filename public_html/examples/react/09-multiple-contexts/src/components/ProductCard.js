@@ -1,7 +1,7 @@
 import "./ProductCard.css";
 import { ProductDeleteButton } from "./ProductDeleteButton";
 import { useContext } from "react";
-import { ThemeContext } from "./ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 /**
  * A component representing a single product card
@@ -10,14 +10,13 @@ import { ThemeContext } from "./ThemeContext";
  * @constructor
  */
 export function ProductCard(props) {
-  const themeContext = useContext(ThemeContext);
-  const theme = themeContext.theme;
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={"product-card " + theme.themeClass}>
       <div className="product-card-image">
         <img
-          src={require("./img/products/" + props.product.id + ".jpg")}
+          src={require("../img/products/" + props.product.id + ".jpg")}
           alt="a product"
         />
       </div>
