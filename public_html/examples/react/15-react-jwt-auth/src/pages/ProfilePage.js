@@ -4,8 +4,8 @@
  * @constructor
  */
 import { useEffect, useState } from "react";
-import { sendApiRequest } from "../tools/requests";
 import "./ProfilePage.css";
+import {asyncApiRequest} from "../tools/requests";
 
 export function ProfilePage(props) {
   const [bio, setBio] = useState("Loading data...");
@@ -57,7 +57,8 @@ export function ProfilePage(props) {
     if (!dataLoaded && props.username) {
       setDataLoaded(true);
       setEditsDisabled(true);
-      sendApiRequest("GET", "/users/" + props.username, showProfileData);
+      asyncApiRequest("GET", "/users/" + props.username)
+        .then(showProfileData);
     }
   }
 
@@ -71,6 +72,8 @@ export function ProfilePage(props) {
     setSuccess("");
     if (profileData.bio) {
       setBio(profileData.bio);
+    } else {
+      setBio("");
     }
   }
 
@@ -83,13 +86,9 @@ export function ProfilePage(props) {
       bio: bio,
     };
     setEditsDisabled(true);
-    sendApiRequest(
-      "PUT",
-      "/users/" + props.username,
-      profileSaveSuccess,
-      profileData,
-      profileSaveError
-    );
+    asyncApiRequest("PUT", "/users/" + props.username, profileData, true)
+      .then(profileSaveSuccess)
+      .catch(error => profileSaveError(error.message));
   }
 
   /**

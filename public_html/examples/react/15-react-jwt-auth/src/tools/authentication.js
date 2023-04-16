@@ -1,7 +1,7 @@
 // Authentication stuff
 
-import { sendApiRequest } from "./requests";
-import { deleteCookie, getCookie, setCookie } from "./cookies";
+import {deleteCookie, getCookie, setCookie} from "./cookies";
+import {asyncApiRequest} from "./requests";
 
 /**
  * Get the currently authenticated user
@@ -37,7 +37,7 @@ export function isAdmin(user) {
  * @param successCallback Function to call on success
  * @param errorCallback Function to call on error, with response text as the parameter
  */
-export function sendAuthenticationRequest(
+export async function sendAuthenticationRequest(
   username,
   password,
   successCallback,
@@ -47,10 +47,9 @@ export function sendAuthenticationRequest(
     username: username,
     password: password,
   };
-  sendApiRequest(
-    "POST",
-    "/authenticate",
-    function (jwtResponse) {
+  try {
+    const jwtResponse = await asyncApiRequest("POST", "/authenticate", postData);
+    if (jwtResponse && jwtResponse.jwt) {
       setCookie("jwt", jwtResponse.jwt);
       const userData = parseJwtUser(jwtResponse.jwt);
       if (userData) {
@@ -58,12 +57,10 @@ export function sendAuthenticationRequest(
         setCookie("current_user_roles", userData.roles.join(","));
         successCallback(userData);
       }
-    },
-    postData,
-    function (responseText) {
-      errorCallback(responseText);
     }
-  );
+  } catch (httpError) {
+    errorCallback(httpError.message);
+  }
 }
 
 /**

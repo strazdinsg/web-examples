@@ -12,6 +12,7 @@ button {
   margin: 1rem 0 0 0;
 }
 
+/* Elements with this class are intended for screen-readers only */
 .sr-only {
   display: none;
 }

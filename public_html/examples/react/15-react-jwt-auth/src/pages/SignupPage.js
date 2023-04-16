@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { sendApiRequest } from "../tools/requests";
 import { useState } from "react";
+import {asyncApiRequest} from "../tools/requests";
 
 export function SignupPage() {
   const [username, setUsername] = useState("");
@@ -55,13 +55,9 @@ export function SignupPage() {
       username: username,
       password: password,
     };
-    sendApiRequest(
-      "POST",
-      "/signup",
-      onSignupSuccess,
-      signupData,
-      (errorMessage) => setError(errorMessage)
-    );
+      asyncApiRequest("POST", "/signup", signupData, true)
+        .then(onSignupSuccess)
+        .catch((error) => setError(error.message))
   }
 
   /**

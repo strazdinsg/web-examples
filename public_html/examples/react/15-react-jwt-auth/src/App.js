@@ -2,14 +2,14 @@ import { Navigation } from "./components/Navigation";
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import { MainContent } from "./MainContent";
-import { sendApiRequest } from "./tools/requests";
 import {
   deleteAuthorizationCookies,
   getAuthenticatedUser,
 } from "./tools/authentication";
+import {asyncApiRequest} from "./tools/requests";
 
 /**
- * A component representing "game" board
+ * The main application component.
  */
 export function App() {
   const [user, setUser] = useState(null);
@@ -42,7 +42,7 @@ export function App() {
     if (products.length === 0 && !productsLoaded) {
       setProductsLoaded(true);
       console.log("Loading products...");
-      sendApiRequest("GET", "/products", function (loadedProducts) {
+      asyncApiRequest("GET", "/products").then(function (loadedProducts) {
         console.log("Products received");
         setProducts(loadedProducts);
       });
