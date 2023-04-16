@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Navigation } from "./Navigation";
-import { ProductGrid } from "./ProductGrid";
+import { Navigation } from "./components/Navigation";
+import { ProductGrid } from "./components/ProductGrid";
 import { asyncApiRequest } from "./tools/requests";
 
 /**
@@ -34,7 +34,7 @@ export function App() {
   );
 
   /**
-   * Pretend that we are loading products
+   * Load products from the backend
    */
   async function loadProducts() {
     console.log("Fetching products from the backend...");

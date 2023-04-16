@@ -3,7 +3,7 @@ import "./ProductGrid.css";
 
 /**
  * Component representing the product grid
- * @param props Props containing the products array
+ * @param props Props containing the products array and error message
  * @return {JSX.Element}
  * @constructor
  */

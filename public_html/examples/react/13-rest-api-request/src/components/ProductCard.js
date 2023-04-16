@@ -11,7 +11,7 @@ export function ProductCard(props) {
     <div className="product-card">
       <div className="product-card-image">
         <img
-          src={require("./img/products/" + props.product.id + ".jpg")}
+          src={require("../img/products/" + props.product.id + ".jpg")}
           alt="product"
         />
       </div>
