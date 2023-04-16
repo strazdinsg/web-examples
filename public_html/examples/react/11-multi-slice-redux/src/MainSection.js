@@ -18,10 +18,7 @@ export function MainSection() {
     productContainer = <p className="loading">Loading products...</p>;
   }
 
-  let shoppingCartContainer = null;
-  if (user) {
-    shoppingCartContainer = <ShoppingCart />;
-  }
+  let shoppingCartContainer = user ?  <ShoppingCart /> : null;
 
   return (
     <main>
