@@ -9,8 +9,7 @@ import { ProductContext } from "./ProductContext";
  * @constructor
  */
 export function ProductGrid() {
-  const productContext = useContext(ProductContext);
-  const products = productContext.products;
+  const { products } = useContext(ProductContext);
 
   if (products.length > 0) {
     const cards = products.map((product) => (

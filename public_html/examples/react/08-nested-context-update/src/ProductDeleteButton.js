@@ -9,11 +9,10 @@ import { ProductContext } from "./ProductContext";
  * @constructor
  */
 export function ProductDeleteButton(props) {
-  const productContext = useContext(ProductContext);
-  const deleteFunction = productContext.handleDelete;
+  const { handleDelete } = useContext(ProductContext);
 
   return (
-    <button className="product-delete" onClick={() => deleteFunction(props.id)}>
+    <button className="product-delete" onClick={() => handleDelete(props.id)}>
       Delete
     </button>
   );
