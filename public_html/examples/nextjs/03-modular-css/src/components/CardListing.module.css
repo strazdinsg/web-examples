@@ -1,0 +1,9 @@
+/* Styles for the CardListing component (only it) */
+.card_list {
+  display: flex;
+  background-color: lightgray;
+  border: 1px solid black;
+  margin: auto;
+  width: 600px;
+  justify-content: center;
+}

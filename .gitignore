@@ -2,3 +2,7 @@
 .idea/
 
 .DS_Store
+
+public_html/examples/nextjs/03-modular-css/.next/
+
+public_html/examples/nextjs/03-modular-css/node_modules/
