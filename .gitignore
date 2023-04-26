@@ -3,6 +3,6 @@
 
 .DS_Store
 
-public_html/examples/nextjs/03-modular-css/.next/
+.next
 
-public_html/examples/nextjs/03-modular-css/node_modules/
+node_modules
