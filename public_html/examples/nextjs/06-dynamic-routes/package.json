@@ -1,0 +1,10 @@
+{
+  "name": "dynamic-routes",
+  "version": "1.0.0",
+  "dependencies": {
+    "next": "13.3.4"
+  },
+  "scripts": {
+    "dev": "next dev"
+  }
+}
