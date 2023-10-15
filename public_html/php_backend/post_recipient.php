@@ -10,11 +10,17 @@
 
 <?php
 
+$entityBody = file_get_contents('php://input');
+
 if (!empty($_POST)) {
-    echo "You have POSTED the following data: <br/>";
+    echo "<p>You have POSTED the following data as an HTTP form POST: </p>\n";
     print_r($_POST);
 } else {
-    echo "You have not posted any data with an HTTP POST!";
+    echo "<p>You have not posted any data with an HTTP POST! </p>\n";
+}
+
+if ($entityBody) {
+    echo "<p>You have posted the following data in the request BODY:</p>\n" . $entityBody;
 }
 
 ?>
