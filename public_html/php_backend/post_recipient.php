@@ -10,8 +10,6 @@
 
 <?php
 
-$entityBody = file_get_contents('php://input');
-
 if (!empty($_POST)) {
     echo "<p>You have POSTED the following data as an HTTP form POST: </p>\n";
     print_r($_POST);
@@ -19,6 +17,7 @@ if (!empty($_POST)) {
     echo "<p>You have not posted any data with an HTTP POST! </p>\n";
 }
 
+$entityBody = file_get_contents('php://input');
 if ($entityBody) {
     echo "<p>You have posted the following data in the request BODY:</p>\n" . $entityBody;
 }
