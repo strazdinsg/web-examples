@@ -2,7 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "dependencies": {
-    "next": "13.4.1"
+    "next": "14.1.1"
   },
   "scripts": {
     "dev": "next dev",
