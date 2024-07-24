@@ -7,6 +7,4 @@
 
 node_modules
 
-public_html/examples/typescript/01-hello-ts/hello.js
-
-public_html/examples/typescript/02-null-check/nullable.js
+public_html/examples/typescript/**/*.js
