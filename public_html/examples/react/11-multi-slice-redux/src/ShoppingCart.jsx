@@ -1,9 +1,6 @@
 import "./ShoppingCart.css";
 import { useSelector } from "react-redux";
-import * as PropTypes from "prop-types";
 import { DELETE_ALL, DeleteCartItemButton } from "./DeleteCartItemButton";
-
-DeleteCartItemButton.propTypes = { id: PropTypes.string };
 
 /**
  * Component representing the shopping cart

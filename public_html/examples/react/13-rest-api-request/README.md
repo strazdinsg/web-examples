@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ## API URL
 
 The base URL for the backend REST API is specified in an environment
-variable `REACT_APP_API_BASE_URL`. It is stored in the `.env` file, by default.
+variable `VITE_API_BASE_URL`. It is stored in the `.env` file, by default.
 The `.env` file is consulted only at the build time. If you change the value,
 restart the project.
 
