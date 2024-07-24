@@ -7,13 +7,14 @@ import "./ProductCard.css";
  * @constructor
  */
 export function ProductCard(props) {
+  const imageUrl = new URL(
+    "./img/products/" + props.product.id + ".jpg",
+    import.meta.url
+  ).href;
   return (
     <div className="product-card">
       <div className="product-card-image">
-        <img
-          src={require("./img/products/" + props.product.id + ".jpg")}
-          alt="product image"
-        />
+        <img src={imageUrl} alt="product" />
       </div>
       <h2 className="product-card-title">{props.product.name}</h2>
       <h3 className="product-card-price">{props.product.price} Kr</h3>
