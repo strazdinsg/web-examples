@@ -11,14 +11,15 @@ import { ThemeContext } from "../context/ThemeContext";
  */
 export function ProductCard(props) {
   const { theme } = useContext(ThemeContext);
+  const imageUrl = new URL(
+    "../img/products/" + props.product.id + ".jpg",
+    import.meta.url
+  ).href;
 
   return (
     <div className={"product-card " + theme.themeClass}>
       <div className="product-card-image">
-        <img
-          src={require("../img/products/" + props.product.id + ".jpg")}
-          alt="a product"
-        />
+        <img src={imageUrl} alt="a product" />
       </div>
       <h2 className="product-card-title">{props.product.name}</h2>
       <h3 className="product-card-price">{props.product.price} Kr</h3>

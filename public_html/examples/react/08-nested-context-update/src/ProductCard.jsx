@@ -1,4 +1,5 @@
 import "./ProductCard.css";
+import { ProductDeleteButton } from "./ProductDeleteButton";
 
 /**
  * A component representing a single product card
@@ -21,6 +22,7 @@ export function ProductCard(props) {
       <div className="product-card-description">
         {props.product.description}
       </div>
+      <ProductDeleteButton id={props.product.id} />
     </div>
   );
 }
